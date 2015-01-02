@@ -1,4 +1,12 @@
 language: objective-c
-xcode_project: BIObjCHelpersExample.xcodeproj
-xcode_scheme: BIObjCHelpersExampleTests
-xcode_sdk: iphonesimulator8.1
+
+before_install:
+  - brew update
+  - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
+  - sudo easy_install cpp-coveralls
+
+script:
+  - xctool test -project BIObjCHelpersExample.xcodeproj -scheme BIObjCHelpersExample -sdk iphonesimulator8.1 -destination "platform=iOS Simulator,name=iPhone 6,OS=8.1"
+
+after_success: 
+  ./coveralls.rb --exclude-folder BIObjCHelpersExample/Classes/GUI --exclude-folder BIObjCHelpersExampleTests
