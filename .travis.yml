@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: BIObjCHelpersExample.xcodeproj
+xcode_scheme: BIObjCHelpersExampleTests
+xcode_sdk: iphonesimulator8.0
