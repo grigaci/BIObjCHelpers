@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		658AF67F1A56BAA600D48C74 /* BIObjCHelpersExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF67E1A56BAA600D48C74 /* BIObjCHelpersExampleTests.m */; };
 		658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */; };
 		658AF6971A56BB8E00D48C74 /* BIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */; };
 		658AF6981A56BB8E00D48C74 /* BIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF6901A56BB8E00D48C74 /* BIViewController.m */; };
 		658AF6991A56BB8E00D48C74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 658AF6931A56BB8E00D48C74 /* Images.xcassets */; };
 		658AF69A1A56BB8E00D48C74 /* BILaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658AF6951A56BB8E00D48C74 /* BILaunchScreen.xib */; };
 		658AF69F1A56BB9C00D48C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF69D1A56BB9C00D48C74 /* main.m */; };
+		658AF6A41A56BDD200D48C74 /* BIOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF6A31A56BDD200D48C74 /* BIOperationQueue.m */; };
+		658AF6A91A56C46700D48C74 /* BIOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF6A81A56C46700D48C74 /* BIOperationQueue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +30,7 @@
 /* Begin PBXFileReference section */
 		658AF65F1A56BAA500D48C74 /* BIObjCHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIObjCHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF6781A56BAA600D48C74 /* BIObjCHelpersExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		658AF67D1A56BAA600D48C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		658AF67E1A56BAA600D48C74 /* BIObjCHelpersExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BIObjCHelpersExampleTests.m; sourceTree = "<group>"; };
+		658AF67D1A56BAA600D48C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
 		658AF6891A56BB8E00D48C74 /* BIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIAppDelegate.h; sourceTree = "<group>"; };
 		658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAppDelegate.m; sourceTree = "<group>"; };
 		658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BIMain.storyboard; sourceTree = "<group>"; };
@@ -40,6 +40,9 @@
 		658AF6951A56BB8E00D48C74 /* BILaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BILaunchScreen.xib; sourceTree = "<group>"; };
 		658AF69C1A56BB9C00D48C74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		658AF69D1A56BB9C00D48C74 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		658AF6A21A56BDD200D48C74 /* BIOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIOperationQueue.h; sourceTree = "<group>"; };
+		658AF6A31A56BDD200D48C74 /* BIOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIOperationQueue.m; sourceTree = "<group>"; };
+		658AF6A81A56C46700D48C74 /* BIOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIOperationQueue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,18 +94,18 @@
 		658AF67B1A56BAA600D48C74 /* BIObjCHelpersExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				658AF67E1A56BAA600D48C74 /* BIObjCHelpersExampleTests.m */,
-				658AF67C1A56BAA600D48C74 /* Supporting Files */,
+				658AF6A51A56C43900D48C74 /* Tests */,
+				658AF67C1A56BAA600D48C74 /* SupportingFiles */,
 			);
 			path = BIObjCHelpersExampleTests;
 			sourceTree = "<group>";
 		};
-		658AF67C1A56BAA600D48C74 /* Supporting Files */ = {
+		658AF67C1A56BAA600D48C74 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				658AF67D1A56BAA600D48C74 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		658AF6881A56BB8E00D48C74 /* Classes */ = {
@@ -111,6 +114,7 @@
 				658AF6891A56BB8E00D48C74 /* BIAppDelegate.h */,
 				658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */,
 				658AF68B1A56BB8E00D48C74 /* GUI */,
+				658AF6A01A56BD9200D48C74 /* Helpers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -173,6 +177,48 @@
 				658AF69D1A56BB9C00D48C74 /* main.m */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		658AF6A01A56BD9200D48C74 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				658AF6A11A56BD9200D48C74 /* OperationQueue */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		658AF6A11A56BD9200D48C74 /* OperationQueue */ = {
+			isa = PBXGroup;
+			children = (
+				658AF6A21A56BDD200D48C74 /* BIOperationQueue.h */,
+				658AF6A31A56BDD200D48C74 /* BIOperationQueue.m */,
+			);
+			path = OperationQueue;
+			sourceTree = "<group>";
+		};
+		658AF6A51A56C43900D48C74 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				658AF6A61A56C45700D48C74 /* Helpers */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		658AF6A61A56C45700D48C74 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				658AF6A71A56C45700D48C74 /* OperationQueue */,
+			);
+			name = Helpers;
+			path = Tests/Helpers;
+			sourceTree = "<group>";
+		};
+		658AF6A71A56C45700D48C74 /* OperationQueue */ = {
+			isa = PBXGroup;
+			children = (
+				658AF6A81A56C46700D48C74 /* BIOperationQueue.m */,
+			);
+			path = OperationQueue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +323,7 @@
 			files = (
 				658AF6981A56BB8E00D48C74 /* BIViewController.m in Sources */,
 				658AF69F1A56BB9C00D48C74 /* main.m in Sources */,
+				658AF6A41A56BDD200D48C74 /* BIOperationQueue.m in Sources */,
 				658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				658AF67F1A56BAA600D48C74 /* BIObjCHelpersExampleTests.m in Sources */,
+				658AF6A91A56C46700D48C74 /* BIOperationQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +457,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BIObjCHelpersExampleTests/Info.plist;
+				INFOPLIST_FILE = BIObjCHelpersExampleTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BIObjCHelpersExample.app/BIObjCHelpersExample";
@@ -425,7 +472,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BIObjCHelpersExampleTests/Info.plist;
+				INFOPLIST_FILE = BIObjCHelpersExampleTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BIObjCHelpersExample.app/BIObjCHelpersExample";
