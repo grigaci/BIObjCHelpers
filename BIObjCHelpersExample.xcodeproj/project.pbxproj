@@ -15,6 +15,8 @@
 		658AF69F1A56BB9C00D48C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF69D1A56BB9C00D48C74 /* main.m */; };
 		658AF6A41A56BDD200D48C74 /* BIOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF6A31A56BDD200D48C74 /* BIOperationQueue.m */; };
 		658AF6A91A56C46700D48C74 /* BIOperationQueueTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF6A81A56C46700D48C74 /* BIOperationQueueTestCase.m */; };
+		659D5BC61A58053500208A19 /* BISerialOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 659D5BC51A58053500208A19 /* BISerialOperationQueue.m */; };
+		659D5BC81A58059800208A19 /* BISerialOperationQueueTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 659D5BC71A58059800208A19 /* BISerialOperationQueueTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,9 @@
 		658AF6A21A56BDD200D48C74 /* BIOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIOperationQueue.h; sourceTree = "<group>"; };
 		658AF6A31A56BDD200D48C74 /* BIOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIOperationQueue.m; sourceTree = "<group>"; };
 		658AF6A81A56C46700D48C74 /* BIOperationQueueTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIOperationQueueTestCase.m; sourceTree = "<group>"; };
+		659D5BC41A58053500208A19 /* BISerialOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BISerialOperationQueue.h; sourceTree = "<group>"; };
+		659D5BC51A58053500208A19 /* BISerialOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BISerialOperationQueue.m; sourceTree = "<group>"; };
+		659D5BC71A58059800208A19 /* BISerialOperationQueueTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BISerialOperationQueueTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +197,8 @@
 			children = (
 				658AF6A21A56BDD200D48C74 /* BIOperationQueue.h */,
 				658AF6A31A56BDD200D48C74 /* BIOperationQueue.m */,
+				659D5BC41A58053500208A19 /* BISerialOperationQueue.h */,
+				659D5BC51A58053500208A19 /* BISerialOperationQueue.m */,
 			);
 			path = OperationQueue;
 			sourceTree = "<group>";
@@ -217,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				658AF6A81A56C46700D48C74 /* BIOperationQueueTestCase.m */,
+				659D5BC71A58059800208A19 /* BISerialOperationQueueTestCase.m */,
 			);
 			path = OperationQueue;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 				658AF69F1A56BB9C00D48C74 /* main.m in Sources */,
 				658AF6A41A56BDD200D48C74 /* BIOperationQueue.m in Sources */,
 				658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */,
+				659D5BC61A58053500208A19 /* BISerialOperationQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659D5BC81A58059800208A19 /* BISerialOperationQueueTestCase.m in Sources */,
 				658AF6A91A56C46700D48C74 /* BIOperationQueueTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
