@@ -11,6 +11,7 @@
 		654D9AC91A5E9CAE00D853C4 /* BISerialOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D9AC71A5E9CAE00D853C4 /* BISerialOperationQueue.m */; };
 		654D9ACE1A5E9CD500D853C4 /* BIOperationQueueTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D9ACC1A5E9CD500D853C4 /* BIOperationQueueTestCase.m */; };
 		654D9ACF1A5E9CD500D853C4 /* BISerialOperationQueueTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D9ACD1A5E9CD500D853C4 /* BISerialOperationQueueTestCase.m */; };
+		654D9AD31A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 654D9AD11A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld */; };
 		658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */; };
 		658AF6971A56BB8E00D48C74 /* BIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */; };
 		658AF6981A56BB8E00D48C74 /* BIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF6901A56BB8E00D48C74 /* BIViewController.m */; };
@@ -36,6 +37,7 @@
 		654D9AC71A5E9CAE00D853C4 /* BISerialOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BISerialOperationQueue.m; sourceTree = "<group>"; };
 		654D9ACC1A5E9CD500D853C4 /* BIOperationQueueTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIOperationQueueTestCase.m; sourceTree = "<group>"; };
 		654D9ACD1A5E9CD500D853C4 /* BISerialOperationQueueTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BISerialOperationQueueTestCase.m; sourceTree = "<group>"; };
+		654D9AD21A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BIObjCHelpersExample.xcdatamodel; sourceTree = "<group>"; };
 		658AF65F1A56BAA500D48C74 /* BIObjCHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIObjCHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF6781A56BAA600D48C74 /* BIObjCHelpersExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF67D1A56BAA600D48C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = OperationQueue;
 			sourceTree = "<group>";
 		};
+		654D9AD01A5E9E6400D853C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				654D9AD11A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		658AF6561A56BAA500D48C74 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 				658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */,
 				658AF68B1A56BB8E00D48C74 /* GUI */,
 				658AF6A01A56BD9200D48C74 /* Helpers */,
+				654D9AD01A5E9E6400D853C4 /* Model */,
 				654D9AC21A5E9CAE00D853C4 /* Pod */,
 			);
 			path = Classes;
@@ -340,6 +351,7 @@
 				658AF6981A56BB8E00D48C74 /* BIViewController.m in Sources */,
 				658AF69F1A56BB9C00D48C74 /* main.m in Sources */,
 				654D9AC91A5E9CAE00D853C4 /* BISerialOperationQueue.m in Sources */,
+				654D9AD31A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld in Sources */,
 				658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */,
 				654D9AC81A5E9CAE00D853C4 /* BIOperationQueue.m in Sources */,
 			);
@@ -536,6 +548,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		654D9AD11A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				654D9AD21A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodel */,
+			);
+			currentVersion = 654D9AD21A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodel */;
+			name = BIObjCHelpersExample.xcdatamodeld;
+			path = Model/BIObjCHelpersExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 658AF6571A56BAA500D48C74 /* Project object */;
 }
