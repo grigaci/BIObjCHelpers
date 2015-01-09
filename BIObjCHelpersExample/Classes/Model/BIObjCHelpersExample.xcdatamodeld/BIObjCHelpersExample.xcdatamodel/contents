@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+    <entity name="BICapital" representedClassName="BICapital" syncable="YES">
+        <attribute name="createdat" attributeType="Date" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="updatedat" attributeType="Date" syncable="YES"/>
+        <attribute name="uuid" attributeType="String" syncable="YES"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BICountry" inverseName="capital" inverseEntity="BICountry" syncable="YES"/>
+    </entity>
+    <entity name="BICountry" representedClassName="BICountry" syncable="YES">
+        <attribute name="createdat" attributeType="Date" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="updatedat" attributeType="Date" syncable="YES"/>
+        <attribute name="uuid" attributeType="String" syncable="YES"/>
+        <relationship name="capital" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="BICapital" inverseName="country" inverseEntity="BICapital" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BICountry" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="BICapital" positionX="-54" positionY="-9" width="128" height="118"/>
+    </elements>
 </model>

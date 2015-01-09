@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6527C94B1A5FC65E0088D9BC /* BITestCaseCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C94A1A5FC65E0088D9BC /* BITestCaseCoreData.m */; };
+		6527C94E1A5FD9B30088D9BC /* _BIModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C94D1A5FD9B30088D9BC /* _BIModelBase.m */; };
+		6527C9511A5FDB400088D9BC /* _BICapital.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C9501A5FDB400088D9BC /* _BICapital.m */; };
+		6527C9541A5FDB740088D9BC /* BIModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C9531A5FDB740088D9BC /* BIModelBase.m */; };
+		6527C9571A5FDC240088D9BC /* BICapital.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C9561A5FDC240088D9BC /* BICapital.m */; };
+		6527C95D1A5FDC610088D9BC /* _BICountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C95C1A5FDC610088D9BC /* _BICountry.m */; };
+		6527C9601A5FDD6D0088D9BC /* BICountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C95F1A5FDD6D0088D9BC /* BICountry.m */; };
+		6527C9651A5FDF3B0088D9BC /* BIModelBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C9641A5FDF3B0088D9BC /* BIModelBaseTestCase.m */; };
+		6527C9681A5FF54E0088D9BC /* BICapitalTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C9671A5FF54E0088D9BC /* BICapitalTestCase.m */; };
+		6527C9811A5FF7010088D9BC /* NSString+RandomTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C9801A5FF7010088D9BC /* NSString+RandomTest.m */; };
+		6527C9831A5FFA210088D9BC /* BICountryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C9821A5FFA210088D9BC /* BICountryTestCase.m */; };
 		654D9AC81A5E9CAE00D853C4 /* BIOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D9AC51A5E9CAE00D853C4 /* BIOperationQueue.m */; };
 		654D9AC91A5E9CAE00D853C4 /* BISerialOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D9AC71A5E9CAE00D853C4 /* BISerialOperationQueue.m */; };
 		654D9ACE1A5E9CD500D853C4 /* BIOperationQueueTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D9ACC1A5E9CD500D853C4 /* BIOperationQueueTestCase.m */; };
@@ -31,6 +42,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6527C94A1A5FC65E0088D9BC /* BITestCaseCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITestCaseCoreData.m; path = Helpers/TestCases/BITestCaseCoreData.m; sourceTree = "<group>"; };
+		6527C94C1A5FD9B30088D9BC /* _BIModelBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BIModelBase.h; sourceTree = "<group>"; };
+		6527C94D1A5FD9B30088D9BC /* _BIModelBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BIModelBase.m; sourceTree = "<group>"; };
+		6527C94F1A5FDB400088D9BC /* _BICapital.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BICapital.h; sourceTree = "<group>"; };
+		6527C9501A5FDB400088D9BC /* _BICapital.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BICapital.m; sourceTree = "<group>"; };
+		6527C9521A5FDB740088D9BC /* BIModelBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIModelBase.h; sourceTree = "<group>"; };
+		6527C9531A5FDB740088D9BC /* BIModelBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIModelBase.m; sourceTree = "<group>"; };
+		6527C9551A5FDC240088D9BC /* BICapital.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICapital.h; sourceTree = "<group>"; };
+		6527C9561A5FDC240088D9BC /* BICapital.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICapital.m; sourceTree = "<group>"; };
+		6527C95B1A5FDC610088D9BC /* _BICountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BICountry.h; sourceTree = "<group>"; };
+		6527C95C1A5FDC610088D9BC /* _BICountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BICountry.m; sourceTree = "<group>"; };
+		6527C95E1A5FDD6D0088D9BC /* BICountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BICountry.h; path = BIObjCHelpersExample/Classes/Model/Entities/BICountry.h; sourceTree = SOURCE_ROOT; };
+		6527C95F1A5FDD6D0088D9BC /* BICountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BICountry.m; path = BIObjCHelpersExample/Classes/Model/Entities/BICountry.m; sourceTree = SOURCE_ROOT; };
+		6527C9641A5FDF3B0088D9BC /* BIModelBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIModelBaseTestCase.m; path = Tests/Model/Entities/BIModelBaseTestCase.m; sourceTree = "<group>"; };
+		6527C9661A5FDF960088D9BC /* BITestCaseCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BITestCaseCoreData.h; path = Helpers/TestCases/BITestCaseCoreData.h; sourceTree = "<group>"; };
+		6527C9671A5FF54E0088D9BC /* BICapitalTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BICapitalTestCase.m; path = Tests/Model/Entities/BICapitalTestCase.m; sourceTree = "<group>"; };
+		6527C97F1A5FF7010088D9BC /* NSString+RandomTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RandomTest.h"; path = "Helpers/Categories/NSString/NSString+RandomTest.h"; sourceTree = "<group>"; };
+		6527C9801A5FF7010088D9BC /* NSString+RandomTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RandomTest.m"; path = "Helpers/Categories/NSString/NSString+RandomTest.m"; sourceTree = "<group>"; };
+		6527C9821A5FFA210088D9BC /* BICountryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BICountryTestCase.m; path = Tests/Model/Entities/BICountryTestCase.m; sourceTree = "<group>"; };
 		654D9AC41A5E9CAE00D853C4 /* BIOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIOperationQueue.h; sourceTree = "<group>"; };
 		654D9AC51A5E9CAE00D853C4 /* BIOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIOperationQueue.m; sourceTree = "<group>"; };
 		654D9AC61A5E9CAE00D853C4 /* BISerialOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BISerialOperationQueue.h; sourceTree = "<group>"; };
@@ -70,6 +100,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6527C9341A5FC4D80088D9BC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				6527C93B1A5FC4D80088D9BC /* Private */,
+				6527C9521A5FDB740088D9BC /* BIModelBase.h */,
+				6527C9531A5FDB740088D9BC /* BIModelBase.m */,
+				6527C9551A5FDC240088D9BC /* BICapital.h */,
+				6527C9561A5FDC240088D9BC /* BICapital.m */,
+				6527C95E1A5FDD6D0088D9BC /* BICountry.h */,
+				6527C95F1A5FDD6D0088D9BC /* BICountry.m */,
+			);
+			name = Entities;
+			path = Model/Entities;
+			sourceTree = "<group>";
+		};
+		6527C93B1A5FC4D80088D9BC /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				6527C94C1A5FD9B30088D9BC /* _BIModelBase.h */,
+				6527C94D1A5FD9B30088D9BC /* _BIModelBase.m */,
+				6527C94F1A5FDB400088D9BC /* _BICapital.h */,
+				6527C9501A5FDB400088D9BC /* _BICapital.m */,
+				6527C95B1A5FDC610088D9BC /* _BICountry.h */,
+				6527C95C1A5FDC610088D9BC /* _BICountry.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		6527C9481A5FC6030088D9BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6527C97D1A5FF6C30088D9BC /* Categories */,
+				6527C9491A5FC60C0088D9BC /* TestCases */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		6527C9491A5FC60C0088D9BC /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				6527C9661A5FDF960088D9BC /* BITestCaseCoreData.h */,
+				6527C94A1A5FC65E0088D9BC /* BITestCaseCoreData.m */,
+			);
+			name = TestCases;
+			sourceTree = "<group>";
+		};
+		6527C9611A5FDEF60088D9BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6527C9621A5FDEF90088D9BC /* Entities */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6527C9621A5FDEF90088D9BC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				6527C9641A5FDF3B0088D9BC /* BIModelBaseTestCase.m */,
+				6527C9671A5FF54E0088D9BC /* BICapitalTestCase.m */,
+				6527C9821A5FFA210088D9BC /* BICountryTestCase.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		6527C97D1A5FF6C30088D9BC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6527C97E1A5FF6DC0088D9BC /* NSString */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		6527C97E1A5FF6DC0088D9BC /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				6527C97F1A5FF7010088D9BC /* NSString+RandomTest.h */,
+				6527C9801A5FF7010088D9BC /* NSString+RandomTest.m */,
+			);
+			name = NSString;
+			sourceTree = "<group>";
+		};
 		654D9AC21A5E9CAE00D853C4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +221,7 @@
 		654D9AD01A5E9E6400D853C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6527C9341A5FC4D80088D9BC /* Entities */,
 				654D9AD11A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld */,
 			);
 			name = Model;
@@ -146,6 +258,7 @@
 		658AF67B1A56BAA600D48C74 /* BIObjCHelpersExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				6527C9481A5FC6030088D9BC /* Helpers */,
 				658AF6A51A56C43900D48C74 /* Tests */,
 				658AF67C1A56BAA600D48C74 /* SupportingFiles */,
 			);
@@ -243,6 +356,7 @@
 		658AF6A51A56C43900D48C74 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				6527C9611A5FDEF60088D9BC /* Model */,
 				654D9ACA1A5E9CD500D853C4 /* Pod */,
 			);
 			name = Tests;
@@ -352,8 +466,14 @@
 				658AF69F1A56BB9C00D48C74 /* main.m in Sources */,
 				654D9AC91A5E9CAE00D853C4 /* BISerialOperationQueue.m in Sources */,
 				654D9AD31A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld in Sources */,
+				6527C95D1A5FDC610088D9BC /* _BICountry.m in Sources */,
 				658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */,
+				6527C9571A5FDC240088D9BC /* BICapital.m in Sources */,
+				6527C9541A5FDB740088D9BC /* BIModelBase.m in Sources */,
+				6527C94E1A5FD9B30088D9BC /* _BIModelBase.m in Sources */,
+				6527C9601A5FDD6D0088D9BC /* BICountry.m in Sources */,
 				654D9AC81A5E9CAE00D853C4 /* BIOperationQueue.m in Sources */,
+				6527C9511A5FDB400088D9BC /* _BICapital.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,8 +481,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6527C9811A5FF7010088D9BC /* NSString+RandomTest.m in Sources */,
+				6527C94B1A5FC65E0088D9BC /* BITestCaseCoreData.m in Sources */,
+				6527C9831A5FFA210088D9BC /* BICountryTestCase.m in Sources */,
 				654D9ACF1A5E9CD500D853C4 /* BISerialOperationQueueTestCase.m in Sources */,
+				6527C9681A5FF54E0088D9BC /* BICapitalTestCase.m in Sources */,
 				654D9ACE1A5E9CD500D853C4 /* BIOperationQueueTestCase.m in Sources */,
+				6527C9651A5FDF3B0088D9BC /* BIModelBaseTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
