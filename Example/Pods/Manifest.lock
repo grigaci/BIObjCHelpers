@@ -1,0 +1,24 @@
+PODS:
+  - CJALog (1.1.0)
+  - CJAMacros (2.1.1)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core (= 2.2)
+  - MagicalRecord/Core (2.2)
+  - OCHamcrest (4.1.1)
+  - OCMockito (1.4.0):
+    - OCHamcrest (~> 4.0)
+
+DEPENDENCIES:
+  - CJALog (~> 1.1.0)
+  - CJAMacros (~> 2.1)
+  - MagicalRecord (~> 2.2)
+  - OCMockito (~> 1.4.0)
+
+SPEC CHECKSUMS:
+  CJALog: a80d588116a3b545ab7d649f9b77be41f6c92225
+  CJAMacros: e3f6c0823e3cbcba6a3788363117d35371a63ef7
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  OCHamcrest: af1c7c5ea345de69ea6c9c2958f65f3044e5c420
+  OCMockito: 991936bb775cc4c27f063d38f5e17b9161fbd21c
+
+COCOAPODS: 0.35.0
