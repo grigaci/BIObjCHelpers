@@ -7,6 +7,7 @@
 //
 
 #import "BIAppDelegate.h"
+#import "BIAppStartersFactory.h"
 
 @interface BIAppDelegate ()
 
@@ -15,7 +16,7 @@
 @implementation BIAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [[BIAppStartersFactory new] run];
     return YES;
 }
 
