@@ -32,6 +32,8 @@
 		658AF69F1A56BB9C00D48C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF69D1A56BB9C00D48C74 /* main.m */; };
 		65D6246C1A63A7A800095EF0 /* BIAppStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6246B1A63A7A800095EF0 /* BIAppStartersFactory.m */; };
 		65D624701A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6246F1A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m */; };
+		65D6248F1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6248E1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m */; };
+		65D624931A63B55600095EF0 /* BIDatasourceFetchedResultsBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D624921A63B55600095EF0 /* BIDatasourceFetchedResultsBaseTestCase.m */; };
 		9CBFC2787F0722703A7A167B /* libPods-BIObjCHelpersExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46CA5FA87E9AD752021D8E56 /* libPods-BIObjCHelpersExampleTests.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,9 @@
 		65D6246A1A63A7A800095EF0 /* BIAppStartersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAppStartersFactory.h; path = Starters/BIAppStartersFactory.h; sourceTree = "<group>"; };
 		65D6246B1A63A7A800095EF0 /* BIAppStartersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAppStartersFactory.m; path = Starters/BIAppStartersFactory.m; sourceTree = "<group>"; };
 		65D6246F1A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAppStartersFactoryTestCase.m; path = Tests/Helpers/Starters/BIAppStartersFactoryTestCase.m; sourceTree = "<group>"; };
+		65D6248D1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIDatasourceFetchedResultsBase.h; path = ../Pod/Datasource/Base/BIDatasourceFetchedResultsBase.h; sourceTree = SOURCE_ROOT; };
+		65D6248E1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIDatasourceFetchedResultsBase.m; path = ../Pod/Datasource/Base/BIDatasourceFetchedResultsBase.m; sourceTree = SOURCE_ROOT; };
+		65D624921A63B55600095EF0 /* BIDatasourceFetchedResultsBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIDatasourceFetchedResultsBaseTestCase.m; path = Datasource/Base/BIDatasourceFetchedResultsBaseTestCase.m; sourceTree = "<group>"; };
 		72913F596A1BB0AB3CA8003A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7CC316F00CB20E763F363544 /* Pods-BIObjCHelpersExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIObjCHelpersExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIObjCHelpersExampleTests/Pods-BIObjCHelpersExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F18AFB62E9ED4DFAEB9B6D8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +225,7 @@
 		654D9AC21A5E9CAE00D853C4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				65D624881A63B37200095EF0 /* Datasource */,
 				6527C9841A6002910088D9BC /* OperationQueue */,
 			);
 			path = Pod;
@@ -228,6 +234,7 @@
 		654D9ACA1A5E9CD500D853C4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				65D624901A63B52F00095EF0 /* Datasource */,
 				654D9ACB1A5E9CD500D853C4 /* OperationQueue */,
 			);
 			name = Pod;
@@ -414,6 +421,40 @@
 				65D6246F1A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m */,
 			);
 			name = Starters;
+			sourceTree = "<group>";
+		};
+		65D624881A63B37200095EF0 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				65D6248C1A63B42500095EF0 /* Base */,
+			);
+			name = Datasource;
+			sourceTree = "<group>";
+		};
+		65D6248C1A63B42500095EF0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				65D6248D1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.h */,
+				65D6248E1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m */,
+			);
+			name = Base;
+			path = ../../Pod/Datasource/Base;
+			sourceTree = SOURCE_ROOT;
+		};
+		65D624901A63B52F00095EF0 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				65D624911A63B53200095EF0 /* Base */,
+			);
+			name = Datasource;
+			sourceTree = "<group>";
+		};
+		65D624911A63B53200095EF0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				65D624921A63B55600095EF0 /* BIDatasourceFetchedResultsBaseTestCase.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		E50A54C3EC62FC868EFCC2DD /* Pods */ = {
@@ -604,6 +645,7 @@
 				6527C9891A6002910088D9BC /* BIOperationQueue.m in Sources */,
 				6527C9571A5FDC240088D9BC /* BICapital.m in Sources */,
 				6527C9541A5FDB740088D9BC /* BIModelBase.m in Sources */,
+				65D6248F1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m in Sources */,
 				6527C94E1A5FD9B30088D9BC /* _BIModelBase.m in Sources */,
 				6527C9601A5FDD6D0088D9BC /* BICountry.m in Sources */,
 				6527C9511A5FDB400088D9BC /* _BICapital.m in Sources */,
@@ -616,6 +658,7 @@
 			files = (
 				6527C9811A5FF7010088D9BC /* NSString+RandomTest.m in Sources */,
 				65D624701A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m in Sources */,
+				65D624931A63B55600095EF0 /* BIDatasourceFetchedResultsBaseTestCase.m in Sources */,
 				6527C94B1A5FC65E0088D9BC /* BITestCaseCoreData.m in Sources */,
 				6527C9831A5FFA210088D9BC /* BICountryTestCase.m in Sources */,
 				654D9ACF1A5E9CD500D853C4 /* BISerialOperationQueueTestCase.m in Sources */,
