@@ -88,6 +88,7 @@
 		655C474D1A654ED7001A0AAE /* BIMockDatasourceFetchedCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIMockDatasourceFetchedCollectionView.m; path = Datasource/CollectionView/Mock/BIMockDatasourceFetchedCollectionView.m; sourceTree = "<group>"; };
 		655C47501A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFetchedResultsController+BITestHelpers.h"; path = "Helpers/Categories/NSFetchedResultsController/NSFetchedResultsController+BITestHelpers.h"; sourceTree = "<group>"; };
 		655C47511A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+BITestHelpers.m"; path = "Helpers/Categories/NSFetchedResultsController/NSFetchedResultsController+BITestHelpers.m"; sourceTree = "<group>"; };
+		655C47671A6575A5001A0AAE /* BIObjCHelpersExampleTests.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BIObjCHelpersExampleTests.pch; path = SupportingFiles/BIObjCHelpersExampleTests.pch; sourceTree = "<group>"; };
 		658AF65F1A56BAA500D48C74 /* BIObjCHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIObjCHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF6781A56BAA600D48C74 /* BIObjCHelpersExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF67D1A56BAA600D48C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
@@ -356,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				658AF67D1A56BAA600D48C74 /* Info.plist */,
+				655C47671A6575A5001A0AAE /* BIObjCHelpersExampleTests.pch */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -874,6 +876,7 @@
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_PREFIX_HEADER = BIObjCHelpersExampleTests/SupportingFiles/BIObjCHelpersExampleTests.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -896,6 +899,7 @@
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
+				GCC_PREFIX_HEADER = BIObjCHelpersExampleTests/SupportingFiles/BIObjCHelpersExampleTests.pch;
 				INFOPLIST_FILE = BIObjCHelpersExampleTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

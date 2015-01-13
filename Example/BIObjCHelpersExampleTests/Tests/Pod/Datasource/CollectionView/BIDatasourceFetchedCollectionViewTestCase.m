@@ -6,15 +6,6 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-@import XCTest;
-@import Foundation;
-
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-
-#define MOCKITO_SHORTHAND
-#import <OCMockito/OCMockito.h>
-
 #import "BITestCaseCoreData.h"
 #import "BIMockDatasourceFetchedCollectionView.h"
 #import "NSFetchedResultsController+BITestHelpers.h"

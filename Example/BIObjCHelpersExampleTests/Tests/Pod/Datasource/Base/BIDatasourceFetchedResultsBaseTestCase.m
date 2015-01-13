@@ -6,9 +6,6 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-@import XCTest;
-@import Foundation;
-
 #import "BITestCaseCoreData.h"
 
 #import "BIDatasourceFetchedResultsBase.h"
