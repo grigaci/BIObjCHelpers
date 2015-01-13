@@ -1,15 +1,14 @@
 //
-//  BIViewController.h
+//  BIAllCountriesTableViewController.h
 //  BIObjCHelpersExample
 //
 //  Created by Bogdan Iusco on 1/2/15.
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface BIViewController : UIViewController
-
+@interface BIAllCountriesTableViewController : UITableViewController
 
 @end
 

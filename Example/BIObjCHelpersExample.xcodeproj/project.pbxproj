@@ -28,9 +28,10 @@
 		655C47361A650696001A0AAE /* BIDatasourceFetchedCollectionViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47351A650696001A0AAE /* BIDatasourceFetchedCollectionViewTestCase.m */; };
 		655C474E1A654ED7001A0AAE /* BIMockDatasourceFetchedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C474D1A654ED7001A0AAE /* BIMockDatasourceFetchedCollectionView.m */; };
 		655C47521A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47511A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.m */; };
+		655C47731A658938001A0AAE /* BIAllCountriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47721A658938001A0AAE /* BIAllCountriesTableViewController.m */; };
+		655C47761A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47751A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m */; };
 		658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */; };
 		658AF6971A56BB8E00D48C74 /* BIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */; };
-		658AF6981A56BB8E00D48C74 /* BIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF6901A56BB8E00D48C74 /* BIViewController.m */; };
 		658AF6991A56BB8E00D48C74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 658AF6931A56BB8E00D48C74 /* Images.xcassets */; };
 		658AF69A1A56BB8E00D48C74 /* BILaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658AF6951A56BB8E00D48C74 /* BILaunchScreen.xib */; };
 		658AF69F1A56BB9C00D48C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF69D1A56BB9C00D48C74 /* main.m */; };
@@ -89,14 +90,16 @@
 		655C47501A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFetchedResultsController+BITestHelpers.h"; path = "Helpers/Categories/NSFetchedResultsController/NSFetchedResultsController+BITestHelpers.h"; sourceTree = "<group>"; };
 		655C47511A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+BITestHelpers.m"; path = "Helpers/Categories/NSFetchedResultsController/NSFetchedResultsController+BITestHelpers.m"; sourceTree = "<group>"; };
 		655C47671A6575A5001A0AAE /* BIObjCHelpersExampleTests.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BIObjCHelpersExampleTests.pch; path = SupportingFiles/BIObjCHelpersExampleTests.pch; sourceTree = "<group>"; };
+		655C47711A658938001A0AAE /* BIAllCountriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIAllCountriesTableViewController.h; sourceTree = "<group>"; };
+		655C47721A658938001A0AAE /* BIAllCountriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAllCountriesTableViewController.m; sourceTree = "<group>"; };
+		655C47741A65896B001A0AAE /* BIAllCapitalsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIAllCapitalsCollectionViewController.h; sourceTree = "<group>"; };
+		655C47751A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAllCapitalsCollectionViewController.m; sourceTree = "<group>"; };
 		658AF65F1A56BAA500D48C74 /* BIObjCHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIObjCHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF6781A56BAA600D48C74 /* BIObjCHelpersExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF67D1A56BAA600D48C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
 		658AF6891A56BB8E00D48C74 /* BIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIAppDelegate.h; sourceTree = "<group>"; };
 		658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAppDelegate.m; sourceTree = "<group>"; };
 		658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BIMain.storyboard; sourceTree = "<group>"; };
-		658AF68F1A56BB8E00D48C74 /* BIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIViewController.h; sourceTree = "<group>"; };
-		658AF6901A56BB8E00D48C74 /* BIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIViewController.m; sourceTree = "<group>"; };
 		658AF6931A56BB8E00D48C74 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		658AF6951A56BB8E00D48C74 /* BILaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BILaunchScreen.xib; sourceTree = "<group>"; };
 		658AF69C1A56BB9C00D48C74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -313,6 +316,40 @@
 			name = NSFetchedResultsController;
 			sourceTree = "<group>";
 		};
+		655C476D1A658938001A0AAE /* AllCapitals */ = {
+			isa = PBXGroup;
+			children = (
+				655C476E1A658938001A0AAE /* ViewController */,
+			);
+			path = AllCapitals;
+			sourceTree = "<group>";
+		};
+		655C476E1A658938001A0AAE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				655C47741A65896B001A0AAE /* BIAllCapitalsCollectionViewController.h */,
+				655C47751A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		655C476F1A658938001A0AAE /* AllCountries */ = {
+			isa = PBXGroup;
+			children = (
+				655C47701A658938001A0AAE /* ViewController */,
+			);
+			path = AllCountries;
+			sourceTree = "<group>";
+		};
+		655C47701A658938001A0AAE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				655C47711A658938001A0AAE /* BIAllCountriesTableViewController.h */,
+				655C47721A658938001A0AAE /* BIAllCountriesTableViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		658AF6561A56BAA500D48C74 = {
 			isa = PBXGroup;
 			children = (
@@ -379,26 +416,10 @@
 			isa = PBXGroup;
 			children = (
 				658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */,
-				658AF68D1A56BB8E00D48C74 /* MainScreen */,
+				655C476D1A658938001A0AAE /* AllCapitals */,
+				655C476F1A658938001A0AAE /* AllCountries */,
 			);
 			path = GUI;
-			sourceTree = "<group>";
-		};
-		658AF68D1A56BB8E00D48C74 /* MainScreen */ = {
-			isa = PBXGroup;
-			children = (
-				658AF68E1A56BB8E00D48C74 /* ViewController */,
-			);
-			path = MainScreen;
-			sourceTree = "<group>";
-		};
-		658AF68E1A56BB8E00D48C74 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				658AF68F1A56BB8E00D48C74 /* BIViewController.h */,
-				658AF6901A56BB8E00D48C74 /* BIViewController.m */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		658AF6911A56BB8E00D48C74 /* Resources */ = {
@@ -712,11 +733,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D624971A63DD3100095EF0 /* BIDatasourceFetchedTableView.m in Sources */,
-				658AF6981A56BB8E00D48C74 /* BIViewController.m in Sources */,
 				658AF69F1A56BB9C00D48C74 /* main.m in Sources */,
 				654D9AD31A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld in Sources */,
 				65D6246C1A63A7A800095EF0 /* BIAppStartersFactory.m in Sources */,
 				6527C95D1A5FDC610088D9BC /* _BICountry.m in Sources */,
+				655C47761A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m in Sources */,
 				6527C98A1A6002910088D9BC /* BISerialOperationQueue.m in Sources */,
 				658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */,
 				6527C9891A6002910088D9BC /* BIOperationQueue.m in Sources */,
@@ -725,6 +746,7 @@
 				65D6248F1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m in Sources */,
 				6527C94E1A5FD9B30088D9BC /* _BIModelBase.m in Sources */,
 				6527C9601A5FDD6D0088D9BC /* BICountry.m in Sources */,
+				655C47731A658938001A0AAE /* BIAllCountriesTableViewController.m in Sources */,
 				655C47331A6505E4001A0AAE /* BIDatasourceFetchedCollectionView.m in Sources */,
 				6527C9511A5FDB400088D9BC /* _BICapital.m in Sources */,
 			);
