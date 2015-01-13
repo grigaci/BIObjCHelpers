@@ -30,12 +30,16 @@
 		655C47521A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47511A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.m */; };
 		655C47731A658938001A0AAE /* BIAllCountriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47721A658938001A0AAE /* BIAllCountriesTableViewController.m */; };
 		655C47761A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47751A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m */; };
+		655C477A1A658C4C001A0AAE /* BIStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47791A658C4C001A0AAE /* BIStartersFactory.m */; };
+		655C477E1A658E86001A0AAE /* BIStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C477D1A658E86001A0AAE /* BIStartersFactoryTestCase.m */; };
+		655C47891A6592F3001A0AAE /* BIMockStarter.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47881A6592F3001A0AAE /* BIMockStarter.m */; };
+		655C47941A659A86001A0AAE /* BIAppStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47931A659A86001A0AAE /* BIAppStartersFactory.m */; };
+		655C47971A659AAE001A0AAE /* BIAppStarterSetupCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C47961A659AAE001A0AAE /* BIAppStarterSetupCoreData.m */; };
 		658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */; };
 		658AF6971A56BB8E00D48C74 /* BIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */; };
 		658AF6991A56BB8E00D48C74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 658AF6931A56BB8E00D48C74 /* Images.xcassets */; };
 		658AF69A1A56BB8E00D48C74 /* BILaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658AF6951A56BB8E00D48C74 /* BILaunchScreen.xib */; };
 		658AF69F1A56BB9C00D48C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF69D1A56BB9C00D48C74 /* main.m */; };
-		65D6246C1A63A7A800095EF0 /* BIAppStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6246B1A63A7A800095EF0 /* BIAppStartersFactory.m */; };
 		65D624701A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6246F1A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m */; };
 		65D6248F1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6248E1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m */; };
 		65D624931A63B55600095EF0 /* BIDatasourceFetchedResultsBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D624921A63B55600095EF0 /* BIDatasourceFetchedResultsBaseTestCase.m */; };
@@ -94,6 +98,16 @@
 		655C47721A658938001A0AAE /* BIAllCountriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAllCountriesTableViewController.m; sourceTree = "<group>"; };
 		655C47741A65896B001A0AAE /* BIAllCapitalsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIAllCapitalsCollectionViewController.h; sourceTree = "<group>"; };
 		655C47751A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAllCapitalsCollectionViewController.m; sourceTree = "<group>"; };
+		655C47781A658C4C001A0AAE /* BIStartersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIStartersFactory.h; path = ../Pod/Starters/BIStartersFactory.h; sourceTree = SOURCE_ROOT; };
+		655C47791A658C4C001A0AAE /* BIStartersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIStartersFactory.m; path = ../Pod/Starters/BIStartersFactory.m; sourceTree = SOURCE_ROOT; };
+		655C477B1A658C9A001A0AAE /* BIStarterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BIStarterProtocol.h; path = ../Pod/Starters/BIStarterProtocol.h; sourceTree = "<group>"; };
+		655C477D1A658E86001A0AAE /* BIStartersFactoryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIStartersFactoryTestCase.m; path = Starters/BIStartersFactoryTestCase.m; sourceTree = "<group>"; };
+		655C47871A6592F3001A0AAE /* BIMockStarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIMockStarter.h; sourceTree = "<group>"; };
+		655C47881A6592F3001A0AAE /* BIMockStarter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIMockStarter.m; sourceTree = "<group>"; };
+		655C47921A659A86001A0AAE /* BIAppStartersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIAppStartersFactory.h; sourceTree = "<group>"; };
+		655C47931A659A86001A0AAE /* BIAppStartersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAppStartersFactory.m; sourceTree = "<group>"; };
+		655C47951A659AAE001A0AAE /* BIAppStarterSetupCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIAppStarterSetupCoreData.h; sourceTree = "<group>"; };
+		655C47961A659AAE001A0AAE /* BIAppStarterSetupCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAppStarterSetupCoreData.m; sourceTree = "<group>"; };
 		658AF65F1A56BAA500D48C74 /* BIObjCHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIObjCHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF6781A56BAA600D48C74 /* BIObjCHelpersExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF67D1A56BAA600D48C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
@@ -104,8 +118,6 @@
 		658AF6951A56BB8E00D48C74 /* BILaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BILaunchScreen.xib; sourceTree = "<group>"; };
 		658AF69C1A56BB9C00D48C74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		658AF69D1A56BB9C00D48C74 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		65D6246A1A63A7A800095EF0 /* BIAppStartersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAppStartersFactory.h; path = Starters/BIAppStartersFactory.h; sourceTree = "<group>"; };
-		65D6246B1A63A7A800095EF0 /* BIAppStartersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAppStartersFactory.m; path = Starters/BIAppStartersFactory.m; sourceTree = "<group>"; };
 		65D6246F1A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAppStartersFactoryTestCase.m; path = Tests/Helpers/Starters/BIAppStartersFactoryTestCase.m; sourceTree = "<group>"; };
 		65D6248D1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIDatasourceFetchedResultsBase.h; path = ../Pod/Datasource/Base/BIDatasourceFetchedResultsBase.h; sourceTree = SOURCE_ROOT; };
 		65D6248E1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIDatasourceFetchedResultsBase.m; path = ../Pod/Datasource/Base/BIDatasourceFetchedResultsBase.m; sourceTree = SOURCE_ROOT; };
@@ -248,6 +260,7 @@
 			children = (
 				65D624881A63B37200095EF0 /* Datasource */,
 				6527C9841A6002910088D9BC /* OperationQueue */,
+				655C47771A658BC4001A0AAE /* Starters */,
 			);
 			path = Pod;
 			sourceTree = SOURCE_ROOT;
@@ -257,6 +270,7 @@
 			children = (
 				65D624901A63B52F00095EF0 /* Datasource */,
 				654D9ACB1A5E9CD500D853C4 /* OperationQueue */,
+				655C477C1A658E4E001A0AAE /* Starters */,
 			);
 			name = Pod;
 			path = Tests/Pod;
@@ -348,6 +362,62 @@
 				655C47721A658938001A0AAE /* BIAllCountriesTableViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		655C47771A658BC4001A0AAE /* Starters */ = {
+			isa = PBXGroup;
+			children = (
+				655C477B1A658C9A001A0AAE /* BIStarterProtocol.h */,
+				655C47781A658C4C001A0AAE /* BIStartersFactory.h */,
+				655C47791A658C4C001A0AAE /* BIStartersFactory.m */,
+			);
+			name = Starters;
+			sourceTree = SOURCE_ROOT;
+		};
+		655C477C1A658E4E001A0AAE /* Starters */ = {
+			isa = PBXGroup;
+			children = (
+				655C47861A6592F3001A0AAE /* Mock */,
+				655C477D1A658E86001A0AAE /* BIStartersFactoryTestCase.m */,
+			);
+			name = Starters;
+			sourceTree = "<group>";
+		};
+		655C47861A6592F3001A0AAE /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				655C47871A6592F3001A0AAE /* BIMockStarter.h */,
+				655C47881A6592F3001A0AAE /* BIMockStarter.m */,
+			);
+			name = Mock;
+			path = Starters/Mock;
+			sourceTree = "<group>";
+		};
+		655C478F1A659A86001A0AAE /* Starters */ = {
+			isa = PBXGroup;
+			children = (
+				655C47901A659A86001A0AAE /* CoreData */,
+				655C47911A659A86001A0AAE /* Factory */,
+			);
+			path = Starters;
+			sourceTree = "<group>";
+		};
+		655C47901A659A86001A0AAE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				655C47951A659AAE001A0AAE /* BIAppStarterSetupCoreData.h */,
+				655C47961A659AAE001A0AAE /* BIAppStarterSetupCoreData.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		655C47911A659A86001A0AAE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				655C47921A659A86001A0AAE /* BIAppStartersFactory.h */,
+				655C47931A659A86001A0AAE /* BIAppStartersFactory.m */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		658AF6561A56BAA500D48C74 = {
@@ -459,7 +529,7 @@
 		658AF6A01A56BD9200D48C74 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				65D624691A63A75200095EF0 /* Starters */,
+				655C478F1A659A86001A0AAE /* Starters */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -472,15 +542,6 @@
 				654D9ACA1A5E9CD500D853C4 /* Pod */,
 			);
 			name = Tests;
-			sourceTree = "<group>";
-		};
-		65D624691A63A75200095EF0 /* Starters */ = {
-			isa = PBXGroup;
-			children = (
-				65D6246A1A63A7A800095EF0 /* BIAppStartersFactory.h */,
-				65D6246B1A63A7A800095EF0 /* BIAppStartersFactory.m */,
-			);
-			name = Starters;
 			sourceTree = "<group>";
 		};
 		65D6246D1A63AB0E00095EF0 /* Helpers */ = {
@@ -735,14 +796,16 @@
 				65D624971A63DD3100095EF0 /* BIDatasourceFetchedTableView.m in Sources */,
 				658AF69F1A56BB9C00D48C74 /* main.m in Sources */,
 				654D9AD31A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld in Sources */,
-				65D6246C1A63A7A800095EF0 /* BIAppStartersFactory.m in Sources */,
 				6527C95D1A5FDC610088D9BC /* _BICountry.m in Sources */,
 				655C47761A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m in Sources */,
 				6527C98A1A6002910088D9BC /* BISerialOperationQueue.m in Sources */,
 				658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */,
+				655C47971A659AAE001A0AAE /* BIAppStarterSetupCoreData.m in Sources */,
 				6527C9891A6002910088D9BC /* BIOperationQueue.m in Sources */,
 				6527C9571A5FDC240088D9BC /* BICapital.m in Sources */,
+				655C47941A659A86001A0AAE /* BIAppStartersFactory.m in Sources */,
 				6527C9541A5FDB740088D9BC /* BIModelBase.m in Sources */,
+				655C477A1A658C4C001A0AAE /* BIStartersFactory.m in Sources */,
 				65D6248F1A63B42500095EF0 /* BIDatasourceFetchedResultsBase.m in Sources */,
 				6527C94E1A5FD9B30088D9BC /* _BIModelBase.m in Sources */,
 				6527C9601A5FDD6D0088D9BC /* BICountry.m in Sources */,
@@ -759,10 +822,12 @@
 				655C474E1A654ED7001A0AAE /* BIMockDatasourceFetchedCollectionView.m in Sources */,
 				6527C9811A5FF7010088D9BC /* NSString+RandomTest.m in Sources */,
 				65D624701A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m in Sources */,
+				655C47891A6592F3001A0AAE /* BIMockStarter.m in Sources */,
 				65D624931A63B55600095EF0 /* BIDatasourceFetchedResultsBaseTestCase.m in Sources */,
 				6527C94B1A5FC65E0088D9BC /* BITestCaseCoreData.m in Sources */,
 				6527C9831A5FFA210088D9BC /* BICountryTestCase.m in Sources */,
 				654D9ACF1A5E9CD500D853C4 /* BISerialOperationQueueTestCase.m in Sources */,
+				655C477E1A658E86001A0AAE /* BIStartersFactoryTestCase.m in Sources */,
 				6527C9681A5FF54E0088D9BC /* BICapitalTestCase.m in Sources */,
 				65D6249D1A63DEB300095EF0 /* BIDatasourceFetchedTableViewTestCase.m in Sources */,
 				655C47521A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.m in Sources */,

@@ -8,8 +8,8 @@
 
 @import Foundation;
 
-@interface BIAppStartersFactory : NSObject
+#import "BIStartersFactory.h"
 
-- (void)run;
+@interface BIAppStartersFactory : BIStartersFactory
 
 @end

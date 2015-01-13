@@ -17,11 +17,6 @@
 
 @implementation BIAppStartersFactoryTestCase
 
-- (void)testVerifyCoreDataStackNotLoaded {
-    NSPersistentStoreCoordinator *persistanceStore = [NSPersistentStoreCoordinator MR_defaultStoreCoordinator];
-    XCTAssert(persistanceStore);
-}
-
 - (void)testRun {
     [[BIAppStartersFactory new] run];
     NSPersistentStoreCoordinator *persistanceStore = [NSPersistentStoreCoordinator MR_defaultStoreCoordinator];

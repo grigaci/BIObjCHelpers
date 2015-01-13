@@ -6,22 +6,15 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
-
 #import "BIAppStartersFactory.h"
-
-@interface BIAppStartersFactory ()
-
-@end
-
+#import "BIAppStarterSetupCoreData.h"
 
 @implementation BIAppStartersFactory
 
-#pragma mark - Public
+#pragma mark - BIStartersFactory methods
 
-- (void)run {
-    [MagicalRecord setupCoreDataStack];
+- (void)loadStarters {
+    [self addStarter:[BIAppStarterSetupCoreData new]];
 }
-
 
 @end
