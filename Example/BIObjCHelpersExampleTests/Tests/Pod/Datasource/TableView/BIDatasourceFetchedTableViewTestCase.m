@@ -10,12 +10,12 @@
 @import Foundation;
 
 #define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-
 #define MOCKITO_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
 #import <OCMockito/OCMockito.h>
 
 #import "BITestCaseCoreData.h"
+#import "NSFetchedResultsController+BITestHelpers.h"
 
 #import "BIDatasourceFetchedTableView.h"
 
@@ -51,14 +51,10 @@
 
 - (void)testTableViewDatasourceMethods {
     // Simulate an fetched with 1 section and 2 objects
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
     NSArray *objects = @[@1, @2];
-    [given([sectionInfo objects]) willReturn:objects];
-    [given([sectionInfo numberOfObjects]) willReturn:@(objects.count)];
-    NSFetchedResultsController *fetchedResults = mock([NSFetchedResultsController class]);
-    [given([fetchedResults sections]) willReturn:@[sectionInfo]];
-
+    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController mockWithSectionsArray:@[objects]];
     self.datasource.fetchedResultsController = fetchedResults;
+
     XCTAssertEqual([self.datasource numberOfSectionsInTableView:self.tableView], 1U);
     XCTAssertEqual([self.datasource tableView:self.tableView numberOfRowsInSection:0], objects.count);
     
@@ -166,8 +162,8 @@
     NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
     NSIndexPath *fromIndexPath = [NSIndexPath indexPathForRow:1 inSection:1];
     NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:1 inSection:2];
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:fromIndexPath forChangeType:NSFetchedResultsChangeDelete newIndexPath:toIndexPath];
-    
+    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:fromIndexPath forChangeType:NSFetchedResultsChangeMove newIndexPath:toIndexPath];
+
     // Test the delete call
     id verifyCountObj = verifyCount(self.tableView, times(1));
     verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param

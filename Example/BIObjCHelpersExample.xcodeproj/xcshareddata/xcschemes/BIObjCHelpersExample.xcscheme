@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,20 +16,6 @@
                BlueprintIdentifier = "658AF65E1A56BAA500D48C74"
                BuildableName = "BIObjCHelpersExample.app"
                BlueprintName = "BIObjCHelpersExample"
-               ReferencedContainer = "container:BIObjCHelpersExample.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "658AF6771A56BAA600D48C74"
-               BuildableName = "BIObjCHelpersExampleTests.xctest"
-               BlueprintName = "BIObjCHelpersExampleTests"
                ReferencedContainer = "container:BIObjCHelpersExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -90,7 +75,7 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "658AF65E1A56BAA500D48C74"
@@ -98,7 +83,7 @@
             BlueprintName = "BIObjCHelpersExample"
             ReferencedContainer = "container:BIObjCHelpersExample.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
