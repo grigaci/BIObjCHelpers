@@ -38,6 +38,7 @@
 		655C479A1A659F20001A0AAE /* DefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 655C47991A659F20001A0AAE /* DefaultData.plist */; };
 		655C479D1A65A17A001A0AAE /* BIAppStarterPopulateCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C479C1A65A17A001A0AAE /* BIAppStarterPopulateCoreData.m */; };
 		655C479F1A65A623001A0AAE /* BIAppStarterPopulateCoreDataTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C479E1A65A623001A0AAE /* BIAppStarterPopulateCoreDataTestCase.m */; };
+		6566331E1A6940B800A9BD67 /* BIAllCountriesDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6566331D1A6940B800A9BD67 /* BIAllCountriesDatasource.m */; };
 		658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */; };
 		658AF6971A56BB8E00D48C74 /* BIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */; };
 		658AF6991A56BB8E00D48C74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 658AF6931A56BB8E00D48C74 /* Images.xcassets */; };
@@ -115,6 +116,8 @@
 		655C479B1A65A17A001A0AAE /* BIAppStarterPopulateCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIAppStarterPopulateCoreData.h; sourceTree = "<group>"; };
 		655C479C1A65A17A001A0AAE /* BIAppStarterPopulateCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIAppStarterPopulateCoreData.m; sourceTree = "<group>"; };
 		655C479E1A65A623001A0AAE /* BIAppStarterPopulateCoreDataTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAppStarterPopulateCoreDataTestCase.m; path = Tests/Helpers/Starters/BIAppStarterPopulateCoreDataTestCase.m; sourceTree = "<group>"; };
+		6566331C1A6940B800A9BD67 /* BIAllCountriesDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAllCountriesDatasource.h; path = Datasource/BIAllCountriesDatasource.h; sourceTree = "<group>"; };
+		6566331D1A6940B800A9BD67 /* BIAllCountriesDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAllCountriesDatasource.m; path = Datasource/BIAllCountriesDatasource.m; sourceTree = "<group>"; };
 		658AF65F1A56BAA500D48C74 /* BIObjCHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIObjCHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF6781A56BAA600D48C74 /* BIObjCHelpersExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF67D1A56BAA600D48C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
@@ -357,6 +360,7 @@
 		655C476F1A658938001A0AAE /* AllCountries */ = {
 			isa = PBXGroup;
 			children = (
+				6566331B1A6911AE00A9BD67 /* Datasource */,
 				655C47701A658938001A0AAE /* ViewController */,
 			);
 			path = AllCountries;
@@ -435,6 +439,15 @@
 				655C47991A659F20001A0AAE /* DefaultData.plist */,
 			);
 			name = DefaultData;
+			sourceTree = "<group>";
+		};
+		6566331B1A6911AE00A9BD67 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				6566331C1A6940B800A9BD67 /* BIAllCountriesDatasource.h */,
+				6566331D1A6940B800A9BD67 /* BIAllCountriesDatasource.m */,
+			);
+			name = Datasource;
 			sourceTree = "<group>";
 		};
 		658AF6561A56BAA500D48C74 = {
@@ -822,6 +835,7 @@
 				658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */,
 				655C47971A659AAE001A0AAE /* BIAppStarterSetupCoreData.m in Sources */,
 				6527C9891A6002910088D9BC /* BIOperationQueue.m in Sources */,
+				6566331E1A6940B800A9BD67 /* BIAllCountriesDatasource.m in Sources */,
 				6527C9571A5FDC240088D9BC /* BICapital.m in Sources */,
 				655C47941A659A86001A0AAE /* BIAppStartersFactory.m in Sources */,
 				6527C9541A5FDB740088D9BC /* BIModelBase.m in Sources */,

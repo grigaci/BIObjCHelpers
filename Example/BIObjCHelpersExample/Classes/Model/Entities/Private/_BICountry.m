@@ -8,6 +8,14 @@
 
 #import "_BICountry.h"
 
+const struct BICountryAttributes BICountryAttributes = {
+    .name = @"name",
+};
+
+const struct BICountryRelationships BICountryRelationships = {
+    .capital = @"capital",
+};
+
 @implementation _BICountry
 
 @dynamic name;

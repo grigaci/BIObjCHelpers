@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
+#import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "BIAllCountriesTableViewController.h"
+#import "BIAllCountriesDatasource.h"
 
 @interface BIAllCountriesTableViewController ()
+
+@property (nonatomic, strong) BIAllCountriesDatasource *datasource;
 
 @end
 
@@ -16,7 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.datasource = [BIAllCountriesDatasource datasourceWithTableView:self.tableView];
+    self.datasource.managedObjectContext = [NSManagedObjectContext MR_defaultContext];
+    [self.datasource load];
 }
 
 
