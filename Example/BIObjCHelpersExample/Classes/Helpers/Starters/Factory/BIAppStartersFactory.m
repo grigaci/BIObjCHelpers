@@ -8,6 +8,7 @@
 
 #import "BIAppStartersFactory.h"
 #import "BIAppStarterSetupCoreData.h"
+#import "BIAppStarterPopulateCoreData.h"
 
 @implementation BIAppStartersFactory
 
@@ -15,6 +16,7 @@
 
 - (void)loadStarters {
     [self addStarter:[BIAppStarterSetupCoreData new]];
+    [self addStarter:[BIAppStarterPopulateCoreData new]];
 }
 
 @end

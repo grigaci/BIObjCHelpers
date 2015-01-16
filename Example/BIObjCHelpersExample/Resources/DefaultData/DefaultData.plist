@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>capital</key>
+		<string>Paris</string>
+		<key>country</key>
+		<string>France</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Helsinki</string>
+		<key>country</key>
+		<string>Finland</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Tallinn</string>
+		<key>country</key>
+		<string>Estonia</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Copenhagen</string>
+		<key>country</key>
+		<string>Denmark</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Prague</string>
+		<key>country</key>
+		<string>Czech Republic</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Nicosia</string>
+		<key>country</key>
+		<string>Cyprus</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Zagreb</string>
+		<key>country</key>
+		<string>Croatia</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Sofia</string>
+		<key>country</key>
+		<string>Bulgaria</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Brussels</string>
+		<key>country</key>
+		<string>Belgium</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Vienna</string>
+		<key>country</key>
+		<string>Austria</string>
+	</dict>
+</array>
+</plist>
