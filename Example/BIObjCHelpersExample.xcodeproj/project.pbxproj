@@ -39,6 +39,8 @@
 		655C479D1A65A17A001A0AAE /* BIAppStarterPopulateCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C479C1A65A17A001A0AAE /* BIAppStarterPopulateCoreData.m */; };
 		655C479F1A65A623001A0AAE /* BIAppStarterPopulateCoreDataTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C479E1A65A623001A0AAE /* BIAppStarterPopulateCoreDataTestCase.m */; };
 		6566331E1A6940B800A9BD67 /* BIAllCountriesDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6566331D1A6940B800A9BD67 /* BIAllCountriesDatasource.m */; };
+		656633251A69464700A9BD67 /* BIAllCapitalsDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 656633241A69464700A9BD67 /* BIAllCapitalsDatasource.m */; };
+		6566332A1A69473200A9BD67 /* BIAllCapitalsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 656633291A69473200A9BD67 /* BIAllCapitalsCollectionViewCell.m */; };
 		658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 658AF68A1A56BB8E00D48C74 /* BIAppDelegate.m */; };
 		658AF6971A56BB8E00D48C74 /* BIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658AF68C1A56BB8E00D48C74 /* BIMain.storyboard */; };
 		658AF6991A56BB8E00D48C74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 658AF6931A56BB8E00D48C74 /* Images.xcassets */; };
@@ -118,6 +120,10 @@
 		655C479E1A65A623001A0AAE /* BIAppStarterPopulateCoreDataTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAppStarterPopulateCoreDataTestCase.m; path = Tests/Helpers/Starters/BIAppStarterPopulateCoreDataTestCase.m; sourceTree = "<group>"; };
 		6566331C1A6940B800A9BD67 /* BIAllCountriesDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAllCountriesDatasource.h; path = Datasource/BIAllCountriesDatasource.h; sourceTree = "<group>"; };
 		6566331D1A6940B800A9BD67 /* BIAllCountriesDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAllCountriesDatasource.m; path = Datasource/BIAllCountriesDatasource.m; sourceTree = "<group>"; };
+		656633231A69464700A9BD67 /* BIAllCapitalsDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAllCapitalsDatasource.h; path = Datasource/BIAllCapitalsDatasource.h; sourceTree = "<group>"; };
+		656633241A69464700A9BD67 /* BIAllCapitalsDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAllCapitalsDatasource.m; path = Datasource/BIAllCapitalsDatasource.m; sourceTree = "<group>"; };
+		656633281A69473200A9BD67 /* BIAllCapitalsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAllCapitalsCollectionViewCell.h; path = Views/Cell/BIAllCapitalsCollectionViewCell.h; sourceTree = "<group>"; };
+		656633291A69473200A9BD67 /* BIAllCapitalsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAllCapitalsCollectionViewCell.m; path = Views/Cell/BIAllCapitalsCollectionViewCell.m; sourceTree = "<group>"; };
 		658AF65F1A56BAA500D48C74 /* BIObjCHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIObjCHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF6781A56BAA600D48C74 /* BIObjCHelpersExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		658AF67D1A56BAA600D48C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
@@ -343,6 +349,8 @@
 		655C476D1A658938001A0AAE /* AllCapitals */ = {
 			isa = PBXGroup;
 			children = (
+				656633261A69470400A9BD67 /* Views */,
+				6566331F1A6945FE00A9BD67 /* Datasource */,
 				655C476E1A658938001A0AAE /* ViewController */,
 			);
 			path = AllCapitals;
@@ -448,6 +456,32 @@
 				6566331D1A6940B800A9BD67 /* BIAllCountriesDatasource.m */,
 			);
 			name = Datasource;
+			sourceTree = "<group>";
+		};
+		6566331F1A6945FE00A9BD67 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				656633231A69464700A9BD67 /* BIAllCapitalsDatasource.h */,
+				656633241A69464700A9BD67 /* BIAllCapitalsDatasource.m */,
+			);
+			name = Datasource;
+			sourceTree = "<group>";
+		};
+		656633261A69470400A9BD67 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				656633271A69471100A9BD67 /* Cell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		656633271A69471100A9BD67 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				656633281A69473200A9BD67 /* BIAllCapitalsCollectionViewCell.h */,
+				656633291A69473200A9BD67 /* BIAllCapitalsCollectionViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		658AF6561A56BAA500D48C74 = {
@@ -828,6 +862,7 @@
 			files = (
 				65D624971A63DD3100095EF0 /* BIDatasourceFetchedTableView.m in Sources */,
 				658AF69F1A56BB9C00D48C74 /* main.m in Sources */,
+				656633251A69464700A9BD67 /* BIAllCapitalsDatasource.m in Sources */,
 				654D9AD31A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld in Sources */,
 				6527C95D1A5FDC610088D9BC /* _BICountry.m in Sources */,
 				655C47761A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m in Sources */,
@@ -847,6 +882,7 @@
 				655C47731A658938001A0AAE /* BIAllCountriesTableViewController.m in Sources */,
 				655C47331A6505E4001A0AAE /* BIDatasourceFetchedCollectionView.m in Sources */,
 				6527C9511A5FDB400088D9BC /* _BICapital.m in Sources */,
+				6566332A1A69473200A9BD67 /* BIAllCapitalsCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
