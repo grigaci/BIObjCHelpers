@@ -89,6 +89,7 @@
 		6527C9861A6002910088D9BC /* BIOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIOperationQueue.m; path = ../Pod/OperationQueue/BIOperationQueue.m; sourceTree = SOURCE_ROOT; };
 		6527C9871A6002910088D9BC /* BISerialOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BISerialOperationQueue.h; path = ../Pod/OperationQueue/BISerialOperationQueue.h; sourceTree = SOURCE_ROOT; };
 		6527C9881A6002910088D9BC /* BISerialOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BISerialOperationQueue.m; path = ../Pod/OperationQueue/BISerialOperationQueue.m; sourceTree = SOURCE_ROOT; };
+		652DE1431A6D44E30002C6E7 /* BIObjCHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BIObjCHelpers.h; path = ../Pod/Interface/BIObjCHelpers.h; sourceTree = SOURCE_ROOT; };
 		654D9ACC1A5E9CD500D853C4 /* BIOperationQueueTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIOperationQueueTestCase.m; sourceTree = "<group>"; };
 		654D9ACD1A5E9CD500D853C4 /* BISerialOperationQueueTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BISerialOperationQueueTestCase.m; sourceTree = "<group>"; };
 		654D9AD21A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BIObjCHelpersExample.xcdatamodel; sourceTree = "<group>"; };
@@ -271,9 +272,18 @@
 			path = ../../Pod/OperationQueue;
 			sourceTree = "<group>";
 		};
+		652DE1421A6D449D0002C6E7 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				652DE1431A6D44E30002C6E7 /* BIObjCHelpers.h */,
+			);
+			name = Interface;
+			sourceTree = SOURCE_ROOT;
+		};
 		654D9AC21A5E9CAE00D853C4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				652DE1421A6D449D0002C6E7 /* Interface */,
 				65D624881A63B37200095EF0 /* Datasource */,
 				6527C9841A6002910088D9BC /* OperationQueue */,
 				655C47771A658BC4001A0AAE /* Starters */,

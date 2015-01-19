@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import "BIDatasourceFetchedTableView.h"
+#import "BIObjCHelpers.h"
 
 @interface BIAllCountriesDatasource : BIDatasourceFetchedTableView
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import "BIDatasourceFetchedCollectionView.h"
+#import "BIObjCHelpers.h"
 
 @interface BIAllCapitalsDatasource : BIDatasourceFetchedCollectionView
 
