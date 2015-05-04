@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-@import UIKit;
-
 #import "BIDatasourceBase.h"
 
-typedef void(^BIDatasourceFetchedTableViewConfigureCell)(id cell, NSIndexPath *indexPath);
+@import UIKit;
+
+typedef void(^BIDatasourceTableViewConfigureCell)(id cell, NSIndexPath *indexPath);
 
 @interface BIDatasourceTableView : BIDatasourceBase<UITableViewDataSource>
 
@@ -20,7 +20,7 @@ typedef void(^BIDatasourceFetchedTableViewConfigureCell)(id cell, NSIndexPath *i
 @property (nonatomic, readonly, strong) UITableView *tableView;
 @property (nonatomic, copy) NSString *cellIdentifier;
 @property (nonatomic, strong) Class cellClass;
-@property (nonatomic, copy) BIDatasourceFetchedTableViewConfigureCell configureCellBlock;
+@property (nonatomic, copy) BIDatasourceTableViewConfigureCell configureCellBlock;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 

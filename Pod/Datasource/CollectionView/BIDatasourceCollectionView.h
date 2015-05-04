@@ -10,7 +10,7 @@
 
 @import UIKit;
 
-typedef void(^BIDatasourceFetchedCollectionViewConfigureCell)(id cell, NSIndexPath *indexPath);
+typedef void(^BIDatasourceCollectionViewConfigureCell)(id cell, NSIndexPath *indexPath);
 
 @interface BIDatasourceCollectionView : BIDatasourceBase<UICollectionViewDataSource>
 
@@ -20,7 +20,7 @@ typedef void(^BIDatasourceFetchedCollectionViewConfigureCell)(id cell, NSIndexPa
 @property (nonatomic, readonly, strong) UICollectionView *collectionView;
 @property (nonatomic, copy) NSString *cellIdentifier;
 @property (nonatomic, strong) Class cellClass;
-@property (nonatomic, copy) BIDatasourceFetchedCollectionViewConfigureCell configureCellBlock;
+@property (nonatomic, copy) BIDatasourceCollectionViewConfigureCell configureCellBlock;
 
 - (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 

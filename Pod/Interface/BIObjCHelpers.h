@@ -18,3 +18,4 @@
 #import "BIDatasourceFetchedCollectionView.h"
 
 #import "BIHandlerBase.h"
+#import "BIHandlerTableView.h"
