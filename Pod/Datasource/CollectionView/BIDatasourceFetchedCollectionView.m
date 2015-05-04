@@ -10,7 +10,6 @@
 
 @interface BIDatasourceFetchedCollectionView ()
 
-@property (nonatomic, readwrite, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *objectChanges;
 @property (nonatomic, strong) NSMutableArray *sectionChanges;
 
@@ -18,34 +17,42 @@
 
 @implementation BIDatasourceFetchedCollectionView
 
-#pragma mark - Init methods
+#pragma mark - Property methods
 
-+ (instancetype)datasourceWithCollectionView:(UICollectionView *)collectionView {
-    return [[[self class] alloc] initWithCollectionView:collectionView];
-}
-
-- (instancetype)initWithCollectionView:(UICollectionView *)collectionView {
-    NSParameterAssert(collectionView);
-    if (self) {
-        self.collectionView = collectionView;
-        self.collectionView.dataSource = self;
+- (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController {
+    NSParameterAssert(fetchedResultsController);
+    if (_fetchedResultsController) {
+        _fetchedResultsController.delegate = nil;
     }
-    return self;
-}
-
-#pragma mark - Public methods
-
-- (void)load {
-    NSParameterAssert(self.cellIdentifier.length);
-    NSParameterAssert([self.cellClass isSubclassOfClass:[UICollectionViewCell class]]);
     
-    [self.collectionView registerClass:self.cellClass forCellWithReuseIdentifier:self.cellIdentifier];
+    _fetchedResultsController = fetchedResultsController;
+    _fetchedResultsController.delegate = self;
 }
 
-- (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    if (self.configureCellBlock) {
-        self.configureCellBlock(cell, indexPath);
+- (void)setPaused:(BOOL)paused {
+    self.fetchedResultsController.delegate = paused? nil : self;
+    _paused = paused;
+    if (!_paused) {
+        NSError *error;
+        [self.fetchedResultsController performFetch:&error];
+        if (error) {
+            NSLog(@"Error while performing fetch: %@", error);
+        }
     }
+}
+
+- (NSMutableArray *)objectChanges {
+    if (!_objectChanges) {
+        _objectChanges = [NSMutableArray new];
+    }
+    return _objectChanges;
+}
+
+- (NSMutableArray *)sectionChanges {
+    if (!_sectionChanges) {
+        _sectionChanges = [NSMutableArray new];
+    }
+    return _sectionChanges;
 }
 
 #pragma mark - UICollectionViewDatasource methods
@@ -234,36 +241,6 @@
     [NSFetchedResultsController deleteCacheWithName:self.fetchedResultsController.cacheName];
     [self resetFetchedResultControllerChanges];
     [self.collectionView reloadData];
-}
-
-#pragma mark - property methods
-
-- (NSString *)cellIdentifier {
-    if (!_cellIdentifier) {
-        _cellIdentifier = [NSUUID UUID].UUIDString;
-    }
-    return _cellIdentifier;
-}
-
-- (Class)cellClass {
-    if (!_cellClass) {
-        _cellClass = [UICollectionViewCell class];
-    }
-    return _cellClass;
-}
-
-- (NSMutableArray *)objectChanges {
-    if (!_objectChanges) {
-        _objectChanges = [NSMutableArray new];
-    }
-    return _objectChanges;
-}
-
-- (NSMutableArray *)sectionChanges {
-    if (!_sectionChanges) {
-        _sectionChanges = [NSMutableArray new];
-    }
-    return _sectionChanges;
 }
 
 @end

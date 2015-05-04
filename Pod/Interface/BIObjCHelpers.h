@@ -11,6 +11,7 @@
 #import "BIStartersFactory.h"
 #import "BIOperationQueue.h"
 
-#import "BIDatasourceFetchedResultsBase.h"
+#import "BIDatasourceTableView.h"
+#import "BIDatasourceCollectionView.h"
 #import "BIDatasourceFetchedTableView.h"
 #import "BIDatasourceFetchedCollectionView.h"

@@ -8,39 +8,38 @@
 
 #import "BIDatasourceFetchedTableView.h"
 
-@interface BIDatasourceFetchedTableView ()
-
-@property (nonatomic, readwrite, strong) UITableView *tableView;
-
-@end
-
 @implementation BIDatasourceFetchedTableView
 
-#pragma mark - Init methods
 
-+ (instancetype)datasourceWithTableView:(UITableView *)tableView {
-    return [[[self class] alloc] initWithTableView:tableView];
-}
-
-- (instancetype)initWithTableView:(UITableView *)tableView {
-    NSParameterAssert(tableView);
-    self = [super init];
-    if (self) {
-        self.tableView = tableView;
-        self.tableView.dataSource = self;
-    }
-    return self;
-}
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    if (self.configureCellBlock) {
-        self.configureCellBlock(cell, indexPath);
-    }
-}
+#pragma mark - BIDatasourceBase methods
 
 - (void)load {
+    [super load];
     NSParameterAssert(self.fetchedResultsController);
-    [self.tableView registerClass:self.cellClass forCellReuseIdentifier:self.cellIdentifier];
+}
+
+#pragma mark - Property methods
+
+- (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController {
+    NSParameterAssert(fetchedResultsController);
+    if (_fetchedResultsController) {
+        _fetchedResultsController.delegate = nil;
+    }
+    
+    _fetchedResultsController = fetchedResultsController;
+    _fetchedResultsController.delegate = self;
+}
+
+- (void)setPaused:(BOOL)paused {
+    self.fetchedResultsController.delegate = paused? nil : self;
+    _paused = paused;
+    if (!_paused) {
+        NSError *error;
+        [self.fetchedResultsController performFetch:&error];
+        if (error) {
+            NSLog(@"Error while performing fetch: %@", error);
+        }
+    }
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -54,17 +53,6 @@
     NSParameterAssert(self.fetchedResultsController);
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSParameterAssert(self.fetchedResultsController);
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath: indexPath];
-    if (!cell) {
-        cell = [[self.cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.cellIdentifier];
-    }
-    [self configureCell: cell atIndexPath: indexPath];
-
-    return cell;
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate Methods
@@ -128,22 +116,6 @@
             [self.tableView insertRowsAtIndexPaths:insertPaths withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
-}
-
-#pragma mark - property methods
-
-- (NSString *)cellIdentifier {
-    if (!_cellIdentifier) {
-        _cellIdentifier = [NSUUID UUID].UUIDString;
-    }
-    return _cellIdentifier;
-}
-
-- (Class)cellClass {
-    if (!_cellClass) {
-        _cellClass = [UITableViewCell class];
-    }
-    return _cellClass;
 }
 
 @end

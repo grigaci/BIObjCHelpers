@@ -6,23 +6,14 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-@import UIKit;
+#import "BIDatasourceTableView.h"
 
-#import "BIDatasourceFetchedResultsBase.h"
+@import CoreData;
 
-typedef void(^BIDatasourceFetchedTableViewConfigureCell)(id cell, NSIndexPath *indexPath);
+@interface BIDatasourceFetchedTableView : BIDatasourceTableView<NSFetchedResultsControllerDelegate>
 
-@interface BIDatasourceFetchedTableView : BIDatasourceFetchedResultsBase<UITableViewDataSource>
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
-+ (instancetype)datasourceWithTableView:(UITableView *)tableView;
-- (instancetype)initWithTableView:(UITableView *)tableView;
-
-@property (nonatomic, readonly, strong) UITableView *tableView;
-@property (nonatomic, copy) NSString *cellIdentifier;
-@property (nonatomic, strong) Class cellClass;
-@property (nonatomic, copy) BIDatasourceFetchedTableViewConfigureCell configureCellBlock;
-
-- (void)load;
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+@property (nonatomic, assign, getter=isPaused) BOOL paused;
 
 @end
