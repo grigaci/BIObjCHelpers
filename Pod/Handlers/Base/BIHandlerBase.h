@@ -1,5 +1,5 @@
 //
-//  BIDatasourceBase.h
+//  BIHandlerBase.h
 //  BIObjCHelpersExample
 //
 //  Created by Bogdan Iusco on 04/05/15.
@@ -8,6 +8,6 @@
 
 #import "BILifecycle.h"
 
-@interface BIDatasourceBase : BILifecycle
+@interface BIHandlerBase : BILifecycle
 
 @end

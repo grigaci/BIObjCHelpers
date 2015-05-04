@@ -8,33 +8,6 @@
 
 #import "BIDatasourceBase.h"
 
-@interface BIDatasourceBase ()
-
-@property (nonatomic, assign, readwrite, getter=isLoaded) BOOL loaded;
-
-@end
-
-
 @implementation BIDatasourceBase
-
-#pragma mark - Initializer
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.loaded = NO;
-    }
-    return self;
-}
-
-#pragma mark - Public methods
-
-- (void)load {
-    self.loaded = YES;
-}
-
-- (void)unload {
-    self.loaded = NO;
-}
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "BIStarterProtocol.h"
+#import "BILifecycle.h"
 
 #import "BIStartersFactory.h"
 #import "BIOperationQueue.h"
@@ -15,3 +16,5 @@
 #import "BIDatasourceCollectionView.h"
 #import "BIDatasourceFetchedTableView.h"
 #import "BIDatasourceFetchedCollectionView.h"
+
+#import "BIHandlerBase.h"

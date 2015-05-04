@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		3414D852405A7B7BCBF938E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 875251456342497C5A42EB63 /* libPods.a */; };
 		43D5A9231AF7A54B00E3EB9D /* BIDatasourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5A9221AF7A54B00E3EB9D /* BIDatasourceBase.m */; };
-		43D5A9261AF7A67200E3EB9D /* BIDatasourceBase+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5A9251AF7A67200E3EB9D /* BIDatasourceBase+Private.m */; };
-		43D5A9281AF7A77100E3EB9D /* BIDatasourceBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5A9271AF7A77100E3EB9D /* BIDatasourceBaseTestCase.m */; };
 		43D5A92B1AF7AAC600E3EB9D /* BIDatasourceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5A92A1AF7AAC600E3EB9D /* BIDatasourceTableView.m */; };
 		43D5A92E1AF7AE3300E3EB9D /* BIDatasourceCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5A92D1AF7AE3300E3EB9D /* BIDatasourceCollectionView.m */; };
+		43D5A9321AF7BE0900E3EB9D /* BILifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5A9311AF7BE0900E3EB9D /* BILifecycle.m */; };
+		43D5A9351AF7BEED00E3EB9D /* BILifecycleTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5A9341AF7BEED00E3EB9D /* BILifecycleTestCase.m */; };
+		43D5A93A1AF7BFEE00E3EB9D /* BIHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5A9391AF7BFEE00E3EB9D /* BIHandlerBase.m */; };
 		6527C94B1A5FC65E0088D9BC /* BITestCaseCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C94A1A5FC65E0088D9BC /* BITestCaseCoreData.m */; };
 		6527C94E1A5FD9B30088D9BC /* _BIModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C94D1A5FD9B30088D9BC /* _BIModelBase.m */; };
 		6527C9511A5FDB400088D9BC /* _BICapital.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527C9501A5FDB400088D9BC /* _BICapital.m */; };
@@ -70,13 +71,15 @@
 /* Begin PBXFileReference section */
 		43D5A9211AF7A54B00E3EB9D /* BIDatasourceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIDatasourceBase.h; path = ../Pod/Datasource/Base/BIDatasourceBase.h; sourceTree = SOURCE_ROOT; };
 		43D5A9221AF7A54B00E3EB9D /* BIDatasourceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIDatasourceBase.m; path = ../Pod/Datasource/Base/BIDatasourceBase.m; sourceTree = SOURCE_ROOT; };
-		43D5A9241AF7A67200E3EB9D /* BIDatasourceBase+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BIDatasourceBase+Private.h"; path = "../Pod/Datasource/Base/BIDatasourceBase+Private.h"; sourceTree = SOURCE_ROOT; };
-		43D5A9251AF7A67200E3EB9D /* BIDatasourceBase+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BIDatasourceBase+Private.m"; path = "../Pod/Datasource/Base/BIDatasourceBase+Private.m"; sourceTree = SOURCE_ROOT; };
-		43D5A9271AF7A77100E3EB9D /* BIDatasourceBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIDatasourceBaseTestCase.m; path = Datasource/Base/BIDatasourceBaseTestCase.m; sourceTree = "<group>"; };
 		43D5A9291AF7AAC600E3EB9D /* BIDatasourceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIDatasourceTableView.h; path = ../Pod/Datasource/TableView/BIDatasourceTableView.h; sourceTree = SOURCE_ROOT; };
 		43D5A92A1AF7AAC600E3EB9D /* BIDatasourceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIDatasourceTableView.m; path = ../Pod/Datasource/TableView/BIDatasourceTableView.m; sourceTree = SOURCE_ROOT; };
 		43D5A92C1AF7AE3300E3EB9D /* BIDatasourceCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIDatasourceCollectionView.h; path = ../Pod/Datasource/CollectionView/BIDatasourceCollectionView.h; sourceTree = SOURCE_ROOT; };
 		43D5A92D1AF7AE3300E3EB9D /* BIDatasourceCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIDatasourceCollectionView.m; path = ../Pod/Datasource/CollectionView/BIDatasourceCollectionView.m; sourceTree = SOURCE_ROOT; };
+		43D5A9301AF7BE0900E3EB9D /* BILifecycle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BILifecycle.h; path = ../Pod/Lifecycle/BILifecycle.h; sourceTree = SOURCE_ROOT; };
+		43D5A9311AF7BE0900E3EB9D /* BILifecycle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BILifecycle.m; path = ../Pod/Lifecycle/BILifecycle.m; sourceTree = SOURCE_ROOT; };
+		43D5A9341AF7BEED00E3EB9D /* BILifecycleTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BILifecycleTestCase.m; path = Lifecycle/BILifecycleTestCase.m; sourceTree = "<group>"; };
+		43D5A9381AF7BFEE00E3EB9D /* BIHandlerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIHandlerBase.h; path = ../Pod/Handlers/Base/BIHandlerBase.h; sourceTree = SOURCE_ROOT; };
+		43D5A9391AF7BFEE00E3EB9D /* BIHandlerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIHandlerBase.m; path = ../Pod/Handlers/Base/BIHandlerBase.m; sourceTree = SOURCE_ROOT; };
 		46CA5FA87E9AD752021D8E56 /* libPods-BIObjCHelpersExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BIObjCHelpersExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6527C94A1A5FC65E0088D9BC /* BITestCaseCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITestCaseCoreData.m; path = Helpers/TestCases/BITestCaseCoreData.m; sourceTree = "<group>"; };
 		6527C94C1A5FD9B30088D9BC /* _BIModelBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BIModelBase.h; sourceTree = "<group>"; };
@@ -187,6 +190,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		43D5A92F1AF7B73700E3EB9D /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				43D5A9301AF7BE0900E3EB9D /* BILifecycle.h */,
+				43D5A9311AF7BE0900E3EB9D /* BILifecycle.m */,
+			);
+			name = Lifecycle;
+			sourceTree = "<group>";
+		};
+		43D5A9331AF7BECC00E3EB9D /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				43D5A9341AF7BEED00E3EB9D /* BILifecycleTestCase.m */,
+			);
+			name = Lifecycle;
+			sourceTree = "<group>";
+		};
+		43D5A9361AF7BFBE00E3EB9D /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				43D5A9371AF7BFC500E3EB9D /* Base */,
+			);
+			name = Handlers;
+			sourceTree = "<group>";
+		};
+		43D5A9371AF7BFC500E3EB9D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				43D5A9381AF7BFEE00E3EB9D /* BIHandlerBase.h */,
+				43D5A9391AF7BFEE00E3EB9D /* BIHandlerBase.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		6527C9341A5FC4D80088D9BC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +329,8 @@
 		654D9AC21A5E9CAE00D853C4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				43D5A9361AF7BFBE00E3EB9D /* Handlers */,
+				43D5A92F1AF7B73700E3EB9D /* Lifecycle */,
 				652DE1421A6D449D0002C6E7 /* Interface */,
 				65D624881A63B37200095EF0 /* Datasource */,
 				6527C9841A6002910088D9BC /* OperationQueue */,
@@ -303,6 +342,7 @@
 		654D9ACA1A5E9CD500D853C4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				43D5A9331AF7BECC00E3EB9D /* Lifecycle */,
 				65D624901A63B52F00095EF0 /* Datasource */,
 				654D9ACB1A5E9CD500D853C4 /* OperationQueue */,
 				655C477C1A658E4E001A0AAE /* Starters */,
@@ -662,8 +702,6 @@
 			children = (
 				43D5A9211AF7A54B00E3EB9D /* BIDatasourceBase.h */,
 				43D5A9221AF7A54B00E3EB9D /* BIDatasourceBase.m */,
-				43D5A9241AF7A67200E3EB9D /* BIDatasourceBase+Private.h */,
-				43D5A9251AF7A67200E3EB9D /* BIDatasourceBase+Private.m */,
 			);
 			name = Base;
 			path = ../../Pod/Datasource/Base;
@@ -682,7 +720,6 @@
 		65D624911A63B53200095EF0 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				43D5A9271AF7A77100E3EB9D /* BIDatasourceBaseTestCase.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -888,6 +925,7 @@
 				65D624971A63DD3100095EF0 /* BIDatasourceFetchedTableView.m in Sources */,
 				658AF69F1A56BB9C00D48C74 /* main.m in Sources */,
 				656633251A69464700A9BD67 /* BIAllCapitalsDatasource.m in Sources */,
+				43D5A9321AF7BE0900E3EB9D /* BILifecycle.m in Sources */,
 				654D9AD31A5E9EFA00D853C4 /* BIObjCHelpersExample.xcdatamodeld in Sources */,
 				6527C95D1A5FDC610088D9BC /* _BICountry.m in Sources */,
 				655C47761A65896B001A0AAE /* BIAllCapitalsCollectionViewController.m in Sources */,
@@ -899,13 +937,13 @@
 				6527C9571A5FDC240088D9BC /* BICapital.m in Sources */,
 				43D5A92E1AF7AE3300E3EB9D /* BIDatasourceCollectionView.m in Sources */,
 				655C47941A659A86001A0AAE /* BIAppStartersFactory.m in Sources */,
-				43D5A9261AF7A67200E3EB9D /* BIDatasourceBase+Private.m in Sources */,
 				6527C9541A5FDB740088D9BC /* BIModelBase.m in Sources */,
 				655C477A1A658C4C001A0AAE /* BIStartersFactory.m in Sources */,
 				6527C94E1A5FD9B30088D9BC /* _BIModelBase.m in Sources */,
 				43D5A92B1AF7AAC600E3EB9D /* BIDatasourceTableView.m in Sources */,
 				655C479D1A65A17A001A0AAE /* BIAppStarterPopulateCoreData.m in Sources */,
 				6527C9601A5FDD6D0088D9BC /* BICountry.m in Sources */,
+				43D5A93A1AF7BFEE00E3EB9D /* BIHandlerBase.m in Sources */,
 				655C47731A658938001A0AAE /* BIAllCountriesTableViewController.m in Sources */,
 				655C47331A6505E4001A0AAE /* BIDatasourceFetchedCollectionView.m in Sources */,
 				6527C9511A5FDB400088D9BC /* _BICapital.m in Sources */,
@@ -925,12 +963,12 @@
 				6527C94B1A5FC65E0088D9BC /* BITestCaseCoreData.m in Sources */,
 				6527C9831A5FFA210088D9BC /* BICountryTestCase.m in Sources */,
 				654D9ACF1A5E9CD500D853C4 /* BISerialOperationQueueTestCase.m in Sources */,
+				43D5A9351AF7BEED00E3EB9D /* BILifecycleTestCase.m in Sources */,
 				655C477E1A658E86001A0AAE /* BIStartersFactoryTestCase.m in Sources */,
 				6527C9681A5FF54E0088D9BC /* BICapitalTestCase.m in Sources */,
 				65D6249D1A63DEB300095EF0 /* BIDatasourceFetchedTableViewTestCase.m in Sources */,
 				655C479F1A65A623001A0AAE /* BIAppStarterPopulateCoreDataTestCase.m in Sources */,
 				655C47521A6569D6001A0AAE /* NSFetchedResultsController+BITestHelpers.m in Sources */,
-				43D5A9281AF7A77100E3EB9D /* BIDatasourceBaseTestCase.m in Sources */,
 				655C47361A650696001A0AAE /* BIDatasourceFetchedCollectionViewTestCase.m in Sources */,
 				654D9ACE1A5E9CD500D853C4 /* BIOperationQueueTestCase.m in Sources */,
 				6527C9651A5FDF3B0088D9BC /* BIModelBaseTestCase.m in Sources */,
