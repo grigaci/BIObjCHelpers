@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BIObjCHelpers"
-  s.version          = "0.2.2"
+  s.version          = "0.2.3"
   s.summary          = "My collection of Objective-C helpers"
   s.description      = <<-DESC
                        Simple collection of classes commonly used in Objective-C projects.
