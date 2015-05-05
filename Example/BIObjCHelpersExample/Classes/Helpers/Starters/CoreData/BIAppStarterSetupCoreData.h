@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "BIStarterProtocol.h"
+
+#import <Foundation/Foundation.h>
 
 @interface BIAppStarterSetupCoreData : NSObject<BIStarter>
 

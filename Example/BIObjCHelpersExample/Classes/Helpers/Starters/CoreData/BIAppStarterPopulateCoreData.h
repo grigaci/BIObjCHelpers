@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
+#import "BIStarterProtocol.h"
+
 @import Foundation;
 @import CoreData;
-
-#import "BIStarterProtocol.h"
 
 extern const struct BIAppStarterPopulateCoreDataPlistKeys {
     __unsafe_unretained NSString *country;

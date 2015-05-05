@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @protocol BIStarter <NSObject>
 
 @required
