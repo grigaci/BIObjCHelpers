@@ -12,7 +12,7 @@
 
 @interface BIDatasourceFetchedTableView : BIDatasourceTableView<NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong, nullable) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic, assign, getter=isPaused) BOOL paused;
 

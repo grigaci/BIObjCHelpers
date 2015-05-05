@@ -10,7 +10,7 @@
 
 @interface BIDatasourceCollectionView ()
 
-@property (nonatomic, readwrite, strong) UICollectionView *collectionView;
+@property (nonatomic, readwrite, strong, nonnull) UICollectionView *collectionView;
 
 @end
 

@@ -10,7 +10,7 @@
 
 @interface BIAllCapitalsCollectionViewCell ()
 
-@property (nonatomic, readwrite, strong) UILabel *label;
+@property (nonatomic, readwrite, nonnull, strong) UILabel *label;
 
 @end
 

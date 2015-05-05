@@ -12,7 +12,7 @@
 
 @interface BIAllCountriesTableViewController ()
 
-@property (nonatomic, strong) BIAllCountriesDatasource *datasource;
+@property (nonatomic, nullable, strong) BIAllCountriesDatasource *datasource;
 
 @end
 

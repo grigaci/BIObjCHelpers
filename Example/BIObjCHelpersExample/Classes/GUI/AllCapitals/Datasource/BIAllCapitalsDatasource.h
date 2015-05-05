@@ -10,6 +10,6 @@
 
 @interface BIAllCapitalsDatasource : BIDatasourceFetchedCollectionView
 
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, nullable, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

@@ -10,18 +10,18 @@
 
 @import UIKit;
 
-typedef void(^BIDatasourceCollectionViewConfigureCell)(id cell, NSIndexPath *indexPath);
+typedef void(^BIDatasourceCollectionViewConfigureCell)(id __nonnull cell, NSIndexPath * __nonnull indexPath);
 
 @interface BIDatasourceCollectionView : BIDatasourceBase<UICollectionViewDataSource>
 
-+ (instancetype)datasourceWithCollectionView:(UICollectionView *)collectionView;
-- (instancetype)initWithCollectionView:(UICollectionView *)collectionView;
++ (nonnull instancetype)datasourceWithCollectionView:(nonnull UICollectionView *)collectionView;
+- (nonnull instancetype)initWithCollectionView:(nonnull UICollectionView *)collectionView;
 
-@property (nonatomic, readonly, strong) UICollectionView *collectionView;
-@property (nonatomic, copy) NSString *cellIdentifier;
-@property (nonatomic, strong) Class cellClass;
-@property (nonatomic, copy) BIDatasourceCollectionViewConfigureCell configureCellBlock;
+@property (nonatomic, readonly, strong, nonnull) UICollectionView *collectionView;
+@property (nonatomic, copy, nullable) NSString *cellIdentifier;
+@property (nonatomic, strong, nullable) Class cellClass;
+@property (nonatomic, copy, nullable) BIDatasourceCollectionViewConfigureCell configureCellBlock;
 
-- (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCell:(nonnull UICollectionViewCell *)cell atIndexPath:(nonnull NSIndexPath *)indexPath;
 
 @end

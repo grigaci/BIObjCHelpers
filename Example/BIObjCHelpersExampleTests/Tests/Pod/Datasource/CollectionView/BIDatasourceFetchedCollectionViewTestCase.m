@@ -37,7 +37,6 @@
 #pragma mark - test init methods
 
 - (void)testInitializer {
-    XCTAssertThrows([BIDatasourceFetchedCollectionView datasourceWithCollectionView:nil]);
     XCTAssertEqual(self.collectionView.dataSource, self.datasource);
 }
 

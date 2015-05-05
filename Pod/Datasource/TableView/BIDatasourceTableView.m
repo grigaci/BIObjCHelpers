@@ -10,7 +10,7 @@
 
 @interface BIDatasourceTableView ()
 
-@property (nonatomic, readwrite, strong) UITableView *tableView;
+@property (nonatomic, readwrite, strong, nonnull) UITableView *tableView;
 
 @end
 

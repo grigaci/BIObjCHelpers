@@ -40,11 +40,4 @@
     XCTAssertEqual(starterIndex, 2U); // Should have 2 calls
 }
 
-#pragma mark - Test addStarter method
-
-- (void)testAddStarterWithNil {
-    BIStartersFactory *factory = [BIStartersFactory new];
-    XCTAssertThrows([factory addStarter:nil]);
-}
-
 @end

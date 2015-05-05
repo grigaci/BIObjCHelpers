@@ -10,18 +10,18 @@
 
 @import UIKit;
 
-typedef void(^BIDatasourceTableViewConfigureCell)(id cell, NSIndexPath *indexPath);
+typedef void(^BIDatasourceTableViewConfigureCell)(id __nonnull cell, NSIndexPath * __nonnull indexPath);
 
 @interface BIDatasourceTableView : BIDatasourceBase<UITableViewDataSource>
 
-+ (instancetype)datasourceWithTableView:(UITableView *)tableView;
-- (instancetype)initWithTableView:(UITableView *)tableView;
++ (nonnull instancetype)datasourceWithTableView:(nonnull UITableView *)tableView;
+- (nonnull instancetype)initWithTableView:(nonnull UITableView *)tableView;
 
-@property (nonatomic, readonly, strong) UITableView *tableView;
-@property (nonatomic, copy) NSString *cellIdentifier;
-@property (nonatomic, strong) Class cellClass;
-@property (nonatomic, copy) BIDatasourceTableViewConfigureCell configureCellBlock;
+@property (nonatomic, readonly, strong, nonnull) UITableView *tableView;
+@property (nonatomic, copy, nullable) NSString *cellIdentifier;
+@property (nonatomic, strong, nullable) Class cellClass;
+@property (nonatomic, copy, nullable) BIDatasourceTableViewConfigureCell configureCellBlock;
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCell:(nonnull UITableViewCell *)cell atIndexPath:(nonnull NSIndexPath *)indexPath;
 
 @end

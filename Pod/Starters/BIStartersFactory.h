@@ -13,7 +13,7 @@
 @interface BIStartersFactory : NSObject
 
 - (void)run;
-- (void)addStarter:(id<BIStarter>)starter;
+- (void)addStarter:(nonnull id<BIStarter>)starter;
 - (void)loadStarters;
 
 @end

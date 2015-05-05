@@ -10,6 +10,6 @@
 
 @interface BIAllCountriesDatasource : BIDatasourceFetchedTableView
 
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, nullable, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

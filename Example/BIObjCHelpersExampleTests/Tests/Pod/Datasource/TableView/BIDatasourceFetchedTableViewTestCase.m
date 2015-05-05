@@ -35,7 +35,6 @@
 #pragma mark - Init methods
 
 - (void)testInitializer {
-    XCTAssertThrows([BIDatasourceFetchedTableView datasourceWithTableView:nil]);
     XCTAssertEqual(self.tableView.dataSource, self.datasource);
 }
 

@@ -10,6 +10,6 @@
 
 @interface BIAllCapitalsCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, readonly, strong) UILabel *label;
+@property (nonatomic, readonly, nonnull, strong) UILabel *label;
 
 @end

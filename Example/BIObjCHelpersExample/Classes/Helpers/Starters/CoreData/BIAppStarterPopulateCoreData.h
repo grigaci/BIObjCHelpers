@@ -12,13 +12,13 @@
 @import CoreData;
 
 extern const struct BIAppStarterPopulateCoreDataPlistKeys {
-    __unsafe_unretained NSString *country;
-    __unsafe_unretained NSString *capital;
+    __unsafe_unretained NSString * __nonnull country;
+    __unsafe_unretained NSString * __nonnull capital;
 } BIAppStarterPopulateCoreDataPlistKeys;
 
 
 @interface BIAppStarterPopulateCoreData : NSObject <BIStarter>
 
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, nullable, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

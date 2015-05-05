@@ -13,7 +13,7 @@
 
 @interface BIAllCapitalsCollectionViewController ()
 
-@property (nonatomic, strong) BIAllCapitalsDatasource *datasource;
+@property (nonatomic, nullable, strong) BIAllCapitalsDatasource *datasource;
 
 @end
 

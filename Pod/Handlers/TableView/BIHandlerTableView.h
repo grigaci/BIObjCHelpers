@@ -10,16 +10,16 @@
 
 @import UIKit;
 
-typedef void(^BIHandlerTableViewRowSelectionCallback)(id cell, NSIndexPath *indexPath);
+typedef void(^BIHandlerTableViewRowSelectionCallback)(id __nonnull cell, NSIndexPath * __nonnull indexPath);
 
 @interface BIHandlerTableView : BIHandlerBase<UITableViewDelegate>
 
-+ (instancetype)handlerWithTableView:(UITableView *)tableView;
-- (instancetype)initWithTableView:(UITableView *)tableView;
++ (nonnull instancetype)handlerWithTableView:(nonnull UITableView *)tableView;
+- (nonnull instancetype)initWithTableView:(nonnull UITableView *)tableView;
 
-@property (nonatomic, readonly, strong) UITableView *tableView;
+@property (nonatomic, readonly, strong, nonnull) UITableView *tableView;
 
-@property (nonatomic, copy) BIHandlerTableViewRowSelectionCallback didSelectRowCallback;
-@property (nonatomic, copy) BIHandlerTableViewRowSelectionCallback didDeselectRowCallback;
+@property (nonatomic, copy, nullable) BIHandlerTableViewRowSelectionCallback didSelectRowCallback;
+@property (nonatomic, copy, nullable) BIHandlerTableViewRowSelectionCallback didDeselectRowCallback;
 
 @end

@@ -10,7 +10,7 @@
 
 @interface BILifecycle : NSObject
 
-- (instancetype)init;
+- (nonnull instancetype)init;
 
 @property (nonatomic, assign, readonly, getter=isLoaded) BOOL loaded;
 

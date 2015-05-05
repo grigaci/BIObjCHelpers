@@ -10,8 +10,8 @@
 
 @interface BIDatasourceFetchedCollectionView ()
 
-@property (nonatomic, strong) NSMutableArray *objectChanges;
-@property (nonatomic, strong) NSMutableArray *sectionChanges;
+@property (nonatomic, strong, nonnull) NSMutableArray *objectChanges;
+@property (nonatomic, strong, nonnull) NSMutableArray *sectionChanges;
 
 @end
 
