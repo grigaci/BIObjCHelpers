@@ -19,3 +19,6 @@
 
 #import "BIHandlerBase.h"
 #import "BIHandlerTableView.h"
+
+#import "NSBundle+BIExtra.h"
+#import "NSString+BIExtra.h"
