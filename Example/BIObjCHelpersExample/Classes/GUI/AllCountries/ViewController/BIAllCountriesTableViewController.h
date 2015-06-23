@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @interface BIAllCountriesTableViewController : UITableViewController
 

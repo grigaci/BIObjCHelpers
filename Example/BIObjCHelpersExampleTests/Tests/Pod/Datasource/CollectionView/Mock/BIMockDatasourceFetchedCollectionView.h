@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 typedef void(^BIMockDatasourceFetchedCollectionViewInsertSections)(NSIndexSet *sections);
 typedef void(^BIMockDatasourceFetchedCollectionViewDeleteSections)(NSIndexSet *sections);

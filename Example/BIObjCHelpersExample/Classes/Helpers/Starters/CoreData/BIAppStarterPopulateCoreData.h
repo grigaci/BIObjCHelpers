@@ -8,8 +8,8 @@
 
 #import "BIStarterProtocol.h"
 
-@import Foundation;
-@import CoreData;
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 extern const struct BIAppStarterPopulateCoreDataPlistKeys {
     __unsafe_unretained NSString * __nonnull country;

@@ -8,7 +8,7 @@
 
 #import "BIHandlerBase.h"
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 typedef void(^BIHandlerTableViewRowSelectionCallback)(id __nonnull cell, NSIndexPath * __nonnull indexPath);
 

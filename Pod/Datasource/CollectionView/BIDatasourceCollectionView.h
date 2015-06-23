@@ -8,7 +8,7 @@
 
 #import "BIDatasourceBase.h"
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 typedef void(^BIDatasourceCollectionViewConfigureCell)(id __nonnull cell, NSIndexPath * __nonnull indexPath);
 

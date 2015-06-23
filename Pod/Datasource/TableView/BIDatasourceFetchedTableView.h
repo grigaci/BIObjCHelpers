@@ -8,7 +8,7 @@
 
 #import "BIDatasourceTableView.h"
 
-@import CoreData;
+#import <CoreData/CoreData.h>
 
 @interface BIDatasourceFetchedTableView : BIDatasourceTableView<NSFetchedResultsControllerDelegate>
 

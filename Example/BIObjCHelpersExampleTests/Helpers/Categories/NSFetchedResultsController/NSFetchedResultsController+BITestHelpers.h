@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-@import CoreData;
+#import <CoreData/CoreData.h>
 
 @interface NSFetchedResultsController (BITestHelpers)
 
