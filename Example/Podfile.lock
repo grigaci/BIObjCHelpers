@@ -7,18 +7,21 @@ PODS:
   - OCHamcrest (4.1.1)
   - OCMockito (1.4.0):
     - OCHamcrest (~> 4.0)
+  - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
   - CJALog (~> 1.1.0)
   - CJAMacros (~> 2.1)
   - MagicalRecord (~> 2.2)
   - OCMockito (~> 1.4.0)
+  - SVPullToRefresh
 
 SPEC CHECKSUMS:
-  CJALog: a80d588116a3b545ab7d649f9b77be41f6c92225
-  CJAMacros: e3f6c0823e3cbcba6a3788363117d35371a63ef7
-  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
-  OCHamcrest: af1c7c5ea345de69ea6c9c2958f65f3044e5c420
-  OCMockito: 991936bb775cc4c27f063d38f5e17b9161fbd21c
+  CJALog: e91c4e468145c8e42559831d251c727680b61650
+  CJAMacros: 503053c63da9564e35c95b29c6c8cb999396bebd
+  MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
+  OCHamcrest: 6f03ffa81d12feab872638490a44ab0a6d3aca10
+  OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.38.0.beta.2

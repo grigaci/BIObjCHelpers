@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BIObjCHelpers"
-  s.version          = "0.2.5"
+  s.version          = "0.2.6"
   s.summary          = "My collection of Objective-C helpers"
   s.description      = <<-DESC
                        Simple collection of classes commonly used in Objective-C projects.
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-
-  s.source_files = 'Pod/**/*.{h,m}', 'Pod/Datasource/**/*.{h,m}', 'Pod/Handlers/**/*.{h,m}', 'Pod/Categories/**/*.{h,m}'
+  s.dependency = 'SVPullToRefresh', '0.4.1'
+  s.source_files = 'Pod/**/*.{h,m}', 'Pod/Datasource/**/*.{h,m}', 'Pod/Handlers/**/*.{h,m}', 'Pod/Categories/**/*.{h,m}', 'Pod/Batch/**/*.{h,m}'
 
 end
