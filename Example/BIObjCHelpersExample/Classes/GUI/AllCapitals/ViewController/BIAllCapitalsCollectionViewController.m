@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
-
 #import "BIAllCapitalsCollectionViewController.h"
 #import "BIAllCapitalsDatasource.h"
+
+#import <MagicalRecord/MagicalRecord.h>
 
 @interface BIAllCapitalsCollectionViewController ()
 

@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
-
 #import "BIAllCountriesDatasource.h"
 #import "BICountry.h"
+
+#import <MagicalRecord/MagicalRecord.h>
 
 @implementation BIAllCountriesDatasource
 

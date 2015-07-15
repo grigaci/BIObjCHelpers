@@ -1,25 +1,30 @@
 PODS:
+  - BIObjCHelpers (0.2.9):
+    - SVPullToRefresh
   - CJALog (1.1.0)
-  - CJAMacros (2.1.1)
-  - MagicalRecord (2.2):
-    - MagicalRecord/Core (= 2.2)
-  - MagicalRecord/Core (2.2)
+  - CJAMacros (2.1.3)
+  - MagicalRecord (2.3.0)
   - OCHamcrest (4.1.1)
   - OCMockito (1.4.0):
     - OCHamcrest (~> 4.0)
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
+  - BIObjCHelpers (from `../`)
   - CJALog (~> 1.1.0)
   - CJAMacros (~> 2.1)
   - MagicalRecord (~> 2.2)
   - OCMockito (~> 1.4.0)
-  - SVPullToRefresh
+
+EXTERNAL SOURCES:
+  BIObjCHelpers:
+    :path: ../
 
 SPEC CHECKSUMS:
+  BIObjCHelpers: f9710b3d08215c6d8fa9841f5e6874db6bb86f74
   CJALog: e91c4e468145c8e42559831d251c727680b61650
-  CJAMacros: 503053c63da9564e35c95b29c6c8cb999396bebd
-  MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
+  CJAMacros: 01775e631d55f3ffc8524483e27fbdd6c9fd8a44
+  MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   OCHamcrest: 6f03ffa81d12feab872638490a44ab0a6d3aca10
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
