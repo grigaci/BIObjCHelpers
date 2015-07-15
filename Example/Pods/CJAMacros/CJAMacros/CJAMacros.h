@@ -76,25 +76,31 @@ _lambda \
 /// @name Device Checks
 ///---------------------------
 
-#define DEVICE_SCREEN_HAS_LENGTH(_frame, _length) ( fabsf( MAX(CGRectGetHeight(_frame), CGRectGetWidth(_frame)) - _length) < FLT_EPSILON )
+#define DEVICE_SCREEN_HAS_LENGTH(_frame, _length) ( fabs( MAX(CGRectGetHeight(_frame), CGRectGetWidth(_frame)) - _length) < DBL_EPSILON )
+
+/**
+ Runtime check for the current device.
+ checks if the current device is an iPhone 4 or an Device with 480 Screen height
+ */
+#define DEVICE_IS_IPHONE_4 DEVICE_SCREEN_HAS_LENGTH([UIScreen mainScreen].bounds, 480.)
 
 /**
  Runtime check for the current device.
  checks if the current device is an iPhone 5 or iPod Touch 5 Gen, or an Device with 1136 Screen height
  */
-#define DEVICE_IS_IPHONE_5 DEVICE_SCREEN_HAS_LENGTH([UIScreen mainScreen].bounds, 568.f)
+#define DEVICE_IS_IPHONE_5 DEVICE_SCREEN_HAS_LENGTH([UIScreen mainScreen].bounds, 568.)
 
 /**
  Runtime check for the current device.
  checks if the current device is an iPhone 6
  */
-#define DEVICE_IS_IPHONE_6 DEVICE_SCREEN_HAS_LENGTH([UIScreen mainScreen].bounds, 667.f)
+#define DEVICE_IS_IPHONE_6 DEVICE_SCREEN_HAS_LENGTH([UIScreen mainScreen].bounds, 667.)
 
 /**
  Runtime check for the current device.
  checks if the current device is an iPhone 6 Plus
  */
-#define DEVICE_IS_IPHONE_6_PLUS DEVICE_SCREEN_HAS_LENGTH([UIScreen mainScreen].bounds, 736.f)
+#define DEVICE_IS_IPHONE_6_PLUS DEVICE_SCREEN_HAS_LENGTH([UIScreen mainScreen].bounds, 736.)
 
 /**
  Runtime check for the current device.
@@ -202,7 +208,7 @@ _lambda \
  checks ( CURRENT_VERSION_NUMBR == GIVEN_VERSION_NUMBER)
  @_gVersion - the given Version Number. aka (_iOS_7_0 or NSFoundationVersionNumber_iOS_7_0 and so on)
  */
-#define SYSTEM_VERSION_EQUAL_TO(_gVersion)                  ( fabsf(NSFoundationVersionNumber - _gVersion) < DBL_EPSILON )
+#define SYSTEM_VERSION_EQUAL_TO(_gVersion)                  ( fabs(NSFoundationVersionNumber - _gVersion) < DBL_EPSILON )
 
 /**
  Runtime check for the current version Nummer.

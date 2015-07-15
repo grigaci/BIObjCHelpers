@@ -6,9 +6,10 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "BIAllCountriesTableViewController.h"
 #import "BIAllCountriesDatasource.h"
+
+#import <MagicalRecord/MagicalRecord.h>
 
 @interface BIAllCountriesTableViewController ()
 

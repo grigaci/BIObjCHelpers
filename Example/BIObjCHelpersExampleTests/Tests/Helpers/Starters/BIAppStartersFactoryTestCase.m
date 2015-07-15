@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
-#import <XCTest/XCTest.h>
-
 #import "BIAppStartersFactory.h"
+
+#import <XCTest/XCTest.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 @interface BIAppStartersFactoryTestCase : XCTestCase
 

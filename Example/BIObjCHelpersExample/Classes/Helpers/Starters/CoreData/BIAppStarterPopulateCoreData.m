@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
-
 #import "BIAppStarterPopulateCoreData.h"
 #import "BICountry.h"
 #import "BICapital.h"
+
+#import <MagicalRecord/MagicalRecord.h>
 
 const struct BIAppStarterPopulateCoreDataPlistKeys BIAppStarterPopulateCoreDataPlistKeys = {
     .country = @"country",

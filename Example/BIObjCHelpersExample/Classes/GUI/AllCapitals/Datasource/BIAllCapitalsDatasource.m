@@ -6,11 +6,12 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
-
 #import "BIAllCapitalsDatasource.h"
 #import "BIAllCapitalsCollectionViewCell.h"
 #import "BICapital.h"
+
+#import <MagicalRecord/MagicalRecord.h>
+
 
 @implementation BIAllCapitalsDatasource
 
