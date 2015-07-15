@@ -68,6 +68,8 @@
 		65D624701A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6246F1A63AB4700095EF0 /* BIAppStartersFactoryTestCase.m */; };
 		65D624971A63DD3100095EF0 /* BIDatasourceFetchedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D624961A63DD3100095EF0 /* BIDatasourceFetchedTableView.m */; };
 		65D6249D1A63DEB300095EF0 /* BIDatasourceFetchedTableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6249C1A63DEB300095EF0 /* BIDatasourceFetchedTableViewTestCase.m */; };
+		910FCF1C1B564B0C006DE04F /* NSDate+BIAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 910FCF1B1B564B0C006DE04F /* NSDate+BIAttributedString.m */; };
+		910FCF1F1B564C59006DE04F /* NSDateBIAttributedStringTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 910FCF1E1B564C59006DE04F /* NSDateBIAttributedStringTestCase.m */; };
 		9CBFC2787F0722703A7A167B /* libPods-BIObjCHelpersExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46CA5FA87E9AD752021D8E56 /* libPods-BIObjCHelpersExampleTests.a */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +195,9 @@
 		7F18AFB62E9ED4DFAEB9B6D8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		875251456342497C5A42EB63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0A28CA1F5D3FE5397875F9 /* Pods-BIObjCHelpersExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIObjCHelpersExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BIObjCHelpersExampleTests/Pods-BIObjCHelpersExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		910FCF1A1B564B0C006DE04F /* NSDate+BIAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+BIAttributedString.h"; path = "../Pod/Categories/NSDate/NSDate+BIAttributedString.h"; sourceTree = SOURCE_ROOT; };
+		910FCF1B1B564B0C006DE04F /* NSDate+BIAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+BIAttributedString.m"; path = "../Pod/Categories/NSDate/NSDate+BIAttributedString.m"; sourceTree = SOURCE_ROOT; };
+		910FCF1E1B564C59006DE04F /* NSDateBIAttributedStringTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDateBIAttributedStringTestCase.m; path = Categories/NSDate/NSDateBIAttributedStringTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +240,7 @@
 		43252B6A1B32BA6900E50B2B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				910FCF161B564AA8006DE04F /* NSDate */,
 				43252B7C1B32BD5500E50B2B /* NSString */,
 				43252B6B1B32BA9900E50B2B /* NSBundle */,
 			);
@@ -253,6 +259,7 @@
 		43252B781B32BCB500E50B2B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				910FCF1D1B564BDA006DE04F /* NSDate */,
 				43252B801B32BEE300E50B2B /* NSString */,
 				43252B791B32BCBC00E50B2B /* NSBundle */,
 			);
@@ -934,6 +941,23 @@
 			name = TableView;
 			sourceTree = "<group>";
 		};
+		910FCF161B564AA8006DE04F /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				910FCF1A1B564B0C006DE04F /* NSDate+BIAttributedString.h */,
+				910FCF1B1B564B0C006DE04F /* NSDate+BIAttributedString.m */,
+			);
+			name = NSDate;
+			sourceTree = "<group>";
+		};
+		910FCF1D1B564BDA006DE04F /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				910FCF1E1B564C59006DE04F /* NSDateBIAttributedStringTestCase.m */,
+			);
+			name = NSDate;
+			sourceTree = "<group>";
+		};
 		E50A54C3EC62FC868EFCC2DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1124,6 +1148,7 @@
 				43D5A93E1AF7C20700E3EB9D /* BIHandlerTableView.m in Sources */,
 				6527C98A1A6002910088D9BC /* BISerialOperationQueue.m in Sources */,
 				658AF6961A56BB8E00D48C74 /* BIAppDelegate.m in Sources */,
+				910FCF1C1B564B0C006DE04F /* NSDate+BIAttributedString.m in Sources */,
 				655C47971A659AAE001A0AAE /* BIAppStarterSetupCoreData.m in Sources */,
 				432982131B551CAC009B2FDC /* BIExampleFeedTableViewController.m in Sources */,
 				6527C9891A6002910088D9BC /* BIOperationQueue.m in Sources */,
@@ -1164,6 +1189,7 @@
 				4329821B1B5527B7009B2FDC /* BIMockDatasourceFeedTableView.m in Sources */,
 				43D5A9351AF7BEED00E3EB9D /* BILifecycleTestCase.m in Sources */,
 				43252B7B1B32BCE100E50B2B /* NSBundleBIExtraTestCase.m in Sources */,
+				910FCF1F1B564C59006DE04F /* NSDateBIAttributedStringTestCase.m in Sources */,
 				4329820E1B551669009B2FDC /* BITableViewBatchTestCase.m in Sources */,
 				655C477E1A658E86001A0AAE /* BIStartersFactoryTestCase.m in Sources */,
 				43D5A9421AF7C51100E3EB9D /* BIHandlerTableViewTestCase.m in Sources */,
