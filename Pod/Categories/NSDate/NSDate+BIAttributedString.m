@@ -111,8 +111,7 @@
 
 - (nonnull NSDateFormatter *)FM_dateFormatterWithFormat:(NSString *)format {
     NSDateFormatter *dateFormatter = [self FM_dateFormatter];
-    NSString *dateFormat = [NSString stringWithFormat:format];
-    dateFormatter.dateFormat = dateFormat;
+    dateFormatter.dateFormat = format;
     return dateFormatter;
 }
 
