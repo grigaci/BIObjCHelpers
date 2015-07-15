@@ -47,7 +47,7 @@
 }
 
 - (nonnull NSAttributedString *)calendarComponentsWithAttributes:(NSDictionary * __nonnull)attributes format:(NSString * __nonnull)format {
-    NSDateFormatter *dateFormatter = [self FM_dateFormatterWithFormat:format];
+    NSDateFormatter *dateFormatter = [self BI_dateFormatterWithFormat:format];
     NSMutableAttributedString *componentsString = [[NSMutableAttributedString alloc] initWithString:[dateFormatter stringFromDate:self] attributes:attributes];
     return componentsString;
 }
@@ -55,20 +55,20 @@
 #pragma mark - Suffixes
 
 - (nonnull NSAttributedString *)daySuffixWithAttributes:(NSDictionary * __nonnull)attributes {
-    NSAttributedString *attributedDaySuffix = [self FM_attributedString:[self FM_daySuffix] attributes:attributes];
+    NSAttributedString *attributedDaySuffix = [self BI_attributedString:[self BI_daySuffix] attributes:attributes];
     return attributedDaySuffix;
 }
 
 - (nonnull NSAttributedString *)hourSuffixWithAttributes:(NSDictionary * __nonnull)attributes {
-    NSDateFormatter *dateFormatter = [self FM_dateFormatterWithFormat:@"a"];
+    NSDateFormatter *dateFormatter = [self BI_dateFormatterWithFormat:@"a"];
     NSString *hourSuffix = [dateFormatter stringFromDate:self];
-    NSAttributedString *attributedHourSuffix = [self FM_attributedString:hourSuffix attributes:attributes];
+    NSAttributedString *attributedHourSuffix = [self BI_attributedString:hourSuffix attributes:attributes];
     return attributedHourSuffix;
 }
 
 #pragma mark - Private methods
 
-- (nonnull NSDateFormatter *)FM_dateFormatter {
+- (nonnull NSDateFormatter *)BI_dateFormatter {
     static NSDateFormatter *dateFormatter;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -80,7 +80,7 @@
     return dateFormatter;
 }
 
-- (nonnull NSString *)FM_daySuffix {
+- (nonnull NSString *)BI_daySuffix {
     NSInteger day = [[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:self] day];
     switch (day) {
         case 1:
@@ -102,15 +102,15 @@
     }
 }
 
-- (nonnull NSAttributedString *)FM_attributedString:(NSString *)string attributes:(NSDictionary *)attributes {
+- (nonnull NSAttributedString *)BI_attributedString:(NSString *)string attributes:(NSDictionary *)attributes {
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string
                                                                                          attributes:attributes];
     return attributedString;
 }
 
-- (nonnull NSDateFormatter *)FM_dateFormatterWithFormat:(NSString *)format {
-    NSDateFormatter *dateFormatter = [self FM_dateFormatter];
+- (nonnull NSDateFormatter *)BI_dateFormatterWithFormat:(NSString *)format {
+    NSDateFormatter *dateFormatter = [self BI_dateFormatter];
     dateFormatter.dateFormat = format;
     return dateFormatter;
 }
