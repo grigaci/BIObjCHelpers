@@ -11,6 +11,7 @@
 @interface NSDate (BIAttributedString)
 
 //default format : 2015, July 14th 9:31am (yyyy, MMMM d* h:mm*)
+
 - (nonnull NSAttributedString *)yearStringWithAttributes:(NSDictionary * __nonnull)attributes;
 - (nonnull NSAttributedString *)monthStringWithAttributes:(NSDictionary * __nonnull)attributes;
 - (nonnull NSAttributedString *)dayStringWithAttributes:(NSDictionary * __nonnull)attributes;
