@@ -1,5 +1,5 @@
 PODS:
-  - BIObjCHelpers (0.2.9):
+  - BIObjCHelpers (0.2.10):
     - SVPullToRefresh
   - CJALog (1.1.0)
   - CJAMacros (2.1.3)
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  BIObjCHelpers: f9710b3d08215c6d8fa9841f5e6874db6bb86f74
+  BIObjCHelpers: 3f37caa6afb9e563643518648f51e73be6b6233e
   CJALog: e91c4e468145c8e42559831d251c727680b61650
   CJAMacros: 01775e631d55f3ffc8524483e27fbdd6c9fd8a44
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
@@ -29,4 +29,4 @@ SPEC CHECKSUMS:
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-COCOAPODS: 0.38.0.beta.2
+COCOAPODS: 0.37.2

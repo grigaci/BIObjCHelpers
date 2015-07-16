@@ -7,6 +7,7 @@
 //
 
 #import "BIDatasourceBase.h"
+#import "BITableView.h"
 
 #import <UIKit/UIKit.h>
 

@@ -8,7 +8,7 @@
 
 #import "BIDatasourceFeedTableView.h"
 #import "BITableViewBatch.h"
-
+#import "BITableView.h"
 #import <SVPullToRefresh/SVPullToRefresh.h>
 
 @interface BIDatasourceFeedTableView ()
@@ -20,12 +20,18 @@
 
 @implementation BIDatasourceFeedTableView
 
+@dynamic tableView;
+
++ (nonnull instancetype)datasourceWithBITableView:(nonnull BITableView *)tableView {
+    return [self datasourceWithTableView:tableView];
+}
+
 #pragma mark - BIDatasourceBase methods
 
 - (void)load {
     [super load];
     __weak typeof(self) weakself = self;
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
+    [self.tableView setInfiniteScrollingCallback:^{
         BITableViewBatch *batch = [weakself createNextBatch];
         [weakself fetchBatch:batch];
     }];

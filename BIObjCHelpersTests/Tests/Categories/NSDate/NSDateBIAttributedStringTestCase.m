@@ -6,6 +6,7 @@
 //  Copyright © 2015 Bogdan Iusco. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "NSDate+BIAttributedString.h"
 

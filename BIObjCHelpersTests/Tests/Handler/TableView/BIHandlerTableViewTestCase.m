@@ -7,7 +7,7 @@
 //
 
 #import "BIHandlerTableView.h"
-
+#import "BITableView.h"
 #import <XCTest/XCTest.h>
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
@@ -19,7 +19,7 @@
 @interface BIHandlerTableViewTestCase : XCTestCase
 
 @property (nonatomic, strong) BIHandlerTableView *handler;
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) BITableView *tableView;
 @property (nonatomic, strong) UITableViewCell *cell;
 
 @end
@@ -30,7 +30,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.tableView = mock([UITableView class]);
+    self.tableView = mock([BITableView class]);
     self.cell = mock([UITableViewCell class]);
     self.handler = [BIHandlerTableView handlerWithTableView:self.tableView];
 

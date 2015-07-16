@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BITableView.h>
 
-@interface BIExampleFeedTableViewController : UITableViewController
+@interface BIExampleFeedTableViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet BITableView *tableView;
+
 
 @end

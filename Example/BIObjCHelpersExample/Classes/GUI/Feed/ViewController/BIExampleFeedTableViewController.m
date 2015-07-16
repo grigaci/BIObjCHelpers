@@ -1,4 +1,4 @@
-//
+    //
 //  BIExampleFeedTableViewController.m
 //  BIObjCHelpersExample
 //
@@ -24,7 +24,7 @@
 
 - (BIExampleDatasourceFeedTableView *)datasource {
     if (!_datasource) {
-        _datasource = [BIExampleDatasourceFeedTableView datasourceWithTableView:self.tableView];
+        _datasource = [BIExampleDatasourceFeedTableView datasourceWithBITableView:self.tableView];
     }
     return _datasource;
 }
