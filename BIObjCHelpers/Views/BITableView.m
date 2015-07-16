@@ -9,40 +9,6 @@
 #import "BITableView.h"
 #import "BIScrollDirection.h"
 
-@interface BITableView () <UITableViewDelegate>
-
-@end
-
-@implementation BITableView
-
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.delegate = self;
-        self.enableInfiniteScrolling = YES;
-        self.leadingScreens = .5f;
-    }
-    return self;
-}
-
-#pragma mark - Batch Fetching
-
-- (void)scrollViewWillEndDragging:(nonnull UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout nonnull CGPoint *)targetContentOffset {
-    if (!self.enableInfiniteScrolling) {
-        return;
-    }
-    [self handleFetchBatchForTargetOffset:*targetContentOffset];
-}
-
-- (void)handleFetchBatchForTargetOffset:(CGPoint)targetOffset {
-    if (BIDisplayShouldFetchBatch([self scrollDirection], self.bounds, self.contentSize, targetOffset, self.leadingScreens)) {
-        if (self.infiniteScrollingCallback) {
-            self.infiniteScrollingCallback();
-        }
-    }
-}
-
 BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
                                CGRect bounds,
                                CGSize contentSize,
@@ -79,6 +45,78 @@ BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
     CGFloat remainingDistance = contentLength - viewLength - offset;
     
     return hasSmallContent || remainingDistance <= triggerDistance;
+}
+
+@interface BITableView () <UITableViewDelegate>
+
+@property (nonatomic, strong) UIActivityIndicatorView *spinnerView;
+
+@end
+
+@implementation BITableView
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        self.delegate = self;
+        self.enableInfiniteScrolling = YES;
+        self.leadingScreens = .5f;
+    }
+    return self;
+}
+
+#pragma mark - Public methods
+
+- (void)triggerInfiniteScrolling {
+    if (self.infiniteScrollingCallback) {
+        self.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+        self.infiniteScrollingCallback();
+    }
+}
+
+#pragma mark - Batch Fetching
+
+- (void)scrollViewWillEndDragging:(nonnull UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout nonnull CGPoint *)targetContentOffset {
+    if (!self.enableInfiniteScrolling) {
+        return;
+    }
+    [self handleFetchBatchForTargetOffset:*targetContentOffset];
+}
+
+- (void)handleFetchBatchForTargetOffset:(CGPoint)targetOffset {
+    if (BIDisplayShouldFetchBatch([self scrollDirection], self.bounds, self.contentSize, targetOffset, self.leadingScreens)) {
+        if (self.infiniteScrollingCallback) {
+            self.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+            self.infiniteScrollingCallback();
+        }
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *view = self.activityIndicatorView;
+    view.hidden = !self.infiniteScrollingState;
+    return self.activityIndicatorView;
+}
+
+#pragma mark - Getters and Setters
+
+- (UIView *)activityIndicatorView {
+    if (!_activityIndicatorView) {
+        _activityIndicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 44)];
+        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [spinner startAnimating];
+        CGRect spinnerRect = spinner.frame;
+        spinnerRect.origin.x = _activityIndicatorView.center.x - spinnerRect.size.width / 2;
+        spinner.frame = spinnerRect;
+        [_activityIndicatorView addSubview:spinner];
+    }
+    return _activityIndicatorView;
+}
+
+- (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
+    _infiniteScrollingState = infiniteScrollingState;
+    self.activityIndicatorView.hidden = !infiniteScrollingState;
 }
 
 #pragma mark - Private Methods

@@ -2,15 +2,15 @@ PODS:
   - OCHamcrest (4.1.1)
   - OCMockito (1.4.0):
     - OCHamcrest (~> 4.0)
-  - SVPullToRefresh (0.4.1)
+  - UIViewShadow (1.0.0)
 
 DEPENDENCIES:
   - OCMockito (~> 1.4.0)
-  - SVPullToRefresh
+  - UIViewShadow
 
 SPEC CHECKSUMS:
   OCHamcrest: 6f03ffa81d12feab872638490a44ab0a6d3aca10
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
-  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  UIViewShadow: efdfe9a419a5e16c7f1073d7d6051e9c2251b176
 
-COCOAPODS: 0.38.0.beta.2
+COCOAPODS: 0.37.2

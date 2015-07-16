@@ -7,16 +7,16 @@
 //
 
 #import "BITableViewBatch.h"
+#import "BITableView.h"
 
 #import "BIMockDatasourceFeedTableView.h"
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import <SVPullToRefresh/SVPullToRefresh.h>
 
 @interface BIDatasourceFeedTableViewTestCase : XCTestCase
 
-@property (nonatomic, strong, nullable) UITableView *tableView;
+@property (nonatomic, strong, nullable) BITableView *tableView;
 @property (nonatomic, strong, nullable) BIMockDatasourceFeedTableView *datasource;
 
 @end
@@ -25,7 +25,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+    self.tableView = [[BITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     self.datasource = [BIMockDatasourceFeedTableView datasourceWithTableView:self.tableView];
     [self.datasource load];
 }
@@ -60,7 +60,7 @@
     };
     [self.tableView triggerInfiniteScrolling];
     XCTAssertTrue(wasCalled);
-    XCTAssertEqual(self.tableView.infiniteScrollingView.state, SVInfiniteScrollingStateLoading);
+    XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateLoading);
 }
 
 #pragma mark - Test fetchBatchCompletedWithFailure
@@ -94,7 +94,7 @@
 - (void)testFetchBatchCompletedCommon {
     [self.tableView triggerInfiniteScrolling];
     [self.datasource fetchBatchCompletedCommon];
-    XCTAssertEqual(self.tableView.infiniteScrollingView.state, SVInfiniteScrollingStateStopped);
+    XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateStopped);
     XCTAssertNil(self.datasource.currentBatch);
 }
 

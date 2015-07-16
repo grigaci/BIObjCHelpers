@@ -422,6 +422,7 @@
 		43BE6CC41B568B1F001F0A00 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				912E97D51B57D39C0029A913 /* BITableView */,
 				43BE6CC51B568B1F001F0A00 /* NSFetchedResultsController */,
 				43BE6CC81B568B1F001F0A00 /* NSString */,
 			);
@@ -618,6 +619,13 @@
 				EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		912E97D51B57D39C0029A913 /* BITableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BITableView;
 			sourceTree = "<group>";
 		};
 		914D2CAA1B578CEF009A9B4D /* Details */ = {
@@ -930,7 +938,7 @@
 		};
 		43BE6C3A1B56882B001F0A00 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 817E8A412EFC8949D37CE542 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 7DC7BA7D38B46B467A3DCB83 /* Pods-BIObjCHelpersTests.debug.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -940,7 +948,7 @@
 		};
 		43BE6C3B1B56882B001F0A00 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB1D306E32DEEA06A1B3FEA0 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 817E8A412EFC8949D37CE542 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

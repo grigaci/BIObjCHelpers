@@ -17,11 +17,6 @@
     "ios": "7.0"
   },
   "requires_arc": true,
-  "dependencies": {
-    "SVPullToRefresh": [
-
-    ]
-  },
   "source_files": [
     "BIObjCHelpers/**/*.{h,m}",
     "BIObjCHelpers/**/**/*.{h,m}"

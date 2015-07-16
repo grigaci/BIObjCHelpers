@@ -9,7 +9,6 @@
 #import "BIDatasourceFeedTableView.h"
 #import "BITableViewBatch.h"
 #import "BITableView.h"
-#import <SVPullToRefresh/SVPullToRefresh.h>
 
 @interface BIDatasourceFeedTableView ()
 
@@ -79,7 +78,8 @@
 
 - (void)fetchBatchCompletedCommon {
     self.currentBatch = nil;
-    [self.tableView.infiniteScrollingView stopAnimating];
+    self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+//    [self.tableView.infiniteScrollingView stopAnimating];
 }
 
 @end
