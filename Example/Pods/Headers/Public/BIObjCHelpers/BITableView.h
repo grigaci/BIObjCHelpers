@@ -1,1 +1,1 @@
-../../../../../BIObjCHelpers/Views/BITableView.h
+../../../../../BIObjCHelpers/Views/TableView/BITableView.h

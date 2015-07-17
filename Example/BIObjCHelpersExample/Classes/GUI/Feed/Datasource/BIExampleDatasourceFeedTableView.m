@@ -34,6 +34,12 @@
 }
 
 - (void)fetchBatch:(nonnull BITableViewBatch *)batch {
+    if (self.countItems > 30) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            batch.completionBlock(nil, @[]);
+        });
+        return;
+    }
     [super fetchBatch:batch];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSUInteger sectionIndex = batch.sectionIndex;

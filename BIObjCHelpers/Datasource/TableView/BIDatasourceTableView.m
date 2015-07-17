@@ -55,7 +55,7 @@
 
 - (Class)cellClass {
     if (!_cellClass) {
-        _cellClass = [UITableViewCell class];
+        _cellClass = [self.tableView isKindOfClass:[BITableView class]] ? [BITableViewCell class] : [UITableViewCell class];
     }
     return _cellClass;
 }
@@ -72,7 +72,6 @@
         cell = [[self.cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.cellIdentifier];
     }
     [self configureCell: cell atIndexPath: indexPath];
-    
     return cell;
 }
 

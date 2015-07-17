@@ -20,5 +20,6 @@
   "source_files": [
     "BIObjCHelpers/**/*.{h,m}",
     "BIObjCHelpers/**/**/*.{h,m}"
-  ]
+  ],
+  "resources": "BIObjcHelpers/**/*.xib"
 }

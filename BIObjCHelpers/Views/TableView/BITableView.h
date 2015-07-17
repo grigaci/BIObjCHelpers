@@ -7,7 +7,7 @@
 //
 
 #import "BIScrollDirection.h"
-
+#import "BITableViewCell.h"
 #import <UIKit/UIKit.h>
 
 /*!
@@ -37,6 +37,8 @@ extern BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
                                       CGSize contentSize,
                                       CGPoint targetOffset,
                                       CGFloat leadingScreens);
+
+extern const CGFloat kBILeadingScreens;
 
 @interface BITableView : UITableView
 

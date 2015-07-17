@@ -8,6 +8,8 @@
 
 #import "BITableView.h"
 #import "BIScrollDirection.h"
+#import "UIView+LoadXib.h"
+#import "LoadMoreView.h"
 
 BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
                                CGRect bounds,
@@ -47,6 +49,8 @@ BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
     return hasSmallContent || remainingDistance <= triggerDistance;
 }
 
+const CGFloat kBILeadingScreens = .5f;
+
 @interface BITableView () <UITableViewDelegate>
 
 @property (nonatomic, strong) UIActivityIndicatorView *spinnerView;
@@ -55,13 +59,16 @@ BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
 
 @implementation BITableView
 
+#pragma mark - Lifecycle methods
+
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
     if (self) {
         self.delegate = self;
         self.enableInfiniteScrolling = YES;
-        self.leadingScreens = .5f;
+        self.leadingScreens = kBILeadingScreens;
+//        self.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return self;
 }
@@ -93,30 +100,32 @@ BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *view = self.activityIndicatorView;
-    view.hidden = !self.infiniteScrollingState;
-    return self.activityIndicatorView;
-}
-
 #pragma mark - Getters and Setters
 
 - (UIView *)activityIndicatorView {
     if (!_activityIndicatorView) {
-        _activityIndicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 44)];
-        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        [spinner startAnimating];
-        CGRect spinnerRect = spinner.frame;
-        spinnerRect.origin.x = _activityIndicatorView.center.x - spinnerRect.size.width / 2;
-        spinner.frame = spinnerRect;
-        [_activityIndicatorView addSubview:spinner];
+        _activityIndicatorView = [LoadMoreView viewFromXib];
     }
     return _activityIndicatorView;
 }
 
+
 - (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
     _infiniteScrollingState = infiniteScrollingState;
-    self.activityIndicatorView.hidden = !infiniteScrollingState;
+    self.activityIndicatorView.hidden = infiniteScrollingState == BIInfiniteScrollingStateStopped;
+    if (_infiniteScrollingState == BIInfiniteScrollingStateLoading) {
+        if (!self.activityIndicatorView.superview) {
+            self.tableFooterView = self.activityIndicatorView;
+            CGRect frame = self.tableFooterView.frame;
+            frame.origin.y += 10;
+            self.tableFooterView.frame = frame;
+        }
+    } else {
+        if (self.activityIndicatorView.superview) {
+            [self.activityIndicatorView removeFromSuperview];
+            self.tableFooterView = nil;
+        }
+    }
 }
 
 #pragma mark - Private Methods
