@@ -1,6 +1,6 @@
 language: objective-c
 xcode_workspace: BIObjCHelpers.xcworkspace
-osx_image: beta-xcode6.3
+osx_image: beta-xcode6.4
 
 before_install:
   - brew update
@@ -8,7 +8,7 @@ before_install:
   - sudo easy_install cpp-coveralls
 
 script:
-  - xctool test -workspace BIObjCHelpers.xcworkspace -scheme BIObjCHelpers -sdk iphonesimulator8.3 -destination "platform=iOS Simulator,name=iPhone 6,OS=8.3"
+  - xctool test -workspace BIObjCHelpers.xcworkspace -scheme BIObjCHelpers -sdk iphonesimulator8.4 -destination "platform=iOS Simulator,name=iPhone 6,OS=8.4"
 
 after_success: 
-  ./coveralls.rb --exclude-folder ./BIObjCHelpersTests --exclude-folder ./Pods
+  ./coveralls.rb --exclude-folder ./Example --exclude-folder ./Pods
