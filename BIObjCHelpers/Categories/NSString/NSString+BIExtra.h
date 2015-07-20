@@ -13,4 +13,6 @@
 + (nonnull instancetype)randomString;
 + (nonnull instancetype)randomStringOfLength:(NSUInteger)length;
 
+- (BOOL)isValidEmail;
+
 @end
