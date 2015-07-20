@@ -22,7 +22,7 @@ Use Xcode 6.3 or above for building the projects.
 
 ## Categories
 * __NSBundle+BIExtra__ - NSBundle category for getting the full path of a file
-* __NSString+BIExtra__ - NSString category for random string generation
+* __NSString+BIExtra__ - NSString category for random string generation and email validation.
 * __NSDate+BIAttributedString__ - NSDate category for getting attributed string date components
 
 ## Starters
