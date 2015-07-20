@@ -8,7 +8,7 @@
 
 #import "BIDatasourceFeedTableView.h"
 #import "BITableViewBatch.h"
-#import "BITableView.h"
+#import "BITableViewCell.h"
 
 @interface BIDatasourceFeedTableView ()
 
@@ -20,6 +20,7 @@
 @implementation BIDatasourceFeedTableView
 
 @dynamic tableView;
+@synthesize cellClass = _cellClass;
 
 + (nonnull instancetype)datasourceWithBITableView:(nonnull BITableView *)tableView {
     return [self datasourceWithTableView:tableView];
@@ -34,6 +35,14 @@
         BITableViewBatch *batch = [weakself createNextBatch];
         [weakself fetchBatch:batch];
     }];
+}
+
+// Overriden getter
+- (Class)cellClass {
+    if (!_cellClass) {
+        _cellClass = [BITableViewCell class];
+    }
+    return _cellClass;
 }
 
 #pragma mark - Public methods
@@ -79,7 +88,6 @@
 - (void)fetchBatchCompletedCommon {
     self.currentBatch = nil;
     self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
-//    [self.tableView.infiniteScrollingView stopAnimating];
 }
 
 @end

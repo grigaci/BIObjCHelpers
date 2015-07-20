@@ -43,12 +43,12 @@
 		43BE6D031B568ECB001F0A00 /* BISerialOperationQueueTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF11B568ECB001F0A00 /* BISerialOperationQueueTestCase.m */; };
 		43BE6D041B568ECB001F0A00 /* BIStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF31B568ECB001F0A00 /* BIStartersFactoryTestCase.m */; };
 		43BE6D051B568ECB001F0A00 /* BIMockStarter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF61B568ECB001F0A00 /* BIMockStarter.m */; };
+		43DA58F11B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA58F01B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m */; };
 		830DAE5A3DE83DBED5554583 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5728F3176E11CCA0B30BB593 /* libPods.a */; };
 		914D2CB51B57BB41009A9B4D /* BIBatchFetchingTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 914D2CB41B57BB41009A9B4D /* BIBatchFetchingTestCase.m */; };
 		91E517F21B59208F000B51AF /* BITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E517F11B59208F000B51AF /* BITableViewCell.m */; };
-		91E59B841B5840C50034824F /* LoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B821B5840C50034824F /* LoadMoreView.m */; };
 		91E59B871B5840CD0034824F /* BITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B861B5840CD0034824F /* BITableView.m */; };
-		91E59B8B1B58411B0034824F /* UIView+LoadXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B8A1B58411B0034824F /* UIView+LoadXib.m */; };
+		91E59B8B1B58411B0034824F /* UIView+BILoadXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */; };
 		E59E667E65313C7B4DAF4C43 /* libPods-BIObjCHelpersTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +137,8 @@
 		43BE6CF31B568ECB001F0A00 /* BIStartersFactoryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIStartersFactoryTestCase.m; sourceTree = "<group>"; };
 		43BE6CF51B568ECB001F0A00 /* BIMockStarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIMockStarter.h; sourceTree = "<group>"; };
 		43BE6CF61B568ECB001F0A00 /* BIMockStarter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIMockStarter.m; sourceTree = "<group>"; };
+		43DA58EF1B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIActivityIndicatorContainerView.h; path = Views/ActivityIndicator/BIActivityIndicatorContainerView.h; sourceTree = "<group>"; };
+		43DA58F01B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIActivityIndicatorContainerView.m; path = Views/ActivityIndicator/BIActivityIndicatorContainerView.m; sourceTree = "<group>"; };
 		5728F3176E11CCA0B30BB593 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC7BA7D38B46B467A3DCB83 /* Pods-BIObjCHelpersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIObjCHelpersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIObjCHelpersTests/Pods-BIObjCHelpersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		817E8A412EFC8949D37CE542 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,13 +146,10 @@
 		914D2CB41B57BB41009A9B4D /* BIBatchFetchingTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIBatchFetchingTestCase.m; sourceTree = "<group>"; };
 		91E517F01B59208F000B51AF /* BITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BITableViewCell.h; path = Views/TableView/Cell/BITableViewCell.h; sourceTree = "<group>"; };
 		91E517F11B59208F000B51AF /* BITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewCell.m; path = Views/TableView/Cell/BITableViewCell.m; sourceTree = "<group>"; };
-		91E59B811B5840C50034824F /* LoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadMoreView.h; path = "Views/TableView/Load More View/LoadMoreView.h"; sourceTree = "<group>"; };
-		91E59B821B5840C50034824F /* LoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadMoreView.m; path = "Views/TableView/Load More View/LoadMoreView.m"; sourceTree = "<group>"; };
-		91E59B831B5840C50034824F /* LoadMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadMoreView.xib; path = "Views/TableView/Load More View/LoadMoreView.xib"; sourceTree = "<group>"; };
 		91E59B851B5840CD0034824F /* BITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BITableView.h; path = Views/TableView/BITableView.h; sourceTree = "<group>"; };
 		91E59B861B5840CD0034824F /* BITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableView.m; path = Views/TableView/BITableView.m; sourceTree = "<group>"; };
-		91E59B891B58411B0034824F /* UIView+LoadXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+LoadXib.h"; path = "UIView/UIView+LoadXib.h"; sourceTree = "<group>"; };
-		91E59B8A1B58411B0034824F /* UIView+LoadXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+LoadXib.m"; path = "UIView/UIView+LoadXib.m"; sourceTree = "<group>"; };
+		91E59B891B58411B0034824F /* UIView+BILoadXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+BILoadXib.h"; path = "UIView/UIView+BILoadXib.h"; sourceTree = "<group>"; };
+		91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+BILoadXib.m"; path = "UIView/UIView+BILoadXib.m"; sourceTree = "<group>"; };
 		B17EECE85027D221447B728D /* Pods-BIObjCHelpersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIObjCHelpersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BIObjCHelpersTests/Pods-BIObjCHelpersTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB1D306E32DEEA06A1B3FEA0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BIObjCHelpersTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -623,6 +622,15 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		43DA58F21B5D1CAB00ECAAC0 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				43DA58EF1B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.h */,
+				43DA58F01B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m */,
+			);
+			name = ActivityIndicator;
+			sourceTree = "<group>";
+		};
 		85B299E0DE6CE916B3F10556 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,6 +658,7 @@
 		914D2CAF1B5792CD009A9B4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43DA58F21B5D1CAB00ECAAC0 /* ActivityIndicator */,
 				91E59B7F1B5840970034824F /* TableView */,
 			);
 			name = Views;
@@ -670,26 +679,15 @@
 				91E517EB1B58F938000B51AF /* Cell */,
 				91E59B851B5840CD0034824F /* BITableView.h */,
 				91E59B861B5840CD0034824F /* BITableView.m */,
-				91E59B801B5840A20034824F /* LoadMoreView */,
 			);
 			name = TableView;
-			sourceTree = "<group>";
-		};
-		91E59B801B5840A20034824F /* LoadMoreView */ = {
-			isa = PBXGroup;
-			children = (
-				91E59B811B5840C50034824F /* LoadMoreView.h */,
-				91E59B821B5840C50034824F /* LoadMoreView.m */,
-				91E59B831B5840C50034824F /* LoadMoreView.xib */,
-			);
-			name = LoadMoreView;
 			sourceTree = "<group>";
 		};
 		91E59B881B5840D40034824F /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				91E59B891B58411B0034824F /* UIView+LoadXib.h */,
-				91E59B8A1B58411B0034824F /* UIView+LoadXib.m */,
+				91E59B891B58411B0034824F /* UIView+BILoadXib.h */,
+				91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -851,9 +849,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BE6C771B5689CA001F0A00 /* BIDatasourceCollectionView.m in Sources */,
-				91E59B841B5840C50034824F /* LoadMoreView.m in Sources */,
 				43BE6C741B5689CA001F0A00 /* NSDate+BIAttributedString.m in Sources */,
-				91E59B8B1B58411B0034824F /* UIView+LoadXib.m in Sources */,
+				91E59B8B1B58411B0034824F /* UIView+BILoadXib.m in Sources */,
 				43BE6C731B5689CA001F0A00 /* NSBundle+BIExtra.m in Sources */,
 				43BE6C7B1B5689CA001F0A00 /* BIDatasourceTableView.m in Sources */,
 				43BE6C801B5689CA001F0A00 /* BISerialOperationQueue.m in Sources */,
@@ -863,6 +860,7 @@
 				91E517F21B59208F000B51AF /* BITableViewCell.m in Sources */,
 				43BE6C721B5689CA001F0A00 /* BITableViewBatch.m in Sources */,
 				43BE6C811B5689CA001F0A00 /* BIStartersFactory.m in Sources */,
+				43DA58F11B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m in Sources */,
 				43BE6C761B5689CA001F0A00 /* BIDatasourceBase.m in Sources */,
 				43BE6C7C1B5689CA001F0A00 /* BIHandlerBase.m in Sources */,
 				43BE6C781B5689CA001F0A00 /* BIDatasourceFetchedCollectionView.m in Sources */,

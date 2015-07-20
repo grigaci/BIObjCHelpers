@@ -98,4 +98,11 @@
     XCTAssertNil(self.datasource.currentBatch);
 }
 
+#pragma mark - Test load
+
+- (void)testLoad {
+    XCTAssertEqualObjects(self.datasource.cellClass, [BITableViewCell class]);
+    XCTAssert(self.datasource.cellIdentifier.length);
+}
+
 @end

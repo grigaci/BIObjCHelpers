@@ -40,12 +40,14 @@ extern BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
 
 extern const CGFloat kBILeadingScreens;
 
+@class BIActivityIndicatorContainerView;
+
 @interface BITableView : UITableView
 
 /*!
  @callback infiniteScrollingCallback Used to notify dataSource to fetch the next batch
  */
-@property (nonatomic, copy) void (^infiniteScrollingCallback)();
+@property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)();
 
 /*!
  @field enableInfiniteScrolling specifies whether the scrolling of the tableView is infinite or not
@@ -61,10 +63,10 @@ extern const CGFloat kBILeadingScreens;
 @property (nonatomic, assign) CGFloat leadingScreens;
 
 /*!
- @field activityIndicatorView Activity indicator that is displayed on the tableView footer while a new batch is fetched
- @discussion Override it for further customization
+ @field activityIndicatorContainer Activity indicator that is displayed on the tableView footer while a new batch is fetched
+ @discussion Used as table footer view. Override it for further customization
  */
-@property (nonatomic, strong) UIView *activityIndicatorView;
+@property (nonatomic, strong, nonnull, readonly) BIActivityIndicatorContainerView *activityIndicatorContainer;
 
 @property (nonatomic, assign) BIInfiniteScrollingState infiniteScrollingState;
 

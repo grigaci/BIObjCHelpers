@@ -11,4 +11,4 @@ script:
   - xctool test -workspace BIObjCHelpers.xcworkspace -scheme BIObjCHelpers -sdk iphonesimulator8.3 -destination "platform=iOS Simulator,name=iPhone 6,OS=8.3"
 
 after_success: 
-  ./coveralls.rb --exclude-folder ./BIObjCHelpersTests --exclude-folder ./Pods
+  ./coveralls.rb --exclude-folder ./Example --exclude-folder ./Pods

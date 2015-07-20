@@ -55,7 +55,7 @@
 
 - (Class)cellClass {
     if (!_cellClass) {
-        _cellClass = [self.tableView isKindOfClass:[BITableView class]] ? [BITableViewCell class] : [UITableViewCell class];
+        _cellClass = [UITableViewCell class];
     }
     return _cellClass;
 }

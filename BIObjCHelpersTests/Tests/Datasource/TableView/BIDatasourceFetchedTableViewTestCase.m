@@ -177,7 +177,7 @@
 #pragma mark - Property
 
 - (void)testDefaultPropertyValues {
-    XCTAssertEqual(self.datasource.cellClass, [UITableViewCell class]);
+    XCTAssertEqualObjects(self.datasource.cellClass, [UITableViewCell class]);
     XCTAssert(self.datasource.cellIdentifier.length);
 }
 

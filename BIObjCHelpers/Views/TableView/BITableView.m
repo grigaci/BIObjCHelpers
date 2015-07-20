@@ -8,8 +8,7 @@
 
 #import "BITableView.h"
 #import "BIScrollDirection.h"
-#import "UIView+LoadXib.h"
-#import "LoadMoreView.h"
+#import "BIActivityIndicatorContainerView.h"
 
 BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
                                CGRect bounds,
@@ -53,7 +52,7 @@ const CGFloat kBILeadingScreens = .5f;
 
 @interface BITableView () <UITableViewDelegate>
 
-@property (nonatomic, strong) UIActivityIndicatorView *spinnerView;
+@property (nonatomic, strong, nonnull, readwrite) BIActivityIndicatorContainerView *activityIndicatorContainer;
 
 @end
 
@@ -68,7 +67,7 @@ const CGFloat kBILeadingScreens = .5f;
         self.delegate = self;
         self.enableInfiniteScrolling = YES;
         self.leadingScreens = kBILeadingScreens;
-//        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return self;
 }
@@ -102,28 +101,26 @@ const CGFloat kBILeadingScreens = .5f;
 
 #pragma mark - Getters and Setters
 
-- (UIView *)activityIndicatorView {
-    if (!_activityIndicatorView) {
-        _activityIndicatorView = [LoadMoreView viewFromXib];
+- (BIActivityIndicatorContainerView *)activityIndicatorContainer {
+    if (!_activityIndicatorContainer) {
+        CGRect frame = CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), 44.f);
+        _activityIndicatorContainer = [[BIActivityIndicatorContainerView alloc] initWithFrame:frame];
     }
-    return _activityIndicatorView;
+    return _activityIndicatorContainer;
 }
 
 
 - (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
     _infiniteScrollingState = infiniteScrollingState;
-    self.activityIndicatorView.hidden = infiniteScrollingState == BIInfiniteScrollingStateStopped;
+    self.activityIndicatorContainer.hidden = infiniteScrollingState == BIInfiniteScrollingStateStopped;
     if (_infiniteScrollingState == BIInfiniteScrollingStateLoading) {
-        if (!self.activityIndicatorView.superview) {
-            self.tableFooterView = self.activityIndicatorView;
-            CGRect frame = self.tableFooterView.frame;
-            frame.origin.y += 10;
-            self.tableFooterView.frame = frame;
+        if (!self.activityIndicatorContainer.superview) {
+            self.tableFooterView = self.activityIndicatorContainer;
         }
+        self.activityIndicatorContainer.hidden = NO;
     } else {
-        if (self.activityIndicatorView.superview) {
-            [self.activityIndicatorView removeFromSuperview];
-            self.tableFooterView = nil;
+        if (self.activityIndicatorContainer.superview) {
+            self.activityIndicatorContainer.hidden = YES;
         }
     }
 }
