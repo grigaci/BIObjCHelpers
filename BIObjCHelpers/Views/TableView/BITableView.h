@@ -39,6 +39,7 @@ extern BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
                                       CGFloat leadingScreens);
 
 extern const CGFloat kBILeadingScreens;
+extern const CGFloat kBITableFooterViewAnimationDuration;
 
 @class BIActivityIndicatorContainerView;
 

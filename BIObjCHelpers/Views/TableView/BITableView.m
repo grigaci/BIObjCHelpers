@@ -50,6 +50,7 @@ BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
 }
 
 const CGFloat kBILeadingScreens = .5f;
+const CGFloat kBITableFooterViewAnimationDuration = .25f;
 
 @interface BITableView () <UITableViewDelegate>
 
@@ -99,6 +100,12 @@ const CGFloat kBILeadingScreens = .5f;
     return validDelegate;
 }
 
+- (void)setTableFooterView:(UIView *)tableFooterView {
+    [UIView animateWithDuration:kBITableFooterViewAnimationDuration animations:^{
+        [super setTableFooterView:tableFooterView];
+    }];
+}
+
 #pragma mark - Public methods
 
 - (void)triggerInfiniteScrolling {
@@ -144,17 +151,12 @@ const CGFloat kBILeadingScreens = .5f;
 
 - (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
     _infiniteScrollingState = infiniteScrollingState;
-    self.activityIndicatorContainer.hidden = infiniteScrollingState == BIInfiniteScrollingStateStopped;
-    if (_infiniteScrollingState == BIInfiniteScrollingStateLoading) {
-        if (!self.activityIndicatorContainer.superview) {
-            self.tableFooterView = self.activityIndicatorContainer;
-        }
-        self.activityIndicatorContainer.hidden = NO;
-    } else {
-        if (self.activityIndicatorContainer.superview) {
-            self.activityIndicatorContainer.hidden = YES;
-        }
+    UIView *newFooterView = nil;
+    if (_infiniteScrollingState == BIInfiniteScrollingStateLoading &&
+        !self.activityIndicatorContainer.superview ) {
+            newFooterView = self.activityIndicatorContainer;
     }
+    self.tableFooterView = newFooterView;
 }
 
 #pragma mark - Private Methods
