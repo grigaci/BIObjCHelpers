@@ -20,7 +20,7 @@
 @interface BIDatasourceFetchedTableViewTestCase : BITestCaseCoreData
 
 @property (nonatomic, strong) BIDatasourceFetchedTableView *datasource;
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) BITableView *tableView;
 
 @end
 
@@ -28,7 +28,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero];
+    self.tableView = [[BITableView alloc] initWithFrame:CGRectZero];
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
 }
 
@@ -177,7 +177,7 @@
 #pragma mark - Property
 
 - (void)testDefaultPropertyValues {
-    XCTAssertEqual(self.datasource.cellClass, [UITableViewCell class]);
+    XCTAssertEqualObjects(self.datasource.cellClass, [UITableViewCell class]);
     XCTAssert(self.datasource.cellIdentifier.length);
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435D59C01B622E8A00ECA859 /* BIMockHandlerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */; };
 		43BE6C311B56882B001F0A00 /* libBIObjCHelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE6C251B56882B001F0A00 /* libBIObjCHelpers.a */; };
 		43BE6C721B5689CA001F0A00 /* BITableViewBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6C421B5689C9001F0A00 /* BITableViewBatch.m */; };
 		43BE6C731B5689CA001F0A00 /* NSBundle+BIExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6C461B5689C9001F0A00 /* NSBundle+BIExtra.m */; };
@@ -43,7 +44,14 @@
 		43BE6D031B568ECB001F0A00 /* BISerialOperationQueueTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF11B568ECB001F0A00 /* BISerialOperationQueueTestCase.m */; };
 		43BE6D041B568ECB001F0A00 /* BIStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF31B568ECB001F0A00 /* BIStartersFactoryTestCase.m */; };
 		43BE6D051B568ECB001F0A00 /* BIMockStarter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF61B568ECB001F0A00 /* BIMockStarter.m */; };
+		43DA58F11B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA58F01B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m */; };
+		43DA59481B6209EF00ECAAC0 /* _BITableViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA59471B6209EF00ECAAC0 /* _BITableViewProxy.m */; };
+		43DA594C1B6217F400ECAAC0 /* BITableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */; };
 		830DAE5A3DE83DBED5554583 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5728F3176E11CCA0B30BB593 /* libPods.a */; };
+		914D2CB51B57BB41009A9B4D /* BIBatchFetchingTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 914D2CB41B57BB41009A9B4D /* BIBatchFetchingTestCase.m */; };
+		91E517F21B59208F000B51AF /* BITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E517F11B59208F000B51AF /* BITableViewCell.m */; };
+		91E59B871B5840CD0034824F /* BITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B861B5840CD0034824F /* BITableView.m */; };
+		91E59B8B1B58411B0034824F /* UIView+BILoadXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */; };
 		E59E667E65313C7B4DAF4C43 /* libPods-BIObjCHelpersTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		435D59BE1B622E8A00ECA859 /* BIMockHandlerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIMockHandlerTableView.h; path = BIHandlerTableView/BIMockHandlerTableView.h; sourceTree = "<group>"; };
+		435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIMockHandlerTableView.m; path = BIHandlerTableView/BIMockHandlerTableView.m; sourceTree = "<group>"; };
 		43BE6C251B56882B001F0A00 /* libBIObjCHelpers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBIObjCHelpers.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BE6C301B56882B001F0A00 /* BIObjCHelpersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BE6C361B56882B001F0A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
@@ -132,9 +142,22 @@
 		43BE6CF31B568ECB001F0A00 /* BIStartersFactoryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIStartersFactoryTestCase.m; sourceTree = "<group>"; };
 		43BE6CF51B568ECB001F0A00 /* BIMockStarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIMockStarter.h; sourceTree = "<group>"; };
 		43BE6CF61B568ECB001F0A00 /* BIMockStarter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIMockStarter.m; sourceTree = "<group>"; };
+		43DA58EF1B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIActivityIndicatorContainerView.h; path = Views/ActivityIndicator/BIActivityIndicatorContainerView.h; sourceTree = "<group>"; };
+		43DA58F01B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIActivityIndicatorContainerView.m; path = Views/ActivityIndicator/BIActivityIndicatorContainerView.m; sourceTree = "<group>"; };
+		43DA59461B6209EF00ECAAC0 /* _BITableViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _BITableViewProxy.h; path = Views/TableView/_BITableViewProxy.h; sourceTree = "<group>"; };
+		43DA59471B6209EF00ECAAC0 /* _BITableViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _BITableViewProxy.m; path = Views/TableView/_BITableViewProxy.m; sourceTree = "<group>"; };
+		43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewTestCase.m; path = Views/TableView/BITableViewTestCase.m; sourceTree = "<group>"; };
 		5728F3176E11CCA0B30BB593 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC7BA7D38B46B467A3DCB83 /* Pods-BIObjCHelpersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIObjCHelpersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIObjCHelpersTests/Pods-BIObjCHelpersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		817E8A412EFC8949D37CE542 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		914D2CB31B57BA55009A9B4D /* BIScrollDirection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BIScrollDirection.h; path = Details/BIScrollDirection.h; sourceTree = "<group>"; };
+		914D2CB41B57BB41009A9B4D /* BIBatchFetchingTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIBatchFetchingTestCase.m; sourceTree = "<group>"; };
+		91E517F01B59208F000B51AF /* BITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BITableViewCell.h; path = Views/TableView/Cell/BITableViewCell.h; sourceTree = "<group>"; };
+		91E517F11B59208F000B51AF /* BITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewCell.m; path = Views/TableView/Cell/BITableViewCell.m; sourceTree = "<group>"; };
+		91E59B851B5840CD0034824F /* BITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BITableView.h; path = Views/TableView/BITableView.h; sourceTree = "<group>"; };
+		91E59B861B5840CD0034824F /* BITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableView.m; path = Views/TableView/BITableView.m; sourceTree = "<group>"; };
+		91E59B891B58411B0034824F /* UIView+BILoadXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+BILoadXib.h"; path = "UIView/UIView+BILoadXib.h"; sourceTree = "<group>"; };
+		91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+BILoadXib.m"; path = "UIView/UIView+BILoadXib.m"; sourceTree = "<group>"; };
 		B17EECE85027D221447B728D /* Pods-BIObjCHelpersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIObjCHelpersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BIObjCHelpersTests/Pods-BIObjCHelpersTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB1D306E32DEEA06A1B3FEA0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BIObjCHelpersTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +195,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		435D59BD1B622E6C00ECA859 /* BIHandlerTableView */ = {
+			isa = PBXGroup;
+			children = (
+				435D59BE1B622E8A00ECA859 /* BIMockHandlerTableView.h */,
+				435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */,
+			);
+			name = BIHandlerTableView;
+			sourceTree = "<group>";
+		};
 		43BE6C1C1B56882B001F0A00 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +227,8 @@
 		43BE6C271B56882B001F0A00 /* BIObjCHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				914D2CAF1B5792CD009A9B4D /* Views */,
+				914D2CAA1B578CEF009A9B4D /* Details */,
 				43BE6C3F1B5689C9001F0A00 /* Batch */,
 				43BE6C431B5689C9001F0A00 /* Categories */,
 				43BE6C4D1B5689CA001F0A00 /* Datasource */,
@@ -246,6 +280,7 @@
 		43BE6C431B5689C9001F0A00 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				91E59B881B5840D40034824F /* UIView */,
 				43BE6C441B5689C9001F0A00 /* NSBundle */,
 				43BE6C471B5689C9001F0A00 /* NSDate */,
 				43BE6C4A1B5689CA001F0A00 /* NSString */,
@@ -391,6 +426,7 @@
 		43BE6C821B568A52001F0A00 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				43DA59491B6217A900ECAAC0 /* Views */,
 				43BE6CD51B568ECB001F0A00 /* Batch */,
 				43BE6CD81B568ECB001F0A00 /* Categories */,
 				43BE6CDF1B568ECB001F0A00 /* Datasource */,
@@ -414,6 +450,7 @@
 		43BE6CC41B568B1F001F0A00 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				435D59BD1B622E6C00ECA859 /* BIHandlerTableView */,
 				43BE6CC51B568B1F001F0A00 /* NSFetchedResultsController */,
 				43BE6CC81B568B1F001F0A00 /* NSString */,
 			);
@@ -467,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				43BE6CD61B568ECB001F0A00 /* TableView */,
+				914D2CB41B57BB41009A9B4D /* BIBatchFetchingTestCase.m */,
 			);
 			path = Batch;
 			sourceTree = "<group>";
@@ -602,6 +640,31 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		43DA58F21B5D1CAB00ECAAC0 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				43DA58EF1B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.h */,
+				43DA58F01B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m */,
+			);
+			name = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		43DA59491B6217A900ECAAC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43DA594A1B6217B200ECAAC0 /* TableView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		43DA594A1B6217B200ECAAC0 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
 		85B299E0DE6CE916B3F10556 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +672,53 @@
 				EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		914D2CAA1B578CEF009A9B4D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				914D2CB31B57BA55009A9B4D /* BIScrollDirection.h */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		914D2CAF1B5792CD009A9B4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43DA58F21B5D1CAB00ECAAC0 /* ActivityIndicator */,
+				91E59B7F1B5840970034824F /* TableView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		91E517EB1B58F938000B51AF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				91E517F01B59208F000B51AF /* BITableViewCell.h */,
+				91E517F11B59208F000B51AF /* BITableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		91E59B7F1B5840970034824F /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				91E517EB1B58F938000B51AF /* Cell */,
+				91E59B851B5840CD0034824F /* BITableView.h */,
+				91E59B861B5840CD0034824F /* BITableView.m */,
+				43DA59461B6209EF00ECAAC0 /* _BITableViewProxy.h */,
+				43DA59471B6209EF00ECAAC0 /* _BITableViewProxy.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		91E59B881B5840D40034824F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				91E59B891B58411B0034824F /* UIView+BILoadXib.h */,
+				91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */,
+			);
+			name = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -769,20 +879,25 @@
 			files = (
 				43BE6C771B5689CA001F0A00 /* BIDatasourceCollectionView.m in Sources */,
 				43BE6C741B5689CA001F0A00 /* NSDate+BIAttributedString.m in Sources */,
+				91E59B8B1B58411B0034824F /* UIView+BILoadXib.m in Sources */,
 				43BE6C731B5689CA001F0A00 /* NSBundle+BIExtra.m in Sources */,
 				43BE6C7B1B5689CA001F0A00 /* BIDatasourceTableView.m in Sources */,
 				43BE6C801B5689CA001F0A00 /* BISerialOperationQueue.m in Sources */,
 				43BE6C7E1B5689CA001F0A00 /* BILifecycle.m in Sources */,
 				43BE6C7A1B5689CA001F0A00 /* BIDatasourceFetchedTableView.m in Sources */,
 				43BE6C791B5689CA001F0A00 /* BIDatasourceFeedTableView.m in Sources */,
+				91E517F21B59208F000B51AF /* BITableViewCell.m in Sources */,
 				43BE6C721B5689CA001F0A00 /* BITableViewBatch.m in Sources */,
 				43BE6C811B5689CA001F0A00 /* BIStartersFactory.m in Sources */,
+				43DA58F11B5D1CA900ECAAC0 /* BIActivityIndicatorContainerView.m in Sources */,
 				43BE6C761B5689CA001F0A00 /* BIDatasourceBase.m in Sources */,
 				43BE6C7C1B5689CA001F0A00 /* BIHandlerBase.m in Sources */,
 				43BE6C781B5689CA001F0A00 /* BIDatasourceFetchedCollectionView.m in Sources */,
 				43BE6C751B5689CA001F0A00 /* NSString+BIExtra.m in Sources */,
 				43BE6C7F1B5689CA001F0A00 /* BIOperationQueue.m in Sources */,
+				91E59B871B5840CD0034824F /* BITableView.m in Sources */,
 				43BE6C7D1B5689CA001F0A00 /* BIHandlerTableView.m in Sources */,
+				43DA59481B6209EF00ECAAC0 /* _BITableViewProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,7 +914,10 @@
 				43BE6D051B568ECB001F0A00 /* BIMockStarter.m in Sources */,
 				43BE6D001B568ECB001F0A00 /* BIHandlerTableViewTestCase.m in Sources */,
 				43BE6CD01B568B1F001F0A00 /* BITestCaseCoreData.m in Sources */,
+				914D2CB51B57BB41009A9B4D /* BIBatchFetchingTestCase.m in Sources */,
+				43DA594C1B6217F400ECAAC0 /* BITableViewTestCase.m in Sources */,
 				43BE6D011B568ECB001F0A00 /* BILifecycleTestCase.m in Sources */,
+				435D59C01B622E8A00ECA859 /* BIMockHandlerTableView.m in Sources */,
 				43BE6D021B568ECB001F0A00 /* BIOperationQueueTestCase.m in Sources */,
 				43BE6CF71B568ECB001F0A00 /* BITableViewBatchTestCase.m in Sources */,
 				43BE6CFE1B568ECB001F0A00 /* BIDatasourceFetchedTableViewTestCase.m in Sources */,
@@ -902,7 +1020,7 @@
 		};
 		43BE6C3A1B56882B001F0A00 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 817E8A412EFC8949D37CE542 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 7DC7BA7D38B46B467A3DCB83 /* Pods-BIObjCHelpersTests.debug.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -912,7 +1030,7 @@
 		};
 		43BE6C3B1B56882B001F0A00 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB1D306E32DEEA06A1B3FEA0 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 817E8A412EFC8949D37CE542 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

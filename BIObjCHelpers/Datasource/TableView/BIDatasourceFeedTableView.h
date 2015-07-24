@@ -7,12 +7,16 @@
 //
 
 #import "BIDatasourceTableView.h"
+#import "BITableView.h"
 
 @class BITableViewBatch;
 
 @interface BIDatasourceFeedTableView : BIDatasourceTableView
 
 @property (nonatomic, strong, nullable, readonly) BITableViewBatch *currentBatch;
+@property (nonatomic, strong, readonly, nonnull) BITableView *tableView;
+
++ (nonnull instancetype)datasourceWithBITableView:(nonnull BITableView *)tableView;
 
 - (nonnull BITableViewBatch *)createNextBatch;
 - (void)fetchBatch:(nonnull BITableViewBatch *)batch;

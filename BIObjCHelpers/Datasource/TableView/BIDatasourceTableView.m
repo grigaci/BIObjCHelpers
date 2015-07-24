@@ -63,6 +63,10 @@
 #pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.numberOfRowsInSectionCallback) {
+        return self.numberOfRowsInSectionCallback(section);
+    }
+
     return 0;
 }
 
@@ -72,7 +76,6 @@
         cell = [[self.cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.cellIdentifier];
     }
     [self configureCell: cell atIndexPath: indexPath];
-    
     return cell;
 }
 

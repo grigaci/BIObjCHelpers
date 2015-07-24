@@ -1,0 +1,1 @@
+../../../../../BIObjCHelpers/Details/BIScrollDirection.h
