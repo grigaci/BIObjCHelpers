@@ -9,6 +9,7 @@
 #import "BITableView.h"
 #import "BIScrollDirection.h"
 #import "BIActivityIndicatorContainerView.h"
+#import "_BITableViewProxy.h"
 
 BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
                                CGRect bounds,
@@ -53,23 +54,49 @@ const CGFloat kBILeadingScreens = .5f;
 @interface BITableView () <UITableViewDelegate>
 
 @property (nonatomic, strong, nonnull, readwrite) BIActivityIndicatorContainerView *activityIndicatorContainer;
+@property (nonatomic, strong, nullable, readwrite) _BITableViewProxy *proxyDelegate;
 
 @end
 
 @implementation BITableView
 
-#pragma mark - Lifecycle methods
+#pragma mark - Init methods
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        self.delegate = self;
-        self.enableInfiniteScrolling = YES;
-        self.leadingScreens = kBILeadingScreens;
-        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [self BI_setupTableView];
     }
     return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+    self = [super initWithFrame:frame style:style];
+    if (self) {
+        [self BI_setupTableView];
+    }
+    return self;
+}
+
+#pragma mark - UITableView methods
+
+- (void)setDelegate:(id<UITableViewDelegate>)delegate {
+    /*!
+     By setting the delegate to nil in a dealloc method causes a crash in the proxy class.
+     Fix it by nilling the proxy in case delegate is nil.
+     */
+    if (!delegate) {
+        [super setDelegate:nil];
+        _proxyDelegate = nil;
+        return;
+    }
+    self.proxyDelegate = [[_BITableViewProxy alloc] initWithTarget:delegate interceptor:self];
+    [super setDelegate:(id<UITableViewDelegate>)self.proxyDelegate];
+}
+
+- (id<UITableViewDelegate>)delegate {
+    id<UITableViewDelegate> validDelegate = self.proxyDelegate.target;
+    return validDelegate;
 }
 
 #pragma mark - Public methods
@@ -84,6 +111,11 @@ const CGFloat kBILeadingScreens = .5f;
 #pragma mark - Batch Fetching
 
 - (void)scrollViewWillEndDragging:(nonnull UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout nonnull CGPoint *)targetContentOffset {
+    // Call the method on the delegate class
+    if ([self.proxyDelegate.target respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)]) {
+        [self.proxyDelegate.target scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
+    }
+
     if (!self.enableInfiniteScrolling) {
         return;
     }
@@ -136,6 +168,14 @@ const CGFloat kBILeadingScreens = .5f;
         direction = BIScrollDirectionUp;
     }
     return direction;
+}
+
+- (void)BI_setupTableView {
+    self.proxyDelegate = [[_BITableViewProxy alloc] initWithTarget:nil interceptor:self];
+    [super setDelegate:(id<UITableViewDelegate>)self.proxyDelegate];
+    self.enableInfiniteScrolling = YES;
+    self.leadingScreens = kBILeadingScreens;
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 @end

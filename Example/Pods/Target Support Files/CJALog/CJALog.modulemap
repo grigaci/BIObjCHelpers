@@ -1,0 +1,6 @@
+module CJALog {
+  umbrella header "CJALog-umbrella.h"
+
+  export *
+  module * { export * }
+}

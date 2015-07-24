@@ -63,6 +63,10 @@
 #pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.numberOfRowsInSectionCallback) {
+        return self.numberOfRowsInSectionCallback(section);
+    }
+
     return 0;
 }
 

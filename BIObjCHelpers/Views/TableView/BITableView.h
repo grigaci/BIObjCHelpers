@@ -42,6 +42,11 @@ extern const CGFloat kBILeadingScreens;
 
 @class BIActivityIndicatorContainerView;
 
+/*!
+ @brief Table view with infinite scrolling support.
+ @note There is one limitation to this table view. Setting its delegate to nil causes the infinite scrolling
+ to not work.
+ */
 @interface BITableView : UITableView
 
 /*!

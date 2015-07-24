@@ -22,6 +22,7 @@ typedef void(^BIDatasourceTableViewConfigureCell)(id __nonnull cell, NSIndexPath
 @property (nonatomic, copy, nullable) NSString *cellIdentifier;
 @property (nonatomic, strong, nullable) Class cellClass;
 @property (nonatomic, copy, nullable) BIDatasourceTableViewConfigureCell configureCellBlock;
+@property (nonatomic, copy, nullable) NSInteger(^numberOfRowsInSectionCallback)(NSInteger section);
 
 - (void)configureCell:(nonnull UITableViewCell *)cell atIndexPath:(nonnull NSIndexPath *)indexPath;
 

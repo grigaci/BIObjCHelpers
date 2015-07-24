@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <BITableView.h>
+
 #import <UIKit/UIKit.h>
+
+@class BITableView;
 
 @interface BIExampleFeedTableViewController : UIViewController
 

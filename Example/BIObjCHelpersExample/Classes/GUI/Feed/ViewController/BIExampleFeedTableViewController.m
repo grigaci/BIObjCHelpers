@@ -9,9 +9,13 @@
 #import "BIExampleFeedTableViewController.h"
 #import "BIExampleDatasourceFeedTableView.h"
 
+#import <BIObjCHelpers/BITableView.h>
+#import <BIObjCHelpers/BIHandlerTableView.h>
+
 @interface BIExampleFeedTableViewController ()
 
-@property (nonatomic, strong, nullable) BIExampleDatasourceFeedTableView *datasource;
+@property (nonatomic, strong, nonnull) BIExampleDatasourceFeedTableView *datasource;
+@property (nonatomic, strong, nonnull) BIHandlerTableView *handler;
 
 @end
 
@@ -20,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.datasource load];
+    [self.handler load];
 }
 
 - (BIExampleDatasourceFeedTableView *)datasource {
@@ -27,6 +32,16 @@
         _datasource = [BIExampleDatasourceFeedTableView datasourceWithBITableView:self.tableView];
     }
     return _datasource;
+}
+
+- (BIHandlerTableView *)handler {
+    if (!_handler) {
+        _handler = [[BIHandlerTableView alloc] initWithTableView:self.tableView];
+        _handler.didSelectRowCallback = ^(id __nonnull cell, NSIndexPath * __nonnull indexPath) {
+            NSLog(@"Did selected cell at row: %@", @(indexPath.row));
+        };
+    }
+    return _handler;
 }
 
 @end
