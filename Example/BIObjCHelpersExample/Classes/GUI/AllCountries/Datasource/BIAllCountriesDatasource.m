@@ -18,6 +18,7 @@
 - (void)load {
     NSParameterAssert(self.managedObjectContext);
     self.fetchedResultsController = [BICountry MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:BICountryAttributes.name ascending:YES delegate:nil inContext:self.managedObjectContext];
+    self.cellClass = [UITableViewCell class];
     [super load];
 }
 

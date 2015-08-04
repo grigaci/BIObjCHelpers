@@ -30,6 +30,7 @@
     [super setUp];
     self.tableView = [[BITableView alloc] initWithFrame:CGRectZero];
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
+    self.datasource.cellClass = [UITableViewCell class];
 }
 
 - (void)tearDown {

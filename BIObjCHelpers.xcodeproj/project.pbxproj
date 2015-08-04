@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4304A9B61B70D892009739B3 /* BIDatasourceTableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */; };
 		435D59C01B622E8A00ECA859 /* BIMockHandlerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */; };
 		43BE6C311B56882B001F0A00 /* libBIObjCHelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE6C251B56882B001F0A00 /* libBIObjCHelpers.a */; };
 		43BE6C721B5689CA001F0A00 /* BITableViewBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6C421B5689C9001F0A00 /* BITableViewBatch.m */; };
@@ -78,6 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceTableViewTestCase.m; sourceTree = "<group>"; };
 		435D59BE1B622E8A00ECA859 /* BIMockHandlerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIMockHandlerTableView.h; path = BIHandlerTableView/BIMockHandlerTableView.h; sourceTree = "<group>"; };
 		435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIMockHandlerTableView.m; path = BIHandlerTableView/BIMockHandlerTableView.m; sourceTree = "<group>"; };
 		43BE6C251B56882B001F0A00 /* libBIObjCHelpers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBIObjCHelpers.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -581,6 +583,7 @@
 		43BE6CE51B568ECB001F0A00 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */,
 				43BE6CE61B568ECB001F0A00 /* BIDatasourceFeedTableViewTestCase.m */,
 				43BE6CE71B568ECB001F0A00 /* BIDatasourceFetchedTableViewTestCase.m */,
 				43BE6CE81B568ECB001F0A00 /* BIMockDatasourceFeedTableView.h */,
@@ -912,6 +915,7 @@
 				43BE6CFB1B568ECB001F0A00 /* BIDatasourceFetchedCollectionViewTestCase.m in Sources */,
 				43BE6CFC1B568ECB001F0A00 /* BIMockDatasourceFetchedCollectionView.m in Sources */,
 				43BE6D051B568ECB001F0A00 /* BIMockStarter.m in Sources */,
+				4304A9B61B70D892009739B3 /* BIDatasourceTableViewTestCase.m in Sources */,
 				43BE6D001B568ECB001F0A00 /* BIHandlerTableViewTestCase.m in Sources */,
 				43BE6CD01B568B1F001F0A00 /* BITestCaseCoreData.m in Sources */,
 				914D2CB51B57BB41009A9B4D /* BIBatchFetchingTestCase.m in Sources */,

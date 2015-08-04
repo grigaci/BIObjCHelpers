@@ -1,1 +1,0 @@
-../../../Target Support Files/MagicalRecord/MagicalRecord-umbrella.h
