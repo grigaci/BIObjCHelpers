@@ -56,6 +56,17 @@ extern const CGFloat kBITableFooterViewAnimationDuration;
 @property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)();
 
 /*!
+ @callback removeCellAtIndexPathAction Used to notify table view's dataSource that a cell needs to be removed.
+ */
+@property (nonatomic, copy, nullable) void (^removeCellAtIndexPathAction)(NSIndexPath *__nonnull);
+
+/*!
+ @callback insertCellAtIndexPathAction Used to notify table view's dataSource that a cell needs inserting.
+ The second param specify a model for the cell.
+ */
+@property (nonatomic, copy, nullable) void (^insertCellAtIndexPathAction)(NSIndexPath *__nonnull, id __nullable);
+
+/*!
  @field enableInfiniteScrolling specifies whether the scrolling of the tableView is infinite or not
  @discussion If it is set to NO, no other batches are fetched. Default is YES
  */
