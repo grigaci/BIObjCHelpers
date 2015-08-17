@@ -3,10 +3,11 @@ xcode_workspace: BIObjCHelpers.xcworkspace
 osx_image: beta-xcode6.3
 
 before_install:
-	- gem i slather --no-ri --no-rdoc
-	- brew uninstall xctool; brew install xctool --HEAD;
+- gem i cocoapods --no-ri --no-rdoc
+- gem i slather --no-ri --no-rdoc
+- brew uninstall xctool; brew install xctool --HEAD;
 
 script:
-	- xctool test -workspace BIObjCHelpers.xcworkspace -scheme BIObjCHelpers -sdk iphonesimulator8.3 -destination "platform=iOS Simulator,name=iPhone 6,OS=8.3"
+- xctool test -workspace BIObjCHelpers.xcworkspace -scheme BIObjCHelpers -sdk iphonesimulator8.3 -destination "platform=iOS Simulator,name=iPhone 6,OS=8.3"
 
 after_success: slather
