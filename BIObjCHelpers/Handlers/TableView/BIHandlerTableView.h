@@ -16,6 +16,8 @@ typedef void(^BIHandlerTableViewRowSelectionCallback)(id __nonnull cell, NSIndex
 
 + (nonnull instancetype)handlerWithTableView:(nonnull UITableView *)tableView;
 - (nonnull instancetype)initWithTableView:(nonnull UITableView *)tableView;
+- (nonnull instancetype)init NS_UNAVAILABLE;
++ (nonnull instancetype)new NS_UNAVAILABLE;
 
 @property (nonatomic, readonly, strong, nonnull) UITableView *tableView;
 

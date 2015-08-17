@@ -7,6 +7,7 @@
 //
 
 #import "BIHandlerTableView.h"
+#import "_BITableView+Internal.h"
 
 @interface BIHandlerTableView ()
 
@@ -28,6 +29,10 @@
     self = [super init];
     if (self) {
         self.tableView = tableView;
+        if ([self.tableView isMemberOfClass:[BITableView class]]) {
+            BITableView *biTableView = (BITableView *)self.tableView;
+            biTableView.handler = self;
+        }
     }
     return self;
 }
@@ -38,7 +43,6 @@
     [super load];
     self.tableView.delegate = self;
 }
-
 
 #pragma mark - UITableViewDelegate methods
 

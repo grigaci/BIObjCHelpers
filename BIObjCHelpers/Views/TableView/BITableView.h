@@ -42,6 +42,8 @@ extern const CGFloat kBILeadingScreens;
 extern const CGFloat kBITableFooterViewAnimationDuration;
 
 @class BIActivityIndicatorContainerView;
+@class BIDatasourceTableView;
+@class BIHandlerTableView;
 
 /*!
  @brief Table view with infinite scrolling support.
@@ -54,17 +56,6 @@ extern const CGFloat kBITableFooterViewAnimationDuration;
  @callback infiniteScrollingCallback Used to notify dataSource to fetch the next batch
  */
 @property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)();
-
-/*!
- @callback removeCellAtIndexPathAction Used to notify table view's dataSource that a cell needs to be removed.
- */
-@property (nonatomic, copy, nullable) void (^removeCellAtIndexPathAction)(NSIndexPath *__nonnull);
-
-/*!
- @callback insertCellAtIndexPathAction Used to notify table view's dataSource that a cell needs inserting.
- The second param specify a model for the cell.
- */
-@property (nonatomic, copy, nullable) void (^insertCellAtIndexPathAction)(NSIndexPath *__nonnull, id __nullable);
 
 /*!
  @field enableInfiniteScrolling specifies whether the scrolling of the tableView is infinite or not
@@ -86,6 +77,16 @@ extern const CGFloat kBITableFooterViewAnimationDuration;
 @property (nonatomic, strong, nonnull, readonly) BIActivityIndicatorContainerView *activityIndicatorContainer;
 
 @property (nonatomic, assign) BIInfiniteScrollingState infiniteScrollingState;
+
+/*!
+ @brief Table view's datasource. Valid only if a BIDatasourceTableView type was created with a reference to this table view.
+ */
+@property (nonatomic, weak, nullable, readonly) BIDatasourceTableView *datasource;
+
+/*!
+ @brief Table view's handler. Valid only if a BIHandlerTableView type was created with a reference to this table view.
+ */
+@property (nonatomic, weak, nullable, readonly) BIHandlerTableView *handler;
 
 - (void)triggerInfiniteScrolling;
 

@@ -19,8 +19,6 @@
 
 @interface BIDatasourceTableViewTestCase : XCTestCase
 
-@property (nonatomic, strong, nullable) BIDatasourceTableView *datasource;
-
 @end
 
 @implementation BIDatasourceTableViewTestCase
@@ -35,6 +33,15 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+#pragma mark - Test init
+
+- (void)test_initBITableView {
+    BITableView *tableView = [[BITableView alloc] initWithFrame:[UIScreen mainScreen].bounds
+                                                          style:UITableViewStylePlain];
+    BIDatasourceTableView *datasource = [BIDatasourceTableView datasourceWithTableView:tableView];
+    XCTAssertEqual(datasource, tableView.datasource);
 }
 
 #pragma mark - Test load
@@ -70,6 +77,36 @@
     [datasource load];
     NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:0];
     XCTAssertThrows([datasource tableView:tableView cellForRowAtIndexPath:indexpath]);
+}
+
+#pragma mark - Test deleteRowsAtIndexPaths:withRowAnimation:
+
+- (void)test_deleteRowsAtIndexPathsWithRowAnimation {
+    UITableView *tableView = mock([UITableView class]);
+    BIDatasourceTableView *datasource = [BIDatasourceTableView datasourceWithTableView:tableView];
+    [datasource load];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    UITableViewRowAnimation animation = UITableViewRowAnimationMiddle;
+    NSArray *indexPaths = @[indexPath];
+
+    [datasource deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    [verifyCount(tableView, times(1)) deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
+#pragma mark - Test test_insertRowsAtIndexPaths:models:withRowAnimation
+
+- (void)test_insertRowsAtIndexPathsModelsWithRowAnimation {
+    UITableView *tableView = mock([UITableView class]);
+    BIDatasourceTableView *datasource = [BIDatasourceTableView datasourceWithTableView:tableView];
+    [datasource load];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    UITableViewRowAnimation animation = UITableViewRowAnimationMiddle;
+    NSArray *indexPaths = @[indexPath];
+    
+    [datasource insertRowsAtIndexPaths:indexPaths models:@[] withRowAnimation:animation];
+    [verifyCount(tableView, times(1)) insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
 }
 
 @end

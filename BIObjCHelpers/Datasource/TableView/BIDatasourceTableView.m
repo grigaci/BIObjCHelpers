@@ -7,6 +7,7 @@
 //
 
 #import "BIDatasourceTableView.h"
+#import "_BITableView+Internal.h"
 
 @interface BIDatasourceTableView ()
 
@@ -29,8 +30,25 @@
     if (self) {
         self.tableView = tableView;
         self.tableView.dataSource = self;
+        if ([self.tableView isMemberOfClass:[BITableView class]]) {
+            BITableView *biTableView = (BITableView *)self.tableView;
+            biTableView.datasource = self;
+        }
     }
     return self;
+}
+
+#pragma mark - Public methods
+
+- (void)deleteRowsAtIndexPaths:(nonnull NSArray *)indexPaths
+              withRowAnimation:(UITableViewRowAnimation)animation {
+    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
+- (void)insertRowsAtIndexPaths:(nonnull NSArray *)indexPaths
+                        models:(nonnull NSArray *)models
+              withRowAnimation:(UITableViewRowAnimation)animation {
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
