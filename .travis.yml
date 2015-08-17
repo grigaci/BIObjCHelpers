@@ -5,10 +5,12 @@ osx_image: beta-xcode6.3
 before_install:
   - brew update
   - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
-  - sudo easy_install cpp-coveralls
+  - rvm use $RVM_RUBY_VERSION
+
+install:
+  - bundle install --without=documentation --path ../travis_bundle_dir
 
 script:
   - xctool test -workspace BIObjCHelpers.xcworkspace -scheme BIObjCHelpers -sdk iphonesimulator8.3 -destination "platform=iOS Simulator,name=iPhone 6,OS=8.3"
 
-after_success: 
-  ./coveralls.rb --exclude-folder ./Example --exclude-folder ./Pods
+after_success: slather

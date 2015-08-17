@@ -1,0 +1,5 @@
+coverage_service: coveralls
+xcodeproj: BIObjCHelpers.xcworkspace
+ignore:
+  - ./Example/*
+  - ./Pods/*
