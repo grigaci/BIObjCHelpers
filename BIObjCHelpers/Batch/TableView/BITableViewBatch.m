@@ -8,7 +8,7 @@
 
 #import "BITableViewBatch.h"
 
-const NSInteger kDefaultTableViewBatchSize = 10;
+const NSInteger kDefaultTableViewBatchSize = 3;
 
 @interface BITableViewBatch ()
 

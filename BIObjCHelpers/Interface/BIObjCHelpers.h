@@ -12,6 +12,9 @@
 #import "BIStartersFactory.h"
 #import "BIOperationQueue.h"
 
+// Views
+#import "BITableView.h"
+
 // Datasources
 #import "BIDatasourceTableView.h"
 #import "BIDatasourceCollectionView.h"

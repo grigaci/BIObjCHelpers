@@ -23,7 +23,7 @@
 @synthesize cellClass = _cellClass;
 
 + (nonnull instancetype)datasourceWithBITableView:(nonnull BITableView *)tableView {
-    return [self datasourceWithTableView:tableView];
+    return [super datasourceWithTableView:tableView];
 }
 
 #pragma mark - BIDatasourceBase methods

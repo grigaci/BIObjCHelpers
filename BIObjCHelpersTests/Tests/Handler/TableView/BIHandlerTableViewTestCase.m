@@ -47,6 +47,15 @@
     [super tearDown];
 }
 
+#pragma mark - Test Init
+
+- (void)test_initBITableView {
+    BITableView *tableView = [[BITableView alloc] initWithFrame:[UIScreen mainScreen].bounds
+                                                          style:UITableViewStylePlain];
+    BIHandlerTableView *handler = [BIHandlerTableView handlerWithTableView:tableView];
+    XCTAssertEqual(handler, tableView.handler);
+}
+
 #pragma mark - Test didSelectRowCallback
 
 - (void)testDidSelectRowCallback {

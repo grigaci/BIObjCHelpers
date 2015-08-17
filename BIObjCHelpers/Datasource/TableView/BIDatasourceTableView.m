@@ -7,6 +7,7 @@
 //
 
 #import "BIDatasourceTableView.h"
+#import "_BITableView+Internal.h"
 
 @interface BIDatasourceTableView ()
 
@@ -29,8 +30,25 @@
     if (self) {
         self.tableView = tableView;
         self.tableView.dataSource = self;
+        if ([self.tableView isMemberOfClass:[BITableView class]]) {
+            BITableView *biTableView = (BITableView *)self.tableView;
+            biTableView.datasource = self;
+        }
     }
     return self;
+}
+
+#pragma mark - Public methods
+
+- (void)deleteRowsAtIndexPaths:(nonnull NSArray *)indexPaths
+              withRowAnimation:(UITableViewRowAnimation)animation {
+    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
+- (void)insertRowsAtIndexPaths:(nonnull NSArray *)indexPaths
+                        models:(nonnull NSArray *)models
+              withRowAnimation:(UITableViewRowAnimation)animation {
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -41,7 +59,11 @@
 
 - (void)load {
     [super load];
-    [self.tableView registerClass:self.cellClass forCellReuseIdentifier:self.cellIdentifier];
+    if (self.cellClass) {
+        [self.tableView registerClass:self.cellClass forCellReuseIdentifier:self.cellIdentifier];
+    } else if (self.cellNib) {
+        [self.tableView registerNib:self.cellNib forCellReuseIdentifier:self.cellIdentifier];
+    }
 }
 
 #pragma mark - Property methods
@@ -51,13 +73,6 @@
         _cellIdentifier = [NSUUID UUID].UUIDString;
     }
     return _cellIdentifier;
-}
-
-- (Class)cellClass {
-    if (!_cellClass) {
-        _cellClass = [UITableViewCell class];
-    }
-    return _cellClass;
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -71,6 +86,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSAssert(self.cellClass || self.cellNib, @"cellClass or cellNib must be specified");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath: indexPath];
     if (!cell) {
         cell = [[self.cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.cellIdentifier];

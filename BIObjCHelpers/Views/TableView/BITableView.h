@@ -42,6 +42,8 @@ extern const CGFloat kBILeadingScreens;
 extern const CGFloat kBITableFooterViewAnimationDuration;
 
 @class BIActivityIndicatorContainerView;
+@class BIDatasourceTableView;
+@class BIHandlerTableView;
 
 /*!
  @brief Table view with infinite scrolling support.
@@ -75,6 +77,16 @@ extern const CGFloat kBITableFooterViewAnimationDuration;
 @property (nonatomic, strong, nonnull, readonly) BIActivityIndicatorContainerView *activityIndicatorContainer;
 
 @property (nonatomic, assign) BIInfiniteScrollingState infiniteScrollingState;
+
+/*!
+ @brief Table view's datasource. Valid only if a BIDatasourceTableView type was created with a reference to this table view.
+ */
+@property (nonatomic, weak, nullable, readonly) BIDatasourceTableView *datasource;
+
+/*!
+ @brief Table view's handler. Valid only if a BIHandlerTableView type was created with a reference to this table view.
+ */
+@property (nonatomic, weak, nullable, readonly) BIHandlerTableView *handler;
 
 - (void)triggerInfiniteScrolling;
 

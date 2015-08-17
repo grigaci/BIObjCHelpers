@@ -54,8 +54,10 @@ const CGFloat kBITableFooterViewAnimationDuration = .25f;
 
 @interface BITableView () <UITableViewDelegate>
 
-@property (nonatomic, strong, nonnull, readwrite) BIActivityIndicatorContainerView *activityIndicatorContainer;
+@property (nonatomic, strong, nonnull,  readwrite) BIActivityIndicatorContainerView *activityIndicatorContainer;
 @property (nonatomic, strong, nullable, readwrite) _BITableViewProxy *proxyDelegate;
+@property (nonatomic, weak, nullable, readwrite) BIDatasourceTableView *datasource;
+@property (nonatomic, weak, nullable, readwrite) BIHandlerTableView *handler;
 
 @end
 

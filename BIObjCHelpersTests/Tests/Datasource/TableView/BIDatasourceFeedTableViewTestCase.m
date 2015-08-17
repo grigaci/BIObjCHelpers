@@ -26,7 +26,7 @@
 - (void)setUp {
     [super setUp];
     self.tableView = [[BITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
-    self.datasource = [BIMockDatasourceFeedTableView datasourceWithTableView:self.tableView];
+    self.datasource = [BIMockDatasourceFeedTableView datasourceWithBITableView:self.tableView];
     [self.datasource load];
 }
 

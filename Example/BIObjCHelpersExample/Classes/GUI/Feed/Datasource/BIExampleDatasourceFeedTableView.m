@@ -22,7 +22,8 @@ const CGFloat kExampleDatasourceFeedMaxElements = 30;
 
 - (void)load {
     [super load];
-    self.countItems = 20;
+    self.tableView.rowHeight = 350.f;
+    self.countItems = 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -33,6 +34,7 @@ const CGFloat kExampleDatasourceFeedMaxElements = 30;
     [super configureCell:cell atIndexPath:indexPath];
     NSString *text = [NSString stringWithFormat:@"%@", @(indexPath.row)];
     cell.textLabel.text = text;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)fetchBatch:(nonnull BITableViewBatch *)batch {
@@ -47,13 +49,13 @@ const CGFloat kExampleDatasourceFeedMaxElements = 30;
         NSUInteger sectionIndex = batch.sectionIndex;
         NSUInteger newRowIndex = [self.tableView numberOfRowsInSection:sectionIndex];
         NSUInteger lastRowIndex = newRowIndex + batch.batchSize;
-        self.countItems += batch.batchSize;
+//        self.countItems += batch.batchSize;
         NSMutableArray *mutableArray = [NSMutableArray new];
         for (NSUInteger index = newRowIndex; index < lastRowIndex; index++) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:sectionIndex];
             [mutableArray addObject:indexPath];
         }
-        batch.completionBlock(nil, [NSArray arrayWithArray:mutableArray]);
+        batch.completionBlock(nil, @[]);
     });
 }
 
