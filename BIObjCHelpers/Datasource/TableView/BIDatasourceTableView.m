@@ -30,7 +30,7 @@
     if (self) {
         self.tableView = tableView;
         self.tableView.dataSource = self;
-        if ([self.tableView isMemberOfClass:[BITableView class]]) {
+        if ([self.tableView isKindOfClass:[BITableView class]]) {
             BITableView *biTableView = (BITableView *)self.tableView;
             biTableView.datasource = self;
         }
