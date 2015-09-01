@@ -7,12 +7,12 @@
 //
 
 #import "BIDatasourceFeedTableView.h"
-#import "BITableViewBatch.h"
+#import "BIBatch.h"
 #import "BITableViewCell.h"
 
 @interface BIDatasourceFeedTableView ()
 
-@property (nonatomic, strong, nullable, readwrite) BITableViewBatch *currentBatch;
+@property (nonatomic, strong, nullable, readwrite) BIBatch *currentBatch;
 
 @end
 
@@ -32,7 +32,7 @@
     [super load];
     __weak typeof(self) weakself = self;
     [self.tableView setInfiniteScrollingCallback:^{
-        BITableViewBatch *batch = [weakself createNextBatch];
+        BIBatch *batch = [weakself createNextBatch];
         [weakself fetchBatch:batch];
     }];
 }
@@ -47,20 +47,20 @@
 
 #pragma mark - Public methods
 
-- (nonnull BITableViewBatch *)createNextBatch {
+- (nonnull BIBatch *)createNextBatch {
     NSUInteger lastSectionIndex = [self.tableView numberOfSections] - 1;
-    NSUInteger batchSize = kDefaultTableViewBatchSize;
+    NSUInteger batchSize = kDefaultBatchSize;
     __weak typeof(self) weakself = self;
-    BITableViewBatchCompletionBlock completionBlock = ^(NSError * __nullable error, NSArray * __nullable newIndexPaths) {
+    BIBatchCompletionBlock completionBlock = ^(NSError * __nullable error, NSArray * __nullable newIndexPaths) {
         [weakself handleFetchBatchResponse:error newIndexPaths:newIndexPaths];
     } ;
-    BITableViewBatch *batch = [[BITableViewBatch alloc] initWithSection:lastSectionIndex
+    BIBatch *batch = [[BIBatch alloc] initWithSection:lastSectionIndex
                                                               batchSize:batchSize
                                                         completionBlock:completionBlock];
     return batch;
 }
 
-- (void)fetchBatch:(nonnull BITableViewBatch *)batch {
+- (void)fetchBatch:(nonnull BIBatch *)batch {
     self.currentBatch = batch;
 }
 

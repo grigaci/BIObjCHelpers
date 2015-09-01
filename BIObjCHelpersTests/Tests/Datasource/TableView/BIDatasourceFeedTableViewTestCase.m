@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import "BITableViewBatch.h"
+#import "BIBatch.h"
 #import "BITableView.h"
-
+#import "BITableViewCell.h"
 #import "BIMockDatasourceFeedTableView.h"
 
 #import <UIKit/UIKit.h>
@@ -40,10 +40,10 @@
 
 - (void)testCreateNextBatchCallback {
     __block BOOL wasCalled = NO;
-    __block BITableViewBatch *batch;
+    __block BIBatch *batch;
     self.datasource.createNextBatchCallback = ^() {
         wasCalled = YES;
-        batch = [[BITableViewBatch alloc] initWithCompletionBlock:nil];
+        batch = [[BIBatch alloc] initWithCompletionBlock:nil];
         return batch;
     };
     [self.tableView triggerInfiniteScrolling];
@@ -55,7 +55,7 @@
 
 - (void)testFetchBatch {
     __block BOOL wasCalled = NO;
-    self.datasource.fetchBatchCallback = ^(BITableViewBatch * __nonnull batch) {
+    self.datasource.fetchBatchCallback = ^(BIBatch * __nonnull batch) {
         wasCalled = YES;
     };
     [self.tableView triggerInfiniteScrolling];

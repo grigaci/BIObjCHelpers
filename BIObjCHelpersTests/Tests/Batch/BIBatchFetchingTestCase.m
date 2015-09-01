@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "BITableView.h"
+#import "BIBatchHelper.h"
 
 @interface BIBatchFetchingTestCase : XCTestCase
 

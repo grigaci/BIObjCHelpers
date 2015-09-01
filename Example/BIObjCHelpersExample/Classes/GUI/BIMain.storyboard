@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VWP-z7-ozE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VWP-z7-ozE">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Countries-->
@@ -99,7 +98,7 @@
                             <outlet property="dataSource" destination="0qS-pR-ATD" id="lXd-M6-kxq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Feed" id="3Yl-SL-Z3x"/>
+                    <navigationItem key="navigationItem" title="TableView Feed" id="3Yl-SL-Z3x"/>
                     <connections>
                         <outlet property="tableView" destination="gbr-9I-WpZ" id="Gah-cV-Cu2"/>
                     </connections>
@@ -108,11 +107,67 @@
             </objects>
             <point key="canvasLocation" x="1484" y="1721"/>
         </scene>
-        <!--Feed-->
+        <!--CollectionView Feed-->
+        <scene sceneID="X1o-BZ-RR4">
+            <objects>
+                <collectionViewController title="CollectionView Feed" id="7mz-7J-Vam" customClass="BIExampleFeedCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3wL-cC-hn6" customClass="BICollectionView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sLs-6d-8YI">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kJ9-9D-iHC">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="7mz-7J-Vam" id="7ee-SJ-B8I"/>
+                            <outlet property="delegate" destination="7mz-7J-Vam" id="3KH-lY-HlW"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Collection Feed" id="Yte-IN-JnX"/>
+                    <connections>
+                        <outlet property="biCollectionView" destination="3wL-cC-hn6" id="TOI-i0-8Bl"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Lz-N6-VYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="2439"/>
+        </scene>
+        <!--CollectionView Feed-->
+        <scene sceneID="SWa-UZ-Mqn">
+            <objects>
+                <navigationController title="CollectionView Feed" id="rWW-h9-szb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="CollectionView Feed" id="EQ0-DB-WEq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LYP-0P-NGt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7mz-7J-Vam" kind="relationship" relationship="rootViewController" id="QAT-bX-Bqm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgb-dY-TMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="2446"/>
+        </scene>
+        <!--TableView Feed-->
         <scene sceneID="RDl-oP-SBx">
             <objects>
-                <navigationController title="Feed" id="HmA-9X-Q6l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="7Qh-yh-XmG"/>
+                <navigationController title="TableView Feed" id="HmA-9X-Q6l" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TableView Feed" id="7Qh-yh-XmG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DH1-5q-Rux">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -156,6 +211,7 @@
                         <segue destination="oJ3-dO-KL0" kind="relationship" relationship="viewControllers" id="Sox-RQ-lp8"/>
                         <segue destination="uJq-vi-i17" kind="relationship" relationship="viewControllers" id="bL3-cl-2KY"/>
                         <segue destination="HmA-9X-Q6l" kind="relationship" relationship="viewControllers" id="ef1-ZB-sHc"/>
+                        <segue destination="rWW-h9-szb" kind="relationship" relationship="viewControllers" id="4cE-te-Wtq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2PQ-zi-YAt" userLabel="First Responder" sceneMemberID="firstResponder"/>

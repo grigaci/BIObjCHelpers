@@ -9,19 +9,19 @@
 #import "BIDatasourceTableView.h"
 #import "BITableView.h"
 
-@class BITableViewBatch;
+@class BIBatch;
 
 @interface BIDatasourceFeedTableView : BIDatasourceTableView
 
-@property (nonatomic, strong, nullable, readonly) BITableViewBatch *currentBatch;
+@property (nonatomic, strong, nullable, readonly) BIBatch *currentBatch;
 @property (nonatomic, strong, readonly, nonnull) BITableView *tableView;
 
 + (nonnull instancetype)datasourceWithBITableView:(nonnull BITableView *)tableView;
 + (nonnull instancetype)datasourceWithTableView:(nonnull UITableView *)tableView NS_UNAVAILABLE;
 - (nonnull instancetype)initWithTableView:(nonnull UITableView *)tableView NS_UNAVAILABLE;
 
-- (nonnull BITableViewBatch *)createNextBatch;
-- (void)fetchBatch:(nonnull BITableViewBatch *)batch;
+- (nonnull BIBatch *)createNextBatch;
+- (void)fetchBatch:(nonnull BIBatch *)batch;
 - (void)fetchBatchCompletedWithFailure:(nonnull NSError *)error;
 - (void)fetchBatchCompletedWithSuccess:(nonnull NSArray *)newIndexPaths;
 - (void)fetchBatchCompletedCommon;

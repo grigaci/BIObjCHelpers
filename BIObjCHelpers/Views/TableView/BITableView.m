@@ -7,55 +7,14 @@
 //
 
 #import "BITableView.h"
-#import "BIScrollDirection.h"
 #import "BIActivityIndicatorContainerView.h"
-#import "_BITableViewProxy.h"
-
-BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
-                               CGRect bounds,
-                               CGSize contentSize,
-                               CGPoint targetOffset,
-                               CGFloat leadingScreens) {
-    
-    // only Up and Left scrolls are currently supported (tail loading)
-    if (scrollDirection != BIScrollDirectionLeft && scrollDirection != BIScrollDirectionUp) {
-        return NO;
-    }
-    
-    // no fetching for null states
-    if (leadingScreens <= 0.0 ||
-        CGRectEqualToRect(bounds, CGRectZero)) {
-        return NO;
-    }
-    
-    CGFloat viewLength, offset, contentLength;
-    
-    if (scrollDirection == BIScrollDirectionUp) {
-        viewLength = bounds.size.height;
-        offset = targetOffset.y;
-        contentLength = contentSize.height;
-    } else { // horizontal
-        viewLength = bounds.size.width;
-        offset = targetOffset.x;
-        contentLength = contentSize.width;
-    }
-    
-    // target offset will always be 0 if the content size is smaller than the viewport
-    BOOL hasSmallContent = offset == 0.0 && contentLength < viewLength;
-    
-    CGFloat triggerDistance = viewLength * leadingScreens;
-    CGFloat remainingDistance = contentLength - viewLength - offset;
-    
-    return hasSmallContent || remainingDistance <= triggerDistance;
-}
-
-const CGFloat kBILeadingScreens = .5f;
-const CGFloat kBITableFooterViewAnimationDuration = .25f;
+#import "_BIScrollViewProxy.h"
+#import "BIBatchHelper.h"
 
 @interface BITableView () <UITableViewDelegate>
 
 @property (nonatomic, strong, nonnull,  readwrite) BIActivityIndicatorContainerView *activityIndicatorContainer;
-@property (nonatomic, strong, nullable, readwrite) _BITableViewProxy *proxyDelegate;
+@property (nonatomic, strong, nullable, readwrite) _BIScrollViewProxy *proxyDelegate;
 @property (nonatomic, weak, nullable, readwrite) BIDatasourceTableView *datasource;
 @property (nonatomic, weak, nullable, readwrite) BIHandlerTableView *handler;
 
@@ -93,7 +52,7 @@ const CGFloat kBITableFooterViewAnimationDuration = .25f;
         _proxyDelegate = nil;
         return;
     }
-    self.proxyDelegate = [[_BITableViewProxy alloc] initWithTarget:delegate interceptor:self];
+    self.proxyDelegate = [[_BIScrollViewProxy alloc] initWithTarget:delegate interceptor:self];
     [super setDelegate:(id<UITableViewDelegate>)self.proxyDelegate];
 }
 
@@ -163,9 +122,9 @@ const CGFloat kBITableFooterViewAnimationDuration = .25f;
 
 #pragma mark - Private Methods
 
-- (BIScrollDirection)scrollDirection {
+- (BIScrollDetails)scrollDirection {
     CGPoint scrollVelocity = [self.panGestureRecognizer velocityInView:self.superview];
-    BIScrollDirection direction = BIScrollDirectionNone;
+    BIScrollDetails direction = BIScrollDirectionNone;
     if (scrollVelocity.y > 0) {
         direction = BIScrollDirectionDown;
     } else {
@@ -175,7 +134,7 @@ const CGFloat kBITableFooterViewAnimationDuration = .25f;
 }
 
 - (void)BI_setupTableView {
-    self.proxyDelegate = [[_BITableViewProxy alloc] initWithTarget:nil interceptor:self];
+    self.proxyDelegate = [[_BIScrollViewProxy alloc] initWithTarget:nil interceptor:self];
     [super setDelegate:(id<UITableViewDelegate>)self.proxyDelegate];
     self.enableInfiniteScrolling = YES;
     self.leadingScreens = kBILeadingScreens;

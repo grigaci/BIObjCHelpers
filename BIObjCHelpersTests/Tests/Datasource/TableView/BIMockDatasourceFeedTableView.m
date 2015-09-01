@@ -10,14 +10,14 @@
 
 @implementation BIMockDatasourceFeedTableView
 
-- (nonnull BITableViewBatch *)createNextBatch {
+- (nonnull BIBatch *)createNextBatch {
     if (self.createNextBatchCallback) {
         return self.createNextBatchCallback();
     }
    return  [super createNextBatch];
 }
 
-- (void)fetchBatch:(nonnull BITableViewBatch *)batch {
+- (void)fetchBatch:(nonnull BIBatch *)batch {
     [super fetchBatch:batch];
     if (self.fetchBatchCallback) {
         self.fetchBatchCallback(batch);

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import "BITableViewBatch.h"
+#import "BIBatch.h"
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
@@ -20,9 +20,9 @@
 #pragma mark - Test init methods
 
 - (void)testInitParams {
-    BITableViewBatch *batch = [[BITableViewBatch alloc] initWithCompletionBlock:nil];
+    BIBatch *batch = [[BIBatch alloc] initWithCompletionBlock:nil];
     XCTAssertEqual(batch.sectionIndex, 0);
-    XCTAssertEqual(batch.batchSize, kDefaultTableViewBatchSize);
+    XCTAssertEqual(batch.batchSize, kDefaultBatchSize);
 }
 
 #pragma mark - Test property methods
@@ -31,10 +31,10 @@
     NSUInteger section = arc4random_uniform(100);
     NSUInteger batchSize = arc4random_uniform(100);
     __block BOOL wasCalled = NO;
-    BITableViewBatchCompletionBlock block = ^(NSError * __nullable error, NSArray * __nullable newIndexPaths) {
+    BIBatchCompletionBlock block = ^(NSError * __nullable error, NSArray * __nullable newIndexPaths) {
         wasCalled = YES;
     };
-    BITableViewBatch *batch = [[BITableViewBatch alloc] initWithSection:section
+    BIBatch *batch = [[BIBatch alloc] initWithSection:section
                                                               batchSize:batchSize
                                                         completionBlock:block];
     batch.completionBlock(nil, nil);

@@ -21,7 +21,7 @@
 #import "BIDatasourceFetchedTableView.h"
 #import "BIDatasourceFetchedCollectionView.h"
 #import "BIDatasourceFeedTableView.h"
-#import "BITableViewBatch.h"
+#import "BIBatch.h"
 
 // Handlers
 #import "BIHandlerBase.h"
