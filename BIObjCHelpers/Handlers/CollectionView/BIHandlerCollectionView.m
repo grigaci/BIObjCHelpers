@@ -8,7 +8,6 @@
 
 #import "BIHandlerCollectionView.h"
 #import "_BICollectionView+Internal.h"
-#import "BIRefreshControl.h"
 #import "BIDatasourceFeedCollectionView.h"
 
 @interface BIHandlerCollectionView ()
@@ -52,7 +51,6 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     if ([collectionView isKindOfClass:[BICollectionView class]]) {
-        BICollectionView *biCollectionView = (BICollectionView *)collectionView;
         if ([self.collectionView.dataSource isKindOfClass:[BIDatasourceFeedCollectionView class]]) {
             if (((BIDatasourceFeedCollectionView *)self.collectionView.dataSource).dataSourceIsDoneLoading) {
                 return CGSizeMake(0.01f, 0.01f);

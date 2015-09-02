@@ -12,7 +12,6 @@
 @class BIActivityIndicatorContainerView;
 @class BIDatasourceCollectionView;
 @class BIHandlerCollectionView;
-@class BIRefreshControl;
 
 /*!
  @brief CollectionView with infinite scrolling support.

@@ -24,7 +24,7 @@
 
 @implementation BICollectionView
 
-CGFloat const kBIRefreshControlCollectionViewHeight = 44.f;
+CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 
 #pragma mark - Init methods
 
@@ -109,19 +109,10 @@ CGFloat const kBIRefreshControlCollectionViewHeight = 44.f;
 
 - (BIActivityIndicatorContainerView *)activityIndicatorContainer {
     if (!_activityIndicatorContainer) {
-        CGRect frame = CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), 44.f);
+        CGRect frame = CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), kBIActivityIndicatorViewHeight);
         _activityIndicatorContainer = [[BIActivityIndicatorContainerView alloc] initWithFrame:frame];
     }
     return _activityIndicatorContainer;
-}
-
-- (BIRefreshControl * __nonnull)refreshControl {
-    if (!_refreshControl) {
-        CGRect refreshControlFrame = CGRectMake(0.f, -kBIRefreshControlCollectionViewHeight, CGRectGetWidth(self.bounds), kBIRefreshControlCollectionViewHeight);
-        _refreshControl = [[UIRefreshControl alloc] initWithFrame:refreshControlFrame];
-        [_refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    }
-    return _refreshControl;
 }
 
 - (void)setEnablePullToRefresh:(BOOL)enablePullToRefresh {
@@ -135,6 +126,14 @@ CGFloat const kBIRefreshControlCollectionViewHeight = 44.f;
     } else {
         [self.refreshControl removeFromSuperview];
     }
+}
+
+- (UIRefreshControl * __nonnull)refreshControl {
+    if (!_refreshControl) {
+        _refreshControl = [UIRefreshControl new];
+        [_refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    }
+    return _refreshControl;
 }
 
 #pragma mark - Private Methods
