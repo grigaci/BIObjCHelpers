@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureTableView];
     [self.datasource load];
     [self.handler load];
 }
@@ -42,6 +43,10 @@
         };
     }
     return _handler;
+}
+
+- (void)configureTableView {
+    self.tableView.enablePullToRefresh = YES;
 }
 
 @end

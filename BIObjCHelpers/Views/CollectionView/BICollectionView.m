@@ -124,7 +124,9 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
         self.alwaysBounceVertical = YES;
         [self addSubview:self.refreshControl];
     } else {
-        [self.refreshControl removeFromSuperview];
+        if (self.refreshControl.superview) {
+            [self.refreshControl removeFromSuperview];
+        }
     }
 }
 

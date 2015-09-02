@@ -21,7 +21,7 @@
 - (nonnull instancetype)initWithTableView:(nonnull UITableView *)tableView NS_UNAVAILABLE;
 
 - (nonnull BIBatch *)createNextBatch;
-- (void)fetchBatch:(nonnull BIBatch *)batch;
+- (void)fetchBatch:(nonnull BIBatch *)batch loadOnTop:(BOOL)loadOnTop;
 - (void)fetchBatchCompletedWithFailure:(nonnull NSError *)error;
 - (void)fetchBatchCompletedWithSuccess:(nonnull NSArray *)newIndexPaths;
 - (void)fetchBatchCompletedCommon;

@@ -9,7 +9,7 @@
 #import "BIExampleDatasourceFeedTableView.h"
 #import "BIBatch.h"
 
-const CGFloat kExampleDatasourceFeedMaxElements = 130;
+const CGFloat kExampleDatasourceFeedMaxElements = 30;
 
 @interface BIExampleDatasourceFeedTableView ()
 
@@ -37,18 +37,18 @@ const CGFloat kExampleDatasourceFeedMaxElements = 130;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-- (void)fetchBatch:(nonnull BIBatch *)batch {
+- (void)fetchBatch:(nonnull BIBatch *)batch loadOnTop:(BOOL)loadOnTop {
     if (self.countItems > kExampleDatasourceFeedMaxElements) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             batch.completionBlock(nil, @[]);
         });
         return;
     }
-    [super fetchBatch:batch];
+    [super fetchBatch:batch loadOnTop:loadOnTop];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSUInteger sectionIndex = batch.sectionIndex;
-        NSUInteger newRowIndex = [self.tableView numberOfRowsInSection:sectionIndex];
-        NSUInteger lastRowIndex = newRowIndex + batch.batchSize;
+        NSUInteger newRowIndex = loadOnTop ? 0 : [self.tableView numberOfRowsInSection:sectionIndex];
+        NSUInteger lastRowIndex = loadOnTop ? batch.batchSize : newRowIndex + batch.batchSize;
         self.countItems += batch.batchSize;
         NSMutableArray *mutableArray = [NSMutableArray new];
         for (NSUInteger index = newRowIndex; index < lastRowIndex; index++) {

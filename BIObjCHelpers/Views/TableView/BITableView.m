@@ -18,6 +18,8 @@
 @property (nonatomic, weak, nullable, readwrite) BIDatasourceTableView *datasource;
 @property (nonatomic, weak, nullable, readwrite) BIHandlerTableView *handler;
 
+@property (nonatomic, strong, nonnull, readwrite) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation BITableView
@@ -109,7 +111,6 @@
     return _activityIndicatorContainer;
 }
 
-
 - (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
     _infiniteScrollingState = infiniteScrollingState;
     UIView *newFooterView = nil;
@@ -118,6 +119,29 @@
             newFooterView = self.activityIndicatorContainer;
     }
     self.tableFooterView = newFooterView;
+}
+
+- (void)setEnablePullToRefresh:(BOOL)enablePullToRefresh {
+    if (_enablePullToRefresh == enablePullToRefresh) {
+        return;
+    }
+    _enablePullToRefresh = enablePullToRefresh;
+    if (enablePullToRefresh) {
+        self.alwaysBounceVertical = YES;
+        [self addSubview:self.refreshControl];
+    } else {
+        if (self.refreshControl.superview) {
+            [self.refreshControl removeFromSuperview];
+        }
+    }
+}
+
+- (UIRefreshControl * __nonnull)refreshControl {
+    if (!_refreshControl) {
+        _refreshControl = [UIRefreshControl new];
+        [_refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    }
+    return _refreshControl;
 }
 
 #pragma mark - Private Methods
@@ -137,8 +161,18 @@
     self.proxyDelegate = [[_BIScrollViewProxy alloc] initWithTarget:nil interceptor:self];
     [super setDelegate:(id<UITableViewDelegate>)self.proxyDelegate];
     self.enableInfiniteScrolling = YES;
+    self.enablePullToRefresh = NO;
     self.leadingScreens = kBILeadingScreens;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.alwaysBounceVertical = YES;
+}
+
+#pragma mark - Pull-To-Refresh Methods
+
+- (void)refresh:(UIRefreshControl *)sender {
+    if (self.pullToRefreshCallback) {
+        self.pullToRefreshCallback();
+    }
 }
 
 @end

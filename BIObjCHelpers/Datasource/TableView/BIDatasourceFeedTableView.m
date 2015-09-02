@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong, nullable, readwrite) BIBatch *currentBatch;
 
+@property (nonatomic, assign) BOOL reloadIsOnTop;
+
 @end
 
 
@@ -33,7 +35,13 @@
     __weak typeof(self) weakself = self;
     [self.tableView setInfiniteScrollingCallback:^{
         BIBatch *batch = [weakself createNextBatch];
-        [weakself fetchBatch:batch];
+        [weakself fetchBatch:batch loadOnTop:NO];
+        weakself.reloadIsOnTop = NO;
+    }];
+    [self.tableView setPullToRefreshCallback:^{
+        BIBatch *batch = [weakself createNextBatch];
+        [weakself fetchBatch:batch loadOnTop:YES];
+        weakself.reloadIsOnTop = YES;
     }];
 }
 
@@ -53,6 +61,9 @@
     __weak typeof(self) weakself = self;
     BIBatchCompletionBlock completionBlock = ^(NSError * __nullable error, NSArray * __nullable newIndexPaths) {
         [weakself handleFetchBatchResponse:error newIndexPaths:newIndexPaths];
+        if (weakself.reloadIsOnTop) {
+            [weakself.tableView.refreshControl endRefreshing];
+        }
     } ;
     BIBatch *batch = [[BIBatch alloc] initWithSection:lastSectionIndex
                                                               batchSize:batchSize
@@ -60,7 +71,7 @@
     return batch;
 }
 
-- (void)fetchBatch:(nonnull BIBatch *)batch {
+- (void)fetchBatch:(nonnull BIBatch *)batch loadOnTop:(BOOL)loadOnTop {
     self.currentBatch = batch;
 }
 
@@ -87,7 +98,9 @@
 
 - (void)fetchBatchCompletedCommon {
     self.currentBatch = nil;
-    self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+    if (!self.reloadIsOnTop) {
+        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+    }
 }
 
 @end
