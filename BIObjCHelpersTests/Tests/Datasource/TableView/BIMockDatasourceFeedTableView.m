@@ -18,7 +18,7 @@
 }
 
 - (void)fetchBatch:(nonnull BIBatch *)batch {
-    [super fetchBatch:batch];
+    [super fetchBatch:batch loadOnTop:NO];
     if (self.fetchBatchCallback) {
         self.fetchBatchCallback(batch);
     }

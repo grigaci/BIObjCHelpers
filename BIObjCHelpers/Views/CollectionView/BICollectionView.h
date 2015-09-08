@@ -35,10 +35,10 @@
 @property (nonatomic, assign) BOOL enableInfiniteScrolling;
 
 /*!
- @field enablePullToRefresh Specifies whether to trigger the pullToRefresCallback block or not, when a pull-to-refresh gesture for the collectionView is made.
+ @field pullToRefreshEnabled Specifies whether to trigger the pullToRefresCallback block or not, when a pull-to-refresh gesture for the collectionView is made.
  @discussion Default is YES.
  */
-@property (nonatomic, assign) BOOL enablePullToRefresh;
+@property (nonatomic, assign) BOOL pullToRefreshEnabled;
 
 /*!
  @field leadingScreens Represents the number of screens left to scroll before triggering the fetch of the next batch

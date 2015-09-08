@@ -115,12 +115,9 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     return _activityIndicatorContainer;
 }
 
-- (void)setEnablePullToRefresh:(BOOL)enablePullToRefresh {
-    if (_enablePullToRefresh == enablePullToRefresh) {
-        return;
-    }
-    _enablePullToRefresh = enablePullToRefresh;
-    if (enablePullToRefresh) {
+- (void)setPullToRefreshEnabled:(BOOL)pullToRefreshEnabled {
+    _pullToRefreshEnabled = pullToRefreshEnabled;
+    if (_pullToRefreshEnabled) {
         self.alwaysBounceVertical = YES;
         [self addSubview:self.refreshControl];
     } else {
@@ -140,9 +137,9 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 
 #pragma mark - Private Methods
 
-- (BIScrollDetails)scrollDirection {
+- (BIScrollDirection)scrollDirection {
     CGPoint scrollVelocity = [self.panGestureRecognizer velocityInView:self.superview];
-    BIScrollDetails direction = BIScrollDirectionNone;
+    BIScrollDirection direction = BIScrollDirectionNone;
     if (scrollVelocity.y > 0) {
         direction = BIScrollDirectionDown;
     } else {
@@ -155,8 +152,8 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     self.proxyDelegate = [[_BIScrollViewProxy alloc] initWithTarget:nil interceptor:self];
     [super setDelegate:(id<UICollectionViewDelegate>)self.proxyDelegate];
     self.enableInfiniteScrolling = YES;
-    self.enablePullToRefresh = YES;
-    self.leadingScreens = kBILeadingScreens;
+    self.pullToRefreshEnabled = YES;
+    self.leadingScreens = kBIDefaultInfiniteScrollingLeadingScreens;
 }
 
 #pragma mark - Pull-To-Refresh Methods

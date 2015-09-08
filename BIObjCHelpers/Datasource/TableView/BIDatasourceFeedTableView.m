@@ -62,7 +62,7 @@
     BIBatchCompletionBlock completionBlock = ^(NSError * __nullable error, NSArray * __nullable newIndexPaths) {
         [weakself handleFetchBatchResponse:error newIndexPaths:newIndexPaths];
         if (weakself.reloadIsOnTop) {
-            [weakself.tableView.refreshControl endRefreshing];
+            [weakself.tableView.pullToRefreshControl endRefreshing];
         }
     } ;
     BIBatch *batch = [[BIBatch alloc] initWithSection:lastSectionIndex

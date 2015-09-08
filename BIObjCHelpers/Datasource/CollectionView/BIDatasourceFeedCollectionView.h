@@ -18,6 +18,7 @@
 @property (nonatomic, assign, readonly) BOOL dataSourceIsDoneLoading;
 
 + (nonnull instancetype)datasourceWithBICollectionView:(nonnull BICollectionView *)collectionView;
+- (nonnull instancetype)initWithBICollectionView:(nonnull BICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
 + (nonnull instancetype)datasourceWithCollectionView:(nonnull UICollectionView *)collectionView NS_UNAVAILABLE;
 - (nonnull instancetype)initWithCollectionView:(nonnull UICollectionView *)collectionView NS_UNAVAILABLE;
 

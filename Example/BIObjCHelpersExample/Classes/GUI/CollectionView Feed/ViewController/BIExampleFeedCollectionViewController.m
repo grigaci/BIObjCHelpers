@@ -27,7 +27,6 @@
     [super viewDidLoad];
     [self.dataSource load];
     [self.handler load];
-    
 }
 
 #pragma mark - Properties

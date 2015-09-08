@@ -13,12 +13,12 @@
 
 @interface BITableView () <UITableViewDelegate>
 
-@property (nonatomic, strong, nonnull,  readwrite) BIActivityIndicatorContainerView *activityIndicatorContainer;
+@property (nonatomic, strong, nullable,  readwrite) BIActivityIndicatorContainerView *infiniteScrollingActivityIndicatorContainer;
 @property (nonatomic, strong, nullable, readwrite) _BIScrollViewProxy *proxyDelegate;
-@property (nonatomic, weak, nullable, readwrite) BIDatasourceTableView *datasource;
-@property (nonatomic, weak, nullable, readwrite) BIHandlerTableView *handler;
+@property (nonatomic, strong, nullable, readwrite) UIRefreshControl *pullToRefreshControl;
 
-@property (nonatomic, strong, nonnull, readwrite) UIRefreshControl *refreshControl;
+@property (nonatomic, weak,   nullable, readwrite) BIDatasourceTableView *datasource;
+@property (nonatomic, weak,   nullable, readwrite) BIHandlerTableView *handler;
 
 @end
 
@@ -71,6 +71,13 @@
 
 #pragma mark - Public methods
 
+- (void)triggerPullToRefresh {
+    [self.pullToRefreshControl beginRefreshing];
+    if (self.pullToRefreshCallback) {
+        self.pullToRefreshCallback();
+    }
+}
+
 - (void)triggerInfiniteScrolling {
     if (self.infiniteScrollingCallback) {
         self.infiniteScrollingState = BIInfiniteScrollingStateLoading;
@@ -86,14 +93,14 @@
         [self.proxyDelegate.target scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
     }
 
-    if (!self.enableInfiniteScrolling) {
+    if (!self.isInfiniteScrollingEnabled) {
         return;
     }
     [self handleFetchBatchForTargetOffset:*targetContentOffset];
 }
 
 - (void)handleFetchBatchForTargetOffset:(CGPoint)targetOffset {
-    if (BIDisplayShouldFetchBatch([self scrollDirection], self.bounds, self.contentSize, targetOffset, self.leadingScreens)) {
+    if (BIDisplayShouldFetchBatch([self BI_scrollDirection], self.bounds, self.contentSize, targetOffset, self.infiniteScrollingLeadingScreens)) {
         if (self.infiniteScrollingCallback) {
             self.infiniteScrollingState = BIInfiniteScrollingStateLoading;
             self.infiniteScrollingCallback();
@@ -101,54 +108,56 @@
     }
 }
 
-#pragma mark - Getters and Setters
+#pragma mark - Property methods
 
-- (BIActivityIndicatorContainerView *)activityIndicatorContainer {
-    if (!_activityIndicatorContainer) {
-        CGRect frame = CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), 44.f);
-        _activityIndicatorContainer = [[BIActivityIndicatorContainerView alloc] initWithFrame:frame];
+- (void)setPullToRefreshEnabled:(BOOL)pullToRefreshEnabled {
+    _pullToRefreshEnabled = pullToRefreshEnabled;
+    if (_pullToRefreshEnabled) {
+        [self BI_createPullToRefreshControl];
+        self.alwaysBounceVertical = YES;
+        [self addSubview:self.pullToRefreshControl];
+    } else {
+        [self.pullToRefreshControl removeFromSuperview];
+        self.pullToRefreshControl = nil;
     }
-    return _activityIndicatorContainer;
 }
 
 - (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
     _infiniteScrollingState = infiniteScrollingState;
     UIView *newFooterView = nil;
-    if (_infiniteScrollingState == BIInfiniteScrollingStateLoading &&
-        !self.activityIndicatorContainer.superview ) {
-            newFooterView = self.activityIndicatorContainer;
+    if (self.isInfiniteScrollingEnabled &&
+        _infiniteScrollingState == BIInfiniteScrollingStateLoading &&
+        !self.infiniteScrollingActivityIndicatorContainer.superview ) {
+        [self BI_createInfiniteScrollingActivityIndicatorContainer];
+        newFooterView = self.infiniteScrollingActivityIndicatorContainer;
     }
     self.tableFooterView = newFooterView;
 }
 
-- (void)setEnablePullToRefresh:(BOOL)enablePullToRefresh {
-    if (_enablePullToRefresh == enablePullToRefresh) {
-        return;
-    }
-    _enablePullToRefresh = enablePullToRefresh;
-    if (enablePullToRefresh) {
-        self.alwaysBounceVertical = YES;
-        [self addSubview:self.refreshControl];
-    } else {
-        if (self.refreshControl.superview) {
-            [self.refreshControl removeFromSuperview];
+- (void)setInfiniteScrollingEnabled:(BOOL)infiniteScrollingEnabled {
+    _infiniteScrollingEnabled = infiniteScrollingEnabled;
+    if (!infiniteScrollingEnabled) {
+        if (self.tableFooterView &&
+            self.tableFooterView == self.infiniteScrollingActivityIndicatorContainer) {
+            self.infiniteScrollingActivityIndicatorContainer = nil;
+            self.tableFooterView = nil;
         }
     }
 }
 
-- (UIRefreshControl * __nonnull)refreshControl {
-    if (!_refreshControl) {
-        _refreshControl = [UIRefreshControl new];
-        [_refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+#pragma mark - Action methods
+
+- (void)BI_handlePullToRefreshAction:(UIRefreshControl *)sender {
+    if (self.pullToRefreshCallback) {
+        self.pullToRefreshCallback();
     }
-    return _refreshControl;
 }
 
 #pragma mark - Private Methods
 
-- (BIScrollDetails)scrollDirection {
+- (BIScrollDirection)BI_scrollDirection {
     CGPoint scrollVelocity = [self.panGestureRecognizer velocityInView:self.superview];
-    BIScrollDetails direction = BIScrollDirectionNone;
+    BIScrollDirection direction = BIScrollDirectionNone;
     if (scrollVelocity.y > 0) {
         direction = BIScrollDirectionDown;
     } else {
@@ -160,18 +169,23 @@
 - (void)BI_setupTableView {
     self.proxyDelegate = [[_BIScrollViewProxy alloc] initWithTarget:nil interceptor:self];
     [super setDelegate:(id<UITableViewDelegate>)self.proxyDelegate];
-    self.enableInfiniteScrolling = YES;
-    self.enablePullToRefresh = NO;
-    self.leadingScreens = kBILeadingScreens;
+    self.infiniteScrollingEnabled = NO;
+    self.pullToRefreshEnabled = NO;
+    self.infiniteScrollingLeadingScreens = kBIDefaultInfiniteScrollingLeadingScreens;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.alwaysBounceVertical = YES;
 }
 
-#pragma mark - Pull-To-Refresh Methods
+- (void)BI_createPullToRefreshControl {
+    if (!_pullToRefreshControl) {
+        _pullToRefreshControl = [UIRefreshControl new];
+        [_pullToRefreshControl addTarget:self action:@selector(BI_handlePullToRefreshAction:) forControlEvents:UIControlEventValueChanged];
+    }
+}
 
-- (void)refresh:(UIRefreshControl *)sender {
-    if (self.pullToRefreshCallback) {
-        self.pullToRefreshCallback();
+- (void)BI_createInfiniteScrollingActivityIndicatorContainer {
+    if (!_infiniteScrollingActivityIndicatorContainer) {
+        CGRect frame = CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), 44.f);
+        _infiniteScrollingActivityIndicatorContainer = [[BIActivityIndicatorContainerView alloc] initWithFrame:frame];
     }
 }
 

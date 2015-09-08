@@ -7,6 +7,7 @@
 //
 
 #import "BIScrollDetails.h"
+
 #import <UIKit/UIKit.h>
 
 /*!
@@ -19,15 +20,11 @@
  @return Whether or not the current state should proceed with batch fetching.
  @discussion This method is broken into a category for unit testing purposes and should be used with the BITableView and BICollectionView batch fetching API.
  */
-extern BOOL BIDisplayShouldFetchBatch(BIScrollDetails scrollDirection,
+extern BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
                                       CGRect bounds,
                                       CGSize contentSize,
                                       CGPoint targetOffset,
                                       CGFloat leadingScreens);
 
-extern const CGFloat kBILeadingScreens;
+extern const CGFloat kBIDefaultInfiniteScrollingLeadingScreens;
 extern const CGFloat kBITableFooterViewAnimationDuration;
-
-@interface BIBatchHelper : NSObject
-
-@end

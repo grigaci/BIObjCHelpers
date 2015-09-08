@@ -1,1 +1,0 @@
-UIVIEWSHADOW_OTHER_LDFLAGS = -framework "UIKit"

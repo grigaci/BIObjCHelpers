@@ -45,6 +45,7 @@
 		43BE6D041B568ECB001F0A00 /* BIStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF31B568ECB001F0A00 /* BIStartersFactoryTestCase.m */; };
 		43BE6D051B568ECB001F0A00 /* BIMockStarter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF61B568ECB001F0A00 /* BIMockStarter.m */; };
 		43DA594C1B6217F400ECAAC0 /* BITableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */; };
+		43F23F761B9ED4B600CEAD8C /* BITableViewCellTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F23F751B9ED4B600CEAD8C /* BITableViewCellTestCase.m */; };
 		830DAE5A3DE83DBED5554583 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5728F3176E11CCA0B30BB593 /* libPods.a */; };
 		914D2CB51B57BB41009A9B4D /* BIBatchFetchingTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 914D2CB41B57BB41009A9B4D /* BIBatchFetchingTestCase.m */; };
 		91614A831B94790400D00EB2 /* _BIScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A821B94790400D00EB2 /* _BIScrollViewProxy.m */; };
@@ -52,7 +53,6 @@
 		91614A8A1B947C0200D00EB2 /* BIBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A891B947C0200D00EB2 /* BIBatch.m */; };
 		91614A8E1B9481A000D00EB2 /* BICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A8D1B9481A000D00EB2 /* BICollectionView.m */; };
 		91614A951B94830600D00EB2 /* BIHandlerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A941B94830600D00EB2 /* BIHandlerCollectionView.m */; };
-		916D3E8B1B9586AB00D93B6B /* BICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916D3E8A1B9586AB00D93B6B /* BICollectionViewCell.m */; };
 		91E517F21B59208F000B51AF /* BITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E517F11B59208F000B51AF /* BITableViewCell.m */; };
 		91E59B871B5840CD0034824F /* BITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B861B5840CD0034824F /* BITableView.m */; };
 		91E59B8B1B58411B0034824F /* UIView+BILoadXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */; };
@@ -150,6 +150,7 @@
 		43BE6CF51B568ECB001F0A00 /* BIMockStarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIMockStarter.h; sourceTree = "<group>"; };
 		43BE6CF61B568ECB001F0A00 /* BIMockStarter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIMockStarter.m; sourceTree = "<group>"; };
 		43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewTestCase.m; path = Views/TableView/BITableViewTestCase.m; sourceTree = "<group>"; };
+		43F23F751B9ED4B600CEAD8C /* BITableViewCellTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewCellTestCase.m; path = Views/TableView/Cell/BITableViewCellTestCase.m; sourceTree = "<group>"; };
 		5728F3176E11CCA0B30BB593 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC7BA7D38B46B467A3DCB83 /* Pods-BIObjCHelpersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIObjCHelpersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BIObjCHelpersTests/Pods-BIObjCHelpersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		817E8A412EFC8949D37CE542 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -166,8 +167,6 @@
 		91614A8F1B9481C000D00EB2 /* _BICollectionView+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "_BICollectionView+Internal.h"; path = "Views/CollectionView/_BICollectionView+Internal.h"; sourceTree = "<group>"; };
 		91614A931B94830600D00EB2 /* BIHandlerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIHandlerCollectionView.h; path = CollectionView/BIHandlerCollectionView.h; sourceTree = "<group>"; };
 		91614A941B94830600D00EB2 /* BIHandlerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIHandlerCollectionView.m; path = CollectionView/BIHandlerCollectionView.m; sourceTree = "<group>"; };
-		916D3E891B9586AB00D93B6B /* BICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BICollectionViewCell.h; path = Views/CollectionView/Cell/BICollectionViewCell.h; sourceTree = "<group>"; };
-		916D3E8A1B9586AB00D93B6B /* BICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BICollectionViewCell.m; path = Views/CollectionView/Cell/BICollectionViewCell.m; sourceTree = "<group>"; };
 		91E517F01B59208F000B51AF /* BITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BITableViewCell.h; path = Views/TableView/Cell/BITableViewCell.h; sourceTree = "<group>"; };
 		91E517F11B59208F000B51AF /* BITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewCell.m; path = Views/TableView/Cell/BITableViewCell.m; sourceTree = "<group>"; };
 		91E59B851B5840CD0034824F /* BITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BITableView.h; path = Views/TableView/BITableView.h; sourceTree = "<group>"; };
@@ -678,9 +677,18 @@
 		43DA594A1B6217B200ECAAC0 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				43F23F741B9ED4A300CEAD8C /* Cell */,
 				43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */,
 			);
 			name = TableView;
+			sourceTree = "<group>";
+		};
+		43F23F741B9ED4A300CEAD8C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43F23F751B9ED4B600CEAD8C /* BITableViewCellTestCase.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		85B299E0DE6CE916B3F10556 /* Frameworks */ = {
@@ -722,7 +730,6 @@
 			isa = PBXGroup;
 			children = (
 				91E9ECED1B94A6C40009C4F1 /* Activity Indicator */,
-				91614A8B1B94817300D00EB2 /* Cell */,
 				91614A8C1B9481A000D00EB2 /* BICollectionView.h */,
 				91614A8D1B9481A000D00EB2 /* BICollectionView.m */,
 				91614A8F1B9481C000D00EB2 /* _BICollectionView+Internal.h */,
@@ -747,15 +754,6 @@
 				91614A891B947C0200D00EB2 /* BIBatch.m */,
 			);
 			name = Common;
-			sourceTree = "<group>";
-		};
-		91614A8B1B94817300D00EB2 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				916D3E891B9586AB00D93B6B /* BICollectionViewCell.h */,
-				916D3E8A1B9586AB00D93B6B /* BICollectionViewCell.m */,
-			);
-			name = Cell;
 			sourceTree = "<group>";
 		};
 		91614A921B9482EB00D00EB2 /* CollectionView */ = {
@@ -974,7 +972,6 @@
 				43BE6C7E1B5689CA001F0A00 /* BILifecycle.m in Sources */,
 				43BE6C7A1B5689CA001F0A00 /* BIDatasourceFetchedTableView.m in Sources */,
 				91614A831B94790400D00EB2 /* _BIScrollViewProxy.m in Sources */,
-				916D3E8B1B9586AB00D93B6B /* BICollectionViewCell.m in Sources */,
 				43BE6C791B5689CA001F0A00 /* BIDatasourceFeedTableView.m in Sources */,
 				91614A951B94830600D00EB2 /* BIHandlerCollectionView.m in Sources */,
 				91E517F21B59208F000B51AF /* BITableViewCell.m in Sources */,
@@ -1015,6 +1012,7 @@
 				43BE6CFE1B568ECB001F0A00 /* BIDatasourceFetchedTableViewTestCase.m in Sources */,
 				43BE6CCF1B568B1F001F0A00 /* NSString+RandomTest.m in Sources */,
 				43BE6D041B568ECB001F0A00 /* BIStartersFactoryTestCase.m in Sources */,
+				43F23F761B9ED4B600CEAD8C /* BITableViewCellTestCase.m in Sources */,
 				43BE6CFF1B568ECB001F0A00 /* BIMockDatasourceFeedTableView.m in Sources */,
 				43BE6CCE1B568B1F001F0A00 /* NSFetchedResultsController+BITestHelpers.m in Sources */,
 				43BE6CFA1B568ECB001F0A00 /* NSStringBIExtraTestCase.m in Sources */,

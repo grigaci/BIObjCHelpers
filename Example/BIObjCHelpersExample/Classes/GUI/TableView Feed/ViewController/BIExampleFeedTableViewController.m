@@ -46,7 +46,8 @@
 }
 
 - (void)configureTableView {
-    self.tableView.enablePullToRefresh = YES;
+    self.tableView.pullToRefreshEnabled = YES;
+    self.tableView.infiniteScrollingEnabled = YES;
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "BIBatchHelper.h"
 
-BOOL BIDisplayShouldFetchBatch(BIScrollDetails scrollDirection,
+BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
                                CGRect bounds,
                                CGSize contentSize,
                                CGPoint targetOffset,
@@ -46,9 +46,5 @@ BOOL BIDisplayShouldFetchBatch(BIScrollDetails scrollDirection,
     return hasSmallContent || remainingDistance <= triggerDistance;
 }
 
-const CGFloat kBILeadingScreens = .5f;
+const CGFloat kBIDefaultInfiniteScrollingLeadingScreens = .5f;
 const CGFloat kBITableFooterViewAnimationDuration = .25f;
-
-@implementation BIBatchHelper
-
-@end

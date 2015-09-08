@@ -8,7 +8,6 @@
 
 #import "BIDatasourceFeedCollectionView.h"
 #import "BICollectionViewActivityIndicatorReusableView.h"
-#import "BICollectionViewCell.h"
 
 @interface BIDatasourceFeedCollectionView ()
 
@@ -26,8 +25,16 @@
 @dynamic collectionView;
 @synthesize cellClass = _cellClass;
 
+#pragma mark - Factory methods
+
 + (nonnull instancetype)datasourceWithBICollectionView:(nonnull BICollectionView *)collectionView {
-    return [super datasourceWithCollectionView:collectionView];
+    return [[self alloc] initWithBICollectionView:collectionView];
+}
+
+#pragma mark - Init methods
+
+- (nonnull instancetype)initWithBICollectionView:(nonnull BICollectionView *)collectionView {
+    return [super initWithCollectionView:collectionView];
 }
 
 #pragma mark - BIDatasourceBase methods
@@ -48,10 +55,9 @@
     }];
 }
 
-// Overriden getter
 - (Class)cellClass {
     if (!_cellClass) {
-        _cellClass = [BICollectionViewCell class];
+        _cellClass = [UICollectionViewCell class];
     }
     return _cellClass;
 }

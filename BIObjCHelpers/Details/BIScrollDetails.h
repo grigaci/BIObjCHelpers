@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_OPTIONS(NSInteger, BIScrollDetails) {
+typedef NS_OPTIONS(NSInteger, BIScrollDirection) {
     BIScrollDirectionNone  = 0,
     BIScrollDirectionRight = 1 << 0,
     BIScrollDirectionLeft  = 1 << 1,
@@ -24,5 +24,5 @@ typedef NS_OPTIONS(NSInteger, BIScrollDetails) {
  */
 typedef NS_OPTIONS(NSInteger, BIInfiniteScrollingState) {
     BIInfiniteScrollingStateStopped = 0,
-    BIInfiniteScrollingStateLoading = 1
+    BIInfiniteScrollingStateLoading
 };

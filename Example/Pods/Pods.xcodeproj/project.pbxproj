@@ -104,7 +104,6 @@
 		315DCFB751F3A1FFA8A59A46 /* HCFloatReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0A5D6263FE2279F8F9F30 /* HCFloatReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		31B22F6D2AD134C1836D066B /* Pods-BIObjCHelpersExampleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7F7049308197679AD6575 /* Pods-BIObjCHelpersExampleTests-dummy.m */; };
 		31D76AC1755D563D990C8AB7 /* MKTUnsignedLongLongReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8499B75A129A30681C684C2B /* MKTUnsignedLongLongReturnSetter.h */; };
-		31E270E68FE1D8CA063B064B /* BICollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E3F24A950E70B8C413E3BE /* BICollectionViewCell.h */; };
 		32681F51CE773A0CCAF64674 /* NSEntityDescription+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 9135CC50405445BED9E056E0 /* NSEntityDescription+MagicalDataImport.h */; };
 		32F68C3633820A1D745ED8AF /* HCStringDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = E1236C0B636D1A25C6FA5AAC /* HCStringDescription.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		3432B28A26A5BAD13E45C9BD /* HCXCTestFailureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C047980DEF9609FAFC780 /* HCXCTestFailureHandler.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -170,7 +169,6 @@
 		5309E85E7BF0E09BD6B39A6C /* HCLongLongReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 69408C2788A8DF17C59BAE3B /* HCLongLongReturnGetter.h */; };
 		53D9D06B4307BAF92032E4AF /* HCHasCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B47942C58730EB85AD8A22F /* HCHasCount.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		541EF485A16C28539B271021 /* BIOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9E52EEFE36678CC48A408 /* BIOperationQueue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		543F3C29DDA63EC8489E3B77 /* BICollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E3F24A950E70B8C413E3BE /* BICollectionViewCell.h */; };
 		5458377C6CDBE562E74BCD0C /* BIDatasourceBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4DD9DC2D134DFD596F70DE /* BIDatasourceBase.h */; };
 		550013CDE06F6FE5556F287E /* MagicalImportFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9765B8D7D1405BCE035BDBC0 /* MagicalImportFunctions.h */; };
 		55DA6577CBA451312613341E /* HCTestFailure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1287B26498F14B31D28449D1 /* HCTestFailure.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -290,7 +288,6 @@
 		90824EC82F5A404F3C83A630 /* NSPersistentStore+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E239D2F5EECD560460C5CBBC /* NSPersistentStore+MagicalRecord.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		908E2035C1C6AB08CB0EB167 /* HCIsEqualIgnoringCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 38280F51C4E4C6B9DD1D74E5 /* HCIsEqualIgnoringCase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		916A3FE252DC68998F95E187 /* HCIsCollectionContainingInAnyOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1955BD232D5D676AEA7CFE7E /* HCIsCollectionContainingInAnyOrder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		919D24941B95BBEE00E0F88F /* BIRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 919D24931B95BBEE00E0F88F /* BIRefreshControl.m */; };
 		91EC83A41937EA0C0A2E29D7 /* CJALog.h in Headers */ = {isa = PBXBuildFile; fileRef = 774DBD7E859B577C954C0E55 /* CJALog.h */; };
 		924DECF60AB432D430C5C1EC /* MKTReturnValueSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 863BA96870C1CE2295A1D1C6 /* MKTReturnValueSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		92D4957628D44C1AF6485176 /* NSObject+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D15B74FEE2960262D2FC576 /* NSObject+MagicalDataImport.h */; };
@@ -381,7 +378,6 @@
 		B83DB05315BC76F020468717 /* MKTObjectMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 828C2B755DA9330B09367B4A /* MKTObjectMock.h */; };
 		B8FAA35FBF5834619A7825CE /* NSManagedObject+MagicalRequests.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6B7A1674722392ED4B2518 /* NSManagedObject+MagicalRequests.h */; };
 		BAB4F9CC9A75458AD60819C2 /* NSAttributeDescription+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D905EB4B95A57DBB4713F94 /* NSAttributeDescription+MagicalDataImport.h */; };
-		BAB564866D7DBF6526214014 /* BICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 253898AB90A184CFA25BD3EE /* BICollectionViewCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		BAF94BC4DE7A485A5D1D1A81 /* HCCharReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3EDD178D9D43A58004DD1A /* HCCharReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		BE3C9B82EE135A124426615A /* UIView+BILoadXib.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2A08F1E2782E81B5896C73 /* UIView+BILoadXib.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		BE528F352A7E4E9AF3F66665 /* BIDatasourceFetchedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E21C06DBAC53AF3A03A062 /* BIDatasourceFetchedTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -538,7 +534,6 @@
 		FC91F2EB6891D03A23F9D841 /* UIView+BILoadXib.h in Headers */ = {isa = PBXBuildFile; fileRef = D2B9EA59BE434CD0453D9661 /* UIView+BILoadXib.h */; };
 		FC9EBF2CA62CE7BD22634ACA /* HCLongLongReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C52961AF71BAAF19C00CAD /* HCLongLongReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		FCED28DFD443A45113E12D00 /* Pods-BIObjCHelpersExampleTests-CJALog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4252E89539F5603F979A1008 /* Pods-BIObjCHelpersExampleTests-CJALog-dummy.m */; };
-		FD384C6DB997A4DEC303BA26 /* BICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 253898AB90A184CFA25BD3EE /* BICollectionViewCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		FEA8A366FFD1A1FAAA57E64E /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C36440FA94768B360C9D8 /* Pods-dummy.m */; };
 		FEACA230215303EFAB0C6358 /* NSPersistentStore+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = DE28C4363B48C0D2DD1615FD /* NSPersistentStore+MagicalRecord.h */; };
 		FF34631D80FE2441FEDC94CD /* NSString+BIExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFA89B33469B50B0B5E1839 /* NSString+BIExtra.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -678,7 +673,6 @@
 		232187DA4570BFA3FAC78A97 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		234D50F3E70177EC38846014 /* BIStartersFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIStartersFactory.h; sourceTree = "<group>"; };
 		246772A5F56E1BE70B068F6E /* Pods-MagicalRecord-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-MagicalRecord-dummy.m"; path = "../Pods-MagicalRecord/Pods-MagicalRecord-dummy.m"; sourceTree = "<group>"; };
-		253898AB90A184CFA25BD3EE /* BICollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BICollectionViewCell.m; sourceTree = "<group>"; };
 		260CA5D8D55952183FAE0BB4 /* HCUnsignedLongLongReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCUnsignedLongLongReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedLongLongReturnGetter.m; sourceTree = "<group>"; };
 		28349DBDACD27C17FA5DE8C8 /* Pods-MagicalRecord.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicalRecord.xcconfig"; path = "../Pods-MagicalRecord/Pods-MagicalRecord.xcconfig"; sourceTree = "<group>"; };
 		28AA2E0DB45D680C76D55C8A /* HCStringContains.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCStringContains.h; path = Source/Library/Text/HCStringContains.h; sourceTree = "<group>"; };
@@ -888,8 +882,6 @@
 		9087C4D73D46B33B255DC4FA /* BICollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BICollectionView.h; sourceTree = "<group>"; };
 		9135CC50405445BED9E056E0 /* NSEntityDescription+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSEntityDescription+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSEntityDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
 		9160E1297E5988F117C6BB0E /* MagicalRecordShorthandMethodAliases.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MagicalRecordShorthandMethodAliases.h; path = MagicalRecord/Core/MagicalRecordShorthandMethodAliases.h; sourceTree = "<group>"; };
-		919D24921B95BBEE00E0F88F /* BIRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIRefreshControl.h; path = "Pull To Refresh/BIRefreshControl.h"; sourceTree = "<group>"; };
-		919D24931B95BBEE00E0F88F /* BIRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIRefreshControl.m; path = "Pull To Refresh/BIRefreshControl.m"; sourceTree = "<group>"; };
 		921B293ECC436E29C5D03C61 /* MKTAtLeastTimes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTAtLeastTimes.m; path = Source/OCMockito/MKTAtLeastTimes.m; sourceTree = "<group>"; };
 		922E924E6D85E35E146014C6 /* BIBatchHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIBatchHelper.m; sourceTree = "<group>"; };
 		92C6E37FDC8605EEC2292047 /* HCGenericTestFailureHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCGenericTestFailureHandler.m; path = Source/Core/Helpers/TestFailureHandlers/HCGenericTestFailureHandler.m; sourceTree = "<group>"; };
@@ -1038,7 +1030,6 @@
 		F106440ADB4E4B4F1ABC21DF /* Pods-BIObjCHelpersExampleTests-MagicalRecord.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BIObjCHelpersExampleTests-MagicalRecord.xcconfig"; sourceTree = "<group>"; };
 		F124C513D80CC527DFD8C383 /* HCHasDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCHasDescription.m; path = Source/Library/Object/HCHasDescription.m; sourceTree = "<group>"; };
 		F136D1A4FF2BBF124320378B /* HCLongReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCLongReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCLongReturnGetter.h; sourceTree = "<group>"; };
-		F1E3F24A950E70B8C413E3BE /* BICollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BICollectionViewCell.h; sourceTree = "<group>"; };
 		F21B044C3047028315479FD5 /* Pods-BIObjCHelpersExampleTests-OCMockito-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BIObjCHelpersExampleTests-OCMockito-dummy.m"; sourceTree = "<group>"; };
 		F22B68D97FA7A0F8BCD98383 /* MKTBoolArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTBoolArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTBoolArgumentGetter.m; sourceTree = "<group>"; };
 		F2D4FE045E699CB38506A82A /* BIActivityIndicatorContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIActivityIndicatorContainerView.m; sourceTree = "<group>"; };
@@ -1215,7 +1206,6 @@
 				E8726604F8FD95CECF87C19B /* BICollectionView.m */,
 				67E219DBD284AE74EFDEDE7A /* _BICollectionView+Internal.h */,
 				1058CA35B101E3A051626ED3 /* Activity Indicator */,
-				7FDFE9378EAFAA792BB7D17E /* Cell */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1564,15 +1554,6 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		7FDFE9378EAFAA792BB7D17E /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F1E3F24A950E70B8C413E3BE /* BICollectionViewCell.h */,
-				253898AB90A184CFA25BD3EE /* BICollectionViewCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		82AF6CEEBCBD4A8032A10083 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1616,15 +1597,6 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		919D24911B95BBBE00E0F88F /* Pull To Refresh */ = {
-			isa = PBXGroup;
-			children = (
-				919D24921B95BBEE00E0F88F /* BIRefreshControl.h */,
-				919D24931B95BBEE00E0F88F /* BIRefreshControl.m */,
-			);
-			name = "Pull To Refresh";
-			sourceTree = "<group>";
-		};
 		91BB22C4D703EEF3B5BF1B5A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1648,7 +1620,6 @@
 		9CDA58067F5B1AEADDD80410 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				919D24911B95BBBE00E0F88F /* Pull To Refresh */,
 				20502EEA7AF1F0EDE0658DF9 /* CollectionView */,
 				FC0F5DC82BC5FD862B7633B9 /* TableView */,
 			);
@@ -2254,7 +2225,6 @@
 				6E957D8FD5BAFC2ABB6E6708 /* BIBatchHelper.h in Headers */,
 				407995324A08B411BFB1A496 /* BICollectionView.h in Headers */,
 				01D61072889FD67A22B89FA6 /* BICollectionViewActivityIndicatorReusableView.h in Headers */,
-				543F3C29DDA63EC8489E3B77 /* BICollectionViewCell.h in Headers */,
 				78328BC64C9E8D533B8E80D2 /* BIDatasourceBase.h in Headers */,
 				B0669E91CBCECA99EDBB9B09 /* BIDatasourceCollectionView.h in Headers */,
 				EEBE6B25A5960F512357FA1B /* BIDatasourceFeedCollectionView.h in Headers */,
@@ -2293,7 +2263,6 @@
 				2800F6F8E5E25877F59C3A61 /* BIBatchHelper.h in Headers */,
 				40EDDE5CDD9CA3F6C07F346F /* BICollectionView.h in Headers */,
 				CCE95D513B87BFF68F74EBF9 /* BICollectionViewActivityIndicatorReusableView.h in Headers */,
-				31E270E68FE1D8CA063B064B /* BICollectionViewCell.h in Headers */,
 				5458377C6CDBE562E74BCD0C /* BIDatasourceBase.h in Headers */,
 				1FD32A7B3DE1ADE137202FCC /* BIDatasourceCollectionView.h in Headers */,
 				D5BBA22C0A06A9C13D2C9F57 /* BIDatasourceFeedCollectionView.h in Headers */,
@@ -2797,7 +2766,6 @@
 				71177D3DFBC74BA11BF4B84E /* BIBatchHelper.m in Sources */,
 				2773C9B5979E611745483171 /* BICollectionView.m in Sources */,
 				BF751383AE96AB2FA2E77A6F /* BICollectionViewActivityIndicatorReusableView.m in Sources */,
-				FD384C6DB997A4DEC303BA26 /* BICollectionViewCell.m in Sources */,
 				AE09EF3BA425D3B593AA56F6 /* BIDatasourceBase.m in Sources */,
 				2122CB25A4389F260EFF156C /* BIDatasourceCollectionView.m in Sources */,
 				1ED58038A06E444BD17B0368 /* BIDatasourceFeedCollectionView.m in Sources */,
@@ -2832,7 +2800,6 @@
 				CA46CB3015B77519D504B3BF /* BIBatchHelper.m in Sources */,
 				7805DD8CCE338DEEC0E22AF9 /* BICollectionView.m in Sources */,
 				950E090DFBAE3A39D3B7B759 /* BICollectionViewActivityIndicatorReusableView.m in Sources */,
-				BAB564866D7DBF6526214014 /* BICollectionViewCell.m in Sources */,
 				B0540AA51E14A07E77E70017 /* BIDatasourceBase.m in Sources */,
 				B43758FC257975DB6BC9B6FA /* BIDatasourceCollectionView.m in Sources */,
 				F19D125E3D9F4F5122538C32 /* BIDatasourceFeedCollectionView.m in Sources */,
@@ -2897,7 +2864,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				919D24941B95BBEE00E0F88F /* BIRefreshControl.m in Sources */,
 				FEA8A366FFD1A1FAAA57E64E /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
