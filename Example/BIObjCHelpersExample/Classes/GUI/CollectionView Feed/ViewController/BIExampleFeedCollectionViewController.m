@@ -25,6 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.biCollectionView.infiniteScrollingEnabled = YES;
+    self.biCollectionView.pullToRefreshEnabled = YES;
+
     [self.dataSource load];
     [self.handler load];
 }

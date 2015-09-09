@@ -19,51 +19,75 @@
 @interface BICollectionView : UICollectionView
 
 /*!
- @callback infiniteScrollingCallback Used to notify dataSource to fetch the next batch
+ @brief Specifies whether to trigger the pullToRefresCallback block or not, when a pull-to-refresh gesture for the collectionView is made. Default is NO.
  */
-@property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)();
+@property (nonatomic, assign, getter=isPullToRefreshEnabled) BOOL pullToRefreshEnabled;
 
 /*!
- @callback pullTorefreshCallback Used to notify the dataSource to reload.
+ @brief Used to notify the datasource to reload.
  */
 @property (nonatomic, copy, nullable) void (^pullToRefreshCallback)();
 
 /*!
- @field enableInfiniteScrolling Specifies whether the scrolling of the collectionView is infinite or not
- @discussion If it is set to NO, no other batches are fetched. Default is YES
+ @brief Represents the view that is displayed on top of the collectionView when the pull-to-refresh gesture is made.
  */
-@property (nonatomic, assign) BOOL enableInfiniteScrolling;
+@property (nonatomic, strong, nullable, readonly) UIRefreshControl *pullToRefreshControl;
+
 
 /*!
- @field pullToRefreshEnabled Specifies whether to trigger the pullToRefresCallback block or not, when a pull-to-refresh gesture for the collectionView is made.
- @discussion Default is YES.
+ @brief Specifies whether the scrolling of the collectionView is infinite or not. If it is set to NO, no other batches are fetched. Default is YES.
  */
-@property (nonatomic, assign) BOOL pullToRefreshEnabled;
+@property (nonatomic, assign) BOOL enableInfiniteScrolling __deprecated_msg("Use infiniteScrollingEnabled instead");
 
 /*!
- @field leadingScreens Represents the number of screens left to scroll before triggering the fetch of the next batch
- @discussion Default is 0.5f (half of screen)
+ @brief Specifies whether the scrolling of the collectionView is infinite or not. If it is set to NO, no other batches are fetched. Default is NO
  */
-@property (nonatomic, assign) CGFloat leadingScreens;
+@property (nonatomic, assign, getter=isInfiniteScrollingEnabled) BOOL infiniteScrollingEnabled;
 
 /*!
- @field refreshControl Represents the view that is displayed on top of the collectionView when the pull-to-refresh gesture is made.
+ @brief Used to notify dataSource to fetch the next batch
  */
-@property (nonatomic, strong, nonnull, readonly) UIRefreshControl *refreshControl;
- 
+@property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)();
+
+/*!
+ @brief Represents the number of screens left to scroll before triggering the fetch of the next batch. Default is 0.5f (half of screen)
+ */
+@property (nonatomic, assign) CGFloat leadingScreens __deprecated_msg("Use infiniteScrollingLeadingScreens instead");
+
+/*!
+ @brief Represents the number of screens left to scroll before triggering the fetch of the next batch. Default is 0.5f (half of screen)
+ */
+@property (nonatomic, assign) CGFloat infiniteScrollingLeadingScreens;
+
+/*!
+ @brief Activity indicator that is displayed on the collectionView footer while a new batch is fetched.
+ Used as table footer view. Override it for further customization.
+ */
+@property (nonatomic, strong, nullable, readonly) BIActivityIndicatorContainerView *infiniteScrollingActivityIndicatorContainer;
+
+/*!
+ @brief The current state of the infinite scrolling view.
+ */
 @property (nonatomic, assign) BIInfiniteScrollingState infiniteScrollingState;
 
 /*!
- @brief Collection view's datasource. Valid only if a BIDatasourceCollectionView type was created with a reference to this table view.
+ @brief Collection view's datasource. Valid only if a BIDatasourceCollectionView type was created with a reference to this collection view.
  */
 @property (nonatomic, weak, nullable, readonly) BIDatasourceCollectionView *datasource;
 
 /*!
- @brief Table view's handler. Valid only if a BIHandlerCollectionView type was created with a reference to this table view.
+ @brief collection view's handler. Valid only if a BIHandlerCollectionView type was created with a reference to this collection view.
  */
 @property (nonatomic, weak, nullable, readonly) BIHandlerCollectionView *handler;
 
-- (void)triggerInfiniteScrolling;
+/*!
+ Manual trigger pull to refresh.
+ */
+- (void)triggerPullToRefresh;
 
+/*!
+ Manual trigger the infinite scrolling.
+ */
+- (void)triggerInfiniteScrolling;
 
 @end

@@ -1,1 +1,0 @@
-../../../../../BIObjCHelpers/Views/CollectionView/Cell/BICollectionViewCell.h

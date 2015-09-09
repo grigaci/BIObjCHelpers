@@ -33,15 +33,9 @@
             BICollectionView *biCollectionView = (BICollectionView *)self.collectionView;
             biCollectionView.handler = self;
         }
+        self.collectionView.delegate = self;
     }
     return self;
-}
-
-#pragma mark - BILifecycle methods
-
-- (void)load {
-    [super load];
-    self.collectionView.delegate = self;
 }
 
 #pragma mark - UICollectionViewDelegate Methods
@@ -51,10 +45,9 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     if ([collectionView isKindOfClass:[BICollectionView class]]) {
-        if ([self.collectionView.dataSource isKindOfClass:[BIDatasourceFeedCollectionView class]]) {
-            if (((BIDatasourceFeedCollectionView *)self.collectionView.dataSource).dataSourceIsDoneLoading) {
-                return CGSizeMake(0.01f, 0.01f);
-            }
+        BICollectionView *biCollectionView = (BICollectionView *)collectionView;
+        if (biCollectionView.infiniteScrollingState == BIInfiniteScrollingStateStopped) {
+            return CGSizeMake(0.01f, 0.01f);
         }
         CGSize size = CGSizeMake(CGRectGetWidth(collectionView.frame), 44.f);
         return size;

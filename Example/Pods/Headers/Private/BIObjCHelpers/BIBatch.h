@@ -1,1 +1,1 @@
-../../../../../BIObjCHelpers/Batch/Common/BIBatch.h
+../../../../../BIObjCHelpers/Batch/BIBatch.h

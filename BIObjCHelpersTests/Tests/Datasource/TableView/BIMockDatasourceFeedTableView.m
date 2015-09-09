@@ -10,31 +10,31 @@
 
 @implementation BIMockDatasourceFeedTableView
 
-- (nonnull BIBatch *)createNextBatch {
+- (nonnull BIBatchRequest *)createNextBatch {
     if (self.createNextBatchCallback) {
         return self.createNextBatchCallback();
     }
    return  [super createNextBatch];
 }
 
-- (void)fetchBatch:(nonnull BIBatch *)batch {
-    [super fetchBatch:batch loadOnTop:NO];
+- (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+    [super fetchBatchRequest:batchRequest];
     if (self.fetchBatchCallback) {
-        self.fetchBatchCallback(batch);
+        self.fetchBatchCallback(batchRequest);
     }
 }
 
-- (void)fetchBatchCompletedWithFailure:(nonnull NSError *)error {
-    [super fetchBatchCompletedWithFailure:error];
-    if (self.fetchBatchCompletedWithFailureCallback) {
-        self.fetchBatchCompletedWithFailureCallback(error);
+- (void)handleFetchBatchResponseWithFailure:(nonnull BIBatchResponse *)batchResponse {
+    [super handleFetchBatchResponseWithFailure:batchResponse];
+    if (self.handleFetchBatchResponseWithFailureCallback) {
+        self.handleFetchBatchResponseWithFailureCallback(batchResponse);
     }
 }
 
-- (void)fetchBatchCompletedWithSuccess:(nonnull NSArray *)newIndexPaths {
-    [super fetchBatchCompletedWithSuccess:newIndexPaths];
-    if (self.fetchBatchCompletedWithSuccessCallback) {
-        self.fetchBatchCompletedWithSuccessCallback(newIndexPaths);
+- (void)handleFetchBatchResponseWithSuccess:(nonnull BIBatchResponse *)batchResponse {
+    [super handleFetchBatchResponseWithSuccess:batchResponse];
+    if (self.handleFetchBatchResponseWithSuccessCallback) {
+        self.handleFetchBatchResponseWithSuccessCallback(batchResponse);
     }
 }
 

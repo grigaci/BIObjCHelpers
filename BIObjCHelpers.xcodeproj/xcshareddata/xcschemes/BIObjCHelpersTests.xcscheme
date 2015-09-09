@@ -37,6 +37,14 @@
                BlueprintName = "BIObjCHelpersTests"
                ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "BIActivityIndicatorContainerViewTestCase">
+               </Test>
+               <Test
+                  Identifier = "BITableViewCellTestCase">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

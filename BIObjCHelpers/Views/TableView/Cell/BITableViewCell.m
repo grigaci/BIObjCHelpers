@@ -70,6 +70,7 @@ const CGFloat kBIDefaultTableViewCellSeparatorViewHeight = 1.f;
 
 - (void)BI_commonSetup {
     self.separatorViewHeight = kBIDefaultTableViewCellSeparatorViewHeight;
+    self.separatorViewVisible = NO;
 }
 
 - (void)BI_addSeparatorView {

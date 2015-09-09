@@ -10,9 +10,9 @@
 
 @interface BIMockDatasourceFeedTableView : BIDatasourceFeedTableView
 
-@property (nonatomic, strong, nullable) BIBatch *__nonnull(^createNextBatchCallback)();
-@property (nonatomic, copy, nullable) void(^fetchBatchCallback)(BIBatch * __nonnull);
-@property (nonatomic, strong, nullable) void(^fetchBatchCompletedWithFailureCallback)(NSError * __nonnull);
-@property (nonatomic, strong, nullable) void(^fetchBatchCompletedWithSuccessCallback)(NSArray * __nonnull);
+@property (nonatomic, strong, nullable) BIBatchRequest *__nonnull(^createNextBatchCallback)();
+@property (nonatomic, copy, nullable) void(^fetchBatchCallback)(BIBatchRequest * __nonnull);
+@property (nonatomic, strong, nullable) void(^handleFetchBatchResponseWithFailureCallback)(BIBatchResponse * __nonnull);
+@property (nonatomic, strong, nullable) void(^handleFetchBatchResponseWithSuccessCallback)(BIBatchResponse * __nonnull);
 
 @end

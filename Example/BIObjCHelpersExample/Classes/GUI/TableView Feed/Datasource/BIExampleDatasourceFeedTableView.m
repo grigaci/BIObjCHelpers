@@ -7,7 +7,9 @@
 //
 
 #import "BIExampleDatasourceFeedTableView.h"
-#import "BIBatch.h"
+#import "BIBatchRequest.h"
+#import "BIBatchResponse.h"
+#import "BITableViewCell.h"
 
 const CGFloat kExampleDatasourceFeedMaxElements = 30;
 
@@ -30,32 +32,33 @@ const CGFloat kExampleDatasourceFeedMaxElements = 30;
     return self.countItems;
 }
 
-- (void)configureCell:(nonnull UITableViewCell *)cell atIndexPath:(nonnull NSIndexPath *)indexPath {
+- (void)configureCell:(nonnull BITableViewCell *)cell atIndexPath:(nonnull NSIndexPath *)indexPath {
     [super configureCell:cell atIndexPath:indexPath];
     NSString *text = [NSString stringWithFormat:@"%@", @(indexPath.row)];
     cell.textLabel.text = text;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-- (void)fetchBatch:(nonnull BIBatch *)batch loadOnTop:(BOOL)loadOnTop {
+- (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     if (self.countItems > kExampleDatasourceFeedMaxElements) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            batch.completionBlock(nil, @[]);
+            BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest
+                                                                                     error:nil
+                                                                             newIndexPaths:@[]];
+            batchRequest.completionBlock(batchResponse);
+            self.tableView.pullToRefreshEnabled = NO;
+            self.tableView.infiniteScrollingEnabled = NO;
         });
         return;
     }
-    [super fetchBatch:batch loadOnTop:loadOnTop];
+    [super fetchBatchRequest:batchRequest];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSUInteger sectionIndex = batch.sectionIndex;
-        NSUInteger newRowIndex = loadOnTop ? 0 : [self.tableView numberOfRowsInSection:sectionIndex];
-        NSUInteger lastRowIndex = loadOnTop ? batch.batchSize : newRowIndex + batch.batchSize;
-        self.countItems += batch.batchSize;
-        NSMutableArray *mutableArray = [NSMutableArray new];
-        for (NSUInteger index = newRowIndex; index < lastRowIndex; index++) {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:sectionIndex];
-            [mutableArray addObject:indexPath];
-        }
-        batch.completionBlock(nil, [mutableArray copy]);
+        self.countItems += batchRequest.batchSize;
+        BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest
+                                                                             tableView:self.tableView
+                                                                         countNewItems:batchRequest.batchSize];
+
+        batchRequest.completionBlock(batchResponse);
     });
 }
 

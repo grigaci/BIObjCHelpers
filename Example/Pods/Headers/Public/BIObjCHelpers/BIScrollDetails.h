@@ -1,1 +1,1 @@
-../../../../../BIObjCHelpers/Details/BIScrollDetails.h
+../../../../../BIObjCHelpers/Utils/BIScrollDetails.h

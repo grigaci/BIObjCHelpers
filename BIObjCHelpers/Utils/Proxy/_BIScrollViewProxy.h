@@ -1,5 +1,5 @@
 //
-//  _BITableViewProxy.h
+//  _BIScrollViewProxy.h
 //  BIObjCHelpers
 //
 //  Created by Bogdan Iusco on 24/07/15.
@@ -8,14 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-//@class BITableView;
-
 @interface _BIScrollViewProxy : NSProxy
 
 - (nonnull instancetype)initWithTarget:(nullable id<NSObject>)target interceptor:(nonnull UIScrollView *)interceptor;
 
 @property (nonatomic, weak, nullable, readonly) id target;
 @property (nonatomic, weak, nullable, readonly) UIScrollView *interceptor;
-
 
 @end

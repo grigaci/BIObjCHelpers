@@ -1,12 +1,13 @@
 //
 //  BIDatasourceFeedTableViewTestCase.m
-//  BIObjCHelpersExample
+//  BIObjCHelpers
 //
 //  Created by Bogdan Iusco on 14/07/15.
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import "BIBatch.h"
+#import "BIBatchRequest.h"
+#import "BIBatchResponse.h"
 #import "BITableView.h"
 #import "BITableViewCell.h"
 #import "BIMockDatasourceFeedTableView.h"
@@ -36,45 +37,56 @@
     [super tearDown];
 }
 
+#pragma mark - Test Inits
+
+- (void)test_inits {
+    BIDatasourceFeedTableView *datasource = [BIMockDatasourceFeedTableView datasourceWithBITableView:self.tableView];
+    XCTAssertNotNil(datasource);
+    datasource = [[BIMockDatasourceFeedTableView alloc] initWithBITableView:self.tableView];
+    XCTAssertNotNil(datasource);
+    XCTAssertEqual(datasource.tableView, self.tableView);
+}
+
 #pragma mark - Test createNextBatch
 
 - (void)testCreateNextBatchCallback {
     __block BOOL wasCalled = NO;
-    __block BIBatch *batch;
+    __block BIBatchRequest *batchRequest;
     self.datasource.createNextBatchCallback = ^() {
         wasCalled = YES;
-        batch = [[BIBatch alloc] initWithCompletionBlock:nil];
-        return batch;
+        batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
+        return batchRequest;
     };
     [self.tableView triggerInfiniteScrolling];
     XCTAssertTrue(wasCalled);
-    XCTAssertEqual(batch, self.datasource.currentBatch);
+    XCTAssertEqual(batchRequest, self.datasource.currentBatchRequest);
 }
 
 #pragma mark - Test fetchBatch
 
-#warning @Bogdan fix this
-//- (void)testFetchBatch {
-//    __block BOOL wasCalled = NO;
-//    self.datasource.fetchBatchCallback = ^(BIBatch * __nonnull batch) {
-//        wasCalled = YES;
-//    };
-//    [self.tableView triggerInfiniteScrolling];
-//    XCTAssertTrue(wasCalled);
-//    XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateLoading);
-//}
+- (void)testFetchBatch {
+    __block BOOL wasCalled = NO;
+    self.datasource.fetchBatchCallback = ^(BIBatchRequest * __nonnull batch) {
+        wasCalled = YES;
+    };
+    [self.tableView triggerInfiniteScrolling];
+    XCTAssertTrue(wasCalled);
+    XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateLoading);
+}
 
 #pragma mark - Test fetchBatchCompletedWithFailure
 
 - (void)testFetchBatchCompletedWithFailure {
     __block NSError *returnedError = nil;
-    NSError *sentError = [[NSError alloc] init];
-    self.datasource.fetchBatchCompletedWithFailureCallback = ^(NSError * __nonnull error) {
-        returnedError = error;
+    NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
+    BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
+    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:error newIndexPaths:@[]];
+    self.datasource.handleFetchBatchResponseWithFailureCallback = ^(BIBatchResponse * __nonnull aBatchResponse) {
+        returnedError = aBatchResponse.error;
     };
     [self.tableView triggerInfiniteScrolling];
-    self.datasource.currentBatch.completionBlock(sentError, nil);
-    XCTAssertEqual(sentError, returnedError);
+    self.datasource.currentBatchRequest.completionBlock(batchResponse);
+    XCTAssertEqual(returnedError, error);
 }
 
 #pragma mark - Test fetchBatchCompletedWithSuccess
@@ -82,21 +94,56 @@
 - (void)testFetchBatchCompletedWithSuccess {
     __block NSArray *returnedItems = nil;
     NSArray *sentItems = @[];
-    self.datasource.fetchBatchCompletedWithSuccessCallback = ^(NSArray * __nonnull items) {
-        returnedItems = items;
+    BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
+    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:nil newIndexPaths:sentItems];
+    self.datasource.handleFetchBatchResponseWithSuccessCallback = ^(BIBatchResponse * __nonnull aBatchResponse) {
+        returnedItems = aBatchResponse.indexPaths;
     };
     [self.tableView triggerInfiniteScrolling];
-    self.datasource.currentBatch.completionBlock(nil, sentItems);
+    self.datasource.currentBatchRequest.completionBlock(batchResponse);
     XCTAssertEqual(sentItems, returnedItems);
 }
 
 #pragma mark - Test fetchBatchCompletedCommon
 
-- (void)testFetchBatchCompletedCommon {
+- (void)testFetchBatchCompletedCommonInsertTop {
+    BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
+    batchRequest.insertPosition = BIBatchInsertPositionTop;
+    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:nil newIndexPaths:nil];
+
     [self.tableView triggerInfiniteScrolling];
-    [self.datasource fetchBatchCompletedCommon];
+    [self.tableView triggerPullToRefresh];
+    [self.datasource handleFetchBatchResponseCommon:batchResponse];
+    XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateLoading);
+    XCTAssertFalse([self.tableView.pullToRefreshControl isRefreshing]);
+    XCTAssertNil(self.datasource.currentBatchRequest);
+}
+
+- (void)testFetchBatchCompletedCommonInsertBottom {
+    BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
+    batchRequest.insertPosition = BIBatchInsertPositionBottom;
+    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:nil newIndexPaths:nil];
+    
+    [self.tableView triggerInfiniteScrolling];
+    [self.tableView triggerPullToRefresh];
+    [self.datasource handleFetchBatchResponseCommon:batchResponse];
     XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateStopped);
-    XCTAssertNil(self.datasource.currentBatch);
+    XCTAssertTrue([self.tableView.pullToRefreshControl isRefreshing]);
+    XCTAssertNil(self.datasource.currentBatchRequest);
+}
+
+
+- (void)testFetchBatchCompletedCommonInsertOther {
+    BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
+    batchRequest.insertPosition = 1;
+    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:nil newIndexPaths:nil];
+    
+    [self.tableView triggerInfiniteScrolling];
+    [self.tableView triggerPullToRefresh];
+    [self.datasource handleFetchBatchResponseCommon:batchResponse];
+    XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateLoading);
+    XCTAssertTrue([self.tableView.pullToRefreshControl isRefreshing]);
+    XCTAssertNil(self.datasource.currentBatchRequest);
 }
 
 #pragma mark - Test load

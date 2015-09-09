@@ -8,6 +8,9 @@
 
 #import "BIExampleDatasourceFeedCollectionView.h"
 #import "BIExampleCollectionViewCell.h"
+#import "BIBatchRequest.h"
+#import "BIBatchResponse.h"
+#import "BICollectionView.h"
 
 const CGFloat kExampleDatasourceFeedCollectionViewMaxElements = 30;
 
@@ -36,25 +39,27 @@ const CGFloat kExampleDatasourceFeedCollectionViewMaxElements = 30;
     exampleCell.title = [NSString stringWithFormat:@"%ld", indexPath.row];
 }
 
-- (void)fetchBatch:(nonnull BIBatch *)batch loadOnTop:(BOOL)loadOnTop {
+- (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     if (self.countItems > kExampleDatasourceFeedCollectionViewMaxElements) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            batch.completionBlock(nil, @[]);
+            BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest
+                                                                                     error:nil
+                                                                             newIndexPaths:@[]];
+            batchRequest.completionBlock(batchResponse);
+            self.collectionView.pullToRefreshEnabled = NO;
+            self.collectionView.infiniteScrollingEnabled = NO;
+
         });
         return;
     }
-    [super fetchBatch:batch loadOnTop:loadOnTop];
+    [super fetchBatchRequest:batchRequest];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSUInteger sectionIndex = batch.sectionIndex;
-        NSUInteger newRowIndex = loadOnTop ? 0 : [self.collectionView numberOfItemsInSection:sectionIndex];
-        NSUInteger lastRowIndex = loadOnTop ? batch.batchSize : newRowIndex + batch.batchSize;
-        self.countItems += batch.batchSize;
-        NSMutableArray *mutableArray = [NSMutableArray new];
-        for (NSUInteger index = newRowIndex; index < lastRowIndex; index++) {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:sectionIndex];
-            [mutableArray addObject:indexPath];
-        }
-        batch.completionBlock(nil, [mutableArray copy]);
+        self.countItems += batchRequest.batchSize;
+        BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest
+                                                                        collectionView:self.collectionView
+                                                                         countNewItems:batchRequest.batchSize];
+        
+        batchRequest.completionBlock(batchResponse);
     });
 }
 

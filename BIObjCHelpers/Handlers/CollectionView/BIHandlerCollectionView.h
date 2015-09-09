@@ -28,7 +28,7 @@ typedef void(^BIHandlerCollectionViewItemSelectionCallback)(id __nonnull cell, N
 
 @interface BIHandlerCollectionView (Subclass) <UICollectionViewDelegateFlowLayout>
 /*!
- This method gets called after datasource's collectionView:viewForSupplementaryElementOfKind:atIndexPat method, to provide the size of the infinite scrolling activity indicator. If you want to override it, call it's super.
+ This method gets called after datasource's collectionView:viewForSupplementaryElementOfKind:atIndexPat method, to provide the size of the infinite scrolling activity indicator. If you want to override it, call its super.
  */
 - (CGSize)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
 

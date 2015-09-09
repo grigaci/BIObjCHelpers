@@ -7,14 +7,13 @@
 //
 
 #import "BIDatasourceFeedTableView.h"
-#import "BIBatch.h"
+#import "BIBatchRequest.h"
+#import "BIBatchResponse.h"
 #import "BITableViewCell.h"
 
 @interface BIDatasourceFeedTableView ()
 
-@property (nonatomic, strong, nullable, readwrite) BIBatch *currentBatch;
-
-@property (nonatomic, assign) BOOL reloadIsOnTop;
+@property (nonatomic, strong, nullable, readwrite) BIBatchRequest *currentBatchRequest;
 
 @end
 
@@ -24,8 +23,17 @@
 @dynamic tableView;
 @synthesize cellClass = _cellClass;
 
+#pragma mark - Factory methods
+
 + (nonnull instancetype)datasourceWithBITableView:(nonnull BITableView *)tableView {
-    return [super datasourceWithTableView:tableView];
+    return [[self alloc] initWithBITableView:tableView];
+}
+
+#pragma mark - Init methods
+
+- (nonnull instancetype)initWithBITableView:(nonnull BITableView *)tableView  {
+    self = [super initWithTableView:tableView];
+    return self;
 }
 
 #pragma mark - BIDatasourceBase methods
@@ -34,18 +42,17 @@
     [super load];
     __weak typeof(self) weakself = self;
     [self.tableView setInfiniteScrollingCallback:^{
-        BIBatch *batch = [weakself createNextBatch];
-        [weakself fetchBatch:batch loadOnTop:NO];
-        weakself.reloadIsOnTop = NO;
+        BIBatchRequest *batch = [weakself createNextBatch];
+        batch.insertPosition = BIBatchInsertPositionBottom;
+        [weakself fetchBatchRequest:batch];
     }];
     [self.tableView setPullToRefreshCallback:^{
-        BIBatch *batch = [weakself createNextBatch];
-        [weakself fetchBatch:batch loadOnTop:YES];
-        weakself.reloadIsOnTop = YES;
+        BIBatchRequest *batch = [weakself createNextBatch];
+        batch.insertPosition = BIBatchInsertPositionTop;
+        [weakself fetchBatchRequest:batch];
     }];
 }
 
-// Overriden getter
 - (Class)cellClass {
     if (!_cellClass) {
         _cellClass = [BITableViewCell class];
@@ -55,51 +62,54 @@
 
 #pragma mark - Public methods
 
-- (nonnull BIBatch *)createNextBatch {
+- (nonnull BIBatchRequest *)createNextBatch {
     NSUInteger lastSectionIndex = [self.tableView numberOfSections] - 1;
-    NSUInteger batchSize = kDefaultBatchSize;
+    NSUInteger batchSize = kDefaultBatchRequestSize;
     __weak typeof(self) weakself = self;
-    BIBatchCompletionBlock completionBlock = ^(NSError * __nullable error, NSArray * __nullable newIndexPaths) {
-        [weakself handleFetchBatchResponse:error newIndexPaths:newIndexPaths];
-        if (weakself.reloadIsOnTop) {
-            [weakself.tableView.pullToRefreshControl endRefreshing];
-        }
-    } ;
-    BIBatch *batch = [[BIBatch alloc] initWithSection:lastSectionIndex
-                                                              batchSize:batchSize
-                                                        completionBlock:completionBlock];
+    BIBatchRequestCompletionBlock completionBlock = ^(BIBatchResponse *batchResponse) {
+        [weakself handleFetchBatchResponse:batchResponse];
+    };
+    BIBatchRequest *batch = [[BIBatchRequest alloc] initWithSection:lastSectionIndex
+                                                          batchSize:batchSize
+                                                    completionBlock:completionBlock];
     return batch;
 }
 
-- (void)fetchBatch:(nonnull BIBatch *)batch loadOnTop:(BOOL)loadOnTop {
-    self.currentBatch = batch;
+- (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+    self.currentBatchRequest = batchRequest;
 }
 
-- (void)handleFetchBatchResponse:(nullable NSError *)error
-                   newIndexPaths:(nullable NSArray *)indexPaths {
-    if (error) {
-        [self fetchBatchCompletedWithFailure:error];
+- (void)handleFetchBatchResponse:(nonnull BIBatchResponse *)batchResponse {
+    if (batchResponse.error) {
+        [self handleFetchBatchResponseWithFailure:batchResponse];
     } else {
-        [self fetchBatchCompletedWithSuccess:indexPaths];
+        [self handleFetchBatchResponseWithSuccess:batchResponse];
     }
 }
 
-- (void)fetchBatchCompletedWithFailure:(nonnull NSError *)error {
-    [self fetchBatchCompletedCommon];
+- (void)handleFetchBatchResponseWithFailure:(nonnull BIBatchResponse *)batchResponse {
+    [self handleFetchBatchResponseCommon:batchResponse];
 }
 
-- (void)fetchBatchCompletedWithSuccess:(nonnull NSArray *)newIndexPaths {
+- (void)handleFetchBatchResponseWithSuccess:(nonnull BIBatchResponse *)batchResponse {
     [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView insertRowsAtIndexPaths:batchResponse.indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.tableView endUpdates];
 
-    [self fetchBatchCompletedCommon];
+    [self handleFetchBatchResponseCommon:batchResponse];
 }
 
-- (void)fetchBatchCompletedCommon {
-    self.currentBatch = nil;
-    if (!self.reloadIsOnTop) {
-        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+- (void)handleFetchBatchResponseCommon:(nonnull BIBatchResponse *)batchResponse {
+    self.currentBatchRequest = nil;
+    switch (batchResponse.batchRequest.insertPosition) {
+        case BIBatchInsertPositionTop:
+            [self.tableView.pullToRefreshControl endRefreshing];
+            break;
+        case BIBatchInsertPositionBottom:
+            self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+            break;
+        default:
+            break;
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  _BITableViewProxy.m
+//  _BIScrollViewProxy.m
 //  BIObjCHelpers
 //
 //  Created by Bogdan Iusco on 24/07/15.
@@ -7,7 +7,6 @@
 //
 
 #import "_BIScrollViewProxy.h"
-//#import "BITableView.h"
 
 @interface _BIScrollViewProxy ()
 

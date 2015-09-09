@@ -8,14 +8,12 @@
 
 #import "BIDatasourceFeedCollectionView.h"
 #import "BICollectionViewActivityIndicatorReusableView.h"
+#import "BIBatchRequest.h"
+#import "BIBatchResponse.h"
 
 @interface BIDatasourceFeedCollectionView ()
 
-@property (nonatomic, strong, nullable, readwrite) BIBatch *currentBatch;
-
-@property (nonatomic, assign) BOOL reloadIsOnTop;
-@property (nonatomic, assign, readwrite) BOOL dataSourceIsDoneLoading;
-
+@property (nonatomic, strong, nullable, readwrite) BIBatchRequest *currentBatchRequest;
 @property (nonatomic, copy) NSString *footerViewIdentifier;
 
 @end
@@ -44,14 +42,14 @@
     [self.collectionView registerClass:[BICollectionViewActivityIndicatorReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:self.footerViewIdentifier];
     __weak typeof(self) weakself = self;
     [self.collectionView setInfiniteScrollingCallback:^{
-        BIBatch *batch = [weakself createNextBatch];
-        [weakself fetchBatch:batch loadOnTop:NO];
-        weakself.reloadIsOnTop = NO;
+        BIBatchRequest *batch = [weakself createNextBatch];
+        batch.insertPosition = BIBatchInsertPositionBottom;
+        [weakself fetchBatchRequest:batch];
     }];
     [self.collectionView setPullToRefreshCallback:^{
-        BIBatch *batch = [weakself createNextBatch];
-        [weakself fetchBatch:batch loadOnTop:YES];
-        weakself.reloadIsOnTop = YES;
+        BIBatchRequest *batch = [weakself createNextBatch];
+        batch.insertPosition = BIBatchInsertPositionTop;
+        [weakself fetchBatchRequest:batch];
     }];
 }
 
@@ -64,56 +62,60 @@
 
 #pragma mark - Public methods
 
-- (nonnull BIBatch *)createNextBatch {
+- (nonnull BIBatchRequest *)createNextBatch {
     NSUInteger lastSectionIndex = [self.collectionView numberOfSections] - 1;
-    NSUInteger batchSize = kDefaultBatchSize;
+    NSUInteger batchSize = kDefaultBatchRequestSize;
     __weak typeof(self) weakself = self;
-    BIBatchCompletionBlock completionBlock = ^(NSError * __nullable error, NSArray * __nullable newIndexPaths) {
-        [weakself handleFetchBatchResponse:error newIndexPaths:newIndexPaths];
-        if (weakself.reloadIsOnTop) {
-            [weakself.collectionView.refreshControl endRefreshing];
-        }
-    } ;
-    BIBatch *batch = [[BIBatch alloc] initWithSection:lastSectionIndex
-                                            batchSize:batchSize
-                                      completionBlock:completionBlock];
+    BIBatchRequestCompletionBlock completionBlock = ^(BIBatchResponse *batchResponse) {
+        [weakself handleFetchBatchResponse:batchResponse];
+    };
+    BIBatchRequest *batch = [[BIBatchRequest alloc] initWithSection:lastSectionIndex
+                                                          batchSize:batchSize
+                                                    completionBlock:completionBlock];
     return batch;
 }
 
-- (void)fetchBatch:(nonnull BIBatch *)batch loadOnTop:(BOOL)loadOnTop {
-    self.currentBatch = batch;
+- (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+    self.currentBatchRequest = batchRequest;
 }
 
-- (void)handleFetchBatchResponse:(nullable NSError *)error
-                   newIndexPaths:(nullable NSArray *)indexPaths {
-    if (error) {
-        [self fetchBatchCompletedWithFailure:error];
+- (void)handleFetchBatchResponse:(nonnull BIBatchResponse *)batchResponse {
+    if (batchResponse.error) {
+        [self handleFetchBatchResponseWithFailure:batchResponse];
     } else {
-        [self fetchBatchCompletedWithSuccess:indexPaths];
+        [self handleFetchBatchResponseWithSuccess:batchResponse];
     }
 }
 
-- (void)fetchBatchCompletedWithFailure:(nonnull NSError *)error {
-    [self fetchBatchCompletedCommon];
+- (void)handleFetchBatchResponseWithFailure:(nonnull BIBatchResponse *)batchResponse {
+    [self handleFetchBatchResponseCommon:batchResponse];
 }
 
-- (void)fetchBatchCompletedWithSuccess:(nonnull NSArray *)newIndexPaths {
+- (void)handleFetchBatchResponseWithSuccess:(nonnull BIBatchResponse *)batchResponse {
+    NSArray *newIndexPaths = batchResponse.indexPaths;
     if (newIndexPaths.count) {
         [self.collectionView performBatchUpdates:^{
            [self.collectionView insertItemsAtIndexPaths:newIndexPaths];
         } completion:^(BOOL finished) {
-            [self fetchBatchCompletedCommon];
+            [self handleFetchBatchResponseCommon:batchResponse];
         }];
     } else {
-        self.dataSourceIsDoneLoading = YES;
         [self.collectionView.collectionViewLayout invalidateLayout];
+        [self handleFetchBatchResponseCommon:batchResponse];
     }
 }
 
-- (void)fetchBatchCompletedCommon {
-    self.currentBatch = nil;
-    if (!self.reloadIsOnTop) {
-        self.collectionView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+- (void)handleFetchBatchResponseCommon:(nonnull BIBatchResponse *)batchResponse {
+    self.currentBatchRequest = nil;
+    switch (batchResponse.batchRequest.insertPosition) {
+        case BIBatchInsertPositionTop:
+            [self.collectionView.pullToRefreshControl endRefreshing];
+            break;
+        case BIBatchInsertPositionBottom:
+            self.collectionView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+            break;
+        default:
+            break;
     }
 }
 
@@ -131,7 +133,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
         BICollectionViewActivityIndicatorReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:self.footerViewIdentifier forIndexPath:indexPath];
-        footerView.hidden = self.dataSourceIsDoneLoading;
+        footerView.hidden = NO;
         return footerView;
     }
     return nil;

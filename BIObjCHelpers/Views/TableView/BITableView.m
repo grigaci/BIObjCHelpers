@@ -9,7 +9,7 @@
 #import "BITableView.h"
 #import "BIActivityIndicatorContainerView.h"
 #import "_BIScrollViewProxy.h"
-#import "BIBatchHelper.h"
+#import "BIBatchHelpers.h"
 
 @interface BITableView () <UITableViewDelegate>
 
@@ -72,6 +72,7 @@
 #pragma mark - Public methods
 
 - (void)triggerPullToRefresh {
+    [self BI_createPullToRefreshControl];
     [self.pullToRefreshControl beginRefreshing];
     if (self.pullToRefreshCallback) {
         self.pullToRefreshCallback();

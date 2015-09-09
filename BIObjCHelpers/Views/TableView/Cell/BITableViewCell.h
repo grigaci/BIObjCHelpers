@@ -25,7 +25,7 @@ FOUNDATION_EXPORT const CGFloat kBIDefaultTableViewCellSeparatorViewHeight;
 @property (nonatomic, strong, nonnull, readonly) UIView *separatorView;
 
 /*!
- @brief Flag for adding of removing the separatorView. Default is NO.
+ @brief Flag for adding of removing the separatorView. Default is YES.
  */
 @property (nonatomic, assign, getter=isSeparatorViewVisible) BOOL separatorViewVisible;
 
