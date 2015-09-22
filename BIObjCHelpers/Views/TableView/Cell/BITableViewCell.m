@@ -29,7 +29,7 @@ const CGFloat kBIDefaultTableViewCellSeparatorViewHeight = 1.f;
     return self;
 }
 
-- (nonnull instancetype)initWithCoder:(NSCoder *)aDecoder {
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self BI_commonSetup];
