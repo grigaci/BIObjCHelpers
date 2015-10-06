@@ -33,6 +33,9 @@
 
 - (nonnull instancetype)initWithBITableView:(nonnull BITableView *)tableView  {
     self = [super initWithTableView:tableView];
+    if (self) {
+        self.cellClass = [BITableViewCell class];
+    }
     return self;
 }
 
@@ -51,13 +54,6 @@
         batch.insertPosition = BIBatchInsertPositionTop;
         [weakself fetchBatchRequest:batch];
     }];
-}
-
-- (Class)cellClass {
-    if (!_cellClass) {
-        _cellClass = [BITableViewCell class];
-    }
-    return _cellClass;
 }
 
 #pragma mark - Public methods
