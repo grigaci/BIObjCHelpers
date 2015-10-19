@@ -12,10 +12,10 @@
 
 @interface BILaunchStartersFactory : BIStartersFactory
 
-- (__nonnull instancetype)init NS_UNAVAILABLE;
-+ (__nonnull instancetype)new  NS_UNAVAILABLE;
+- (nonnull instancetype)init NS_UNAVAILABLE;
++ (nonnull instancetype)new  NS_UNAVAILABLE;
 
-- (__nonnull instancetype)initWithLaunchingOptions:(NSDictionary * __nonnull)launchOptions;
+- (nonnull instancetype)initWithLaunchingOptions:(nonnull NSDictionary *)launchOptions;
 
 @property (nonatomic, strong, nonnull, readonly) UIApplication *application;
 @property (nonatomic, strong, nonnull, readonly) NSDictionary *launchOptions;

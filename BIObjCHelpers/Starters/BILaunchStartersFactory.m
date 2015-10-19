@@ -20,7 +20,7 @@
 
 #pragma mark - Init methods
 
-- (instancetype)initWithLaunchingOptions:(NSDictionary *)launchOptions {
+- (nonnull instancetype)initWithLaunchingOptions:(NSDictionary *)launchOptions {
     self = [super init];
     if (self) {
         self.application = [UIApplication sharedApplication];
