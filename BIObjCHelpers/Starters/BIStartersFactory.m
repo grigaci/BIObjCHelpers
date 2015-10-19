@@ -11,7 +11,7 @@
 
 @interface BIStartersFactory ()
 
-@property (nonatomic, strong) NSMutableArray *starters;
+@property (nonatomic, strong, nullable, readwrite) NSMutableArray *starters;
 
 @end
 

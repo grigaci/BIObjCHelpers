@@ -6,11 +6,14 @@
 //  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @protocol BIStarter <NSObject>
 
 @required
 - (void)start;
+
+@optional
+@property (nonatomic, strong, nonnull) NSDictionary *launchOptions;
 
 @end

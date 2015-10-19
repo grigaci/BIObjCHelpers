@@ -54,6 +54,8 @@
 		91E517F21B59208F000B51AF /* BITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E517F11B59208F000B51AF /* BITableViewCell.m */; };
 		91E59B871B5840CD0034824F /* BITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B861B5840CD0034824F /* BITableView.m */; };
 		91E59B8B1B58411B0034824F /* UIView+BILoadXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */; };
+		9437007F1BCD3F9C0063D2CC /* BILaunchStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437007E1BCD3F9C0063D2CC /* BILaunchStartersFactory.m */; settings = {ASSET_TAGS = (); }; };
+		943700841BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 943700831BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m */; settings = {ASSET_TAGS = (); }; };
 		E59E667E65313C7B4DAF4C43 /* libPods-BIObjCHelpersTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +165,9 @@
 		91E59B861B5840CD0034824F /* BITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableView.m; path = Views/TableView/BITableView.m; sourceTree = "<group>"; };
 		91E59B891B58411B0034824F /* UIView+BILoadXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+BILoadXib.h"; path = "UIView/UIView+BILoadXib.h"; sourceTree = "<group>"; };
 		91E59B8A1B58411B0034824F /* UIView+BILoadXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+BILoadXib.m"; path = "UIView/UIView+BILoadXib.m"; sourceTree = "<group>"; };
+		9437007D1BCD3F9C0063D2CC /* BILaunchStartersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILaunchStartersFactory.h; sourceTree = "<group>"; };
+		9437007E1BCD3F9C0063D2CC /* BILaunchStartersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BILaunchStartersFactory.m; sourceTree = "<group>"; };
+		943700831BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BILaunchStartersFactoryTestCase.m; sourceTree = "<group>"; };
 		B17EECE85027D221447B728D /* Pods-BIObjCHelpersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIObjCHelpersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BIObjCHelpersTests/Pods-BIObjCHelpersTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB1D306E32DEEA06A1B3FEA0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BIObjCHelpersTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,6 +429,8 @@
 				43BE6C6F1B5689CA001F0A00 /* BIStarterProtocol.h */,
 				43BE6C701B5689CA001F0A00 /* BIStartersFactory.h */,
 				43BE6C711B5689CA001F0A00 /* BIStartersFactory.m */,
+				9437007D1BCD3F9C0063D2CC /* BILaunchStartersFactory.h */,
+				9437007E1BCD3F9C0063D2CC /* BILaunchStartersFactory.m */,
 			);
 			path = Starters;
 			sourceTree = "<group>";
@@ -632,6 +639,7 @@
 			isa = PBXGroup;
 			children = (
 				43BE6CF31B568ECB001F0A00 /* BIStartersFactoryTestCase.m */,
+				943700831BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m */,
 				43BE6CF41B568ECB001F0A00 /* Mock */,
 			);
 			path = Starters;
@@ -889,6 +897,7 @@
 				43BE6C741B5689CA001F0A00 /* NSDate+BIAttributedString.m in Sources */,
 				91E59B8B1B58411B0034824F /* UIView+BILoadXib.m in Sources */,
 				43BE6C731B5689CA001F0A00 /* NSBundle+BIExtra.m in Sources */,
+				9437007F1BCD3F9C0063D2CC /* BILaunchStartersFactory.m in Sources */,
 				43BE6C7B1B5689CA001F0A00 /* BIDatasourceTableView.m in Sources */,
 				43BE6C801B5689CA001F0A00 /* BISerialOperationQueue.m in Sources */,
 				43BE6C7E1B5689CA001F0A00 /* BILifecycle.m in Sources */,
@@ -919,6 +928,7 @@
 				43BE6CFD1B568ECB001F0A00 /* BIDatasourceFeedTableViewTestCase.m in Sources */,
 				43BE6CF81B568ECB001F0A00 /* NSBundleBIExtraTestCase.m in Sources */,
 				43BE6CFB1B568ECB001F0A00 /* BIDatasourceFetchedCollectionViewTestCase.m in Sources */,
+				943700841BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m in Sources */,
 				43BE6CFC1B568ECB001F0A00 /* BIMockDatasourceFetchedCollectionView.m in Sources */,
 				43BE6D051B568ECB001F0A00 /* BIMockStarter.m in Sources */,
 				4304A9B61B70D892009739B3 /* BIDatasourceTableViewTestCase.m in Sources */,
