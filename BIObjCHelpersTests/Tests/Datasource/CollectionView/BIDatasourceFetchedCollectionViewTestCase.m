@@ -12,6 +12,12 @@
 
 #import "BIDatasourceFetchedCollectionView.h"
 
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
+
+#define MOCKITO_SHORTHAND
+#import <OCMockito/OCMockito.h>
+
 @interface BIDatasourceFetchedCollectionViewTestCase : BITestCaseCoreData
 
 @property (nonatomic, strong) BIDatasourceFetchedCollectionView *datasource;
@@ -87,7 +93,8 @@
         testSections = sections;
     };
 
-    [self.datasource controller:fetchedResults didChangeSection:nil atIndex:sectionIndexToInsert forChangeType:NSFetchedResultsChangeInsert];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeSection:sectionInfo atIndex:sectionIndexToInsert forChangeType:NSFetchedResultsChangeInsert];
     [self.datasource controllerDidChangeContent:fetchedResults];
 
     XCTAssert([testSections isEqualToIndexSet:sectionIndexSetToInsert]);
@@ -104,7 +111,8 @@
         testSections = sections;
     };
     
-    [self.datasource controller:fetchedResults didChangeSection:nil atIndex:sectionIndexToDeleted forChangeType:NSFetchedResultsChangeDelete];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeSection:sectionInfo atIndex:sectionIndexToDeleted forChangeType:NSFetchedResultsChangeDelete];
     [self.datasource controllerDidChangeContent:fetchedResults];
 
     XCTAssert([testSections isEqualToIndexSet:sectionIndexSetToDelete]);
@@ -128,7 +136,8 @@
         wasReloaded = YES;
     };
 
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:nil forChangeType:NSFetchedResultsChangeInsert newIndexPath:indexPath];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:nil forChangeType:NSFetchedResultsChangeInsert newIndexPath:indexPath];
     [self.datasource controllerDidChangeContent:fetchedResults];
 
     if (!wasReloaded) {
@@ -156,7 +165,8 @@
         wasReloaded = YES;
     };
     
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:indexPath forChangeType:NSFetchedResultsChangeDelete newIndexPath:nil];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:indexPath forChangeType:NSFetchedResultsChangeDelete newIndexPath:nil];
     [self.datasource controllerDidChangeContent:fetchedResults];
     
     if (!wasReloaded) {
@@ -184,7 +194,8 @@
         wasReloaded = YES;
     };
     
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:indexPath forChangeType:NSFetchedResultsChangeUpdate newIndexPath:nil];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:indexPath forChangeType:NSFetchedResultsChangeUpdate newIndexPath:nil];
     [self.datasource controllerDidChangeContent:fetchedResults];
 
     if (!wasReloaded) {
@@ -215,7 +226,8 @@
         wasReloaded = YES;
     };
     
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:from forChangeType:NSFetchedResultsChangeMove newIndexPath:to];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:from forChangeType:NSFetchedResultsChangeMove newIndexPath:to];
     [self.datasource controllerDidChangeContent:fetchedResults];
     
     if (!wasReloaded) {

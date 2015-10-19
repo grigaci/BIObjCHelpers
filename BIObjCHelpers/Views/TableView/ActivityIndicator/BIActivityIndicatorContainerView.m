@@ -22,10 +22,20 @@
 - (nonnull instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self addSubview:self.activityIndicatorView];
+        [self BI_commonSetup];
     }
     return self;
 }
+
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self BI_commonSetup];
+    }
+    return self;
+}
+
+#pragma mark - UIView methods
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -48,6 +58,12 @@
         [_activityIndicatorView startAnimating];
     }
     return _activityIndicatorView;
+}
+
+#pragma mark - Private methods
+
+- (void)BI_commonSetup {
+    [self addSubview:self.activityIndicatorView];
 }
 
 @end
