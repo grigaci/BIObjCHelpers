@@ -1,1 +1,1 @@
-../../../../../BIObjCHelpers/Views/ActivityIndicator/BIActivityIndicatorContainerView.h
+../../../../../BIObjCHelpers/Views/TableView/ActivityIndicator/BIActivityIndicatorContainerView.h

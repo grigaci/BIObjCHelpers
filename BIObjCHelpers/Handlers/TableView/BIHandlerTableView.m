@@ -29,7 +29,7 @@
     self = [super init];
     if (self) {
         self.tableView = tableView;
-        if ([self.tableView isMemberOfClass:[BITableView class]]) {
+        if ([self.tableView isKindOfClass:[BITableView class]]) {
             BITableView *biTableView = (BITableView *)self.tableView;
             biTableView.handler = self;
         }

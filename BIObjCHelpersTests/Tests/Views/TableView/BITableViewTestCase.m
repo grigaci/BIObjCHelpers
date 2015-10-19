@@ -7,7 +7,8 @@
 //
 
 #import "BITableView.h"
-#import "BIDatasourceTableView.h"
+#import "BIDatasourceFeedTableView.h"
+#import "BIHandlerTableView.h"
 
 #import "BIMockHandlerTableView.h"
 
@@ -72,6 +73,77 @@
     CGPoint offset = CGPointMake(100, 100);
     [self.tableView.delegate scrollViewWillEndDragging:self.tableView withVelocity:velocity targetContentOffset:&offset];
     XCTAssertTrue(willEndDraggingWasCalled);
+}
+
+
+#pragma mark - Test pullToRefreshEnabled
+
+- (void)test_pullToRefreshEnabledNo {
+    XCTAssertFalse(self.tableView.isPullToRefreshEnabled); // Default value
+    self.tableView.pullToRefreshEnabled = NO;
+    XCTAssertNil(self.tableView.pullToRefreshControl);
+    XCTAssertNil(self.tableView.pullToRefreshCallback);
+}
+
+- (void)test_pullToRefreshEnabledYes {
+    __block BOOL wasCalled = NO;
+    self.tableView.pullToRefreshEnabled = YES;
+    XCTAssertTrue(self.tableView.pullToRefreshControl);
+    self.tableView.pullToRefreshCallback = ^() {
+        wasCalled = YES;
+    };
+    
+    [self.tableView triggerPullToRefresh];
+    XCTAssertTrue(wasCalled);
+}
+
+#pragma mark - Test infiniteScrollingEnabled
+
+- (void)test_infiniteScrollingEnabledNO {
+    XCTAssertFalse(self.tableView.isInfiniteScrollingEnabled);
+    XCTAssertNil(self.tableView.infiniteScrollingCallback);
+    XCTAssertNil(self.tableView.infiniteScrollingActivityIndicatorContainer);
+}
+
+- (void)test_infiniteScrollingEnabledYes {
+    __block BOOL wasCalled = NO;
+    self.tableView.infiniteScrollingEnabled = YES;
+    self.tableView.infiniteScrollingCallback = ^() {
+        wasCalled = YES;
+    };
+
+    [self.tableView triggerInfiniteScrolling];
+    XCTAssertTrue(wasCalled);
+    
+    self.tableView.infiniteScrollingEnabled = NO;
+    XCTAssertNil(self.tableView.infiniteScrollingActivityIndicatorContainer);
+}
+
+#pragma mark - Test infiniteScrollingState
+
+- (void)test_infiniteScrollingState {
+    self.tableView.infiniteScrollingEnabled = YES;
+    self.tableView.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+    XCTAssertNotNil(self.tableView.tableFooterView);
+    
+    self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+    XCTAssertNil(self.tableView.tableFooterView);
+}
+
+#pragma mark - Test datasource
+
+- (void)test_datasource {
+    BIDatasourceFeedTableView *feedDatasource = [BIDatasourceFeedTableView datasourceWithBITableView:self.tableView];
+    XCTAssertNotNil(self.tableView.datasource);
+    XCTAssertEqual(self.tableView.datasource, feedDatasource);
+}
+
+#pragma mark - Test handler
+
+- (void)test_handler {
+    BIHandlerTableView *handler = [BIHandlerTableView handlerWithTableView:self.tableView];
+    XCTAssertNotNil(self.tableView.handler);
+    XCTAssertEqual(self.tableView.handler, handler);
 }
 
 @end

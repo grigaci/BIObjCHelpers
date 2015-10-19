@@ -8,8 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
+/*!
+ Default height for separatorview (1 pt).
+ */
+FOUNDATION_EXPORT const CGFloat kBIDefaultTableViewCellSeparatorViewHeight;
+
+/*!
+ @brief Custom table view cell.
+ */
 @interface BITableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UIView *separatorView;
+/*!
+ @brief Custom separator view placed at the bottom of the cell.
+ Valid only if separatorViewVisible is YES.
+ */
+@property (nonatomic, strong, nonnull, readonly) UIView *separatorView;
+
+/*!
+ @brief Flag for adding of removing the separatorView. Default is YES.
+ */
+@property (nonatomic, assign, getter=isSeparatorViewVisible) BOOL separatorViewVisible;
+
+/*!
+ @brief Custom height for separatorView. Defaults to kBIDefaultTableViewCellSeparatorViewHeight(1 pt).
+ */
+@property (nonatomic, assign) CGFloat separatorViewHeight;
 
 @end

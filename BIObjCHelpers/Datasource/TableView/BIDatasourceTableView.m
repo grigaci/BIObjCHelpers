@@ -59,10 +59,10 @@
 
 - (void)load {
     [super load];
-    if (self.cellClass) {
-        [self.tableView registerClass:self.cellClass forCellReuseIdentifier:self.cellIdentifier];
-    } else if (self.cellNib) {
+    if (self.cellNib) {
         [self.tableView registerNib:self.cellNib forCellReuseIdentifier:self.cellIdentifier];
+    } else if (self.cellClass) {
+        [self.tableView registerClass:self.cellClass forCellReuseIdentifier:self.cellIdentifier];
     }
 }
 

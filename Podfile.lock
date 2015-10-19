@@ -1,16 +1,25 @@
 PODS:
+  - FBSnapshotTestCase (1.8.1)
   - OCHamcrest (4.1.1)
   - OCMockito (1.4.0):
     - OCHamcrest (~> 4.0)
-  - UIViewShadow (1.0.0)
 
 DEPENDENCIES:
+  - FBSnapshotTestCase (from `https://github.com/grigaci/ios-snapshot-test-case.git`)
   - OCMockito (~> 1.4.0)
-  - UIViewShadow
+
+EXTERNAL SOURCES:
+  FBSnapshotTestCase:
+    :git: https://github.com/grigaci/ios-snapshot-test-case.git
+
+CHECKOUT OPTIONS:
+  FBSnapshotTestCase:
+    :commit: 9be336b4564947f3a1f897799cf2cc0838863c8b
+    :git: https://github.com/grigaci/ios-snapshot-test-case.git
 
 SPEC CHECKSUMS:
+  FBSnapshotTestCase: 6cbb7042b269a68b5d31887fc18d6bba29ec5897
   OCHamcrest: 6f03ffa81d12feab872638490a44ab0a6d3aca10
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
-  UIViewShadow: efdfe9a419a5e16c7f1073d7d6051e9c2251b176
 
 COCOAPODS: 0.38.2

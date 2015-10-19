@@ -16,6 +16,8 @@ typedef void(^BIDatasourceCollectionViewConfigureCell)(id __nonnull cell, NSInde
 
 + (nonnull instancetype)datasourceWithCollectionView:(nonnull UICollectionView *)collectionView;
 - (nonnull instancetype)initWithCollectionView:(nonnull UICollectionView *)collectionView;
+- (nonnull instancetype)init NS_UNAVAILABLE;
++ (nonnull instancetype)new NS_UNAVAILABLE;
 
 @property (nonatomic, readonly, strong, nonnull) UICollectionView *collectionView;
 @property (nonatomic, copy, nullable) NSString *cellIdentifier;

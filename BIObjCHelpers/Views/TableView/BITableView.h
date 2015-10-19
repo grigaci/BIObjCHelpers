@@ -6,40 +6,8 @@
 //  Copyright © 2015 iGama Apps. All rights reserved.
 //
 
-#import "BIScrollDirection.h"
-#import "BITableViewCell.h"
+#import "BIScrollDetails.h"
 #import <UIKit/UIKit.h>
-
-/*!
- @typedef BIInfiniteScrollingState
- @abstract Represents the state of the tableView infinite scroll
- @field BIInfiniteScrollingStateStopped The tableView is currently not fetching any batches
- @field BIInfiniteScrollingStateLoading The tableView is currently fetching batches
- */
-typedef NS_OPTIONS(NSInteger, BIInfiniteScrollingState) {
-    BIInfiniteScrollingStateStopped = 0,
-    BIInfiniteScrollingStateLoading = 1
-};
-
-/*!
- @abstract Determine if batch fetching should begin based on the state of the parameters.
- @param scrollDirection The current scrolling direction of the scroll view.
- @param bounds The bounds of the scrollview.
- @param contentSize The content size of the scrollview.
- @param targetOffset The offset that the scrollview will scroll to.
- @param leadingScreens How many screens in the remaining distance will trigger batch fetching.
- @return Whether or not the current state should proceed with batch fetching.
- @discussion This method is broken into a category for unit testing purposes and should be used with the BITableView and
- * BICollectionView batch fetching API.
- */
-extern BOOL BIDisplayShouldFetchBatch(BIScrollDirection scrollDirection,
-                                      CGRect bounds,
-                                      CGSize contentSize,
-                                      CGPoint targetOffset,
-                                      CGFloat leadingScreens);
-
-extern const CGFloat kBILeadingScreens;
-extern const CGFloat kBITableFooterViewAnimationDuration;
 
 @class BIActivityIndicatorContainerView;
 @class BIDatasourceTableView;
@@ -53,29 +21,55 @@ extern const CGFloat kBITableFooterViewAnimationDuration;
 @interface BITableView : UITableView
 
 /*!
- @callback infiniteScrollingCallback Used to notify dataSource to fetch the next batch
+ @brief Specifies whether to trigger the pullToRefresCallback block or not, when a pull-to-refresh gesture for the tableView is made. Default is NO.
+ */
+@property (nonatomic, assign, getter=isPullToRefreshEnabled) BOOL pullToRefreshEnabled;
+
+/*!
+ @brief Used to notify the datasource to reload.
+ */
+@property (nonatomic, copy, nullable) void (^pullToRefreshCallback)();
+
+/*!
+ @brief Represents the view that is displayed on top of the tableView when the pull-to-refresh gesture is made.
+ */
+@property (nonatomic, strong, nullable, readonly) UIRefreshControl *pullToRefreshControl;
+
+
+/*!
+ @brief Specifies whether the scrolling of the tableView is infinite or not. If it is set to NO, no other batches are fetched. Default is YES.
+ */
+@property (nonatomic, assign) BOOL enableInfiniteScrolling __deprecated_msg("Use infiniteScrollingEnabled instead");
+
+/*!
+ @brief Specifies whether the scrolling of the tableView is infinite or not. If it is set to NO, no other batches are fetched. Default is NO
+ */
+@property (nonatomic, assign, getter=isInfiniteScrollingEnabled) BOOL infiniteScrollingEnabled;
+
+/*!
+ @brief Used to notify dataSource to fetch the next batch
  */
 @property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)();
 
 /*!
- @field enableInfiniteScrolling specifies whether the scrolling of the tableView is infinite or not
- @discussion If it is set to NO, no other batches are fetched. Default is YES
+ @brief Represents the number of screens left to scroll before triggering the fetch of the next batch. Default is 0.5f (half of screen)
  */
-
-@property (nonatomic, assign) BOOL enableInfiniteScrolling;
+@property (nonatomic, assign) CGFloat leadingScreens __deprecated_msg("Use infiniteScrollingLeadingScreens instead");
 
 /*!
- @field leadingScreens Represents the number of screens left to scroll before triggering the fetch of the next batch
- @discussion Default is 0.5f (half of screen)
+ @brief Represents the number of screens left to scroll before triggering the fetch of the next batch. Default is 0.5f (half of screen)
  */
-@property (nonatomic, assign) CGFloat leadingScreens;
+@property (nonatomic, assign) CGFloat infiniteScrollingLeadingScreens;
 
 /*!
- @field activityIndicatorContainer Activity indicator that is displayed on the tableView footer while a new batch is fetched
- @discussion Used as table footer view. Override it for further customization
+ @brief Activity indicator that is displayed on the tableView footer while a new batch is fetched.
+ Used as table footer view. Override it for further customization.
  */
-@property (nonatomic, strong, nonnull, readonly) BIActivityIndicatorContainerView *activityIndicatorContainer;
+@property (nonatomic, strong, nullable, readonly) BIActivityIndicatorContainerView *infiniteScrollingActivityIndicatorContainer;
 
+/*!
+ @brief The current state of the infinite scrolling view.
+ */
 @property (nonatomic, assign) BIInfiniteScrollingState infiniteScrollingState;
 
 /*!
@@ -88,6 +82,14 @@ extern const CGFloat kBITableFooterViewAnimationDuration;
  */
 @property (nonatomic, weak, nullable, readonly) BIHandlerTableView *handler;
 
+/*!
+ Manual trigger pull to refresh.
+ */
+- (void)triggerPullToRefresh;
+
+/*!
+ Manual trigger the infinite scrolling.
+ */
 - (void)triggerInfiniteScrolling;
 
 @end

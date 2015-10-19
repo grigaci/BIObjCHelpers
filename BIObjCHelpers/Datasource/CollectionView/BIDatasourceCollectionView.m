@@ -7,6 +7,7 @@
 //
 
 #import "BIDatasourceCollectionView.h"
+#import "_BICollectionView+Internal.h"
 
 @interface BIDatasourceCollectionView ()
 
@@ -28,6 +29,10 @@
     if (self) {
         self.collectionView = collectionView;
         self.collectionView.dataSource = self;
+        if ([self.collectionView isKindOfClass:[BICollectionView class]]) {
+            BICollectionView *biCollectionView = (BICollectionView *)self.collectionView;
+            biCollectionView.datasource = self;
+        }
     }
     return self;
 }

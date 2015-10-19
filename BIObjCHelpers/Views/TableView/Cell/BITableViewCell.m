@@ -8,28 +8,83 @@
 
 #import "BITableViewCell.h"
 
+const CGFloat kBIDefaultTableViewCellSeparatorViewHeight = 1.f;
+
+@interface BITableViewCell ()
+
+@property (nonatomic, strong, nonnull, readwrite) UIView *separatorView;
+
+@end
+
+
 @implementation BITableViewCell
 
-- (void)awakeFromNib {
-    
+#pragma mark - Init methods
+
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self BI_commonSetup];
+    }
+    return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self BI_commonSetup];
+    }
+    return self;
 }
+
+#pragma mark - UIView methods
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self configureSeparatorView];
+    if (self.separatorViewVisible) {
+        self.separatorView.frame = [self BI_separatorViewFrame];
+    }
 }
 
-- (void)configureSeparatorView {
-    self.separatorView = [[UIView alloc] initWithFrame:(CGRect){.0f, CGRectGetMaxY(self.bounds) - 1, CGRectGetWidth(self.bounds), 1}];
+#pragma mark - Property methods
+
+- (void)setSeparatorViewVisible:(BOOL)separatorViewVisible {
+    _separatorViewVisible = separatorViewVisible;
+    if (_separatorViewVisible) {
+        [self BI_addSeparatorView];
+    } else {
+        [_separatorView removeFromSuperview];
+        _separatorView = nil;
+    }
+}
+
+- (void)setSeparatorViewHeight:(CGFloat)separatorViewHeight {
+    _separatorViewHeight = separatorViewHeight;
+    if (self.separatorViewVisible) {
+        [self setNeedsLayout];
+    }
+}
+
+#pragma mark - Private methods
+
+- (void)BI_commonSetup {
+    self.separatorViewHeight = kBIDefaultTableViewCellSeparatorViewHeight;
+    self.separatorViewVisible = NO;
+}
+
+- (void)BI_addSeparatorView {
+    self.separatorView = [[UIView alloc] initWithFrame:[self BI_separatorViewFrame]];
     self.separatorView.backgroundColor = [UIColor lightGrayColor];
-    [self addSubview:self.separatorView];
+    [self.contentView addSubview:self.separatorView];
+}
+
+- (CGRect)BI_separatorViewFrame {
+
+    return (CGRect){.0f,
+        CGRectGetMaxY(self.contentView.bounds) - self.separatorViewHeight,
+        CGRectGetWidth(self.contentView.bounds),
+        self.separatorViewHeight};
 }
 
 @end
