@@ -87,7 +87,8 @@
     NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
     NSUInteger sectionIndexToInsert = 1;
     NSIndexSet *sectionIndexSetToInsert = [NSIndexSet indexSetWithIndex:sectionIndexToInsert];
-    [self.datasource controller:fetchedResults didChangeSection:nil atIndex:sectionIndexToInsert forChangeType:NSFetchedResultsChangeInsert];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeSection:sectionInfo atIndex:sectionIndexToInsert forChangeType:NSFetchedResultsChangeInsert];
 
     id verifyCountObj = verifyCount(self.tableView, times(1));
     verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
@@ -101,7 +102,8 @@
     NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
     NSUInteger sectionIndexToDelete = 0;
     NSIndexSet *sectionIndexSetToDelete = [NSIndexSet indexSetWithIndex:sectionIndexToDelete];
-    [self.datasource controller:fetchedResults didChangeSection:nil atIndex:sectionIndexToDelete forChangeType:NSFetchedResultsChangeDelete];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeSection:sectionInfo atIndex:sectionIndexToDelete forChangeType:NSFetchedResultsChangeDelete];
     
     id verifyCountObj = verifyCount(self.tableView, times(1));
     verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
@@ -116,7 +118,8 @@
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
     NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
     NSIndexPath *newRow = [NSIndexPath indexPathForRow:1 inSection:1];
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:nil forChangeType:NSFetchedResultsChangeInsert newIndexPath:newRow];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:nil forChangeType:NSFetchedResultsChangeInsert newIndexPath:newRow];
     
     id verifyCountObj = verifyCount(self.tableView, times(1));
     verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
@@ -129,7 +132,8 @@
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
     NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
     NSIndexPath *deletedRow = [NSIndexPath indexPathForRow:1 inSection:1];
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:deletedRow forChangeType:NSFetchedResultsChangeDelete newIndexPath:nil];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:deletedRow forChangeType:NSFetchedResultsChangeDelete newIndexPath:nil];
     
     id verifyCountObj = verifyCount(self.tableView, times(1));
     verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
@@ -150,7 +154,8 @@
         testIndexPath = indexPath;
     };
 
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:updateIndexPath forChangeType:NSFetchedResultsChangeUpdate newIndexPath:nil];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:updateIndexPath forChangeType:NSFetchedResultsChangeUpdate newIndexPath:nil];
     XCTAssertEqual(testIndexPath, updateIndexPath);
 }
 
@@ -160,7 +165,8 @@
     NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
     NSIndexPath *fromIndexPath = [NSIndexPath indexPathForRow:1 inSection:1];
     NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:1 inSection:2];
-    [self.datasource controller:fetchedResults didChangeObject:nil atIndexPath:fromIndexPath forChangeType:NSFetchedResultsChangeMove newIndexPath:toIndexPath];
+    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:fromIndexPath forChangeType:NSFetchedResultsChangeMove newIndexPath:toIndexPath];
 
     // Test the delete call
     id verifyCountObj = verifyCount(self.tableView, times(1));

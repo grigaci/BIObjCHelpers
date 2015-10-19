@@ -14,6 +14,9 @@ typedef void(^BIBatchCompletionBlock)(NSError * __nullable error, NSArray * __nu
 
 @interface BIBatch : NSObject// __deprecated_msg("Use BIBatchRequest")
 
+- (nonnull instancetype)init NS_UNAVAILABLE;
++ (nonnull instancetype)new NS_UNAVAILABLE;
+
 /*!
  * @brief Designated initializer for a table view batch.
  * @param sectionIndex The index of the section where to fetch data.

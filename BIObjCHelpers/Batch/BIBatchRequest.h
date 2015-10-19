@@ -34,6 +34,9 @@ typedef NS_ENUM(NSUInteger, BIBatchInsertPosition) {
  */
 @interface BIBatchRequest : NSObject
 
+- (nonnull instancetype)init NS_UNAVAILABLE;
++ (nonnull instancetype)new NS_UNAVAILABLE;
+
 /*!
  * @brief Designated initializer for a table view batch.
  * @param sectionIndex The index of the section where to fetch data.

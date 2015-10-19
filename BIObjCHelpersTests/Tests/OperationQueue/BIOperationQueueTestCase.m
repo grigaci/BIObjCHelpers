@@ -28,14 +28,6 @@
     [super tearDown];
 }
 
-- (void)testAddOperationNilParam {
-    XCTAssertThrows([self.operationQueue addOperation:nil]);
-}
-
-- (void)testAddOperationsWaitUntilFinishedNilParam {
-    XCTAssertThrows([self.operationQueue addOperations:nil waitUntilFinished:YES]);
-}
-
 - (void)testAddOperationsWaitUntilFinishedEmptyArray {
     XCTAssertThrows([self.operationQueue addOperations:@[] waitUntilFinished:YES]);
 }

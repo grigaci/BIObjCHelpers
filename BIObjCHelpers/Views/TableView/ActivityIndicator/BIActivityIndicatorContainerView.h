@@ -10,8 +10,6 @@
 
 @interface BIActivityIndicatorContainerView : UIView
 
-- (nonnull instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
-
 @property (nonatomic, strong, nonnull, readonly) UIActivityIndicatorView *activityIndicatorView;
 
 @end

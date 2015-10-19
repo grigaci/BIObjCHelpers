@@ -17,7 +17,7 @@
 
 @implementation BIAppStartersFactoryTestCase
 
-- (void)testRun {
+- (void)test_run {
     [[BIAppStartersFactory new] run];
     NSPersistentStoreCoordinator *persistanceStore = [NSPersistentStoreCoordinator MR_defaultStoreCoordinator];
     XCTAssert(persistanceStore);
