@@ -12,6 +12,7 @@ typedef void(^BIMockStarterStartCallback)(void);
 
 @interface BIMockStarter : NSObject<BIStarter>
 
-@property (nonatomic, copy) BIMockStarterStartCallback startCallback;
+@property (nonatomic, copy,  nullable) BIMockStarterStartCallback startCallback;
+@property (nonatomic, strong, nonnull) NSDictionary *launchOptions;
 
 @end

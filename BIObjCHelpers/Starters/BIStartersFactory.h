@@ -12,6 +12,8 @@
 
 @interface BIStartersFactory : NSObject
 
+@property (nonatomic, strong, nullable, readonly) NSMutableArray *starters;
+
 - (void)run;
 - (void)addStarter:(nonnull id<BIStarter>)starter;
 - (void)loadStarters;
