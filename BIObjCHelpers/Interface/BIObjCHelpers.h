@@ -31,3 +31,8 @@
 #import "NSBundle+BIExtra.h"
 #import "NSString+BIExtra.h"
 #import "NSDate+BIAttributedString.h"
+
+// Batch
+#import "BIBatch.h"
+#import "BIBatchRequest.h"
+#import "BIBatchResponse.h"
