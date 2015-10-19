@@ -11,6 +11,7 @@
 #import "BILifecycle.h"
 #import "BIStartersFactory.h"
 #import "BIOperationQueue.h"
+#import "BILaunchStartersFactory.h"
 
 // Views
 #import "BITableView.h"
