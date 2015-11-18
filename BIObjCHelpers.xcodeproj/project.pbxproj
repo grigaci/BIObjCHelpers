@@ -46,7 +46,6 @@
 		43DA594C1B6217F400ECAAC0 /* BITableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */; };
 		43F23F761B9ED4B600CEAD8C /* BITableViewCellTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F23F751B9ED4B600CEAD8C /* BITableViewCellTestCase.m */; };
 		43F23F791B9EDA5500CEAD8C /* BIActivityIndicatorContainerViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F23F781B9EDA5500CEAD8C /* BIActivityIndicatorContainerViewTestCase.m */; };
-		43F23F7E1B9EFC0D00CEAD8C /* BIBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F23F7B1B9EFC0D00CEAD8C /* BIBatch.m */; };
 		43F23F7F1B9EFC0D00CEAD8C /* BIBatchHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F23F7D1B9EFC0D00CEAD8C /* BIBatchHelpers.m */; };
 		43F23F811B9EFC6A00CEAD8C /* BIBatchRequestTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F23F801B9EFC6A00CEAD8C /* BIBatchRequestTestCase.m */; };
 		43F23F851B9F040C00CEAD8C /* BIBatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F23F841B9F040C00CEAD8C /* BIBatchResponse.m */; };
@@ -63,8 +62,8 @@
 		91E9ECE91B949D0D0009C4F1 /* BIDatasourceFeedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E9ECE81B949D0D0009C4F1 /* BIDatasourceFeedCollectionView.m */; };
 		91E9ECEC1B94A6BD0009C4F1 /* BIActivityIndicatorContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E9ECEB1B94A6BD0009C4F1 /* BIActivityIndicatorContainerView.m */; };
 		91E9ECF01B94A6F10009C4F1 /* BICollectionViewActivityIndicatorReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E9ECEF1B94A6F10009C4F1 /* BICollectionViewActivityIndicatorReusableView.m */; };
-		9437007F1BCD3F9C0063D2CC /* BILaunchStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437007E1BCD3F9C0063D2CC /* BILaunchStartersFactory.m */; settings = {ASSET_TAGS = (); }; };
-		943700841BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 943700831BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m */; settings = {ASSET_TAGS = (); }; };
+		9437007F1BCD3F9C0063D2CC /* BILaunchStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437007E1BCD3F9C0063D2CC /* BILaunchStartersFactory.m */; };
+		943700841BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 943700831BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m */; };
 		E59E667E65313C7B4DAF4C43 /* libPods-BIObjCHelpersTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB3C6740A3FA0FB1D88D15E /* libPods-BIObjCHelpersTests.a */; };
 /* End PBXBuildFile section */
 
@@ -157,8 +156,6 @@
 		43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewTestCase.m; path = Views/TableView/BITableViewTestCase.m; sourceTree = "<group>"; };
 		43F23F751B9ED4B600CEAD8C /* BITableViewCellTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewCellTestCase.m; path = Views/TableView/Cell/BITableViewCellTestCase.m; sourceTree = "<group>"; };
 		43F23F781B9EDA5500CEAD8C /* BIActivityIndicatorContainerViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIActivityIndicatorContainerViewTestCase.m; path = Views/TableView/ActivityIndicator/BIActivityIndicatorContainerViewTestCase.m; sourceTree = "<group>"; };
-		43F23F7A1B9EFC0D00CEAD8C /* BIBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIBatch.h; sourceTree = "<group>"; };
-		43F23F7B1B9EFC0D00CEAD8C /* BIBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIBatch.m; sourceTree = "<group>"; };
 		43F23F7C1B9EFC0D00CEAD8C /* BIBatchHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIBatchHelpers.h; sourceTree = "<group>"; };
 		43F23F7D1B9EFC0D00CEAD8C /* BIBatchHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIBatchHelpers.m; sourceTree = "<group>"; };
 		43F23F801B9EFC6A00CEAD8C /* BIBatchRequestTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIBatchRequestTestCase.m; sourceTree = "<group>"; };
@@ -299,8 +296,6 @@
 		43BE6C3F1B5689C9001F0A00 /* Batch */ = {
 			isa = PBXGroup;
 			children = (
-				43F23F7A1B9EFC0D00CEAD8C /* BIBatch.h */,
-				43F23F7B1B9EFC0D00CEAD8C /* BIBatch.m */,
 				43F23F881B9F081200CEAD8C /* BIBatchRequest.h */,
 				43F23F891B9F081200CEAD8C /* BIBatchRequest.m */,
 				43F23F831B9F040C00CEAD8C /* BIBatchResponse.h */,
@@ -989,7 +984,6 @@
 				43F23F8A1B9F081200CEAD8C /* BIBatchRequest.m in Sources */,
 				43F23F7F1B9EFC0D00CEAD8C /* BIBatchHelpers.m in Sources */,
 				43BE6C7A1B5689CA001F0A00 /* BIDatasourceFetchedTableView.m in Sources */,
-				43F23F7E1B9EFC0D00CEAD8C /* BIBatch.m in Sources */,
 				91614A831B94790400D00EB2 /* _BIScrollViewProxy.m in Sources */,
 				43BE6C791B5689CA001F0A00 /* BIDatasourceFeedTableView.m in Sources */,
 				91614A951B94830600D00EB2 /* BIHandlerCollectionView.m in Sources */,
