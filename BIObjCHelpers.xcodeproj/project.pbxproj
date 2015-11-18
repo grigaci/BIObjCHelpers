@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4304A9B61B70D892009739B3 /* BIDatasourceTableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */; };
+		43329F6F1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */; };
 		435D59C01B622E8A00ECA859 /* BIMockHandlerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */; };
 		43BE6C311B56882B001F0A00 /* libBIObjCHelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE6C251B56882B001F0A00 /* libBIObjCHelpers.a */; };
 		43BE6C731B5689CA001F0A00 /* NSBundle+BIExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6C461B5689C9001F0A00 /* NSBundle+BIExtra.m */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceTableViewTestCase.m; sourceTree = "<group>"; };
+		43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceBaseTestCase.m; sourceTree = "<group>"; };
 		4355334F1B81B87F0052A128 /* _BITableView+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "_BITableView+Internal.h"; path = "Views/TableView/_BITableView+Internal.h"; sourceTree = "<group>"; };
 		435D59BE1B622E8A00ECA859 /* BIMockHandlerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIMockHandlerTableView.h; path = BIHandlerTableView/BIMockHandlerTableView.h; sourceTree = "<group>"; };
 		435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIMockHandlerTableView.m; path = BIHandlerTableView/BIMockHandlerTableView.m; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 		43BE6CE51B568ECB001F0A00 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */,
 				4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */,
 				43BE6CE61B568ECB001F0A00 /* BIDatasourceFeedTableViewTestCase.m */,
 				43BE6CE71B568ECB001F0A00 /* BIDatasourceFetchedTableViewTestCase.m */,
@@ -1017,6 +1020,7 @@
 				43BE6D051B568ECB001F0A00 /* BIMockStarter.m in Sources */,
 				4304A9B61B70D892009739B3 /* BIDatasourceTableViewTestCase.m in Sources */,
 				43BE6D001B568ECB001F0A00 /* BIHandlerTableViewTestCase.m in Sources */,
+				43329F6F1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m in Sources */,
 				43BE6CD01B568B1F001F0A00 /* BITestCaseCoreData.m in Sources */,
 				914D2CB51B57BB41009A9B4D /* BIBatchHelpersTestCase.m in Sources */,
 				43DA594C1B6217F400ECAAC0 /* BITableViewTestCase.m in Sources */,
