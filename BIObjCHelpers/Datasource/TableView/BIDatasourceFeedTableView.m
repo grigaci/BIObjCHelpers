@@ -88,10 +88,11 @@
 }
 
 - (void)handleFetchBatchResponseWithSuccess:(nonnull BIBatchResponse *)batchResponse {
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:batchResponse.indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.tableView endUpdates];
-
+    if (batchResponse.indexPaths.count) {
+        [self.tableView beginUpdates];
+        [self.tableView insertRowsAtIndexPaths:batchResponse.indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView endUpdates];
+    }
     [self handleFetchBatchResponseCommon:batchResponse];
 }
 
