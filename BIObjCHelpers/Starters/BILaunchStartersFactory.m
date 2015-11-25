@@ -12,7 +12,7 @@
 @interface BILaunchStartersFactory ()
 
 @property (nonatomic, strong, nonnull, readwrite) UIApplication *application;
-@property (nonatomic, strong, nonnull, readwrite) NSDictionary *launchOptions;
+@property (nonatomic, strong, nullable, readwrite) NSDictionary *launchOptions;
 
 @end
 
