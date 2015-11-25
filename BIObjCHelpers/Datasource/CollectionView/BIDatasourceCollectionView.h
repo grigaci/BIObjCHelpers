@@ -22,6 +22,7 @@ typedef void(^BIDatasourceCollectionViewConfigureCell)(id __nonnull cell, NSInde
 @property (nonatomic, readonly, strong, nonnull) UICollectionView *collectionView;
 @property (nonatomic, copy, nullable) NSString *cellIdentifier;
 @property (nonatomic, strong, nullable) Class cellClass;
+@property (nonatomic, strong, nullable) UINib *cellNib;
 @property (nonatomic, copy, nullable) BIDatasourceCollectionViewConfigureCell configureCellBlock;
 
 - (void)configureCell:(nonnull UICollectionViewCell *)cell atIndexPath:(nonnull NSIndexPath *)indexPath;

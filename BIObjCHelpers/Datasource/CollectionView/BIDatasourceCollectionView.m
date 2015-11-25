@@ -60,7 +60,11 @@
     NSParameterAssert(self.cellIdentifier.length);
     NSParameterAssert([self.cellClass isSubclassOfClass:[UICollectionViewCell class]]);
     
-    [self.collectionView registerClass:self.cellClass forCellWithReuseIdentifier:self.cellIdentifier];
+    if (self.cellNib) {
+        [self.collectionView registerNib:self.cellNib forCellWithReuseIdentifier:self.cellIdentifier];
+    } else if (self.cellClass) {
+        [self.collectionView registerClass:self.cellClass forCellWithReuseIdentifier:self.cellIdentifier];
+    }
 }
 
 - (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
