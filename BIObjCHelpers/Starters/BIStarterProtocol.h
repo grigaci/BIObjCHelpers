@@ -14,6 +14,6 @@
 - (void)start;
 
 @optional
-@property (nonatomic, strong, nonnull) NSDictionary *launchOptions;
+@property (nonatomic, strong, nullable) NSDictionary *launchOptions;
 
 @end
