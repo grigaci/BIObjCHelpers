@@ -15,7 +15,7 @@
 - (nonnull instancetype)init NS_UNAVAILABLE;
 + (nonnull instancetype)new  NS_UNAVAILABLE;
 
-- (nonnull instancetype)initWithLaunchingOptions:(nonnull NSDictionary *)launchOptions;
+- (nonnull instancetype)initWithLaunchingOptions:(nullable NSDictionary *)launchOptions;
 
 @property (nonatomic, strong, nonnull, readonly) UIApplication *application;
 @property (nonatomic, strong, nonnull, readonly) NSDictionary *launchOptions;
