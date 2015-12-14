@@ -8,6 +8,22 @@
 
 #import "BIDatasourceBase.h"
 
+@interface BIDatasourceBase ()
+
+@property (nonatomic, strong, nonnull, readwrite) NSHashTable *operations;
+
+@end
+
+
 @implementation BIDatasourceBase
+
+#pragma mark - Property methods
+
+- (NSHashTable *)operations {
+    if (!_operations) {
+        _operations = [NSHashTable weakObjectsHashTable];
+    }
+    return _operations;
+}
 
 @end

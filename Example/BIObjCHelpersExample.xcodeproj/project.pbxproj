@@ -601,6 +601,7 @@
 				658AF65C1A56BAA500D48C74 /* Frameworks */,
 				658AF65D1A56BAA500D48C74 /* Resources */,
 				1E893CC6E069D62A0BC579A8 /* Copy Pods Resources */,
+				489EF24BDED78FD86B7F96F8 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -620,6 +621,7 @@
 				658AF6751A56BAA600D48C74 /* Frameworks */,
 				658AF6761A56BAA600D48C74 /* Resources */,
 				9EDBA9DBA17464A39A0484FB /* Copy Pods Resources */,
+				46DC8BD913535FA509F4BD73 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -718,6 +720,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46DC8BD913535FA509F4BD73 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BIObjCHelpersExampleTests/Pods-BIObjCHelpersExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		489EF24BDED78FD86B7F96F8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9EDBA9DBA17464A39A0484FB /* Copy Pods Resources */ = {

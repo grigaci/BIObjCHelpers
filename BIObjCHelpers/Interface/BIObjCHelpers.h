@@ -22,7 +22,6 @@
 #import "BIDatasourceFetchedTableView.h"
 #import "BIDatasourceFetchedCollectionView.h"
 #import "BIDatasourceFeedTableView.h"
-#import "BIBatch.h"
 
 // Handlers
 #import "BIHandlerBase.h"
@@ -34,6 +33,5 @@
 #import "NSDate+BIAttributedString.h"
 
 // Batch
-#import "BIBatch.h"
 #import "BIBatchRequest.h"
 #import "BIBatchResponse.h"

@@ -11,6 +11,7 @@
 FOUNDATION_EXPORT const NSInteger kDefaultBatchRequestSize;
 
 @class BIBatchResponse;
+@class BIMutableBatchRequest;
 
 typedef void(^BIBatchRequestCompletionBlock)(BIBatchResponse * __nonnull response);
 
@@ -32,7 +33,7 @@ typedef NS_ENUM(NSUInteger, BIBatchInsertPosition) {
  * @brief Defines a set of data request values.
  * Mostly used in table and collection views for inserting sets of data.
  */
-@interface BIBatchRequest : NSObject
+@interface BIBatchRequest : NSObject <NSCopying, NSMutableCopying>
 
 - (nonnull instancetype)init NS_UNAVAILABLE;
 + (nonnull instancetype)new NS_UNAVAILABLE;
@@ -73,6 +74,49 @@ typedef NS_ENUM(NSUInteger, BIBatchInsertPosition) {
  * @brief Specify an index from where to start inserting the new elements that will be fetched.
  * Defaults to BIBatchInsertPositionBottom;
  */
-@property (nonatomic, assign) NSUInteger insertPosition;
+@property (nonatomic, assign, readwrite) NSUInteger insertPosition;
+
+/*!
+ * @brief Additional flags that can be set for a batch request.
+ */
+@property (nonatomic, assign, readonly) NSUInteger options;
+
+/*!
+ * @brief Overriden method for returning the exact class type for a copied object.
+ */
+- (nonnull BIBatchRequest *)copy;
+
+/*!
+ * @brief Overriden method for returning the exact class type for a mutable copy.
+ */
+- (nonnull BIMutableBatchRequest *)mutableCopy;
+
+@end
+
+
+/*!
+ * Mutable version of a batch request.
+ */
+@interface BIMutableBatchRequest : BIBatchRequest
+
+/*!
+ * @brief Size of the batch that is fetching.
+ */
+@property (nonatomic, assign, readwrite) NSUInteger batchSize;
+
+/*!
+ * @brief Section index for which data is fetching.
+ */
+@property (nonatomic, assign, readwrite) NSUInteger sectionIndex;
+
+/*!
+ * @brief Code block to be called when fetching is done or in case of error.
+ */
+@property (nonatomic, copy, nullable, readwrite) BIBatchRequestCompletionBlock completionBlock;
+
+/*!
+ * @brief Additional flags that can be set for a batch request.
+ */
+@property (nonatomic, assign, readwrite) NSUInteger options;
 
 @end

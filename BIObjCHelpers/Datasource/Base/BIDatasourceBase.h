@@ -10,4 +10,6 @@
 
 @interface BIDatasourceBase : BILifecycle
 
+@property (nonatomic, strong, nonnull, readonly) NSHashTable *operations;
+
 @end
