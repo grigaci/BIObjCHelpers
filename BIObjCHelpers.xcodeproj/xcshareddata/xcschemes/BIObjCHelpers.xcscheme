@@ -53,6 +53,12 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "BIActivityIndicatorContainerViewTestCase/testSnapshotView375x44">
+               </Test>
+               <Test
+                  Identifier = "BITableViewCellTestCase/testSnapshotViewDefault375x44">
+               </Test>
+               <Test
                   Identifier = "BITableViewCellTestCase/testSnapshotViewSeparator375x44">
                </Test>
                <Test
