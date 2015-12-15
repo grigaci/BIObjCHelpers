@@ -13,4 +13,7 @@
 @property (nonatomic, weak, nullable, readwrite) BIDatasourceTableView *datasource;
 @property (nonatomic, weak, nullable, readwrite) BIHandlerTableView *handler;
 
+@property (nonatomic, assign, getter=BI_isPullToRefreshEnabled) BOOL BI_pullToRefreshEnabled;
+@property (nonatomic, assign, getter=BI_isInfiniteScrollingEnabled) BOOL BI_infiniteScrollingEnabled;
+
 @end

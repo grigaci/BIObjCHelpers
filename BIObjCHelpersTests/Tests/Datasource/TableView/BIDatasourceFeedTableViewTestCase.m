@@ -59,7 +59,6 @@
     };
     [self.tableView triggerInfiniteScrolling];
     XCTAssertTrue(wasCalled);
-    XCTAssertEqual(batchRequest, self.datasource.currentBatchRequest);
 }
 
 #pragma mark - Test fetchBatch
@@ -80,7 +79,8 @@
     __block NSError *returnedError = nil;
     NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
     BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
-    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:error newIndexPaths:@[]];
+    BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
+    batchResponse.error = error;
     self.datasource.handleFetchBatchResponseWithFailureCallback = ^(BIBatchResponse * __nonnull aBatchResponse) {
         returnedError = aBatchResponse.error;
     };
@@ -95,7 +95,8 @@
     __block NSArray *returnedItems = nil;
     NSArray *sentItems = @[];
     BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
-    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:nil newIndexPaths:sentItems];
+    BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
+    batchResponse.indexPaths = sentItems;
     self.datasource.handleFetchBatchResponseWithSuccessCallback = ^(BIBatchResponse * __nonnull aBatchResponse) {
         returnedItems = aBatchResponse.indexPaths;
     };
@@ -109,7 +110,7 @@
 - (void)testFetchBatchCompletedCommonInsertTop {
     BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
     batchRequest.insertPosition = BIBatchInsertPositionTop;
-    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:nil newIndexPaths:nil];
+    BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
 
     [self.tableView triggerInfiniteScrolling];
     [self.tableView triggerPullToRefresh];
@@ -122,7 +123,7 @@
 - (void)testFetchBatchCompletedCommonInsertBottom {
     BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
     batchRequest.insertPosition = BIBatchInsertPositionBottom;
-    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:nil newIndexPaths:nil];
+    BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
     
     [self.tableView triggerInfiniteScrolling];
     [self.tableView triggerPullToRefresh];
@@ -136,7 +137,7 @@
 - (void)testFetchBatchCompletedCommonInsertOther {
     BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
     batchRequest.insertPosition = 1;
-    BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest error:nil newIndexPaths:nil];
+    BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
     
     [self.tableView triggerInfiniteScrolling];
     [self.tableView triggerPullToRefresh];

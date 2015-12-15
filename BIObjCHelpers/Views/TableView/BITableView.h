@@ -35,12 +35,6 @@
  */
 @property (nonatomic, strong, nullable, readonly) UIRefreshControl *pullToRefreshControl;
 
-
-/*!
- @brief Specifies whether the scrolling of the tableView is infinite or not. If it is set to NO, no other batches are fetched. Default is YES.
- */
-@property (nonatomic, assign) BOOL enableInfiniteScrolling __deprecated_msg("Use infiniteScrollingEnabled instead");
-
 /*!
  @brief Specifies whether the scrolling of the tableView is infinite or not. If it is set to NO, no other batches are fetched. Default is NO
  */
@@ -50,11 +44,6 @@
  @brief Used to notify dataSource to fetch the next batch
  */
 @property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)();
-
-/*!
- @brief Represents the number of screens left to scroll before triggering the fetch of the next batch. Default is 0.5f (half of screen)
- */
-@property (nonatomic, assign) CGFloat leadingScreens __deprecated_msg("Use infiniteScrollingLeadingScreens instead");
 
 /*!
  @brief Represents the number of screens left to scroll before triggering the fetch of the next batch. Default is 0.5f (half of screen)

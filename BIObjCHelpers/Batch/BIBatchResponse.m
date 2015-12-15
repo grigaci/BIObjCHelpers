@@ -14,63 +14,80 @@
 @property (nonatomic, strong, nullable, readwrite) NSError *error;
 @property (nonatomic, copy,   nullable, readwrite) NSArray *indexPaths;
 @property (nonatomic, strong, nullable, readwrite) BIBatchRequest *batchRequest;
+@property (nonatomic, assign, readwrite) BIBatchResponseOptions options;
 
 @end
 
 @implementation BIBatchResponse
 
+#pragma mark - NSCopying methods
+
+- (nonnull BIBatchResponse *)copyWithZone:(NSZone *)zone {
+    BIBatchResponse *copy = [[BIBatchResponse allocWithZone:zone] init];
+
+    copy.error = [self.error copy];
+    copy.indexPaths = self.indexPaths;
+    copy.options = self.options;
+    copy.batchRequest = [self.batchRequest copy];
+
+    return copy;
+}
+
+#pragma mark - NSMutableCopying methods
+
+- (nonnull instancetype)mutableCopyWithZone:(NSZone *)zone {
+    BIMutableBatchResponse *mutableCopy = [[BIMutableBatchResponse allocWithZone:zone] initWithBatchRequest:self.batchRequest];
+
+    mutableCopy.error = self.error;
+    mutableCopy.indexPaths = self.indexPaths;
+    mutableCopy.options = self.options;
+    
+    return mutableCopy;
+}
+
+#pragma mark - NSObject methods
+
+- (nonnull BIBatchResponse *)copy {
+    return [super copy];
+}
+
+- (nonnull BIMutableBatchResponse *)mutableCopy {
+    return [super mutableCopy];
+}
+
+@end
+
+
+@implementation BIMutableBatchResponse
+
+@dynamic error;
+@dynamic indexPaths;
+@dynamic batchRequest;
+@dynamic options;
+
 #pragma mark - Factory methods
 
-+ (nonnull instancetype)batchResponseForRequest:(nonnull BIBatchRequest *)batch
-                                          error:(nullable NSError *)error
-                                  newIndexPaths:(nullable NSArray *)newIndexPaths {
-    return [[self alloc] initWithBatchRequest:batch
-                                        error:error
-                                newIndexPaths:newIndexPaths];
++ (nonnull instancetype)batchResponseForRequest:(nonnull BIBatchRequest *)batch {
+    return [[self alloc] initWithBatchRequest:batch];
 }
 
 #pragma mark - Init methods
 
-- (nonnull instancetype)initWithBatchRequest:(nonnull BIBatchRequest *)batch
-                                       error:(nullable NSError *)error
-                               newIndexPaths:(nullable NSArray *)newIndexPaths {
+- (nonnull instancetype)initWithBatchRequest:(nonnull BIBatchRequest *)batch {
     self = [super init];
     if (self) {
         self.batchRequest = batch;
-        self.error = error;
-        self.indexPaths = newIndexPaths;
     }
     return self;
 }
 
-- (nonnull instancetype)initWithBatchRequest:(nonnull BIBatchRequest *)batchRequest
-                                   tableView:(nonnull UITableView *)tableView
-                               countNewItems:(NSUInteger)countNewItems {
-    NSUInteger sectionIndex = batchRequest.sectionIndex;
-    NSUInteger countSectionItems = [tableView numberOfRowsInSection:sectionIndex];
-    self = [self initWithBatchRequest:batchRequest
-                    countSectionItems:countSectionItems
-                        countNewItems:countNewItems];
-    return self;
-}
+#pragma mark - Public methods
 
-- (nonnull instancetype)initWithBatchRequest:(nonnull BIBatchRequest *)batchRequest
-                              collectionView:(nonnull UICollectionView *)collectionView
-                               countNewItems:(NSUInteger)countNewItems {
-    NSUInteger sectionIndex = batchRequest.sectionIndex;
-    NSUInteger countSectionItems = [collectionView numberOfItemsInSection:sectionIndex];
-    self = [self initWithBatchRequest:batchRequest
-                    countSectionItems:countSectionItems
-                        countNewItems:countNewItems];
-    return self;
-}
-
-- (nonnull instancetype)initWithBatchRequest:(nonnull BIBatchRequest *)batchRequest
-                           countSectionItems:(NSUInteger)countSectionItems
-                               countNewItems:(NSUInteger)countNewItems {
-    NSUInteger sectionIndex = batchRequest.sectionIndex;
+- (void)createIndexPaths:(NSUInteger)countNewItems
+       countSectionItems:(NSUInteger)countSectionItems {
+    NSUInteger sectionIndex = self.batchRequest.sectionIndex;
     NSUInteger newRowIndex = 0;
-    switch (batchRequest.insertPosition) {
+    switch (self.batchRequest.insertPosition) {
         case BIBatchInsertPositionTop:
             newRowIndex = 0;
             break;
@@ -78,7 +95,7 @@
             newRowIndex = countSectionItems;
             break;
         default:
-            newRowIndex = batchRequest.insertPosition;
+            newRowIndex = self.batchRequest.insertPosition;
             break;
     }
     
@@ -88,13 +105,7 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:sectionIndex];
         [mutableArray addObject:indexPath];
     }
-    
-    self = [self initWithBatchRequest:batchRequest
-                                error:nil
-                        newIndexPaths:[mutableArray copy]];
-    
-    return self;
+    self.indexPaths = [mutableArray copy];
 }
 
 @end
-

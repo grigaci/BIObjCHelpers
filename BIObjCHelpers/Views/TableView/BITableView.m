@@ -20,6 +20,9 @@
 @property (nonatomic, weak,   nullable, readwrite) BIDatasourceTableView *datasource;
 @property (nonatomic, weak,   nullable, readwrite) BIHandlerTableView *handler;
 
+@property (nonatomic, assign, getter=BI_isPullToRefreshEnabled) BOOL BI_pullToRefreshEnabled;
+@property (nonatomic, assign, getter=BI_isInfiniteScrollingEnabled) BOOL BI_infiniteScrollingEnabled;
+
 @end
 
 @implementation BITableView
@@ -146,6 +149,31 @@
     }
 }
 
+#pragma mark - Private properties methods
+
+- (void)setBI_infiniteScrollingEnabled:(BOOL)BI_infiniteScrollingEnabled {
+    _BI_infiniteScrollingEnabled = BI_infiniteScrollingEnabled;
+    if (!_BI_infiniteScrollingEnabled) {
+        self.tableFooterView = nil;
+    } else if (self.isInfiniteScrollingEnabled &&
+            !self.infiniteScrollingActivityIndicatorContainer.superview ) {
+            [self BI_createInfiniteScrollingActivityIndicatorContainer];
+            self.tableFooterView = self.infiniteScrollingActivityIndicatorContainer;
+    }
+}
+
+- (void)setBI_pullToRefreshEnabled:(BOOL)BI_pullToRefreshEnabled {
+    _BI_pullToRefreshEnabled = BI_pullToRefreshEnabled;
+    if (!_BI_pullToRefreshEnabled) {
+        [self.pullToRefreshControl removeFromSuperview];
+        self.pullToRefreshControl = nil;
+    } else if (_BI_pullToRefreshEnabled && self.pullToRefreshEnabled && !self.pullToRefreshControl) {
+        [self BI_createPullToRefreshControl];
+        self.alwaysBounceVertical = YES;
+        [self addSubview:self.pullToRefreshControl];
+    }
+}
+
 #pragma mark - Action methods
 
 - (void)BI_handlePullToRefreshAction:(UIRefreshControl *)sender {
@@ -170,9 +198,11 @@
 - (void)BI_setupTableView {
     self.proxyDelegate = [[_BIScrollViewProxy alloc] initWithTarget:nil interceptor:self];
     [super setDelegate:(id<UITableViewDelegate>)self.proxyDelegate];
-    self.infiniteScrollingEnabled = NO;
-    self.pullToRefreshEnabled = NO;
-    self.infiniteScrollingLeadingScreens = kBIDefaultInfiniteScrollingLeadingScreens;
+    _infiniteScrollingEnabled = NO;
+    _pullToRefreshEnabled = NO;
+    _BI_infiniteScrollingEnabled = YES;
+    _BI_pullToRefreshEnabled = YES;
+    _infiniteScrollingLeadingScreens = kBIDefaultInfiniteScrollingLeadingScreens;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

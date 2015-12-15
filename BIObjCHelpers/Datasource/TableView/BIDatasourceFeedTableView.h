@@ -10,7 +10,14 @@
 #import "BITableView.h"
 
 @class BIBatchRequest;
+@class BIMutableBatchRequest;
 @class BIBatchResponse;
+
+typedef NS_ENUM(NSUInteger, BIDatasourceTableViewFetchingState) {
+    BIDatasourceTableViewFetchingStateNone = 0,
+    BIDatasourceTableViewFetchingStatePullToRefresh,
+    BIDatasourceTableViewFetchingStateInfiniteScrolling
+};
 
 /*!
  * Datasource for a BITableView with support for fetching batches.
@@ -43,16 +50,52 @@
 @property (nonatomic, strong, readonly, nonnull) BITableView *tableView;
 
 /*!
+ * @brief Current fetching status.
+ */
+@property (nonatomic, assign, readonly) BIDatasourceTableViewFetchingState fetchingState;
+
+/*!
  * Create a new batch for fetching.
  * @return New batch.
  */
 - (nonnull BIBatchRequest *)createNextBatch;
 
 /*!
+ * Create a mutable batch request.
+ * @return New batch.
+ */
+- (nonnull BIMutableBatchRequest *)createBatchRequest;
+
+/*!
+ * Create a mutable batch request when the table view has no content in it.
+ * @return New batch.
+ */
+- (nonnull BIMutableBatchRequest *)createInitialBatchRequest;
+
+/*!
+ * Create a mutable batch request driven by a pull to refresh gesture.
+ * @return New batch.
+ */
+- (nonnull BIMutableBatchRequest *)createPullToRefreshBatchRequest;
+
+/*!
+ * Create a mutable batch request driven by a scroll down in the table view.
+ * @return New batch.
+ */
+- (nonnull BIMutableBatchRequest *)createInfiniteScrollingBatchRequest;
+
+/*!
  * Fetches a given batch.
  * @param batch Given batch.
  */
 - (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest;
+
+
+/*!
+ * @brief Update table view before fetching a batch request.
+ * @param batchRequest The batch request that triggered the update.
+ */
+- (void)updateTableViewForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest;
 
 /*!
  * @brief Handle a batch response.
@@ -77,5 +120,22 @@
  * @param batchResponse Batch response to handle.
  */
 - (void)handleFetchBatchResponseCommon:(nonnull BIBatchResponse *)batchResponse;
+
+/*!
+ * Called by table view after a pull to refresh action.
+ * Call this method for a simulated pull to refresh action.
+ */
+- (void)tableViewDidTriggerPullToRefreshAction;
+
+/*!
+ * Called by table view for fetching the next batch of data.
+ * Call this method for a simulated action.
+ */
+- (void)tableViewDidTriggerInfiniteScrollingAction;
+
+/*!
+ * Manually trigger the first batch request for data.
+ */
+- (void)triggerInitialRequest;
 
 @end

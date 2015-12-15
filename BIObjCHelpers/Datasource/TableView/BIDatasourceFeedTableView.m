@@ -10,10 +10,13 @@
 #import "BIBatchRequest.h"
 #import "BIBatchResponse.h"
 #import "BITableViewCell.h"
+#import "_BITableView+Internal.h"
 
 @interface BIDatasourceFeedTableView ()
 
 @property (nonatomic, strong, nullable, readwrite) BIBatchRequest *currentBatchRequest;
+
+@property (nonatomic, assign, readwrite) BIDatasourceTableViewFetchingState fetchingState;
 
 @end
 
@@ -35,6 +38,7 @@
     self = [super initWithTableView:tableView];
     if (self) {
         self.cellClass = [BITableViewCell class];
+        _fetchingState = BIDatasourceTableViewFetchingStateNone;
     }
     return self;
 }
@@ -45,14 +49,10 @@
     [super load];
     __weak typeof(self) weakself = self;
     [self.tableView setInfiniteScrollingCallback:^{
-        BIBatchRequest *batch = [weakself createNextBatch];
-        batch.insertPosition = BIBatchInsertPositionBottom;
-        [weakself fetchBatchRequest:batch];
+        [weakself tableViewDidTriggerInfiniteScrollingAction];
     }];
     [self.tableView setPullToRefreshCallback:^{
-        BIBatchRequest *batch = [weakself createNextBatch];
-        batch.insertPosition = BIBatchInsertPositionTop;
-        [weakself fetchBatchRequest:batch];
+        [weakself tableViewDidTriggerPullToRefreshAction];
     }];
 }
 
@@ -71,8 +71,59 @@
     return batch;
 }
 
+- (nonnull BIMutableBatchRequest *)createBatchRequest {
+    __weak typeof(self) weakself = self;
+    BIBatchRequestCompletionBlock completionBlock = ^(BIBatchResponse *batchResponse) {
+        [weakself handleFetchBatchResponse:batchResponse];
+    };
+    BIMutableBatchRequest *mutableBatch = [[BIMutableBatchRequest alloc] initWithCompletionBlock:completionBlock];
+    mutableBatch.batchSize = kDefaultBatchRequestSize;
+    return mutableBatch;
+}
+
+- (nonnull BIMutableBatchRequest *)createInitialBatchRequest {
+    BIMutableBatchRequest *mutableBatch = [self createBatchRequest];
+    mutableBatch.options |= BIBatchRequestOptionInitialRequest;
+    mutableBatch.insertPosition = BIBatchInsertPositionBottom;
+    return mutableBatch;
+}
+
+- (nonnull BIMutableBatchRequest *)createPullToRefreshBatchRequest {
+    BIMutableBatchRequest *mutableBatch = [self createBatchRequest];
+    mutableBatch.options |= BIBatchRequestOptionPullToRefreshRequest;
+    mutableBatch.insertPosition = BIBatchInsertPositionTop;
+    return mutableBatch;
+}
+
+- (nonnull BIMutableBatchRequest *)createInfiniteScrollingBatchRequest {
+    BIMutableBatchRequest *mutableBatch = [self createBatchRequest];
+    mutableBatch.options |= BIBatchRequestOptionInfiniteScrollingRequest;
+    mutableBatch.insertPosition = BIBatchInsertPositionBottom;
+    return mutableBatch;
+}
+
 - (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+    NSAssert(!self.currentBatchRequest, @"Another batch request is in progress!");
     self.currentBatchRequest = batchRequest;
+    [self updateTableViewForFetchBatchRequest:batchRequest];
+}
+
+- (void)updateTableViewForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+    if (batchRequest.isInitialRequest) {
+        self.tableView.BI_pullToRefreshEnabled = NO;
+        self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
+        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+    }
+    if (batchRequest.isInfiniteScrollingRequest) {
+        self.tableView.BI_pullToRefreshEnabled = NO;
+        self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
+        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+    }
+    if (batchRequest.isPullToRefreshRequest) {
+        self.tableView.BI_infiniteScrollingEnabled = NO;
+        self.fetchingState = BIDatasourceTableViewFetchingStatePullToRefresh;
+        [self.tableView.pullToRefreshControl beginRefreshing];
+    }
 }
 
 - (void)handleFetchBatchResponse:(nonnull BIBatchResponse *)batchResponse {
@@ -98,6 +149,7 @@
 
 - (void)handleFetchBatchResponseCommon:(nonnull BIBatchResponse *)batchResponse {
     self.currentBatchRequest = nil;
+    self.fetchingState = BIDatasourceTableViewFetchingStateNone;
     switch (batchResponse.batchRequest.insertPosition) {
         case BIBatchInsertPositionTop:
             [self.tableView.pullToRefreshControl endRefreshing];
@@ -108,6 +160,47 @@
         default:
             break;
     }
+    
+    if (batchResponse.batchRequest.isInitialRequest) {
+        self.tableView.BI_pullToRefreshEnabled = YES;
+    }
+    if (batchResponse.batchRequest.isInfiniteScrollingRequest) {
+        self.tableView.BI_pullToRefreshEnabled = YES;
+    }
+    if (batchResponse.batchRequest.isPullToRefreshRequest) {
+        self.tableView.BI_infiniteScrollingEnabled = YES;
+    }
+}
+
+- (void)tableViewDidTriggerPullToRefreshAction {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
+        return;
+    }
+    BIMutableBatchRequest *batchRequest = [self createPullToRefreshBatchRequest];
+    [self fetchBatchRequest:batchRequest];
+}
+
+- (void)tableViewDidTriggerInfiniteScrollingAction {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
+        return;
+    }
+    BIMutableBatchRequest *batchRequest = [self createInfiniteScrollingBatchRequest];
+    [self fetchBatchRequest:batchRequest];
+}
+
+- (void)triggerInitialRequest {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
+        return;
+    }
+    BIMutableBatchRequest *batchRequest = [self createInitialBatchRequest];
+    [self fetchBatchRequest:batchRequest];
+}
+
+#pragma mark - Property methods
+
+- (void)setFetchingState:(BIDatasourceTableViewFetchingState)fetchingState {
+    NSAssert(_fetchingState ==  BIDatasourceTableViewFetchingStateNone || fetchingState ==  BIDatasourceTableViewFetchingStateNone, @"Trying to change the fetching state while another operation is in progress");
+    _fetchingState = fetchingState;
 }
 
 @end
