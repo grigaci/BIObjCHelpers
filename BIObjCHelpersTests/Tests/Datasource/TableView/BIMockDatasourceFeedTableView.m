@@ -7,6 +7,7 @@
 //
 
 #import "BIMockDatasourceFeedTableView.h"
+#import "BIBatchRequest.h"
 
 @implementation BIMockDatasourceFeedTableView
 
@@ -15,6 +16,14 @@
         return self.createNextBatchCallback();
     }
    return  [super createNextBatch];
+}
+
+- (nonnull BIMutableBatchRequest *)createBatchRequest {
+    if (self.createNextBatchCallback) {
+        BIBatchRequest *batchRequest = self.createNextBatchCallback();
+        return [batchRequest mutableCopy];
+    }
+    return  [super createBatchRequest];
 }
 
 - (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {

@@ -30,6 +30,40 @@ typedef NS_ENUM(NSUInteger, BIBatchInsertPosition) {
 };
 
 /*!
+ * @brief Extra options for a batch request.
+ */
+typedef NS_OPTIONS(NSUInteger, BIBatchRequestOptions) {
+    /*!
+     * @brief No option.
+     */
+    BIBatchRequestOptionNone                      = 1 << 0,
+    /*!
+     * @brief The first request on the target.
+     */
+    BIBatchRequestOptionInitialRequest            = 1 << 1,
+    /*!
+     * @brief Request triggered by a pull to refresh.
+     */
+    BIBatchRequestOptionPullToRefreshRequest      = 1 << 2,
+    /*!
+     * @brief Request triggered by a scroll.
+     */
+    BIBatchRequestOptionInfiniteScrollingRequest  = 1 << 3,
+    /*!
+     * @brief Request triggered after an error occured and there is no content.
+     */
+    BIBatchRequestOptionErrorTapToRetry           = 1 << 4,
+    /*!
+     * @brief Request triggered from a no content state.
+     */
+    BIBatchRequestOptionNoContent                 = 1 << 5,
+    /*!
+     * @brief Request triggered for a reload content case.
+     */
+    BIBatchRequestOptionReload                    = 1 << 6
+};
+
+/*!
  * @brief Defines a set of data request values.
  * Mostly used in table and collection views for inserting sets of data.
  */
@@ -79,7 +113,22 @@ typedef NS_ENUM(NSUInteger, BIBatchInsertPosition) {
 /*!
  * @brief Additional flags that can be set for a batch request.
  */
-@property (nonatomic, assign, readonly) NSUInteger options;
+@property (nonatomic, assign, readonly) BIBatchRequestOptions options;
+
+/*!
+ * @brief True if options contain BIBatchRequestOptionInitialRequest flag.
+ */
+@property (nonatomic, assign, readonly) BOOL isInitialRequest;
+
+/*!
+ * @brief True if options contain BIBatchRequestOptionPullToRefreshRequest flag.
+ */
+@property (nonatomic, assign, readonly) BOOL isPullToRefreshRequest;
+
+/*!
+ * @brief True if options contain BIBatchRequestOptionInfiniteScrollingRequest flag.
+ */
+@property (nonatomic, assign, readonly) BOOL isInfiniteScrollingRequest;
 
 /*!
  * @brief Overriden method for returning the exact class type for a copied object.
@@ -90,6 +139,13 @@ typedef NS_ENUM(NSUInteger, BIBatchInsertPosition) {
  * @brief Overriden method for returning the exact class type for a mutable copy.
  */
 - (nonnull BIMutableBatchRequest *)mutableCopy;
+
+/*!
+ * @brief Compare two requests.
+ * @param anotherRequest To whom to compare.
+ * @return YES if objects are equal, NO otherwise.
+ */
+- (BOOL)isEqualToRequest:(nonnull BIBatchRequest *)anotherRequest;
 
 @end
 
@@ -117,6 +173,6 @@ typedef NS_ENUM(NSUInteger, BIBatchInsertPosition) {
 /*!
  * @brief Additional flags that can be set for a batch request.
  */
-@property (nonatomic, assign, readwrite) NSUInteger options;
+@property (nonatomic, assign, readwrite) BIBatchRequestOptions options;
 
 @end

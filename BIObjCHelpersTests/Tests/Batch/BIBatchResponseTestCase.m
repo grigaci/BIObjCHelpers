@@ -34,20 +34,10 @@
 #pragma mark - Test Inits
 
 - (void)test_inits {
-    BIBatchRequest *batch = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
-    NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
-    NSArray *indexPaths = @[];
-    
-    BIBatchResponse *response = [BIBatchResponse batchResponseForRequest:batch
-                                                                   error:error
-                                                           newIndexPaths:indexPaths];
-    XCTAssertNotNil(response);
-    response = [[BIBatchResponse alloc] initWithBatchRequest:batch
-                                                       error:error
-                                               newIndexPaths:indexPaths];
-    XCTAssertNotNil(response);
-    XCTAssertEqualObjects(response.error, error);
-    XCTAssertEqualObjects(response.indexPaths, indexPaths);
+    BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
+    BIMutableBatchResponse *mutableBatchReponse = [BIMutableBatchResponse batchResponseForRequest:batchRequest];
+    XCTAssertNotNil(mutableBatchReponse);
+    XCTAssertEqual(mutableBatchReponse.batchRequest, batchRequest);
 }
 
 @end

@@ -40,9 +40,8 @@
                                                           batchSize:batchSize
                                                     completionBlock:block];
     
-    BIBatchResponse *response = [BIBatchResponse batchResponseForRequest:batch
-                                                                   error:nil
-                                                           newIndexPaths:@[]];
+    BIMutableBatchResponse *response = [BIMutableBatchResponse batchResponseForRequest:batch];
+    response.indexPaths = @[];
     batch.completionBlock(response);
     XCTAssertEqual(batch.sectionIndex, section);
     XCTAssertEqual(batch.batchSize, batchSize);

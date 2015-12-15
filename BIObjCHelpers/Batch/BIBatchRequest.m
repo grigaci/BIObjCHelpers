@@ -15,7 +15,7 @@ const NSInteger kDefaultBatchRequestSize = 3;
 @property (nonatomic, assign, readwrite) NSUInteger batchSize;
 @property (nonatomic, assign, readwrite) NSUInteger sectionIndex;
 @property (nonatomic, copy, nullable, readwrite) BIBatchRequestCompletionBlock completionBlock;
-@property (nonatomic, assign, readwrite) NSUInteger options;
+@property (nonatomic, assign, readwrite) BIBatchRequestOptions options;
 
 @end
 
@@ -41,6 +41,16 @@ const NSInteger kDefaultBatchRequestSize = 3;
     return [self initWithSection:0
                        batchSize:kDefaultBatchRequestSize
                  completionBlock:completionBlock];
+}
+
+#pragma mark - Public methods
+
+- (BOOL)isEqualToRequest:(nonnull BIBatchRequest *)anotherRequest {
+    BOOL isBatchSizeEqual = self.batchSize == anotherRequest.batchSize;
+    BOOL isSectionIndexEqual = self.sectionIndex == anotherRequest.sectionIndex;
+    BOOL isInsertPositionEqual = self.insertPosition == anotherRequest.insertPosition;
+    BOOL areOptionsEqual = self.options == anotherRequest.options;
+    return isBatchSizeEqual && isSectionIndexEqual && isInsertPositionEqual && areOptionsEqual;
 }
 
 #pragma mark - NSCopying methods
@@ -73,6 +83,20 @@ const NSInteger kDefaultBatchRequestSize = 3;
 
 - (nonnull BIMutableBatchRequest *)mutableCopy {
     return [super mutableCopy];
+}
+
+#pragma mark - Property methods
+
+- (BOOL)isInitialRequest {
+    return (self.options & BIBatchRequestOptionInitialRequest) > 0;
+}
+
+- (BOOL)isPullToRefreshRequest {
+    return (self.options & BIBatchRequestOptionPullToRefreshRequest) > 0;
+}
+
+- (BOOL)isInfiniteScrollingRequest {
+    return (self.options & BIBatchRequestOptionInfiniteScrollingRequest) > 0;
 }
 
 @end

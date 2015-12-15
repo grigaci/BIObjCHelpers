@@ -42,9 +42,8 @@ const CGFloat kExampleDatasourceFeedMaxElements = 30;
 - (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     if (self.countItems > kExampleDatasourceFeedMaxElements) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest
-                                                                                     error:nil
-                                                                             newIndexPaths:@[]];
+            BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
+            batchResponse.indexPaths = @[];
             batchRequest.completionBlock(batchResponse);
             self.tableView.pullToRefreshEnabled = NO;
             self.tableView.infiniteScrollingEnabled = NO;
@@ -53,11 +52,9 @@ const CGFloat kExampleDatasourceFeedMaxElements = 30;
     }
     [super fetchBatchRequest:batchRequest];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
+        [batchResponse createIndexPaths:batchRequest.batchSize countSectionItems:self.countItems];
         self.countItems += batchRequest.batchSize;
-        BIBatchResponse *batchResponse = [[BIBatchResponse alloc] initWithBatchRequest:batchRequest
-                                                                             tableView:self.tableView
-                                                                         countNewItems:batchRequest.batchSize];
-
         batchRequest.completionBlock(batchResponse);
     });
 }
