@@ -150,17 +150,11 @@
 - (void)handleFetchBatchResponseCommon:(nonnull BIBatchResponse *)batchResponse {
     self.currentBatchRequest = nil;
     self.fetchingState = BIDatasourceTableViewFetchingStateNone;
-    switch (batchResponse.batchRequest.insertPosition) {
-        case BIBatchInsertPositionTop:
-            [self.tableView.pullToRefreshControl endRefreshing];
-            break;
-        case BIBatchInsertPositionBottom:
-            self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
-            break;
-        default:
-            break;
-    }
-    
+    [self updateTableViewForBatchResponse:batchResponse];
+}
+
+- (void)updateTableViewForBatchResponse:(nonnull BIBatchResponse *)batchResponse {
+    // Internal flags
     if (batchResponse.batchRequest.isInitialRequest) {
         self.tableView.BI_pullToRefreshEnabled = YES;
     }
@@ -169,6 +163,20 @@
     }
     if (batchResponse.batchRequest.isPullToRefreshRequest) {
         self.tableView.BI_infiniteScrollingEnabled = YES;
+    }
+   
+    // Batch response flags
+    if (batchResponse.shouldStopInfiniteScrolling || batchResponse.batchRequest.isInfiniteScrollingRequest) {
+        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+    }
+    if (batchResponse.shouldStopPullToRefresh || batchResponse.batchRequest.isPullToRefreshRequest) {
+        [self.tableView.pullToRefreshControl endRefreshing];
+    }
+    if (batchResponse.shouldDisablePullToRefresh) {
+        self.tableView.pullToRefreshEnabled = NO;
+    }
+    if (batchResponse.shouldDisableInfiniteScrolling) {
+        self.tableView.infiniteScrollingEnabled = NO;
     }
 }
 

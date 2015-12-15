@@ -128,14 +128,12 @@
 
 - (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
     _infiniteScrollingState = infiniteScrollingState;
-    UIView *newFooterView = nil;
     if (self.isInfiniteScrollingEnabled &&
         _infiniteScrollingState == BIInfiniteScrollingStateLoading &&
         !self.infiniteScrollingActivityIndicatorContainer.superview ) {
         [self BI_createInfiniteScrollingActivityIndicatorContainer];
-        newFooterView = self.infiniteScrollingActivityIndicatorContainer;
+        self.tableFooterView = self.infiniteScrollingActivityIndicatorContainer;
     }
-    self.tableFooterView = newFooterView;
 }
 
 - (void)setInfiniteScrollingEnabled:(BOOL)infiniteScrollingEnabled {

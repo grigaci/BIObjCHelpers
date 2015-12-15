@@ -55,6 +55,24 @@
     return [super mutableCopy];
 }
 
+#pragma mark - Property methods
+
+- (BOOL)shouldStopPullToRefresh {
+    return (self.options & BIBatchResponseOptionStopPullToRefresh) > 0;
+}
+
+- (BOOL)shouldStopInfiniteScrolling {
+    return (self.options & BIBatchResponseOptionStopInfiniteScrolling) > 0;
+}
+
+- (BOOL)shouldDisablePullToRefresh {
+    return (self.options & BIBatchResponseOptionDisablePullToRefresh) > 0;
+}
+
+- (BOOL)shouldDisableInfiniteScrolling {
+    return (self.options & BIBatchResponseOptionDisableInfiniteScrolling) > 0;
+}
+
 @end
 
 

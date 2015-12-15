@@ -122,6 +122,12 @@ typedef NS_ENUM(NSUInteger, BIDatasourceTableViewFetchingState) {
 - (void)handleFetchBatchResponseCommon:(nonnull BIBatchResponse *)batchResponse;
 
 /*!
+ * @brief Update table view for a given batch response.
+ * @param batchResponse Batch response to handle.
+ */
+- (void)updateTableViewForBatchResponse:(nonnull BIBatchResponse *)batchResponse;
+
+/*!
  * Called by table view after a pull to refresh action.
  * Call this method for a simulated pull to refresh action.
  */

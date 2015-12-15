@@ -54,6 +54,26 @@ typedef NS_OPTIONS(NSUInteger, BIBatchResponseOptions) {
  */
 @property (nonatomic, assign, readonly) BIBatchResponseOptions options;
 
+/*!
+ * @brief YES if options contain BIBatchResponseOptionStopPullToRefresh flag.
+ */
+@property (nonatomic, assign, readonly) BOOL shouldStopPullToRefresh;
+
+/*!
+ * @brief YES if options contain BIBatchResponseOptionStopInfiniteScrolling flag.
+ */
+@property (nonatomic, assign, readonly) BOOL shouldStopInfiniteScrolling;
+
+/*!
+ * @brief YES if options contain BIBatchResponseOptionDisablePullToRefresh flag.
+ */
+@property (nonatomic, assign, readonly) BOOL shouldDisablePullToRefresh;
+
+/*!
+ * @brief YES if options contain BIBatchResponseOptionDisableInfiniteScrolling flag.
+ */
+@property (nonatomic, assign, readonly) BOOL shouldDisableInfiniteScrolling;
+
 @end
 
 /*!
