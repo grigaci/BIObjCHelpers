@@ -107,29 +107,23 @@
 
 #pragma mark - Test fetchBatchCompletedCommon
 
-- (void)testFetchBatchCompletedCommonInsertTop {
-    BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
-    batchRequest.insertPosition = BIBatchInsertPositionTop;
-    BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
+- (void)testFetchBatchCompletedCommonPullToRefresh {
+    BIMutableBatchRequest *mutableBatchRequest = [[BIMutableBatchRequest alloc] initWithCompletionBlock:nil];
+    mutableBatchRequest.options |= BIBatchRequestOptionPullToRefreshRequest;
+    BIMutableBatchResponse *mutableBatchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:mutableBatchRequest];
 
-    [self.tableView triggerInfiniteScrolling];
-    [self.tableView triggerPullToRefresh];
-    [self.datasource handleFetchBatchResponseCommon:batchResponse];
-    XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateLoading);
+    [self.datasource handleFetchBatchResponseCommon:mutableBatchResponse];
     XCTAssertFalse([self.tableView.pullToRefreshControl isRefreshing]);
     XCTAssertNil(self.datasource.currentBatchRequest);
 }
 
-- (void)testFetchBatchCompletedCommonInsertBottom {
-    BIBatchRequest *batchRequest = [[BIBatchRequest alloc] initWithCompletionBlock:nil];
-    batchRequest.insertPosition = BIBatchInsertPositionBottom;
-    BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
+- (void)testFetchBatchCompletedCommonInfiniteScrolling {
+    BIMutableBatchRequest *mutableBatchRequest = [[BIMutableBatchRequest alloc] initWithCompletionBlock:nil];
+    mutableBatchRequest.options |= BIBatchRequestOptionInfiniteScrollingRequest;
+    BIMutableBatchResponse *mutableBatchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:mutableBatchRequest];
     
-    [self.tableView triggerInfiniteScrolling];
-    [self.tableView triggerPullToRefresh];
-    [self.datasource handleFetchBatchResponseCommon:batchResponse];
+    [self.datasource handleFetchBatchResponseCommon:mutableBatchResponse];
     XCTAssertEqual(self.tableView.infiniteScrollingState, BIInfiniteScrollingStateStopped);
-    XCTAssertTrue([self.tableView.pullToRefreshControl isRefreshing]);
     XCTAssertNil(self.datasource.currentBatchRequest);
 }
 

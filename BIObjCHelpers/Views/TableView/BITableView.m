@@ -134,6 +134,9 @@
         [self BI_createInfiniteScrollingActivityIndicatorContainer];
         self.tableFooterView = self.infiniteScrollingActivityIndicatorContainer;
     }
+    if (_infiniteScrollingState == BIInfiniteScrollingStateStopped) {
+        self.tableFooterView = nil;
+    }
 }
 
 - (void)setInfiniteScrollingEnabled:(BOOL)infiniteScrollingEnabled {
