@@ -48,6 +48,7 @@ typedef NS_OPTIONS(NSUInteger, BIBatchResponseOptions) {
 
 @property (nonatomic, strong, nullable, readonly) NSError *error;
 @property (nonatomic, copy,   nullable, readonly) NSArray *indexPaths;
+@property (nonatomic, copy,   nullable, readonly) NSIndexSet *addedSectionsIndexSet;
 @property (nonatomic, strong, nullable, readonly) BIBatchRequest *batchRequest;
 /*!
  * Extra response values.
@@ -105,6 +106,12 @@ typedef NS_OPTIONS(NSUInteger, BIBatchResponseOptions) {
  * Not nil only if error is nil
  */
 @property (nonatomic, copy,   nullable, readwrite) NSArray *indexPaths;
+
+/*!
+ * @brief Contains NSUINteger type objects for defining whether there are new sections to be inserted
+ * Not nil only if error is nil
+ */
+@property (nonatomic, copy,   nullable, readwrite) NSIndexSet *addedSectionsIndexSet;
 
 /*!
  * @brief Original request.

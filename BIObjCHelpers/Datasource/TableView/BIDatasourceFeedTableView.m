@@ -135,6 +135,9 @@
 - (void)handleFetchBatchResponseWithSuccess:(nonnull BIBatchResponse *)batchResponse {
     if (batchResponse.indexPaths.count) {
         [self.tableView beginUpdates];
+        if (batchResponse.addedSectionsIndexSet.count) {
+            [self.tableView insertSections:batchResponse.addedSectionsIndexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
         [self.tableView insertRowsAtIndexPaths:batchResponse.indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
         [self.tableView endUpdates];
     }
