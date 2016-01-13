@@ -128,11 +128,8 @@
 
 - (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
     _infiniteScrollingState = infiniteScrollingState;
-    if (self.isInfiniteScrollingEnabled &&
-        _infiniteScrollingState == BIInfiniteScrollingStateLoading &&
-        !self.infiniteScrollingActivityIndicatorContainer.superview ) {
-        [self BI_createInfiniteScrollingActivityIndicatorContainer];
-        self.tableFooterView = self.infiniteScrollingActivityIndicatorContainer;
+    if (self.isInfiniteScrollingEnabled && _infiniteScrollingState == BIInfiniteScrollingStateLoading) {
+        [self BI_startInfiniteScrolling];
     }
     if (_infiniteScrollingState == BIInfiniteScrollingStateStopped) {
         self.tableFooterView = nil;
@@ -184,6 +181,13 @@
 }
 
 #pragma mark - Private Methods
+
+- (void)BI_startInfiniteScrolling {
+    if (!self.infiniteScrollingActivityIndicatorContainer.superview) {
+        [self BI_createInfiniteScrollingActivityIndicatorContainer];
+        self.tableFooterView = self.infiniteScrollingActivityIndicatorContainer;
+    }
+}
 
 - (BIScrollDirection)BI_scrollDirection {
     CGPoint scrollVelocity = [self.panGestureRecognizer velocityInView:self.superview];
