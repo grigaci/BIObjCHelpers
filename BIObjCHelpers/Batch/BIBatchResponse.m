@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong, nullable, readwrite) NSError *error;
 @property (nonatomic, copy,   nullable, readwrite) NSArray *indexPaths;
+@property (nonatomic, copy,   nullable, readwrite) NSIndexSet *addedSectionsIndexSet;
 @property (nonatomic, strong, nullable, readwrite) BIBatchRequest *batchRequest;
 @property (nonatomic, assign, readwrite) BIBatchResponseOptions options;
 
@@ -29,7 +30,8 @@
     copy.indexPaths = self.indexPaths;
     copy.options = self.options;
     copy.batchRequest = [self.batchRequest copy];
-
+    copy.addedSectionsIndexSet = self.addedSectionsIndexSet;
+    
     return copy;
 }
 
@@ -41,6 +43,7 @@
     mutableCopy.error = self.error;
     mutableCopy.indexPaths = self.indexPaths;
     mutableCopy.options = self.options;
+    mutableCopy.addedSectionsIndexSet = self.addedSectionsIndexSet;
     
     return mutableCopy;
 }
@@ -82,6 +85,7 @@
 @dynamic indexPaths;
 @dynamic batchRequest;
 @dynamic options;
+@dynamic addedSectionsIndexSet;
 
 #pragma mark - Factory methods
 
