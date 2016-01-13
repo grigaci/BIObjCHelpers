@@ -109,7 +109,11 @@
 }
 
 - (void)updateTableViewForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
-    if (batchRequest.isInitialRequest || batchRequest.isInfiniteScrollingRequest) {
+    if (batchRequest.isInitialRequest) {
+        self.tableView.BI_pullToRefreshEnabled = NO;
+        self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
+        [self.tableView BI_startInfiniteScrolling];
+    } else if (batchRequest.isInfiniteScrollingRequest) {
         self.tableView.BI_pullToRefreshEnabled = NO;
         self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
         self.tableView.infiniteScrollingState = BIInfiniteScrollingStateLoading;

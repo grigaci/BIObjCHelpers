@@ -16,4 +16,10 @@
 @property (nonatomic, assign, getter=BI_isPullToRefreshEnabled) BOOL BI_pullToRefreshEnabled;
 @property (nonatomic, assign, getter=BI_isInfiniteScrollingEnabled) BOOL BI_infiniteScrollingEnabled;
 
+/*!
+ Method for starting the loading spinner
+ This method will start loading the spinner even if infiniteScrollingEnabled is NO
+ */
+- (void)BI_startInfiniteScrolling;
+
 @end
