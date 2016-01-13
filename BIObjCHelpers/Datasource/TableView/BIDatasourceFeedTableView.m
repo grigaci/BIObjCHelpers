@@ -158,6 +158,7 @@
     // Internal flags
     if (batchResponse.batchRequest.isInitialRequest) {
         self.tableView.BI_pullToRefreshEnabled = YES;
+        self.tableView.BI_infiniteScrollingEnabled = NO;
     }
     if (batchResponse.batchRequest.isInfiniteScrollingRequest) {
         self.tableView.BI_pullToRefreshEnabled = YES;
