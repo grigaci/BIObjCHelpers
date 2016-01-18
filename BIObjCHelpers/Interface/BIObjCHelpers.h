@@ -15,6 +15,10 @@
 
 // Views
 #import "BITableView.h"
+#import "BITableAdditionalViewBase.h"
+#import "BITableAdditionalLoadingView.h"
+#import "BITableAdditionalNoContentView.h"
+#import "BITableAdditionalErrorNoContentView.h"
 
 // Datasources
 #import "BIDatasourceTableView.h"

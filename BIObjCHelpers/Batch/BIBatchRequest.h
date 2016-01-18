@@ -131,6 +131,16 @@ typedef NS_OPTIONS(NSUInteger, BIBatchRequestOptions) {
 @property (nonatomic, assign, readonly) BOOL isInfiniteScrollingRequest;
 
 /*!
+ * @brief True if options contain BIBatchRequestOptionErrorTapToRetry flag.
+ */
+@property (nonatomic, assign, readonly) BOOL isErrorNoContentTapToRetryRequest;
+
+/*!
+ * @brief True if options contain BIBatchRequestOptionNoContent flag.
+ */
+@property (nonatomic, assign, readonly) BOOL isNoContentRequest;
+
+/*!
  * @brief Overriden method for returning the exact class type for a copied object.
  */
 - (nonnull BIBatchRequest *)copy;
