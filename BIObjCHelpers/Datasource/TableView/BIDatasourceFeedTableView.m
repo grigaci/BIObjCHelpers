@@ -102,6 +102,13 @@
     return mutableBatch;
 }
 
+- (nonnull BIMutableBatchRequest *)createErrorNoContentTapToRetryBatchRequest {
+    BIMutableBatchRequest *mutableBatch = [self createBatchRequest];
+    mutableBatch.options |= BIBatchRequestOptionErrorTapToRetry;
+    mutableBatch.insertPosition = BIBatchInsertPositionBottom;
+    return mutableBatch;
+}
+
 - (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     NSAssert(!self.currentBatchRequest, @"Another batch request is in progress!");
     self.currentBatchRequest = batchRequest;
@@ -109,18 +116,32 @@
 }
 
 - (void)updateTableViewForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
-    if (batchRequest.isInitialRequest) {
+    [self updateTableAdditionalViewsForFetchBatchRequest:batchRequest];
+    BOOL noItemsDisplayed = [self BI_areNoItemsDisplayedForBatchRequest:batchRequest];
+    
+    if (noItemsDisplayed) {
         self.tableView.BI_pullToRefreshEnabled = NO;
-        self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
-        [self.tableView BI_startInfiniteScrolling];
+        if (!self.tableView.visibleAdditionalView) { // If we don't have an additional view visible
+            self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
+            [self.tableView BI_startInfiniteScrolling];
+        }
     } else if (batchRequest.isInfiniteScrollingRequest) {
         self.tableView.BI_pullToRefreshEnabled = NO;
-        self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
-        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+        if (!self.tableView.visibleAdditionalView) { // If we don't have an additional view visible
+            self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
+            self.tableView.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+        }
     } else if (batchRequest.isPullToRefreshRequest) {
         self.tableView.BI_infiniteScrollingEnabled = NO;
         self.fetchingState = BIDatasourceTableViewFetchingStatePullToRefresh;
         [self.tableView.pullToRefreshControl beginRefreshing];
+    }
+}
+
+- (void)updateTableAdditionalViewsForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+    BOOL noItemsDisplayed = [self BI_areNoItemsDisplayedForBatchRequest:batchRequest];
+    if (noItemsDisplayed) {
+        [self.tableView addAdditionalLoadingContentView];
     }
 }
 
@@ -155,6 +176,8 @@
 }
 
 - (void)updateTableViewForBatchResponse:(nonnull BIBatchResponse *)batchResponse {
+    [self updateTableAdditionalViewsForBatchResponse:batchResponse];
+    
     // Internal flags
     if (batchResponse.batchRequest.isInitialRequest) {
         self.tableView.BI_pullToRefreshEnabled = YES;
@@ -166,7 +189,7 @@
     if (batchResponse.batchRequest.isPullToRefreshRequest) {
         self.tableView.BI_infiniteScrollingEnabled = YES;
     }
-   
+    
     // Batch response flags
     if (batchResponse.shouldStopInfiniteScrolling || batchResponse.batchRequest.isInfiniteScrollingRequest) {
         self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
@@ -179,6 +202,21 @@
     }
     if (batchResponse.shouldDisableInfiniteScrolling) {
         self.tableView.infiniteScrollingEnabled = NO;
+    }
+}
+
+- (void)updateTableAdditionalViewsForBatchResponse:(nonnull BIBatchResponse *)batchResponse {
+    BOOL noItemsDisplayed = [self BI_areNoItemsDisplayedForBatchRequest:batchResponse.batchRequest];
+    if (noItemsDisplayed) {
+        BOOL isBatchFailed = batchResponse.error ? YES : NO;
+        BOOL isEmptyResponse = batchResponse.indexPaths.count == 0 ? YES : NO;
+        if (isBatchFailed) {
+            [self.tableView addAdditionalErrorNoContentView];
+        } else if (isEmptyResponse) {
+            [self.tableView addAdditionalNoContentView];
+        } else {
+            [self.tableView removeVisibleAdditionalView];
+        }
     }
 }
 
@@ -206,11 +244,28 @@
     [self fetchBatchRequest:batchRequest];
 }
 
+- (void)triggerErrorNoContentTapToRetryRequest {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
+        return;
+    }
+    BIMutableBatchRequest *batchRequest = [self createErrorNoContentTapToRetryBatchRequest];
+    [self fetchBatchRequest:batchRequest];
+}
+
 #pragma mark - Property methods
 
 - (void)setFetchingState:(BIDatasourceTableViewFetchingState)fetchingState {
     NSAssert(_fetchingState ==  BIDatasourceTableViewFetchingStateNone || fetchingState ==  BIDatasourceTableViewFetchingStateNone, @"Trying to change the fetching state while another operation is in progress");
     _fetchingState = fetchingState;
+}
+
+#pragma mark - Private methods
+
+- (BOOL)BI_areNoItemsDisplayedForBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+    BOOL noItemsDisplayed = batchRequest.isInitialRequest ||
+                            batchRequest.isNoContentRequest ||
+                            batchRequest.isErrorNoContentTapToRetryRequest;
+    return noItemsDisplayed;
 }
 
 @end

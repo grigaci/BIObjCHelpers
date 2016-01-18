@@ -11,55 +11,58 @@
 		02295E1AEE5EBEB491BAED3FFE0AAF34 /* HCFloatReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 839C99F167D48DD39602C860ABE626DF /* HCFloatReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02A3AA5A4C5AC2552E0F3818B75AC911 /* MKTCapturingMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FEA3D2AF1496BBBCEDAD3526AD04E5 /* MKTCapturingMatcher.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		044E05557F320F311E893DB88A7BFD82 /* HCAnyOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CEC181F6E62706AB462A9B364F62CF5 /* HCAnyOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		045FF802874299A38E408288DEDFF8FE /* BIHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B33D93C85FDF28D2E679B8F4F223D9 /* BIHandlerBase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0490B93E885012761E020DB1402881BD /* BISerialOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B208F38A0F69A822AD03B89E6371B086 /* BISerialOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0512D9EF46E7CDB38940F2D224957F84 /* UIView+BILoadXib.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B4DCB671AF2C1B6095B727FEEDF5D9 /* UIView+BILoadXib.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		053B9791198EBF9BD09A4C681B9D1216 /* OCMockito.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BE1C188989704F6F519F60C3E1C8D94 /* OCMockito.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		053E571B24EF6A55E9B240A2BD447A74 /* HCRequireNonNilObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BDC678BD740A4A9EBF7764B855391 /* HCRequireNonNilObject.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		059EA0911BB8839B95BBB37FE4E81E8F /* HCDiagnosingMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2860B0ACB08682A6196A2494871A43F2 /* HCDiagnosingMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05F875DEC17D0FD0B9DA0716B7BCE2BF /* MagicalRecord+ShorthandMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA8561CBAC89D296F032FECF37908FF /* MagicalRecord+ShorthandMethods.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		06684F917DDE0EF6AEC53C79FB388B6D /* MKTUnsignedIntArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AA176DA1C869D1A17A8B4B929BFE316 /* MKTUnsignedIntArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		071DBD845DD8CD2A7D71AD1115DC33A2 /* BIDatasourceTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 174D3F164BEB9DC49182D0BA12CE72EC /* BIDatasourceTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08C92D8ACA2B6DC1A0121A693F07F328 /* MKTBaseMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B37AAA123970508CAE68B3AC8A4F7 /* MKTBaseMockObject.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0953D6D15F1A31AA6894A6F674C46A53 /* NSManagedObject+MagicalRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A37EFDF77EBFEB5EBA5673DD7BF591 /* NSManagedObject+MagicalRequests.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0A1D41CDD1F4B8C002A9559A39876673 /* BIStarterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2ACE5CCABF126B08A7A1BD8FFD2E28 /* BIStarterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B6861CD206675007D741DE4D8F010A9 /* MKTIntReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = D4D26000B077BDDB622F9EAE8AC97F6E /* MKTIntReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0C974DF7E46C71D383499A0D627A38AF /* OCMockito.m in Sources */ = {isa = PBXBuildFile; fileRef = B16B56D9A0D7C3A5F16071050DC1CEED /* OCMockito.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0CB013E7A53D87E5977DBD4E811729B6 /* MagicalRecord+ShorthandMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 068354974DFDD6E647BE01D67619D8C5 /* MagicalRecord+ShorthandMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CC68122FC72F8CA85AF3CB31E13D48A /* NSEntityDescription+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = C55F152F5A61012C78CCECA3917ABCF3 /* NSEntityDescription+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0CE6628299A9C96F838E25281E98F101 /* BIHandlerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F40DFDFFAE8C8D8B5151F631B5C6632 /* BIHandlerTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0D446F09251A3A5423F934B6EB669B30 /* BIOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B10EF00E4E72CC9265E71ADD7228F0B5 /* BIOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D50DBEC273B1E6603BD5164CA434509 /* HCReturnTypeHandlerChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E319618FFC085D6922235B5FCD6D93C /* HCReturnTypeHandlerChain.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		0DAC15C05A8F1899E23F75FD4ED26F10 /* MKTDoubleArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C03C96A36AA09A102C2E35CCE3A866F /* MKTDoubleArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0E48F359865D65253B16A58D2A0925C6 /* HCDiagnosingMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7D3295B679216856E9ED640287F3FC /* HCDiagnosingMatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0E73D27E671EA607E8CB37B404F171D1 /* MKTLongLongArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 82E4142926D7C29B91FCB7175698202E /* MKTLongLongArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0E9A84BD7C8F79A805890B66C7FB51DD /* MKTUnsignedIntReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D7E556463925150CB25DE612588685 /* MKTUnsignedIntReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0F808EA63989322845C0B43B3EDA555E /* BITableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E33EFC7B2B364A5095EC847426BE40ED /* BITableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F925D93BE119F7EF1D3947A78F1BA6B /* NSPersistentStore+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB804E347E6CA70E753BA839A6BBCAE /* NSPersistentStore+MagicalRecord.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		11C84373DDD1DBE15EFC5A539C829D11 /* BITableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E98E6B3DE47FDDE5B3F57204875E76 /* BITableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11ACDD42C194B7E7E082186F2012DD85 /* BILaunchStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A72974938E8F34807E05CD2555ECCED5 /* BILaunchStartersFactory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		11DAB159F712917DF0C3153A1800366F /* MKTBaseMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C4A19ACEB33C15953B820924371DC4 /* MKTBaseMockObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		124E1D34DCC43B41CF9AA58879120EDF /* BIDatasourceBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA6C37B9CD86776B022AF801E15147C /* BIDatasourceBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12B914702F6131D09CBD33007C21205E /* NSInvocation+OCMockito.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6B9C31060CEEB437BC790D86EBAFE9 /* NSInvocation+OCMockito.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12EA06A90C55FAC801E3D25DC38C11B4 /* MKTPointerArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D6FEC832B261FF8D9F41AFE97B9E72 /* MKTPointerArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1332FF85FE7A8B96DE1EEE82D8A023B9 /* HCIsEmptyCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FB652769AFD01E099C10F50DFA26E6BC /* HCIsEmptyCollection.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		13C08EE06BE7BA45004BD4E27BF289AF /* MKTUnsignedCharReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = C195F7127902B80F6175875A5845B867 /* MKTUnsignedCharReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		13FE3DA016BAD1A66418641AF5CD5475 /* _BICollectionView+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C2AABFAC33BA6ABB3786F1E47C67FCA /* _BICollectionView+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14011772C649A6D9C46C667B5ADA1773 /* CJALog.h in Headers */ = {isa = PBXBuildFile; fileRef = A09BD6F4AF8333882912B676AE84A245 /* CJALog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		140E3EDAB79936C93B165E3EAD5B1799 /* BISerialOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD4708A68B6689C414956F4076D9611 /* BISerialOperationQueue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		140FA29F183B56C91624347CED3D7FFA /* MKTUnsignedLongLongReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53C4E30CD7E5639A81A41F8D2FCF7F /* MKTUnsignedLongLongReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1481168D8ED0DADD948E724F249D2B32 /* MKTObjectReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B4FF577BFB0A764A72BF28ACD0CE2 /* MKTObjectReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		154F9D0FE0D0754C134EC54AB796968B /* HCSelfDescribing.h in Headers */ = {isa = PBXBuildFile; fileRef = D74A929AC588BEFC512E846E173C91B1 /* HCSelfDescribing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15C487F55623DE6C8D0EB51BD58BB4F3 /* NSObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C82FF3E7535742C75F992201FDC7DFBE /* NSObject+MagicalDataImport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		16030728A277BE568607B930D1CD3EAB /* UIView+BILoadXib.h in Headers */ = {isa = PBXBuildFile; fileRef = A4613A7BCB3A9DECB1FF724419BAFB01 /* UIView+BILoadXib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		161FB3429D2B1FBB27FC4A5B80B0BC02 /* MKTLongLongReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = E435E1FEE9C3F97B13B77E1376EE6389 /* MKTLongLongReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		16C563236C6317FFB5D078F25C305F93 /* BIStarterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2ACE5CCABF126B08A7A1BD8FFD2E28 /* BIStarterProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		16EA2B0D9F80B5577E1C8705EB695513 /* MKTDoubleReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = C92C8B2F8CD9162F999A96C55FB96179 /* MKTDoubleReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		17D0D5FEC444DA425592CFCF65241756 /* HCTestFailureReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB836F420E8A8ED9991416F4A86AA156 /* HCTestFailureReporter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		18E5CED36994DBD3C3B58D78C274F37C /* MKTOngoingStubbing.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAC9E13307A31ECCE775A92F240992B /* MKTOngoingStubbing.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		18E6C1DD98D298A7914D402E558A77D1 /* BIHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B33D93C85FDF28D2E679B8F4F223D9 /* BIHandlerBase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1935A49FF0B940AC3D64C3DCE437A8F2 /* BIDatasourceCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9548CE5C989CF8A3AAA80D3CEDB7E8C9 /* BIDatasourceCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		194D3AB0D83020680956E3FD88C05489 /* HCIsCollectionOnlyContaining.m in Sources */ = {isa = PBXBuildFile; fileRef = 6327F1A76F73EE3CA883D992849C9CAC /* HCIsCollectionOnlyContaining.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		19EA038DAA88363D611F7E43B3712C10 /* HCInvocationMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E95A7C91B66379B1396E10A8D33F1C /* HCInvocationMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A3A5F16B438424DBE3D111DA8CA81E8 /* HCIsCollectionContaining.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3F2A53D10F40126B84ED749B816995 /* HCIsCollectionContaining.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1AB2A0712971A69D560C0E8A9F81B9C1 /* HCObjectReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = DD2DF267CEAAC7B11E35BC058C839E9D /* HCObjectReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1AC6793B02D25BCF8CB7A4CA25F7F982 /* HCStringContains.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B1B59E303239CC2DAFD75380F5F0FA /* HCStringContains.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1AFB094C2D2D75A0FE9611CE868B8B98 /* BIActivityIndicatorContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07092DEAF82309FBF88CA7AE825D3E61 /* BIActivityIndicatorContainerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1ADE14FDEB82D4B355D4BCE18CB01486 /* BIBatchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F31F5B7EA02837520FD51A3C6966F064 /* BIBatchRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B6E6CA4B06EC78C59249DEB46C6FA6F /* HCArgumentCaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FC094F023EBA265FE8E20429E436C399 /* HCArgumentCaptor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1BB17225B1757A324616560C61C38F0F /* BIHandlerTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 44459BA5C3992D20C3F7C309B2110180 /* BIHandlerTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BD3B428BF7A1FAB16A73693933463B0 /* MKTInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B61E8BEE3FE52DF85E1ACE3E883CCB /* MKTInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1C0C204A12EE245F005B522F24779AB2 /* NSManagedObjectContext+MagicalObserving.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E2BD760D0D1FE316EF9B3AA787961A /* NSManagedObjectContext+MagicalObserving.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C9398A0549974AB8BF81DCC3241CF67 /* MKTAtLeastTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0E2FFE29EC270C414267772981AC9 /* MKTAtLeastTimes.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1CC65EE022AE3A75E6AFFF6C5F7D3978 /* BICollectionViewActivityIndicatorReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4711B6BC7ABDC2325D2FB2F9B13B93E8 /* BICollectionViewActivityIndicatorReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E1D5155054E6516B15AAD5EC6D77C4F /* HCThrowsException.h in Headers */ = {isa = PBXBuildFile; fileRef = F665D565FDF04E1E9AED41D7C617E57F /* HCThrowsException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F3A071C62D008D2981F74EDB0240FF0 /* MKTPointerArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B678D738A9A119059C1C331966DAD01 /* MKTPointerArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1FCAC2EE5DCE42C0A6CC8C5AB5829A0F /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A0E7C462EB36A76C7308631C5EABC /* NSPersistentStoreCoordinator+MagicalRecord.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -67,12 +70,10 @@
 		20694CF03DF3849C5E9C4DEDF49BC960 /* MKTBoolArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EECDDD4891FDBDAB216B0A3F0FBD52 /* MKTBoolArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2102707AFA08CB4388736E2ED8B1A8C1 /* MKTTestLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 311F2ADA7D47A363346C3AB773355470 /* MKTTestLocation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		21874903AD7927C4C0B63AEBD536D856 /* HCIsDictionaryContainingValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E9099BF2383638882C2D3589C04D6832 /* HCIsDictionaryContainingValue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		21BA8DB036B060F16DFB66C1EE46A70B /* BIBatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8E511F21D74ECC44350DE1CDFA7863 /* BIBatchResponse.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2322448F7D4A0D636DA8B5D43358ABFC /* NSManagedObjectContext+MagicalChainSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A42CC128962568F7D320C54286E17 /* NSManagedObjectContext+MagicalChainSave.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2383AF2D235CEDA68E4D42BBFE2CED95 /* HCIsSame.h in Headers */ = {isa = PBXBuildFile; fileRef = D2C69986FB41F4E8A8928A7CA340B72B /* HCIsSame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		244D282808D1AFFBB9945758A61414EC /* HCIsCollectionContainingInAnyOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = B14CDDED43D3C3A2B228A625C487893B /* HCIsCollectionContainingInAnyOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25DB62ACF66AE77F84E5115578E46D7F /* MKTSelectorArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1844CD2187B8728B23995FB663A696A7 /* MKTSelectorArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		26BCEC76A929AB201A97FB30AFB2A6BB /* BIHandlerTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 44459BA5C3992D20C3F7C309B2110180 /* BIHandlerTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27448190B652B29157D74F520079D627 /* HCDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = C346D821D4D282A396B65ED2DCC0EF90 /* HCDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		283517F26EF54B468F3FCB844517CB81 /* HCArgumentCaptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ACC902EA14BBE664D7998890A6BABC5 /* HCArgumentCaptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28BD1167DA55C23B74212513033A0B7D /* NSNumber+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFF03E00B99C8D5E08F049EACA39FE8 /* NSNumber+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,61 +87,63 @@
 		2B64068CF115F5626541CA849BBCD095 /* MKTStructArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = E3168A728762E5B44C1E98EC94A66083 /* MKTStructArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2D56F55C486AA76150BB5AE08032CB71 /* MKTShortReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB3AC2E4F5F8EFD88484C838F1F3F0D /* MKTShortReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2D76A9C9BCAFA6307F912343D23801D0 /* HCIsInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 3336FEF36F6283480E08B18FB435777E /* HCIsInstanceOf.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2D879DCAFC6B72D2C223369DA382E17D /* BILaunchStartersFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C14424E13EE0E8E2D4CDA60C55B7A2E /* BILaunchStartersFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E0B0EC0B81C6B1B7A78919BA4CB99DB /* HCUnsignedIntReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F23D4D59171CF4D6BCBC6974CFB393A /* HCUnsignedIntReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		2E37A328B8A2D2B5188B3BDAA154BFF1 /* NSBundle+BIExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3A82FB39D3A192523B4272B75436 /* NSBundle+BIExtra.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2F027425F9259DFB8B338318BBB60C7E /* _BIScrollViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD358CB30F73C05080F55610429E97D /* _BIScrollViewProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F2BC308E4F94CB3796272ECF74495B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */; };
 		3081159EDA977834208AB0EF1E04E406 /* HCStringDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983764784319F39631FA880969756B2 /* HCStringDescription.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		31750CBA65C71D4493886BC7C495D11F /* HCIsNot.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBF3F9C1F2A519B05E3D14B7BD23128 /* HCIsNot.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3193DE7D851E89AFE97A0891CEF4461E /* MKTReturnValueSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CAF4C4D097477C5C77EAB488FD913AC /* MKTReturnValueSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		31AA3190BCFD3CA6249C97118B1F92EC /* HCTestFailureHandlerChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 8404B36FAD90D71B9092DD42F76E1B51 /* HCTestFailureHandlerChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31C386B6272A0E5B4A3B4CD779D4DE09 /* NSManagedObject+MagicalAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EBB0009C7E394120838E9097953D3A /* NSManagedObject+MagicalAggregation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		31C69770C06DE2D19CBCC1CD2F46D0C0 /* BICollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F0A4786270CD084188C10DFA5324BF0 /* BICollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31CA1E311FFC686C56AA8BA95265E7DC /* BIOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BC593CB59E629030A0CA92311DEB8D04 /* BIOperationQueue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3214813B6AE31A305C5565EA6A268980 /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C90BAE8CC64371EDF32627F02EBA7608 /* NSEntityDescription+MagicalDataImport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3237E01E4157177C17D54C6A707AC1B0 /* MKTClassObjectMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 635CD8ACDAE93B438A858B70B1994E5F /* MKTClassObjectMock.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		339F2BFA842AB3D27F3DDBEFBC312E97 /* MKTUnsignedCharArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = E316036E7D2737D9C73B25A3729B33CD /* MKTUnsignedCharArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		34DFAC98E1F96CC3B10F154CD4E9536F /* HCEvery.h in Headers */ = {isa = PBXBuildFile; fileRef = A0BFD0CF823820E61D44702E716EEBA8 /* HCEvery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36168A1678D791AFC20BAA7881DFF753 /* BITableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3E95A6317BD49291CBA2B5FC963DF4 /* BITableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3643ADE88AD832EE291645F01196B101 /* HCSubstringMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 12E6A17F8B66BB6AC7A560B7DC849040 /* HCSubstringMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		376D9CA4ECAFE413A79BFABEF4CF2785 /* HCStringEndsWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B90CBAE09C65C25DC414DC99B24C6 /* HCStringEndsWith.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		379BF67FE7A33037CAAE990828409946 /* HCHasProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 9993C09F2555E180DAB43491CB349A62 /* HCHasProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		399D5B52E033E396E85517BCFBCD3051 /* MKTThrowsException.h in Headers */ = {isa = PBXBuildFile; fileRef = E665DFCDFDF5EF6A79324F0627DE4BE5 /* MKTThrowsException.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		39C736CCB896C083E924006AF0BA2051 /* MKTLongArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE26197562B01290C150F85072A7BAC /* MKTLongArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3A93FC3C1AB0C9988954CD9361C74206 /* HCNumberAssert.m in Sources */ = {isa = PBXBuildFile; fileRef = F607F71CED8A59D2B553B5E58989C2BD /* HCNumberAssert.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3ABE71E12D1CCD1EB1C531CC5E72D0CC /* BIDatasourceFetchedCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 480FD75A23C29E7021BF605E63ABED65 /* BIDatasourceFetchedCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C45DB85F3698B9FC0FA719AC600D71B /* HCUnsignedLongLongReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE228D7C1DFCF80233376895FF0C0E09 /* HCUnsignedLongLongReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3CE44F0C4238E30B6F5713E7B50C1054 /* NSString+BIExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 699247B273A00C91E09C5DDD3801F4D1 /* NSString+BIExtra.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3D17D6DF58B4154AC408FA8479FAB940 /* HCIsTypeOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 309878EDB884C2E1A7D4B7E695EBF038 /* HCIsTypeOf.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3DADEBC414499EBB70A77A6005812862 /* MKTClassReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = B7D983391692366C5812DF2A97E6AD90 /* MKTClassReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3E72F0973A4038FC223264EAA910A4C0 /* NSManagedObjectContext+MagicalThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = C06EBB6885ADCC9F72AC810468D1639F /* NSManagedObjectContext+MagicalThreading.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3EBFA2B558F15EAF441C9D2AEFB945A2 /* NSBundle+BIExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 78FF21F4D1C2C75A8B62B586AFBF4D9F /* NSBundle+BIExtra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4006DD9133C8BF85D45C4A7A8D1F7117 /* HCGenericTestFailureReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = A92441011309E0D6E1261C97BB08C007 /* HCGenericTestFailureReporter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		40183DD3760ABE39CCCF632FFCFD5EAD /* HCIsTypeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 92455B9ADDFF4BD8B9759FE829F150A8 /* HCIsTypeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40908255A3A712EB13E615F7EE0FEF5F /* HCUnsignedShortReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2378B086364316B580ACE0727655EC57 /* HCUnsignedShortReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		40A4F1D9DA5ED355D967FF8A5782AEBC /* HCUnsignedShortReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECAEA2E46A95BE26B538CC8A934E94C /* HCUnsignedShortReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		40E9191D9304416A9BA0F6A69B38BFA1 /* BITableAdditionalLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 052F7805740F45DBD2E012A8749D2564 /* BITableAdditionalLoadingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4242BC19752A18CF336CA6DAD2DE06FE /* MKTObjectReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D6792163BD461B5CE62D868FF39825 /* MKTObjectReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		426DE306FDC72C6711DF5E3E94EEF371 /* MKTBoolReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7994D8B0FA56939D14AC42F767FB458B /* MKTBoolReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		42D761EC3184176CC512628906947D40 /* OCMockito-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8C04628E453825B7B5321FD9AACFA4 /* OCMockito-dummy.m */; };
 		42D92EB800549A4A8F96CA587DAB2E31 /* HCHasDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = B6DE579E6E8CCA4A0467CF3E5F05D84F /* HCHasDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43261D1345F61050060CBA8CB98A8D35 /* NSManagedObjectContext+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E7430866A20EFC727CF68B35C0214B /* NSManagedObjectContext+MagicalRecord.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		43BB6B329ACFEB6272CB72D60A40B1B0 /* MKTObjectAndProtocolMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F53EDB4B091B37B5B97148A493432C /* MKTObjectAndProtocolMock.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		4434E612D0892DBF32286BB352CFF0DA /* BIDatasourceFetchedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F25CB5A5347479197AC1F3953A6F1 /* BIDatasourceFetchedTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		44493775F4898DDC425DF571F8E61856 /* BISerialOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B208F38A0F69A822AD03B89E6371B086 /* BISerialOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44C5A715B4BA4BEC4111E6BBCA825403 /* MKTExecutesBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = E577C0E217E9900BE4056806432D542A /* MKTExecutesBlock.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		44EDD8EB3224D4E6F23B3FBE80601122 /* MKTBlockArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = EAB07852BF24FFD792E166062C91E031 /* MKTBlockArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		453F7AE8FB2C99A93F1D592B77A7C0EB /* MKTExactTimes.h in Headers */ = {isa = PBXBuildFile; fileRef = 538DD00483B58B2E9B3E55F0B2F7EACA /* MKTExactTimes.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		45CE204C5E91C3BD2BC2ABDE5003626C /* BIDatasourceFeedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 217964D24B614C7D180199304FD04AB6 /* BIDatasourceFeedCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		45F9A9B66048FE89411192AF40F7026D /* HCSenTestFailureReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B61CE804DDB3CBD6D3D040A6F0FDFC /* HCSenTestFailureReporter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		468F153FDCE5A660ED5FBE42C5D56DAB /* HCOrderingComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F68DAB84DFC7C7B5C000D7586F2FA24 /* HCOrderingComparison.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4704F6A3B6B24DE55202407313A999E3 /* BIBatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8E511F21D74ECC44350DE1CDFA7863 /* BIBatchResponse.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		47C2E6386CDDCC78BBFAA26A2E5656C2 /* CJALog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EA77234E0F4E4DD9AEA417A0A17F31 /* CJALog-dummy.m */; };
 		48819FDEF0CE668E2C362E764B09FCFF /* MKTTestLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = D1FFB5B62FED6DB55A1472160B9F411E /* MKTTestLocation.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		48B473180A89F75C59773722B47546B9 /* MKTProtocolMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 35CA50372405923842285BC7E50DA766 /* MKTProtocolMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48F10A9399755257150C2F86E1C63A38 /* NSDate+BIAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C32A72C2071127A280128D2A2BFC61 /* NSDate+BIAttributedString.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		493F363731796C58C05F2F7682789112 /* MKTThrowsException.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9D1BF92E57402A5F3F83938C312650 /* MKTThrowsException.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		493F6EC893E795450A0D98E0E7455369 /* MKTObjectArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = C8357DB262CD47BAEA7723C99EDCEA18 /* MKTObjectArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		49CBA08AA84F552AFDE7C9C454225F5C /* MKTUnsignedLongLongArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = D81BC3DB992392F164DC74DC371F0107 /* MKTUnsignedLongLongArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4B20C4AA39CACE906FAF77B82EE4FDD7 /* HCUnsignedLongReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C9049D989A0CFA27BF58A10311708E4 /* HCUnsignedLongReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4BA5F25C33791D0D76E424FC024ED646 /* HCIsDictionaryContainingKey.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0692B4BAA4AA0C5BE36B6C7E3B12C4 /* HCIsDictionaryContainingKey.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		4BE7E3CEA986F291D86448551655844D /* BIStartersFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CEBC06B427E125BA4EA08A0875B67123 /* BIStartersFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4D436802E971FA60CA1BBD8485D7F570 /* BIDatasourceFeedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 217964D24B614C7D180199304FD04AB6 /* BIDatasourceFeedCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4BB5A7CAA5B25003B78C04765AD4909A /* BITableAdditionalErrorNoContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D2EC81495F609BC30A0CA0AD1E5D90 /* BITableAdditionalErrorNoContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E29BA98EBFA8942E04E53AC94F1AB02 /* HCIsCollectionContainingInRelativeOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1977E7B4EB2054CA1F3EC4A7918DF7DF /* HCIsCollectionContainingInRelativeOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F892A0A206F5D34855B29AE492F98DA /* MKTUnsignedLongReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BCB91F5F64999A2EE8E36BAD58BDB2 /* MKTUnsignedLongReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		50152AB21A3C529220176953D7D1FB88 /* HCIsNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 312F8E6DBB75564326D9604F542D69FB /* HCIsNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50534026B8288F8FED7B390971C6C65A /* BIDatasourceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E42F9B0ECFFFDE5AF5AE75F627FD6 /* BIDatasourceTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		507CB04094BBF1311476B1C7BA5EE4A0 /* MKTFloatArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739118D52B8CC65F9F8C54EF93F46E1 /* MKTFloatArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		50851D34D85BA68ED33766A7BEBAFDB9 /* MKTArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = D6669BC802B108923149BC215798A20A /* MKTArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5174267C87D852918A71E7A22EDAF7B0 /* HCAllOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C09ED3575120D309695BE27390617B5 /* HCAllOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -150,16 +153,19 @@
 		52C41463C5F51A970D512A525D87A8A0 /* MKTLongArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = DA2D24BB177F863125F93B43147A0DA6 /* MKTLongArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		52FCFEDDBEEB8C2EF97546F3311E5853 /* HCIs.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B37BC6CECC3181F06E15F37B2D8670 /* HCIs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		532B622410B5C4DB0F49A5DB561ED4E3 /* HCThrowsException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2622E67A5D46069903060AED292EF50F /* HCThrowsException.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		53C84B9BC1888C435DED09776F602C4C /* BIDatasourceCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 596452B9258A26A94AFDBF656F5ACA1A /* BIDatasourceCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		54E0EB995D518583A71518A03864F46A /* MagicalRecordInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA508A49845B4E0EA5BA120B2C9BF4A /* MagicalRecordInternal.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		553921FB3A7DD66BC297043778501DFD /* HCUnsignedIntReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAAE78897614A837352987825DE74E /* HCUnsignedIntReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5594DC6BBA7B7B7A612015BF8C575BAD /* BIBatchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F31F5B7EA02837520FD51A3C6966F064 /* BIBatchRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		553FCDCA5F8C3297F10BB40E5C5BFB1B /* BIHandlerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F40DFDFFAE8C8D8B5151F631B5C6632 /* BIHandlerTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5596D6A623CE0BB4520599410A16F63A /* BIBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4719D737451BA730991B78AC002D7918 /* BIBatchRequest.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		55D5F4E96E58E80A9BE075A62B99B3E5 /* MagicalRecord+ErrorHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 4865C4840A84D90B0854C2751B723DDE /* MagicalRecord+ErrorHandling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5602497BF7C3EC74D5BBF891A3A93468 /* MagicalRecord-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5090D724A1DA3ADBF789B3742B0242A /* MagicalRecord-dummy.m */; };
+		563D5783D31B6CD204C19ECADCDC8C65 /* BIDatasourceFetchedCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 480FD75A23C29E7021BF605E63ABED65 /* BIDatasourceFetchedCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		58FBC3C596300DCE58B12BE34C8A8384 /* HCHasProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE661E67ECB192C57E82E1A7A4C8EE3 /* HCHasProperty.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		592DAB385F9D384953DFA62A84E7C578 /* OCHamcrest.h in Headers */ = {isa = PBXBuildFile; fileRef = 458965C15ADF65C690242BBDC518ECAC /* OCHamcrest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		595501D2C387596890FF25C18A02D38C /* MKTPrimitiveArgumentMatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E7806D96D83D5D44B5EED0E96BE0FF7 /* MKTPrimitiveArgumentMatching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A053F768EA975D873554ABA0325EACB /* HCMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C1CA2A1E3AEE6B2640B9078BE2DDB05 /* HCMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AAF07F94E5DABB751A33D741DB86442 /* BIBatchHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E4FEC3B6951173C17A34183BC9815 /* BIBatchHelpers.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5ABB0B54A4762CCCF8D3E16876E09EBB /* BIStartersFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CEBC06B427E125BA4EA08A0875B67123 /* BIStartersFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BD174598465F151C9B6E0D07A8F7C46 /* NSRelationshipDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8F8B601637956292E48EF3EACEE3D7 /* NSRelationshipDescription+MagicalDataImport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5C01E158A1DF8D5CE102B3480C3FD0EE /* MKTUnsignedShortArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06320E841E27BC1A2AFC6CE3009B400F /* MKTUnsignedShortArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5CB61EB8F692967D7EB2D7DC482AEAB4 /* NSManagedObject+MagicalFinders.h in Headers */ = {isa = PBXBuildFile; fileRef = 82AA23C442E769821D59F9C17050CA9C /* NSManagedObject+MagicalFinders.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -174,62 +180,59 @@
 		5E8D4DD040313092E626A2674618A3FD /* HCIsIn.h in Headers */ = {isa = PBXBuildFile; fileRef = E3ECE46483061DB2F43D85529167BEDC /* HCIsIn.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EA469342217F6CEC7E73FECEE7FB807 /* HCSubstringMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BE808E496594CB9AB8CE528A87458373 /* HCSubstringMatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5EE1FE111C6D532B67F2BEABC2C39C26 /* MKTArgumentCaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 805E34337DB36A6FEA14519E5151A0F5 /* MKTArgumentCaptor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		610CCB761F12AD6ADAACA4ADA4948E08 /* BIObjCHelpers-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE269F33C0906591D08728AA0374C9C5 /* BIObjCHelpers-dummy.m */; };
 		61939A655FD23A7E5766B4CD61B85403 /* NSPersistentStoreCoordinator+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 58E90EF09FE17784D4C9B5073982ACFA /* NSPersistentStoreCoordinator+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62970334BB794F668D97A97251637C8D /* HCIsNil.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B907FE5A8D34CE34C511DEE02A2F1F /* HCIsNil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		62B63D3AFE1D29C9B5C51ADABB69F11C /* HCBaseDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ED144342C6A35AD2E8E0DB6CFDAED42 /* HCBaseDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63219FB40AD5A97DDF0B200891A9B6D0 /* HCAssertThat.m in Sources */ = {isa = PBXBuildFile; fileRef = 93794C47329AA465E55D74B5BA2BFA16 /* HCAssertThat.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6369959D701AD40BCD7ABA71D0ABB261 /* MKTUnsignedLongLongArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 65428853547E1C738DBFF0084E479945 /* MKTUnsignedLongLongArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		63D2AA380786D3C55D48983FE6BFEF61 /* HCIsNot.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CA76E2EDE6FB0C8E39C9C0112F27E62 /* HCIsNot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63EB34CD88AE8D4059B4A846E16B9976 /* BIBatchHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E4FEC3B6951173C17A34183BC9815 /* BIBatchHelpers.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		659999A55D908C47C8F24F84891CBC19 /* HCIsTrueFalse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C1C8CF468D37C8C175DB05F5435E9 /* HCIsTrueFalse.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		66079636F01002C71AD70AA01C223387 /* HCHasCount.h in Headers */ = {isa = PBXBuildFile; fileRef = 68E40FEA547FF097C15BF5C8F30F67C1 /* HCHasCount.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		660C66FDC6C1FB7BFC84C159D334FDFF /* BIOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BC593CB59E629030A0CA92311DEB8D04 /* BIOperationQueue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		661FE8AE863F5739D226FFB8779D081D /* BITableAdditionalLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247636AE5F463724BEA3365BD4C2AE57 /* BITableAdditionalLoadingView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		669BEF20D3AA9B6EB81F1899864E7D42 /* MKTUnsignedShortReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E647578F981EB1C17C4699CF9F9B2D /* MKTUnsignedShortReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		67E3FF884579A9C912D77E4B16B87EDB /* NSString+BIExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = DA7ADC7F97E5C445E98943AC17A817D2 /* NSString+BIExtra.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		680601A4A2A68C69EECDD76F687706EA /* BIActivityIndicatorContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DA678966624CC6B60BC29FF7EDFBB688 /* BIActivityIndicatorContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		682C3560A0EDFF976FAAE2F065E2C779 /* HCConformsToProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F57312593908DC96EF31A33B031D4D2D /* HCConformsToProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		693BD84A9DC841F2D0EC05FB923F0C5F /* BIDatasourceFetchedTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DF476C78AD902901015088C47A8EE3D /* BIDatasourceFetchedTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6ACA8DF898BE1D9CA88E31C9B5D5A0D6 /* NSManagedObjectContext+MagicalSaves.h in Headers */ = {isa = PBXBuildFile; fileRef = 1454657E2C38A7FE211C9EC2D9BE1B75 /* NSManagedObjectContext+MagicalSaves.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B46840CEE52037706A3A02ED9CA6D76 /* MagicalRecordLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 533377E7E8CD802DF905B1EBA14DF200 /* MagicalRecordLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C8BEF90485453BADD69ABC31327E370 /* MagicalRecord+Actions.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0CCF0A0FF5E2278612480EBA1A2182 /* MagicalRecord+Actions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E1090CB29A764CEABF34775CA237EF5 /* NSString+BIExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = DA7ADC7F97E5C445E98943AC17A817D2 /* NSString+BIExtra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F74360FA5DDAE74284CA2E7558044FE /* HCTestFailureHandlerChain.m in Sources */ = {isa = PBXBuildFile; fileRef = D27019EABF7B4BE3D851BCD3E7703707 /* HCTestFailureHandlerChain.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6F74532B5430B002C72DD201C1296943 /* MKTMockitoCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED6E0233FC062DCEE3B4FC1AA30D995 /* MKTMockitoCore.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6FCACA7B819D3557B4ECE46A6ABDB3F3 /* NSInvocation+OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5951ED6303C378852AFD52371E2B9 /* NSInvocation+OCHamcrest.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		70076531295D90939D999E36C69788B5 /* HCCharReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D41BEB7C8D3784A0E6FAEEE35F1DB /* HCCharReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		70C199F718633F67BCB1907A493AE932 /* MKTReturnsValue.h in Headers */ = {isa = PBXBuildFile; fileRef = D6463E4F4EAA7B4C42069B8615CE8295 /* MKTReturnsValue.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		716F8726CF35E4BB19D228D6755B7943 /* MKTCharReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 854C63CBDDE9635744DCE390ED3A05D5 /* MKTCharReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		722978B6190CA46B9D3623835F535D25 /* BIDatasourceFeedTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C2BD1FAABB2D0F7513CF3EB68975532 /* BIDatasourceFeedTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7241A2680874EEEA4855D6C0F118B487 /* BITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94929F86B88DECD3E5F9B527F21142CE /* BITableViewCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		72EA401FE4048D1C947F9838B12832AB /* HCWrapInMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F779350AD407FEACD95C6675C4335C /* HCWrapInMatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7345901F3C1137A4112FC6CDF8D05C82 /* BIDatasourceFeedTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C2BD1FAABB2D0F7513CF3EB68975532 /* BIDatasourceFeedTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7396D260E247A059E560F4D711435166 /* MagicalRecord+iCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C6FE0580B6586E4417FE177DCC0852 /* MagicalRecord+iCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75868C063043DAABEE1AF3977C1FFE70 /* HCIsDictionaryContainingEntries.h in Headers */ = {isa = PBXBuildFile; fileRef = 232485D35BE5F00EB5D0F8A7DD7232F3 /* HCIsDictionaryContainingEntries.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75B97C081116D71FC9E3C0018CD11119 /* HCObjectReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = E634870143E193407AA31318F5F5B0DB /* HCObjectReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		75EAAAE732922F9820E52AA24B4FFA0A /* BICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D28212052AD600A4DD141291D9803C /* BICollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		75F754C7C165C73C66A56B6FB97A7685 /* HCTestFailureReporterChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9704D0F2DA85FD454610E6B55D9BDBFD /* HCTestFailureReporterChain.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		76C8710386562FBD7789F732552CFEB3 /* BIBatchHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 412807544123D84EBD965753BB454239 /* BIBatchHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76F1B0BC35A782B1C1898766136B984F /* _BITableView+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = A765B9F6089EEF6BCE57508B0C6D1E45 /* _BITableView+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7775BB6344F349D3E49A1221E8A0CC4E /* MKTObjectAndProtocolMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 22270C8AB62B33C409CC377795F8C180 /* MKTObjectAndProtocolMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77D4410D5FEACCCC4EA82B8891572D9E /* NSDate+BIAttributedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C64F426F43F150F08CBDC1EF8E6BF0B /* NSDate+BIAttributedString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		780B0A741218327590087EAC2FB99017 /* HCIsCloseTo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EF47271810C47AF797861D473ABBCF /* HCIsCloseTo.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		78256199696440F5A8149BEB424F2ADD /* NSDate+BIAttributedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C64F426F43F150F08CBDC1EF8E6BF0B /* NSDate+BIAttributedString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7845965321235B8B6C31598D6442EB4D /* BILifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B0531C6FA06FD80D098A048217E0A /* BILifecycle.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		784DE5E9493EA3FD0B3404DC87B573DF /* MKTDynamicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EC572AE9EA9EA97C2542989F2DB835 /* MKTDynamicProperties.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7873559748CF83ECA98B290906A2A1CB /* MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 85FF3B04453D83902E679E9AB7AA153A /* MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79C4C4FEBD3A31491FF065105291A8DE /* BIActivityIndicatorContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA72261773AA54F240233971F52409C7 /* BIActivityIndicatorContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79C83C89D8025F84A7C212D86758D7DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */; };
 		7BA30BC92200E7F54F0D7C9F56FA2BE2 /* HCIsEqual.m in Sources */ = {isa = PBXBuildFile; fileRef = 445B1F846956D83F9BC53E529D091047 /* HCIsEqual.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7BF91BF57A698911C43B8A7E36E8821A /* MKTUnsignedIntReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B61F975EC0B6855C72E5D31319C977 /* MKTUnsignedIntReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7D03D1134683A1CCE7218E3B97509A8A /* MKTObjectArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = CCCE827A3710919AABDFD41F1216A0A2 /* MKTObjectArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7D8D3696219A0EE4355B4C0C9A8F5594 /* BIDatasourceFetchedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9772493E3D1EAC57CDD93850475FD4F6 /* BIDatasourceFetchedCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7F0D1D099F90013FA4F286D20018BF8F /* HCIsCollectionContainingInOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = F20E23F8E705FF6F3CB6B669B48F2830 /* HCIsCollectionContainingInOrder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		800B3E2D3B39FC16B1B27174BE244ACE /* NSInvocation+OCHamcrest.h in Headers */ = {isa = PBXBuildFile; fileRef = E2081943520752F002103C59B1F0B2E8 /* NSInvocation+OCHamcrest.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		808CF8D9DA68172BC1CDBDEEA6FDD572 /* HCXCTestFailureReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = D37AE3B39DEF120E24F70144E3454F18 /* HCXCTestFailureReporter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		80F6DFCF8A97BADE1AEB5876281C0382 /* MKTIntArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = E085DCCBB44144FF7B65439F53DA7122 /* MKTIntArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		810639D7A0AD0BB876CC6A968408EB9E /* BIScrollDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DBF5D431F334C3CC4A3DC1AAD720209 /* BIScrollDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		810CED1BAB932D4844A0F51C541A1DEF /* HCIsAnything.h in Headers */ = {isa = PBXBuildFile; fileRef = F82611202F902EB0B15E965AE0E64628 /* HCIsAnything.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		812CC9051B827A1F3E588F5C2E1B5F03 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD4C53EE4A1A64E8947B4855146A591 /* NSAttributeDescription+MagicalDataImport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		81B9EA9CCA66799EA70204DD001F0820 /* MKTStructReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = E3F5C0C2144954F159F671A61DDF4353 /* MKTStructReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		81C3B6D228E6BF060ABAF9BC4BDC678F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */; };
+		81C5CD088B34C1010B5459C695C9B270 /* BITableAdditionalNoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4F4487CA04DBA342F42DA8ACEDB3F5 /* BITableAdditionalNoContentView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8210D43AB4DADEDAF5961E65B1499C4D /* HCDoubleReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = AFDA455AC429661AB4F201733CA45A24 /* HCDoubleReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		8324CD841790910859131423D635753D /* HCIntReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 152C5A3719F56A02B40EDCFDC838CFC3 /* HCIntReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		846B9AE8D7C3EA4CD62C6870ECF5F085 /* HCIntReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B829CB541A77795605124DA55F08F3E /* HCIntReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		858761C6F6316DD7D84929718DFFFDAB /* MKTClassArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C8EC96C6CF95B89DD841C77E9EC41BB /* MKTClassArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		872E037A928ACEB20557927739266542 /* BILifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B525BB0C5AC24DEE53E64791D3D0733 /* BILifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8841E5C4C63BB9B1F0B6A3454977F4C2 /* HCLongReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A3D8C2478F03BE61DE6C1FE7682ED /* HCLongReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		89C6370C20059B03881B3AA49FA104D1 /* HCHasCount.m in Sources */ = {isa = PBXBuildFile; fileRef = F73D3160081C2D786EFA6EDEAD8595A8 /* HCHasCount.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8A344048EDFA9CE8307521FB22D78B29 /* MKTReturnValueSetterChain.m in Sources */ = {isa = PBXBuildFile; fileRef = F148FFFB28776E74D03D9D6B72D2BE66 /* MKTReturnValueSetterChain.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -239,24 +242,25 @@
 		8BDA48D1740953F6E3C716FD057A8EB5 /* HCDoubleReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42D30C2545066F2C4FED78E74AF729 /* HCDoubleReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8C91D260DD1310B7B566BD0849B283C8 /* MKTExactTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D431820EE9BAA442AC47340E3D9893 /* MKTExactTimes.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8CE9A745573DB5EE8DFE634520169E07 /* HCIsEqualIgnoringCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D212A509DE8080CA449073686ECCB34 /* HCIsEqualIgnoringCase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8CEB8EED8EA557EDF6E4119F6E3DA46B /* _BIScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9411497A6E4DA24E952F064E72E08E5D /* _BIScrollViewProxy.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8D1DAC0F35F3BBCB84206BC92446FB78 /* MKTBoolReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC6B41F6CBEE24B931394774D561EDB /* MKTBoolReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8DFD78AE8CE4BF020D5F120F504326D2 /* BICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B276485E02BDFE3B4EAEA74F0E8952 /* BICollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8F7BAD26BB2C5B2832EA6E67AEB213ED /* MKTLongLongArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = FB196E0AEC37F380B002885E6928D599 /* MKTLongLongArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8FB00D16E6A9A115C660CEC590B4A92F /* BIHandlerCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B165A8848D79032646DC0B3297CBF40 /* BIHandlerCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		90C44915B533176F08EA8C2A96D28923 /* HCStringDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = E88A2D6CCE6B3A94D6BC105082D4EDAE /* HCStringDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		913D6964C6CC60503DFDF8F8A3B01FCE /* HCIsCollectionOnlyContaining.h in Headers */ = {isa = PBXBuildFile; fileRef = D200D4E9425409025C0E40D9E561ADDA /* HCIsCollectionOnlyContaining.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		917AE138D3ACC48430CD20D3881D3B61 /* MKTStubbedInvocationMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FD765ECD47115BA827347C3ABEAE6D0 /* MKTStubbedInvocationMatcher.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		932F4745443444F3AE24C52ABE0A45C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */; };
 		93A3116EED0A9D9009E4426151115404 /* MagicalRecord+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D99CA0E78EB254E0CFC9E57FCC71D01 /* MagicalRecord+Actions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		945D77D2FEDEA7C7D4D187879FFBFF5C /* BIDatasourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 92351E1E6C1E998AD91C57CC0CC11487 /* BIDatasourceBase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		94646AED7EE109AA07397CAA26738D47 /* NSManagedObjectContext+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DB7B93AA561B726397FE35DBE797B9 /* NSManagedObjectContext+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94D982D7A2EDD38B17A835B7CF803390 /* HCIsDictionaryContainingKey.h in Headers */ = {isa = PBXBuildFile; fileRef = EB531712C279A48BA72C913277A5F7CA /* HCIsDictionaryContainingKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94F3C13DAD6F9B13E68749C699B2E6FF /* MKTIntReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = A638BCDC6773956DDBE56BD188C40112 /* MKTIntReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9506FAB2D11A3641F872590F99567456 /* BIObjCHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = C5811763813C5DE67210EB0723B3386A /* BIObjCHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9506FD67C32734428F965E372319C7D3 /* NSManagedObjectModel+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF877CF82E09403D9FB25029CD033BF /* NSManagedObjectModel+MagicalRecord.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		950D1ADD45E38D178E332C267145AD51 /* NSManagedObject+MagicalFinders.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED94568289F6CFFB0D34D26BA73AF27 /* NSManagedObject+MagicalFinders.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		950DAA4A414B2F59F0778B1653F4A185 /* MKTFloatArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 963F32062C1D62513A56018619B7D33E /* MKTFloatArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		959B9B0299B1FF1110DDC66E1B56781C /* HCIsCollectionContainingInAnyOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = B075E1BF90CDA25E35EAF32F1E445362 /* HCIsCollectionContainingInAnyOrder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		95D74DFC8D624AB62B608BA12307A387 /* BIBatchResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 069A6B90BBBFE50F3BF26A401210CED8 /* BIBatchResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97C58C249BE2030E158D426702D73723 /* MKTMockingProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7D3C2EAC60BCF272468A9DAC719E7 /* MKTMockingProgress.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		97EAF483D8C7C2DFA7994320344A672C /* BILifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B0531C6FA06FD80D098A048217E0A /* BILifecycle.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9910CE9FBE5C0FA170EFB6B78C4FF85F /* MKTOngoingStubbing.h in Headers */ = {isa = PBXBuildFile; fileRef = CE94FB3CFB1DAE951DA3EBD36E41CA48 /* MKTOngoingStubbing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		992BFCC2A354865FC10194E05255BA8F /* MKTUnsignedCharArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F0766B0398D3796F8B3C0421B2698C /* MKTUnsignedCharArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		993A4F6E7E49975F9815337A3F898C13 /* HCIs.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE9F3C56241E43D31F7503AE20DF1B /* HCIs.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -266,15 +270,17 @@
 		9C720BCD6DF390F3596DCF87E8B596FB /* HCAssertThat.h in Headers */ = {isa = PBXBuildFile; fileRef = C23571C217C1EBBE0D13A01D330F010E /* HCAssertThat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CB08373C93C4FB6AE1B6DB629B6CA3E /* NSManagedObjectContext+MagicalObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 4764120F8C6831C3D8294B880E5B9004 /* NSManagedObjectContext+MagicalObserving.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9CFFA3D53A2C749C478328EA52745BAB /* HCStringContainsInOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE29C4A6E84585A445433B0EDE3BC2A /* HCStringContainsInOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D06E257522753036CBAF910F75C0117 /* BIHandlerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C782EB3CC75FBF43A1D021EA0947DDD /* BIHandlerBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DD90E61F4CF16683DF069622C3FCA12 /* MKTExecutesBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063F68650DEFA69B7371121975832A7 /* MKTExecutesBlock.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9E01FA153BD741D1ABCF37C75751D573 /* MKTStructArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC205C5E9A7CCE1BDDF1DDF44E95E10 /* MKTStructArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9E2227DD0237E1055A4684E496FE6B95 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 156AA86619774FBDAE5CC9F59965F3EC /* MagicalImportFunctions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9E223A7F39980DA281DDE50D036F69EE /* BIDatasourceCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 596452B9258A26A94AFDBF656F5ACA1A /* BIDatasourceCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9E78230AD102F20FC03487BF2EFED6D6 /* HCHasDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE681124E0E90696EBB165C08C07215 /* HCHasDescription.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A06EB920F7650F4111B582C8CD32F2A4 /* UIView+BILoadXib.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B4DCB671AF2C1B6095B727FEEDF5D9 /* UIView+BILoadXib.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9EE38661FFE463C0E669F623E85A21A6 /* BIDatasourceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E42F9B0ECFFFDE5AF5AE75F627FD6 /* BIDatasourceTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A1627259D4416219FAB0462620062665 /* MKTUnsignedLongArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4FCF77DCAC96500BDDA1C67FC006BC /* MKTUnsignedLongArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A1D156FCB40B992F1D2FAF8CE452A14D /* MKTCapturingMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7741F23F8DB7534E4BCE5812F84911 /* MKTCapturingMatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A2E5EAF84F5B489B195137909156DE82 /* MKTStubbedInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28200BC753DCD4C68A8AE2167E139C /* MKTStubbedInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A35E3EDF475D1DD4E68B0B614981C94B /* BITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5526947828021B4E7D47DE28C9DF0A /* BITableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A33B31721EAD4A79BBBCF78E097615CF /* BIObjCHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = C5811763813C5DE67210EB0723B3386A /* BIObjCHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A44033D48AA21B0FBFB45484BFEFCD33 /* HCTestFailureHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 48D1E9B2DEE3541CE40310895B29FE14 /* HCTestFailureHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4D818AAE9D413BA2071E7A5916CDEB0 /* NSPersistentStore+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DF391DF1AC44D772A84CC6E92EBB9F0 /* NSPersistentStore+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A80E4E3CC1D39E02936B0FC26B786458 /* HCBoolReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 796279BA7260240AABC3635CE7CE6AA7 /* HCBoolReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -283,15 +289,12 @@
 		A8F44C1CDC23A9581361F4E56F08D09E /* HCIsEqualToNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 818701CB4FC7E1FE1AF101563D3A09F3 /* HCIsEqualToNumber.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A9E303B19C1ED949A2FAF0942F3F24B4 /* MKTReturnValueSetterChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A278B03D3EC2650E9A0DE912153FCBD /* MKTReturnValueSetterChain.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		AA70D9224A898B738FEB4D835DDA07AD /* CJALog.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C617BCC72C86E5495A9809B53DFD58 /* CJALog.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		ABA8A0859C94257EB2F1F432C0A1C416 /* BICollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 70A3E809F258C78FEB7DE640DA7A5977 /* BICollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD418E3246320B6077C09C2961B3B1EF /* MKTReturnValueSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82795516F9681194BA75710905B5B34E /* MKTReturnValueSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		ADA8BF8DE5EBDB119AF262A6CBC3F5FE /* BITableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C3CB24A7AE4CC43ED0A2F7E10F28D92 /* BITableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADCB70427E1F42C72037E66D2C460116 /* HCStringStartsWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 60D89FCF64559B8E791059ECD2B7E1D4 /* HCStringStartsWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADF78131E050D29AE4FFD8F301EE5720 /* MKTArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD651B46708A6D9730F2CC4F48E17B /* MKTArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AE52B433D495557A0990CB848F0F1B4A /* HCIsDictionaryContainingEntries.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ED4D7AB950B5790AAA8142F7F63A70 /* HCIsDictionaryContainingEntries.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AE7BD0555D763D4C76B14B1E627C98C1 /* MKTObjectMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 19943AE605824D3A9F1EFA6935AEDD3B /* MKTObjectMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF527A4F0ED4962D6E13D241A8561241 /* HCIsCloseTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AF51C318A88A52A221166CCCEAEE2AF /* HCIsCloseTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF538A1C7CB29C5A33D633E3A9589243 /* _BICollectionView+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D3608D9B97474322A806EF1C69E5511 /* _BICollectionView+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF54F281BDB3F55F443A1AE9988394B0 /* HCIsAnything.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6649FCA7CFE4A48A779B017DEE18EB /* HCIsAnything.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AFADDFF67632AC502AD67096DD3375E0 /* HCBaseMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 6414FA4F77B8B186BD9155A0B975DD04 /* HCBaseMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02A9A4E97038E9DCB887654B227CC78 /* MagicalRecordInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 9623C3A2C4E3DB954135E7AA18F2965B /* MagicalRecordInternal.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -305,33 +308,34 @@
 		B20A2B9D75BCB522EC598CE080E5A9E3 /* MKTUnsignedCharReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F80835DCF8A08D977AD16C74A57B3 /* MKTUnsignedCharReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B28AA1A97C64F70B3D3EFAFED5F187EA /* HCIsSame.m in Sources */ = {isa = PBXBuildFile; fileRef = 551A6F8395372B2BC31D9AAB6C97B188 /* HCIsSame.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B2ED7288F910F4AE4BD890B0E42B88A5 /* HCOrderingComparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F488713D89ED5537571D5A1D9E1DAFA /* HCOrderingComparison.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B3AEB1FF3CC1B5CA41548BB09514E327 /* BIHandlerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C782EB3CC75FBF43A1D021EA0947DDD /* BIHandlerBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B403C64117BD35541467E19B77EF493E /* HCTestFailureReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B111A0989E676032EC9CC6F263D1731 /* HCTestFailureReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4DA19EFDF28DEA3177FD7FA705F0FEC /* BITableAdditionalNoContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA4EA94C056F4E2A37ED34BE9435E376 /* BITableAdditionalNoContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B654F54BA7746A9EE7901B9FBD10DF91 /* HCLongLongReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 059EF11B8F596B51B234C096E4F66BD8 /* HCLongLongReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B674F9190B8E0093C12C5100FA75CE3F /* HCDescribedAs.m in Sources */ = {isa = PBXBuildFile; fileRef = B41D58B84A6557CDFBED7AED0C176FC6 /* HCDescribedAs.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B7082DEF60A619A8826B5BBED2AFF068 /* _BIScrollViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD358CB30F73C05080F55610429E97D /* _BIScrollViewProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B73292953A5A637BBA9D20CE17922287 /* HCConformsToProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5177A3177DE505C6F20A22234837FB /* HCConformsToProtocol.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B8D3D8886A7094C5BBADDEBE58B5223B /* NSInvocation+OCMockito.m in Sources */ = {isa = PBXBuildFile; fileRef = 772EE6DB93530C34ECDCD4B2152B7529 /* NSInvocation+OCMockito.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B8DF6E9412C587C38A157193142F5927 /* MKTProtocolMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 88561B25BC6E26B26FB465C6F2829E20 /* MKTProtocolMock.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B8E08ADD468EC2126B1BFBAD73A89062 /* HCEvery.m in Sources */ = {isa = PBXBuildFile; fileRef = D54B7AD4BD911DFD47646B22049E0506 /* HCEvery.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B95BDFF24815E9B73F2BDD7F01C988C6 /* NSManagedObject+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 61029C3733DFDA30350FCE41E520B739 /* NSManagedObject+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B9BDA3A3A3AE5FFDF22B4410085E1919 /* BICollectionViewActivityIndicatorReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 388F37D8AD170620C4A9FDFEA274D68A /* BICollectionViewActivityIndicatorReusableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BA52779AA84AABCD7504C92DDE6C0EA0 /* NSString+BIExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 699247B273A00C91E09C5DDD3801F4D1 /* NSString+BIExtra.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BB6303D2E07CA31EC85BA96FA1D4E860 /* MKT_TPDWeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A39E20D740E7D920EB0A469DDCFE6262 /* MKT_TPDWeakProxy.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BC37F018F56B551BE597E5B880830680 /* MKTVerificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E588DF97C358AE60F91089BA1FAF200A /* MKTVerificationData.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BE07C6C9EEF5AD0F71D24647C235E81E /* BIHandlerCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B165A8848D79032646DC0B3297CBF40 /* BIHandlerCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD45B1737FECECDC255DFB3C1483A8E4 /* BIActivityIndicatorContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F3DD3F8253066513B5FE1BCB3A417 /* BIActivityIndicatorContainerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BD5215381B5D8CAA905448FCC2813298 /* BIDatasourceFetchedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9772493E3D1EAC57CDD93850475FD4F6 /* BIDatasourceFetchedCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BE703B7D27845166628C3B3672173509 /* _BITableView+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 974D4E0691423D276997BA0C72A6C111 /* _BITableView+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFA38D112EAC739C86B8B40AE794A3E9 /* MKTStructReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B5812E9FD33ABDB424B6B68B864C6C /* MKTStructReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BFA46248003A41E7BFA81FB59F241EB8 /* MKTUnsignedLongLongReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D8E2D6A7FBC2CC5523082A91BF2E84 /* MKTUnsignedLongLongReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C03E1C4990D92786437C316F46B4B790 /* MagicalRecordDeprecationMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 3169C3667E676D8B682BE90CCDC3A7BB /* MagicalRecordDeprecationMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0B007955F6423453FE01F5AFB335027 /* MKTBlockArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5A239276591851B74BD9C14E7A68E /* MKTBlockArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C0C7A99BE3C6745AF5B20BB5A521CE3F /* NSObject+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = A761D38ED1006718AA8BF52096F88C4F /* NSObject+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0D3DF8E22CA8EB2F36BC6295A0CED1E /* MKTArgumentGetterChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C18968CA376AC9D949D1E24106B977 /* MKTArgumentGetterChain.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C1C8FA1B61145E5B66B5356627F206E8 /* BIDatasourceCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9548CE5C989CF8A3AAA80D3CEDB7E8C9 /* BIDatasourceCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C25D9F5CDA905FCE3925C2F66F048A5D /* MagicalRecord+ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3824F0D524E144F1011B3E2F8D495844 /* MagicalRecord+ErrorHandling.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C381D7BE7BB4DFB6856C813B9221659F /* HCIsEqualIgnoringWhiteSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 19943C3B0BE16CBE5FC9B82B123F0E38 /* HCIsEqualIgnoringWhiteSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C50EFA32B96DF994F56D2A4F6F2B7C61 /* MKTUnsignedShortArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5631CAFDB942C12A52D093F24D6C818E /* MKTUnsignedShortArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C5BA3BC2E0E429DD0EE728326B6FF269 /* MKTCharArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9542B4C7086FC3B76CAD1F6524BD672F /* MKTCharArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C6DACF8DBD7733081222EC99928276C8 /* MKTArgumentGetterChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F56785C264876CA11147B1A2FB72880 /* MKTArgumentGetterChain.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C742CBE1D519E615870AB5C0AADA2F59 /* MKTObjectMock.m in Sources */ = {isa = PBXBuildFile; fileRef = D478E6664D2857CFFD503CB7975E7251 /* MKTObjectMock.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C78BBF4D2066D72641405C6B6509E9C8 /* BILaunchStartersFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C14424E13EE0E8E2D4CDA60C55B7A2E /* BILaunchStartersFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7E53B468D442964A5EE800EA97257DC /* MKTReturnsValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A44B650CF317EDDF9791076B357F58C /* MKTReturnsValue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C85457DCBE2B8E31FDE70FAB4CBD1DA2 /* HCTestFailure.h in Headers */ = {isa = PBXBuildFile; fileRef = AF07F67B272AD0F7A51E16591621EE20 /* HCTestFailure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8ECDBD3DE577B1223EBA18BB4921561 /* MKTMockitoCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A0585BE9F7B69F1B24F434C4E61E4EDA /* MKTMockitoCore.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -341,34 +345,37 @@
 		CA446C52CC7F009FC8D729A266B3F3CA /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A77EB885C686CDD034125A6117AB593 /* MagicalRecord+Setup.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CA58D15DFEE95A1AE9D8E404934AF00A /* HCWrapInMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 38802CCA4964DA90B8711C201BE6365C /* HCWrapInMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB0E9F9F8B24A104B0F6E51FF7D6DA0C /* NSManagedObject+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB9E949614718E98473366D0AFB9CF8 /* NSManagedObject+MagicalRecord.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CB8A01D1C0A683BA2B15EA98368E8B62 /* BILaunchStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A72974938E8F34807E05CD2555ECCED5 /* BILaunchStartersFactory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CBA3ADE95ADDBA10BFFDF93050111548 /* HCIsEqualToNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DEFF6D121AC0F59C6F44D2A71AF8A8D /* HCIsEqualToNumber.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CBD504927BEC65A921996483FF7CA51F /* BIDatasourceFeedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA338DB9B79B24393A0483DE1189B6A /* BIDatasourceFeedTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CBF13B510012F873E19F689D2FF12A01 /* MKTClassArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B85ED6FD1FF90EDEE5665D5A2A5F0 /* MKTClassArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CC73C2C729BF8350D205546A1957BF6B /* BIBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4719D737451BA730991B78AC002D7918 /* BIBatchRequest.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CC6002C7F2E29D2D2002CECAE981CB2A /* BIDatasourceFeedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA338DB9B79B24393A0483DE1189B6A /* BIDatasourceFeedTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CC91BD7981325E8CBC2EDD7DFED1F562 /* MKTLongLongReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = E729157B62C987FCDD84549C6EEF060D /* MKTLongLongReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CCA95483E9FF4021BFC967E37B83BFB0 /* HCTestFailureReporterChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 491C2B0B194650230E418924DD96833F /* HCTestFailureReporterChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD6FE54CD04C0633A60264573E4BC68B /* NSString+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 879371BA61E85CFD6A1CB8288C99C3D1 /* NSString+MagicalDataImport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CDAC4BAD973BFE52F4704BA3456F01B1 /* HCIsTrueFalse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F97548B0FC6F2467C367805722EF221 /* HCIsTrueFalse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF54447C34313DB715D8EEB7A2F610CE /* BIDatasourceFeedCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F51C1E43D567BA152896A82C12A6709 /* BIDatasourceFeedCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D08CE13415CA41A15F5D697E35584568 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B88DDCD84394DB764729A090B1FDF1 /* Pods-dummy.m */; };
 		D0C48B45C189A4658B1AA4DB7FE2594E /* MKTVerificationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 005CAC09B2E13CB6D13B5324B4052EC0 /* MKTVerificationData.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D177E221956F4B8303E07EC613A146F6 /* Pods-BIObjCHelpersExampleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B81ADBEBA043967668F9DE7C38899FC9 /* Pods-BIObjCHelpersExampleTests-dummy.m */; };
+		D1C00A4F82BEBA21540671F78AC47C34 /* BITableAdditionalViewBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F186DAA05863B554C004DA1F92CAF96F /* BITableAdditionalViewBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D209E1F078D0EB01A5A01F34B3AB2497 /* HCBaseMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD680985AB37C3CE06A5AFF0B7BE979 /* HCBaseMatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D2ADE65FC50B4BBD6F6821180A45F2B8 /* BIBatchHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 412807544123D84EBD965753BB454239 /* BIBatchHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2B904D4706FAD93EE34247D9DB1250E /* NSNumber+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 527AE783D69F630E26AE173E6B8137E6 /* NSNumber+MagicalDataImport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D2BCFE8F553448DA6FFD16F190B3F642 /* MKTClassObjectMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EF55A3CDEFDA38D256375C0843FEC84 /* MKTClassObjectMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2EEE593880817724DA2B28032C0465D /* _BIScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9411497A6E4DA24E952F064E72E08E5D /* _BIScrollViewProxy.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D32DBF4753709A308A0B30B876BB48D4 /* MKTAnswer.h in Headers */ = {isa = PBXBuildFile; fileRef = B6098EDD08D69F41BDD0F6130D54ADC4 /* MKTAnswer.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D45C33ED7261CC27B93E9D5C02EDBAD7 /* MKTBoolArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E3F116BD824B3047DA1F331732259B9 /* MKTBoolArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D4B232B87A8D4A93AD49F5A7EA9D108C /* MKTMockingProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = FA57CE9846AE0B5C3521976193326709 /* MKTMockingProgress.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D4CF97A71B24E220ACBE771F1CFAF6A1 /* BIDatasourceFetchedTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DF476C78AD902901015088C47A8EE3D /* BIDatasourceFetchedTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D527C82A1857D68B54397688EF6172BE /* MKTShortArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = A820F931377A3FE710E894F2CE24C672 /* MKTShortArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D69520BF26CA6FD24FACF1435F0F4774 /* MKTLongReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6959A13FEBA1A9D8284E4ABABAB739F6 /* MKTLongReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D795AEBC2A157E970C5D14E505E6ABA9 /* NSManagedObject+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 972B3534B62859A3E8F551707EFE5405 /* NSManagedObject+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7C5642D8C666CF1733C5379C001DB0C /* HCIsDictionaryContainingValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F0E35886F7E6F8162478F7C1523C57C /* HCIsDictionaryContainingValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D84AB1C8562DCB5568152943C5820465 /* NSBundle+BIExtra.h in Headers */ = {isa = PBXBuildFile; fileRef = 78FF21F4D1C2C75A8B62B586AFBF4D9F /* NSBundle+BIExtra.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D89B761593F3763265BC92B344E90583 /* BITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F5B795214661A986C2D130588D11D5 /* BITableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D8ECFE4B6766F4B00A50D9604600A101 /* MKTArgumentCaptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 981E6E56ACD5673749DD40CF43745D08 /* MKTArgumentCaptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8F5DC702C9DBD030FA914CD61C2A58E /* NSBundle+BIExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3A82FB39D3A192523B4272B75436 /* NSBundle+BIExtra.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D9204781300EB3083498E8C77F145762 /* HCIsInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1866473D9C97112ABDFB63EBDEA296 /* HCIsInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D99EB2F995B8738F50527D250D42FB76 /* BITableAdditionalViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 561175EC1DBB63EFC3952D2A4D22F6DF /* BITableAdditionalViewBase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D9B2269E418552ADC7AEA756B29D9440 /* HCLongReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 436AFB078C3F8579609A7D8949C263CE /* HCLongReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D9B45A18AB84E942538A023B0859E837 /* NSDate+BIAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C32A72C2071127A280128D2A2BFC61 /* NSDate+BIAttributedString.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DA0A60CD4407A36EE8CA07293E45EFDB /* BIStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E42794A2A1043BB98A121AAC3FCCF5E /* BIStartersFactory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DA59BE4566A16528D3B28C78A6FD8573 /* HCGenericTestFailureReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FBE28BE8AE8AE093D62CC3F55E1F9E /* HCGenericTestFailureReporter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DA66692927BFBE489C9DAB8B73EF6D62 /* HCFloatReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F19CDBF76ADE46567A83A3D889C943 /* HCFloatReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DAC9C55743509493A557ADEF3C307F57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */; };
@@ -378,14 +385,14 @@
 		DECA3D639EBA88A9B20FB04F12AFE789 /* HCIsEqualIgnoringWhiteSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = B65683D6960B1A1F4E01E396C038D2F5 /* HCIsEqualIgnoringWhiteSpace.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DF27C1CD06EE9591D3B1BF4A89AAF127 /* HCIsDictionaryContaining.m in Sources */ = {isa = PBXBuildFile; fileRef = FD38060E95570084FA501C2166A62713 /* HCIsDictionaryContaining.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DF9DC7A7D564C19EB72E37FDE6AA3A61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */; };
+		E0185D2511318B1177B5328B1377C4FF /* BIDatasourceFetchedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F25CB5A5347479197AC1F3953A6F1 /* BIDatasourceFetchedTableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E0A8F45602508E4648A760B0EEF27D09 /* HCStringEndsWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F9C0D47FCF0B2B7D7DDB371BAA2337A /* HCStringEndsWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E135352BCEC4C19436DE610280AD6445 /* BIDatasourceTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 174D3F164BEB9DC49182D0BA12CE72EC /* BIDatasourceTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E208955D4CC96F1F610F9AC2381645F2 /* HCIsCollectionContainingInOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 367EB22C270F5E338FFCC96D55F9A641 /* HCIsCollectionContainingInOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E22C42B7A60FF09A807D36518BD27450 /* MKTCharArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B47D54B7E270457DFD33912227ACD /* MKTCharArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E2B1C1D1EA9AB017B3687F554986DD80 /* BIOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B10EF00E4E72CC9265E71ADD7228F0B5 /* BIOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E316A35215E6F7E88548F6FD615987A1 /* MagicalRecord+iCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 386CB6C34C8A8F4696622167DE0CB9E4 /* MagicalRecord+iCloud.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E36343335D92A98E942B6F861D22C1BC /* MagicalRecord+Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 887337606CBA6D1C9FA0A7E1CA2D1C3B /* MagicalRecord+Options.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E3F0C5553A3F0F800666CFDB0A442805 /* HCCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = D569EABF6D5F882D1D47D4DFA9334359 /* HCCollect.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E5894F089FC0EE5F1A252A90907F187F /* BICollectionViewActivityIndicatorReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = BAA6A764A76B9D4E42E5BA98950F0490 /* BICollectionViewActivityIndicatorReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E62DFA67BCFF72723E93FDD9AE599D85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */; };
 		E665A405CE7E7E5795E2D98DAC78338A /* NSManagedObjectContext+MagicalChainSave.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E2D48E4294EAE1A9C08AD3CE8796293 /* NSManagedObjectContext+MagicalChainSave.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E813DC2098F7B887127FCB055ECCD34D /* NSManagedObject+MagicalAggregation.h in Headers */ = {isa = PBXBuildFile; fileRef = 16B69F7B0EEBFC4070C0737684FA947E /* NSManagedObject+MagicalAggregation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -395,35 +402,36 @@
 		E9F1A8BCA9E652429525F9C46F41ECAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */; };
 		EA47A745E852F1F4577E54C19D17BAC4 /* HCInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BA086F4E3AEF18DE1696A9F4D6064308 /* HCInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EA5502D4BED26E9DA8407C44FC8F1882 /* NSString+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 5226D3A6D01B4B756E0E543B7762BCC7 /* NSString+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EABC00865AD29D820A65AD78BF4CD88C /* BICollectionViewActivityIndicatorReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A133AF17C88528032C7380CB998315C /* BICollectionViewActivityIndicatorReusableView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EB9EA40720F50A0E37566D4FCE346223 /* BIDatasourceFeedCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F51C1E43D567BA152896A82C12A6709 /* BIDatasourceFeedCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBB82F4EEEF43EEFD5835B3A0CEF722C /* HCAnyOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 7957CA1D36419637A529A73EC5E99DAC /* HCAnyOf.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EC3962D1A83858F1258F1D47F0AA16F9 /* HCAllOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E2789466703CD200532EF59CC39E6C82 /* HCAllOf.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EC55C5AD8C20BF7043A12FB2FC614A0B /* HCDescribedAs.h in Headers */ = {isa = PBXBuildFile; fileRef = 7146493E22A5448D2007B3E240D75C5B /* HCDescribedAs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECA4B0662D0CB6CAA33EAD389C419D5A /* HCIsCollectionContainingInRelativeOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B3608CA9BD7BC3F1764ED025947C8 /* HCIsCollectionContainingInRelativeOrder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		ECB9AF7A9D1EB2881EF7E5E717793355 /* BISerialOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD4708A68B6689C414956F4076D9611 /* BISerialOperationQueue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		ED74397183A5BBA25ADAE6F9BF8D3818 /* HCTestFailure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D04674F56108BBF81682CB461EDD413 /* HCTestFailure.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		ED7C3EBFEF62B7AACC8CD2C812582931 /* BIObjCHelpers-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE269F33C0906591D08728AA0374C9C5 /* BIObjCHelpers-dummy.m */; };
 		EE6208CA7C7CE831C7B2DC488098D778 /* MKTDynamicProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = E5AE0A6BBEBE09F19E1DA01812322C2A /* MKTDynamicProperties.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		EEFCDFB937C4D9E3C89EDD0485D628BC /* MagicalRecord+Options.h in Headers */ = {isa = PBXBuildFile; fileRef = 9657719ACE690EB33C68FFEDFFEE71E8 /* MagicalRecord+Options.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EF7CD8C7279673E65DF1415EB4B7FCF0 /* BIBatchResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 069A6B90BBBFE50F3BF26A401210CED8 /* BIBatchResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F17087C132AB001D116F9DB8A60ACF53 /* HCStringContainsInOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E4A56E8407219F04FB29862D2F0D5A /* HCStringContainsInOrder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F2145B0C22B271C1C71011B870210209 /* BIDatasourceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 92351E1E6C1E998AD91C57CC0CC11487 /* BIDatasourceBase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F282D5003478CE7DFF5A676F3D63729D /* HCUnsignedCharReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 46814C8FE12627D31E9CDED04333AC9C /* HCUnsignedCharReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F2BC0A6392BBE4C201A25083247178F9 /* MKTLongReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C74D183587574D2D09EC19454531D72 /* MKTLongReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F2F0743AD4C475AC14CF114976E9F8B7 /* UIView+BILoadXib.h in Headers */ = {isa = PBXBuildFile; fileRef = A4613A7BCB3A9DECB1FF724419BAFB01 /* UIView+BILoadXib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2FBB322A9EF954E4B57057F747E493F /* HCStringStartsWith.m in Sources */ = {isa = PBXBuildFile; fileRef = E03A05A85589873938E1E919D0411610 /* HCStringStartsWith.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F32E04116FBC1A75ED8D4900B4E63DA4 /* MKTShortReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B9FD7FE0503DA635FC775537F27F24 /* MKTShortReturnSetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F41AD49B45C81B64FC92CA86551E0D94 /* MagicalRecordShorthandMethodAliases.h in Headers */ = {isa = PBXBuildFile; fileRef = 888C6848C72F0795A5AB6B64DE342AAC /* MagicalRecordShorthandMethodAliases.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F495FC2194EB85EADA49EFFA3B1641BF /* BILifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B525BB0C5AC24DEE53E64791D3D0733 /* BILifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F50FF1CB5879A9235C104A7CCE37E82C /* BITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1D955CA5FFB8F09DDF13C7168E21EB /* BITableViewCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F54F4AB79E07F915DF48943A0DD3E105 /* NSRelationshipDescription+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = AE883302FE8FC5438A559E447DBFA9AB /* NSRelationshipDescription+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F68D3A763BB4EFE5BBFF656229CB5B8D /* HCReturnValueGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 475300BB87FCFF8ACDE1727C205C101C /* HCReturnValueGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F772ECF9749DEEA8E4405AD4DCA20489 /* BIStartersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E42794A2A1043BB98A121AAC3FCCF5E /* BIStartersFactory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F7C4738EC324A15BDCF6FB5E16BB9007 /* MKTFloatReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AD783AD11BF197C4D4D331766019FF /* MKTFloatReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F827A96A5AEAC8C9D30E7B2B00A2100E /* NSManagedObjectModel+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF99A77AEF2693620B9810AFBBADB90 /* NSManagedObjectModel+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8AC495924E2F27B86412EDC03020909 /* BIHandlerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0192E5C16C458CC17638CBBAB0B5F43 /* BIHandlerCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F90FD8609910447F96403A1E046090D6 /* MKTSelectorArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D939ADA8081BA2D267096BA6ED7EEE6 /* MKTSelectorArgumentGetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F97392DECD600F2A192A8C6BB3414B3D /* BIDatasourceBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA6C37B9CD86776B022AF801E15147C /* BIDatasourceBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9AAED6470738256AE90984B76B88404 /* MKTIntArgumentGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8939D4F71085790BEFB1A119A5F5F30E /* MKTIntArgumentGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F9AE0A48804FD6F8CA49E5F8E500E767 /* BIHandlerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0192E5C16C458CC17638CBBAB0B5F43 /* BIHandlerCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FBA604D6E0B895EE30CE400A1507997B /* MagicalImportFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 58A1FAF12A73DE8C4F26A8CB5DB04F8D /* MagicalImportFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBEFB30E530DDD1925565BA75C6564B5 /* BIScrollDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DBF5D431F334C3CC4A3DC1AAD720209 /* BIScrollDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC8245B7127CB80143057FA925771615 /* HCUnsignedLongLongReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F949BF862A0235ED5F85710267CEB5 /* HCUnsignedLongLongReturnGetter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FD193C51FCE4653EF3C937E6F74D117F /* MKTUnsignedLongReturnSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0544DFD705C3BC90263D1FEAAFFC95 /* MKTUnsignedLongReturnSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FD833B030CE1161EB35FC7628AA84C17 /* BITableAdditionalErrorNoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8896374C999C37105D4ED06C36052855 /* BITableAdditionalErrorNoContentView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FD8FAEC9E62312375BAA5460A5CCF718 /* HCClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A474E9577F2A019475DF572A5BE99D0 /* HCClassMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDC6DB90DC95B4D8B50115E68870454D /* HCCharReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 20FF87645F8A8E8F3D9CA84B18364C6A /* HCCharReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		FF1349EF9EF8B9A0E5BD1B1E3465E182 /* NSManagedObjectContext+MagicalThreading.h in Headers */ = {isa = PBXBuildFile; fileRef = 37321D8DCB837CAD5FD31775220DBB9E /* NSManagedObjectContext+MagicalThreading.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -441,7 +449,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0BF12D016C377D53E759D6A1FB51A64F;
+			remoteGlobalIDString = D7A5C3FA6B6B4EC59733F55616517763;
 			remoteInfo = BIObjCHelpers;
 		};
 		1FEB3ACEB7C1D85A414D1955FB8093C9 /* PBXContainerItemProxy */ = {
@@ -490,7 +498,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0BF12D016C377D53E759D6A1FB51A64F;
+			remoteGlobalIDString = D7A5C3FA6B6B4EC59733F55616517763;
 			remoteInfo = BIObjCHelpers;
 		};
 /* End PBXContainerItemProxy section */
@@ -502,16 +510,17 @@
 		019180BD989143179A9CEE6117686845 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 		03C4A19ACEB33C15953B820924371DC4 /* MKTBaseMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTBaseMockObject.h; path = Source/OCMockito/MKTBaseMockObject.h; sourceTree = "<group>"; };
 		045BDC678BD740A4A9EBF7764B855391 /* HCRequireNonNilObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCRequireNonNilObject.m; path = Source/Core/Helpers/HCRequireNonNilObject.m; sourceTree = "<group>"; };
+		052F7805740F45DBD2E012A8749D2564 /* BITableAdditionalLoadingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BITableAdditionalLoadingView.h; sourceTree = "<group>"; };
 		053F80835DCF8A08D977AD16C74A57B3 /* MKTUnsignedCharReturnSetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTUnsignedCharReturnSetter.m; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTUnsignedCharReturnSetter.m; sourceTree = "<group>"; };
 		059EF11B8F596B51B234C096E4F66BD8 /* HCLongLongReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCLongLongReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCLongLongReturnGetter.m; sourceTree = "<group>"; };
-		05D28212052AD600A4DD141291D9803C /* BICollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BICollectionView.m; sourceTree = "<group>"; };
 		06320E841E27BC1A2AFC6CE3009B400F /* MKTUnsignedShortArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTUnsignedShortArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTUnsignedShortArgumentGetter.h; sourceTree = "<group>"; };
 		066CC72A6ABF35B932228CF8C682D1E2 /* Pods-BIObjCHelpersExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BIObjCHelpersExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		068354974DFDD6E647BE01D67619D8C5 /* MagicalRecord+ShorthandMethods.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+ShorthandMethods.h"; path = "MagicalRecord/Core/MagicalRecord+ShorthandMethods.h"; sourceTree = "<group>"; };
 		069A6B90BBBFE50F3BF26A401210CED8 /* BIBatchResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIBatchResponse.h; sourceTree = "<group>"; };
-		07092DEAF82309FBF88CA7AE825D3E61 /* BIActivityIndicatorContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIActivityIndicatorContainerView.m; sourceTree = "<group>"; };
+		07D2EC81495F609BC30A0CA0AD1E5D90 /* BITableAdditionalErrorNoContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BITableAdditionalErrorNoContentView.h; sourceTree = "<group>"; };
 		07DB7B93AA561B726397FE35DBE797B9 /* NSManagedObjectContext+MagicalRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+MagicalRecord.h"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalRecord.h"; sourceTree = "<group>"; };
 		087FD11D167AF1ECB6B7A282C44B6420 /* Pods-BIObjCHelpersExampleTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BIObjCHelpersExampleTests-resources.sh"; sourceTree = "<group>"; };
+		0A133AF17C88528032C7380CB998315C /* BICollectionViewActivityIndicatorReusableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BICollectionViewActivityIndicatorReusableView.m; sourceTree = "<group>"; };
 		0A278B03D3EC2650E9A0DE912153FCBD /* MKTReturnValueSetterChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTReturnValueSetterChain.h; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTReturnValueSetterChain.h; sourceTree = "<group>"; };
 		0B1B3608CA9BD7BC3F1764ED025947C8 /* HCIsCollectionContainingInRelativeOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsCollectionContainingInRelativeOrder.m; path = Source/Library/Collection/HCIsCollectionContainingInRelativeOrder.m; sourceTree = "<group>"; };
 		0B7741F23F8DB7534E4BCE5812F84911 /* MKTCapturingMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTCapturingMatcher.m; path = Source/OCMockito/MKTCapturingMatcher.m; sourceTree = "<group>"; };
@@ -559,6 +568,7 @@
 		22270C8AB62B33C409CC377795F8C180 /* MKTObjectAndProtocolMock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTObjectAndProtocolMock.h; path = Source/OCMockito/MKTObjectAndProtocolMock.h; sourceTree = "<group>"; };
 		232485D35BE5F00EB5D0F8A7DD7232F3 /* HCIsDictionaryContainingEntries.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsDictionaryContainingEntries.h; path = Source/Library/Collection/HCIsDictionaryContainingEntries.h; sourceTree = "<group>"; };
 		2378B086364316B580ACE0727655EC57 /* HCUnsignedShortReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCUnsignedShortReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedShortReturnGetter.h; sourceTree = "<group>"; };
+		247636AE5F463724BEA3365BD4C2AE57 /* BITableAdditionalLoadingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BITableAdditionalLoadingView.m; sourceTree = "<group>"; };
 		25374384CDF64B15051ED7208889E155 /* HCClassMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCClassMatcher.m; path = Source/Library/Object/HCClassMatcher.m; sourceTree = "<group>"; };
 		25F949BF862A0235ED5F85710267CEB5 /* HCUnsignedLongLongReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCUnsignedLongLongReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedLongLongReturnGetter.m; sourceTree = "<group>"; };
 		2622E67A5D46069903060AED292EF50F /* HCThrowsException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCThrowsException.m; path = Source/Library/Object/HCThrowsException.m; sourceTree = "<group>"; };
@@ -585,13 +595,12 @@
 		3824F0D524E144F1011B3E2F8D495844 /* MagicalRecord+ErrorHandling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+ErrorHandling.m"; path = "MagicalRecord/Core/MagicalRecord+ErrorHandling.m"; sourceTree = "<group>"; };
 		386CB6C34C8A8F4696622167DE0CB9E4 /* MagicalRecord+iCloud.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+iCloud.m"; path = "MagicalRecord/Core/MagicalRecord+iCloud.m"; sourceTree = "<group>"; };
 		38802CCA4964DA90B8711C201BE6365C /* HCWrapInMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCWrapInMatcher.h; path = Source/Core/Helpers/HCWrapInMatcher.h; sourceTree = "<group>"; };
-		388F37D8AD170620C4A9FDFEA274D68A /* BICollectionViewActivityIndicatorReusableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BICollectionViewActivityIndicatorReusableView.m; sourceTree = "<group>"; };
 		3AE26197562B01290C150F85072A7BAC /* MKTLongArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTLongArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTLongArgumentGetter.m; sourceTree = "<group>"; };
 		3AF51C318A88A52A221166CCCEAEE2AF /* HCIsCloseTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsCloseTo.h; path = Source/Library/Number/HCIsCloseTo.h; sourceTree = "<group>"; };
 		3BE1C188989704F6F519F60C3E1C8D94 /* OCMockito.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMockito.h; path = Source/OCMockito/OCMockito.h; sourceTree = "<group>"; };
-		3C5526947828021B4E7D47DE28C9DF0A /* BITableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BITableView.m; sourceTree = "<group>"; };
 		3C64F426F43F150F08CBDC1EF8E6BF0B /* NSDate+BIAttributedString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDate+BIAttributedString.h"; sourceTree = "<group>"; };
 		3C8EC96C6CF95B89DD841C77E9EC41BB /* MKTClassArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTClassArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTClassArgumentGetter.h; sourceTree = "<group>"; };
+		3E4F3DD3F8253066513B5FE1BCB3A417 /* BIActivityIndicatorContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIActivityIndicatorContainerView.m; sourceTree = "<group>"; };
 		3F5177A3177DE505C6F20A22234837FB /* HCConformsToProtocol.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCConformsToProtocol.m; path = Source/Library/Object/HCConformsToProtocol.m; sourceTree = "<group>"; };
 		3F6649FCA7CFE4A48A779B017DEE18EB /* HCIsAnything.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsAnything.m; path = Source/Library/Logical/HCIsAnything.m; sourceTree = "<group>"; };
 		412807544123D84EBD965753BB454239 /* BIBatchHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIBatchHelpers.h; sourceTree = "<group>"; };
@@ -602,6 +611,7 @@
 		458965C15ADF65C690242BBDC518ECAC /* OCHamcrest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCHamcrest.h; path = Source/OCHamcrest.h; sourceTree = "<group>"; };
 		46814C8FE12627D31E9CDED04333AC9C /* HCUnsignedCharReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCUnsignedCharReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedCharReturnGetter.m; sourceTree = "<group>"; };
 		468A42CC128962568F7D320C54286E17 /* NSManagedObjectContext+MagicalChainSave.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalChainSave.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalChainSave.m"; sourceTree = "<group>"; };
+		4711B6BC7ABDC2325D2FB2F9B13B93E8 /* BICollectionViewActivityIndicatorReusableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BICollectionViewActivityIndicatorReusableView.h; sourceTree = "<group>"; };
 		4719D737451BA730991B78AC002D7918 /* BIBatchRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIBatchRequest.m; sourceTree = "<group>"; };
 		475300BB87FCFF8ACDE1727C205C101C /* HCReturnValueGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCReturnValueGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCReturnValueGetter.m; sourceTree = "<group>"; };
 		4764120F8C6831C3D8294B880E5B9004 /* NSManagedObjectContext+MagicalObserving.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalObserving.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalObserving.m"; sourceTree = "<group>"; };
@@ -617,7 +627,6 @@
 		4B1B37AAA123970508CAE68B3AC8A4F7 /* MKTBaseMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTBaseMockObject.m; path = Source/OCMockito/MKTBaseMockObject.m; sourceTree = "<group>"; };
 		4BF877CF82E09403D9FB25029CD033BF /* NSManagedObjectModel+MagicalRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectModel+MagicalRecord.m"; path = "MagicalRecord/Categories/NSManagedObjectModel+MagicalRecord.m"; sourceTree = "<group>"; };
 		4C782EB3CC75FBF43A1D021EA0947DDD /* BIHandlerBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIHandlerBase.h; sourceTree = "<group>"; };
-		4D3608D9B97474322A806EF1C69E5511 /* _BICollectionView+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "_BICollectionView+Internal.h"; sourceTree = "<group>"; };
 		4D99CA0E78EB254E0CFC9E57FCC71D01 /* MagicalRecord+Actions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+Actions.m"; path = "MagicalRecord/Core/MagicalRecord+Actions.m"; sourceTree = "<group>"; };
 		4D9C1C8CF468D37C8C175DB05F5435E9 /* HCIsTrueFalse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsTrueFalse.m; path = Source/Library/Number/HCIsTrueFalse.m; sourceTree = "<group>"; };
 		4E3F116BD824B3047DA1F331732259B9 /* MKTBoolArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTBoolArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTBoolArgumentGetter.h; sourceTree = "<group>"; };
@@ -633,6 +642,7 @@
 		538DD00483B58B2E9B3E55F0B2F7EACA /* MKTExactTimes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTExactTimes.h; path = Source/OCMockito/MKTExactTimes.h; sourceTree = "<group>"; };
 		551A6F8395372B2BC31D9AAB6C97B188 /* HCIsSame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsSame.m; path = Source/Library/Object/HCIsSame.m; sourceTree = "<group>"; };
 		552A6165D7AF70A4B106D1447E589AC1 /* MagicalRecord+Setup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+Setup.h"; path = "MagicalRecord/Core/MagicalRecord+Setup.h"; sourceTree = "<group>"; };
+		561175EC1DBB63EFC3952D2A4D22F6DF /* BITableAdditionalViewBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BITableAdditionalViewBase.m; sourceTree = "<group>"; };
 		5631CAFDB942C12A52D093F24D6C818E /* MKTUnsignedShortArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTUnsignedShortArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTUnsignedShortArgumentGetter.m; sourceTree = "<group>"; };
 		57C18968CA376AC9D949D1E24106B977 /* MKTArgumentGetterChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTArgumentGetterChain.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTArgumentGetterChain.m; sourceTree = "<group>"; };
 		57FBE28BE8AE8AE093D62CC3F55E1F9E /* HCGenericTestFailureReporter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCGenericTestFailureReporter.h; path = Source/Core/Helpers/TestFailureReporters/HCGenericTestFailureReporter.h; sourceTree = "<group>"; };
@@ -647,6 +657,8 @@
 		5B525BB0C5AC24DEE53E64791D3D0733 /* BILifecycle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BILifecycle.h; sourceTree = "<group>"; };
 		5BAD651B46708A6D9730F2CC4F48E17B /* MKTArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTArgumentGetter.m; sourceTree = "<group>"; };
 		5BC02232110610619274EEFFA4462347 /* OCHamcrest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OCHamcrest.xcconfig; sourceTree = "<group>"; };
+		5C1D955CA5FFB8F09DDF13C7168E21EB /* BITableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BITableViewCell.m; sourceTree = "<group>"; };
+		5C2AABFAC33BA6ABB3786F1E47C67FCA /* _BICollectionView+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "_BICollectionView+Internal.h"; sourceTree = "<group>"; };
 		5C4B90CBAE09C65C25DC414DC99B24C6 /* HCStringEndsWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCStringEndsWith.m; path = Source/Library/Text/HCStringEndsWith.m; sourceTree = "<group>"; };
 		5D939ADA8081BA2D267096BA6ED7EEE6 /* MKTSelectorArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTSelectorArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTSelectorArgumentGetter.h; sourceTree = "<group>"; };
 		5DBF5D431F334C3CC4A3DC1AAD720209 /* BIScrollDetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIScrollDetails.h; sourceTree = "<group>"; };
@@ -684,14 +696,14 @@
 		6E319618FFC085D6922235B5FCD6D93C /* HCReturnTypeHandlerChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCReturnTypeHandlerChain.h; path = Source/Core/Helpers/ReturnValueGetters/HCReturnTypeHandlerChain.h; sourceTree = "<group>"; };
 		6EC6B41F6CBEE24B931394774D561EDB /* MKTBoolReturnSetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTBoolReturnSetter.m; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTBoolReturnSetter.m; sourceTree = "<group>"; };
 		6ED6E0233FC062DCEE3B4FC1AA30D995 /* MKTMockitoCore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTMockitoCore.m; path = Source/OCMockito/MKTMockitoCore.m; sourceTree = "<group>"; };
+		6F3E95A6317BD49291CBA2B5FC963DF4 /* BITableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BITableView.h; sourceTree = "<group>"; };
 		6F488713D89ED5537571D5A1D9E1DAFA /* HCOrderingComparison.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCOrderingComparison.h; path = Source/Library/Number/HCOrderingComparison.h; sourceTree = "<group>"; };
 		6F56785C264876CA11147B1A2FB72880 /* MKTArgumentGetterChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTArgumentGetterChain.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTArgumentGetterChain.h; sourceTree = "<group>"; };
 		6FBCFEF854B38F91CB888DC04F83BEB3 /* MKTInvocationContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTInvocationContainer.h; path = Source/OCMockito/MKTInvocationContainer.h; sourceTree = "<group>"; };
-		70A3E809F258C78FEB7DE640DA7A5977 /* BICollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BICollectionView.h; sourceTree = "<group>"; };
 		7146493E22A5448D2007B3E240D75C5B /* HCDescribedAs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCDescribedAs.h; path = Source/Library/Decorator/HCDescribedAs.h; sourceTree = "<group>"; };
 		71EECDDD4891FDBDAB216B0A3F0FBD52 /* MKTBoolArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTBoolArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTBoolArgumentGetter.m; sourceTree = "<group>"; };
 		72A37EFDF77EBFEB5EBA5673DD7BF591 /* NSManagedObject+MagicalRequests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MagicalRequests.m"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalRequests.m"; sourceTree = "<group>"; };
-		75E98E6B3DE47FDDE5B3F57204875E76 /* BITableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BITableViewCell.h; sourceTree = "<group>"; };
+		72F5B795214661A986C2D130588D11D5 /* BITableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BITableView.m; sourceTree = "<group>"; };
 		76798B4059DAD7DACF1B99385A2BA45C /* HCIsIn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsIn.m; path = Source/Library/Collection/HCIsIn.m; sourceTree = "<group>"; };
 		772EE6DB93530C34ECDCD4B2152B7529 /* NSInvocation+OCMockito.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+OCMockito.m"; path = "Source/OCMockito/NSInvocation+OCMockito.m"; sourceTree = "<group>"; };
 		77BB75F171B4B568E3D4545FBE26A534 /* Pods-BIObjCHelpersExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BIObjCHelpersExampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -701,6 +713,7 @@
 		7957CA1D36419637A529A73EC5E99DAC /* HCAnyOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCAnyOf.m; path = Source/Library/Logical/HCAnyOf.m; sourceTree = "<group>"; };
 		796279BA7260240AABC3635CE7CE6AA7 /* HCBoolReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCBoolReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCBoolReturnGetter.m; sourceTree = "<group>"; };
 		7994D8B0FA56939D14AC42F767FB458B /* MKTBoolReturnSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTBoolReturnSetter.h; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTBoolReturnSetter.h; sourceTree = "<group>"; };
+		79B276485E02BDFE3B4EAEA74F0E8952 /* BICollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BICollectionView.m; sourceTree = "<group>"; };
 		79CCF9628E9451302E961B40B1DA4682 /* OCHamcrest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OCHamcrest-dummy.m"; sourceTree = "<group>"; };
 		7A9D1BF92E57402A5F3F83938C312650 /* MKTThrowsException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTThrowsException.m; path = Source/OCMockito/MKTThrowsException.m; sourceTree = "<group>"; };
 		7AFAC66557FAF094C54E587EFB4CF59B /* NSManagedObjectContext+MagicalSaves.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalSaves.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalSaves.m"; sourceTree = "<group>"; };
@@ -732,6 +745,7 @@
 		88561B25BC6E26B26FB465C6F2829E20 /* MKTProtocolMock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTProtocolMock.m; path = Source/OCMockito/MKTProtocolMock.m; sourceTree = "<group>"; };
 		887337606CBA6D1C9FA0A7E1CA2D1C3B /* MagicalRecord+Options.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+Options.m"; path = "MagicalRecord/Core/MagicalRecord+Options.m"; sourceTree = "<group>"; };
 		888C6848C72F0795A5AB6B64DE342AAC /* MagicalRecordShorthandMethodAliases.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MagicalRecordShorthandMethodAliases.h; path = MagicalRecord/Core/MagicalRecordShorthandMethodAliases.h; sourceTree = "<group>"; };
+		8896374C999C37105D4ED06C36052855 /* BITableAdditionalErrorNoContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BITableAdditionalErrorNoContentView.m; sourceTree = "<group>"; };
 		88C2F8E49FDFD66C9AC1D5DB79ACBB24 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		8939D4F71085790BEFB1A119A5F5F30E /* MKTIntArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTIntArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTIntArgumentGetter.m; sourceTree = "<group>"; };
 		8B829CB541A77795605124DA55F08F3E /* HCIntReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIntReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCIntReturnGetter.h; sourceTree = "<group>"; };
@@ -740,6 +754,7 @@
 		8D212A509DE8080CA449073686ECCB34 /* HCIsEqualIgnoringCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsEqualIgnoringCase.m; path = Source/Library/Text/HCIsEqualIgnoringCase.m; sourceTree = "<group>"; };
 		8D94758CE6874768E0DDB5F354AE5197 /* MKTUnsignedShortReturnSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTUnsignedShortReturnSetter.h; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTUnsignedShortReturnSetter.h; sourceTree = "<group>"; };
 		8E42794A2A1043BB98A121AAC3FCCF5E /* BIStartersFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIStartersFactory.m; sourceTree = "<group>"; };
+		8F0A4786270CD084188C10DFA5324BF0 /* BICollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BICollectionView.h; sourceTree = "<group>"; };
 		8F40DFDFFAE8C8D8B5151F631B5C6632 /* BIHandlerTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIHandlerTableView.m; sourceTree = "<group>"; };
 		8FB3AC2E4F5F8EFD88484C838F1F3F0D /* MKTShortReturnSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTShortReturnSetter.h; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTShortReturnSetter.h; sourceTree = "<group>"; };
 		9139848BEF0C8E76D78DC05D2E1C6AD1 /* BIObjCHelpers-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BIObjCHelpers-prefix.pch"; sourceTree = "<group>"; };
@@ -749,7 +764,6 @@
 		93196652A222178E13BA54CD1DE8CE6E /* Pods-BIObjCHelpersExampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BIObjCHelpersExampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		93794C47329AA465E55D74B5BA2BFA16 /* HCAssertThat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCAssertThat.m; path = Source/Core/HCAssertThat.m; sourceTree = "<group>"; };
 		9411497A6E4DA24E952F064E72E08E5D /* _BIScrollViewProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = _BIScrollViewProxy.m; sourceTree = "<group>"; };
-		94929F86B88DECD3E5F9B527F21142CE /* BITableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BITableViewCell.m; sourceTree = "<group>"; };
 		9542B4C7086FC3B76CAD1F6524BD672F /* MKTCharArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTCharArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTCharArgumentGetter.h; sourceTree = "<group>"; };
 		9548CE5C989CF8A3AAA80D3CEDB7E8C9 /* BIDatasourceCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIDatasourceCollectionView.h; sourceTree = "<group>"; };
 		95E2BD760D0D1FE316EF9B3AA787961A /* NSManagedObjectContext+MagicalObserving.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+MagicalObserving.h"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalObserving.h"; sourceTree = "<group>"; };
@@ -758,13 +772,13 @@
 		9657719ACE690EB33C68FFEDFFEE71E8 /* MagicalRecord+Options.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+Options.h"; path = "MagicalRecord/Core/MagicalRecord+Options.h"; sourceTree = "<group>"; };
 		9704D0F2DA85FD454610E6B55D9BDBFD /* HCTestFailureReporterChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCTestFailureReporterChain.m; path = Source/Core/Helpers/TestFailureReporters/HCTestFailureReporterChain.m; sourceTree = "<group>"; };
 		972B3534B62859A3E8F551707EFE5405 /* NSManagedObject+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MagicalDataImport.h"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		974D4E0691423D276997BA0C72A6C111 /* _BITableView+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "_BITableView+Internal.h"; sourceTree = "<group>"; };
 		9772493E3D1EAC57CDD93850475FD4F6 /* BIDatasourceFetchedCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceFetchedCollectionView.m; sourceTree = "<group>"; };
 		977FFF048D4191DFE1F425F0D9BE061F /* HCShortReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCShortReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCShortReturnGetter.m; sourceTree = "<group>"; };
 		981E6E56ACD5673749DD40CF43745D08 /* MKTArgumentCaptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTArgumentCaptor.h; path = Source/OCMockito/MKTArgumentCaptor.h; sourceTree = "<group>"; };
 		98BFB6AE52951A1BB84C8D3D9FBE9998 /* OCHamcrest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OCHamcrest-prefix.pch"; sourceTree = "<group>"; };
 		9993C09F2555E180DAB43491CB349A62 /* HCHasProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCHasProperty.h; path = Source/Library/Object/HCHasProperty.h; sourceTree = "<group>"; };
 		9A7707E760FFAC9C77D145A304C674E3 /* MKTCharReturnSetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTCharReturnSetter.m; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTCharReturnSetter.m; sourceTree = "<group>"; };
-		9C3CB24A7AE4CC43ED0A2F7E10F28D92 /* BITableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BITableView.h; sourceTree = "<group>"; };
 		9CD358CB30F73C05080F55610429E97D /* _BIScrollViewProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = _BIScrollViewProxy.h; sourceTree = "<group>"; };
 		9D8F8B601637956292E48EF3EACEE3D7 /* NSRelationshipDescription+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSRelationshipDescription+MagicalDataImport.m"; path = "MagicalRecord/Categories/DataImport/NSRelationshipDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
 		9DA6C37B9CD86776B022AF801E15147C /* BIDatasourceBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIDatasourceBase.h; sourceTree = "<group>"; };
@@ -791,12 +805,11 @@
 		A6AD783AD11BF197C4D4D331766019FF /* MKTFloatReturnSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTFloatReturnSetter.h; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTFloatReturnSetter.h; sourceTree = "<group>"; };
 		A72974938E8F34807E05CD2555ECCED5 /* BILaunchStartersFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BILaunchStartersFactory.m; sourceTree = "<group>"; };
 		A761D38ED1006718AA8BF52096F88C4F /* NSObject+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSObject+MagicalDataImport.h"; sourceTree = "<group>"; };
-		A765B9F6089EEF6BCE57508B0C6D1E45 /* _BITableView+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "_BITableView+Internal.h"; sourceTree = "<group>"; };
 		A820F931377A3FE710E894F2CE24C672 /* MKTShortArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTShortArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTShortArgumentGetter.h; sourceTree = "<group>"; };
 		A92441011309E0D6E1261C97BB08C007 /* HCGenericTestFailureReporter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCGenericTestFailureReporter.m; path = Source/Core/Helpers/TestFailureReporters/HCGenericTestFailureReporter.m; sourceTree = "<group>"; };
 		A9D431820EE9BAA442AC47340E3D9893 /* MKTExactTimes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTExactTimes.m; path = Source/OCMockito/MKTExactTimes.m; sourceTree = "<group>"; };
 		AA0CCF0A0FF5E2278612480EBA1A2182 /* MagicalRecord+Actions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+Actions.h"; path = "MagicalRecord/Core/MagicalRecord+Actions.h"; sourceTree = "<group>"; };
-		AA72261773AA54F240233971F52409C7 /* BIActivityIndicatorContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIActivityIndicatorContainerView.h; sourceTree = "<group>"; };
+		AA4EA94C056F4E2A37ED34BE9435E376 /* BITableAdditionalNoContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BITableAdditionalNoContentView.h; sourceTree = "<group>"; };
 		AB836F420E8A8ED9991416F4A86AA156 /* HCTestFailureReporter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCTestFailureReporter.m; path = Source/Core/Helpers/TestFailureReporters/HCTestFailureReporter.m; sourceTree = "<group>"; };
 		ACE681124E0E90696EBB165C08C07215 /* HCHasDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCHasDescription.m; path = Source/Library/Object/HCHasDescription.m; sourceTree = "<group>"; };
 		ADE29C4A6E84585A445433B0EDE3BC2A /* HCStringContainsInOrder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCStringContainsInOrder.h; path = Source/Library/Text/HCStringContainsInOrder.h; sourceTree = "<group>"; };
@@ -825,7 +838,6 @@
 		B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BA086F4E3AEF18DE1696A9F4D6064308 /* HCInvocationMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCInvocationMatcher.m; path = Source/Core/Helpers/HCInvocationMatcher.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BAA6A764A76B9D4E42E5BA98950F0490 /* BICollectionViewActivityIndicatorReusableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BICollectionViewActivityIndicatorReusableView.h; sourceTree = "<group>"; };
 		BB3F2A53D10F40126B84ED749B816995 /* HCIsCollectionContaining.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsCollectionContaining.m; path = Source/Library/Collection/HCIsCollectionContaining.m; sourceTree = "<group>"; };
 		BC593CB59E629030A0CA92311DEB8D04 /* BIOperationQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIOperationQueue.m; sourceTree = "<group>"; };
 		BC67CD23AC65BB0D533CC064CBA62C1A /* libOCHamcrest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCHamcrest.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -873,6 +885,7 @@
 		D8EF47271810C47AF797861D473ABBCF /* HCIsCloseTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsCloseTo.m; path = Source/Library/Number/HCIsCloseTo.m; sourceTree = "<group>"; };
 		D9B61E8BEE3FE52DF85E1ACE3E883CCB /* MKTInvocationMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTInvocationMatcher.m; path = Source/OCMockito/MKTInvocationMatcher.m; sourceTree = "<group>"; };
 		DA2D24BB177F863125F93B43147A0DA6 /* MKTLongArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTLongArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTLongArgumentGetter.h; sourceTree = "<group>"; };
+		DA678966624CC6B60BC29FF7EDFBB688 /* BIActivityIndicatorContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIActivityIndicatorContainerView.h; sourceTree = "<group>"; };
 		DA7ADC7F97E5C445E98943AC17A817D2 /* NSString+BIExtra.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+BIExtra.h"; sourceTree = "<group>"; };
 		DA846BCD835C7F9033C22C0D1A8D9B75 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		DA9C3A82FB39D3A192523B4272B75436 /* NSBundle+BIExtra.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+BIExtra.m"; sourceTree = "<group>"; };
@@ -890,6 +903,7 @@
 		E2789466703CD200532EF59CC39E6C82 /* HCAllOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCAllOf.m; path = Source/Library/Logical/HCAllOf.m; sourceTree = "<group>"; };
 		E316036E7D2737D9C73B25A3729B33CD /* MKTUnsignedCharArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTUnsignedCharArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTUnsignedCharArgumentGetter.h; sourceTree = "<group>"; };
 		E3168A728762E5B44C1E98EC94A66083 /* MKTStructArgumentGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTStructArgumentGetter.h; path = Source/OCMockito/Helpers/ArgumentGetters/MKTStructArgumentGetter.h; sourceTree = "<group>"; };
+		E33EFC7B2B364A5095EC847426BE40ED /* BITableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BITableViewCell.h; sourceTree = "<group>"; };
 		E3B33D93C85FDF28D2E679B8F4F223D9 /* BIHandlerBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIHandlerBase.m; sourceTree = "<group>"; };
 		E3B61CE804DDB3CBD6D3D040A6F0FDFC /* HCSenTestFailureReporter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCSenTestFailureReporter.m; path = Source/Core/Helpers/TestFailureReporters/HCSenTestFailureReporter.m; sourceTree = "<group>"; };
 		E3C32A72C2071127A280128D2A2BFC61 /* NSDate+BIAttributedString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BIAttributedString.m"; sourceTree = "<group>"; };
@@ -915,6 +929,7 @@
 		EB531712C279A48BA72C913277A5F7CA /* HCIsDictionaryContainingKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsDictionaryContainingKey.h; path = Source/Library/Collection/HCIsDictionaryContainingKey.h; sourceTree = "<group>"; };
 		EBC205C5E9A7CCE1BDDF1DDF44E95E10 /* MKTStructArgumentGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTStructArgumentGetter.m; path = Source/OCMockito/Helpers/ArgumentGetters/MKTStructArgumentGetter.m; sourceTree = "<group>"; };
 		F148FFFB28776E74D03D9D6B72D2BE66 /* MKTReturnValueSetterChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTReturnValueSetterChain.m; path = Source/OCMockito/Helpers/ReturnValueSetters/MKTReturnValueSetterChain.m; sourceTree = "<group>"; };
+		F186DAA05863B554C004DA1F92CAF96F /* BITableAdditionalViewBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BITableAdditionalViewBase.h; sourceTree = "<group>"; };
 		F20E23F8E705FF6F3CB6B669B48F2830 /* HCIsCollectionContainingInOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsCollectionContainingInOrder.m; path = Source/Library/Collection/HCIsCollectionContainingInOrder.m; sourceTree = "<group>"; };
 		F224B82DB3FBBE69E6D72E551146C125 /* Pods-BIObjCHelpersExampleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BIObjCHelpersExampleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F31F5B7EA02837520FD51A3C6966F064 /* BIBatchRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BIBatchRequest.h; sourceTree = "<group>"; };
@@ -939,6 +954,7 @@
 		FCD4C53EE4A1A64E8947B4855146A591 /* NSAttributeDescription+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributeDescription+MagicalDataImport.m"; path = "MagicalRecord/Categories/DataImport/NSAttributeDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
 		FD38060E95570084FA501C2166A62713 /* HCIsDictionaryContaining.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsDictionaryContaining.m; path = Source/Library/Collection/HCIsDictionaryContaining.m; sourceTree = "<group>"; };
 		FD4ADCCF4BAADB1FC1D143859BC174BD /* HCBoolReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCBoolReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCBoolReturnGetter.h; sourceTree = "<group>"; };
+		FD4F4487CA04DBA342F42DA8ACEDB3F5 /* BITableAdditionalNoContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BITableAdditionalNoContentView.m; sourceTree = "<group>"; };
 		FE2F25CB5A5347479197AC1F3953A6F1 /* BIDatasourceFetchedTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceFetchedTableView.m; sourceTree = "<group>"; };
 		FE64E9B62F2A6F8EE8D63CDCFA88A45C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -950,6 +966,14 @@
 			files = (
 				E89ED93BC0FB4D295BAE9F11B5B21FBE /* CoreData.framework in Frameworks */,
 				E9F1A8BCA9E652429525F9C46F41ECAA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4600FE48B4A0D60CEAADA4EB0B4405E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79C83C89D8025F84A7C212D86758D7DF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -985,14 +1009,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE6812B10D02D6B277F573D7339896BE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F2BC308E4F94CB3796272ECF74495B6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DBB0E9F2DB3099AA519C75A2049A8AAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1024,6 +1040,21 @@
 				60AF16FC457F3612CD9B676F41F30130 /* libPods-BIObjCHelpersExampleTests.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1120AD5586C8D65EBB22E65AC013B45E /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				07D2EC81495F609BC30A0CA0AD1E5D90 /* BITableAdditionalErrorNoContentView.h */,
+				8896374C999C37105D4ED06C36052855 /* BITableAdditionalErrorNoContentView.m */,
+				052F7805740F45DBD2E012A8749D2564 /* BITableAdditionalLoadingView.h */,
+				247636AE5F463724BEA3365BD4C2AE57 /* BITableAdditionalLoadingView.m */,
+				AA4EA94C056F4E2A37ED34BE9435E376 /* BITableAdditionalNoContentView.h */,
+				FD4F4487CA04DBA342F42DA8ACEDB3F5 /* BITableAdditionalNoContentView.m */,
+				F186DAA05863B554C004DA1F92CAF96F /* BITableAdditionalViewBase.h */,
+				561175EC1DBB63EFC3952D2A4D22F6DF /* BITableAdditionalViewBase.m */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 		138525B050818945C44EF4812977576A /* CJAMacros */ = {
@@ -1063,15 +1094,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		1D0B0A10320606C323B19CB537008CED /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				75E98E6B3DE47FDDE5B3F57204875E76 /* BITableViewCell.h */,
-				94929F86B88DECD3E5F9B527F21142CE /* BITableViewCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		1F53EE456AC302B6CBA5E3E38EDAA231 /* NSBundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -1088,15 +1110,6 @@
 				9411497A6E4DA24E952F064E72E08E5D /* _BIScrollViewProxy.m */,
 			);
 			path = Proxy;
-			sourceTree = "<group>";
-		};
-		23EA2C368BB1430704604B6C896758DF /* Activity Indicator */ = {
-			isa = PBXGroup;
-			children = (
-				BAA6A764A76B9D4E42E5BA98950F0490 /* BICollectionViewActivityIndicatorReusableView.h */,
-				388F37D8AD170620C4A9FDFEA274D68A /* BICollectionViewActivityIndicatorReusableView.m */,
-			);
-			path = "Activity Indicator";
 			sourceTree = "<group>";
 		};
 		274480B30DB23C2879D32114C784BAE6 /* Batch */ = {
@@ -1128,15 +1141,6 @@
 				B8DCF029181227DFB891B1A2658BBCB2 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		35239D029ABE1003AADF1F59B07A5407 /* ActivityIndicator */ = {
-			isa = PBXGroup;
-			children = (
-				AA72261773AA54F240233971F52409C7 /* BIActivityIndicatorContainerView.h */,
-				07092DEAF82309FBF88CA7AE825D3E61 /* BIActivityIndicatorContainerView.m */,
-			);
-			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
 		37329CD8BE26EF2E611C995519C8173F /* OCMockito */ = {
@@ -1294,23 +1298,25 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		42261D6F8C606898887C370F4E0C1BC4 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				974D4E0691423D276997BA0C72A6C111 /* _BITableView+Internal.h */,
+				6F3E95A6317BD49291CBA2B5FC963DF4 /* BITableView.h */,
+				72F5B795214661A986C2D130588D11D5 /* BITableView.m */,
+				E814D5B1AE559EFED8F64114A23BC90D /* ActivityIndicator */,
+				1120AD5586C8D65EBB22E65AC013B45E /* Additions */,
+				84B5E4D84AC7915173D28CF10B63F0D0 /* Cell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2E58A9294E3A183927BC26690021E0CA /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4DDBB18538E86F4FDE9503B23159DDDB /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				4D3608D9B97474322A806EF1C69E5511 /* _BICollectionView+Internal.h */,
-				70A3E809F258C78FEB7DE640DA7A5977 /* BICollectionView.h */,
-				05D28212052AD600A4DD141291D9803C /* BICollectionView.m */,
-				23EA2C368BB1430704604B6C896758DF /* Activity Indicator */,
-			);
-			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		52B2D4477754DC4F7D796FB8A606F4ED /* NSDate */ = {
@@ -1362,15 +1368,6 @@
 				D8ED7545DE31ED46F64655B8E9367425 /* BIObjCHelpers */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		722EE539E64D25194E74C05A0CB2B0DD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4DDBB18538E86F4FDE9503B23159DDDB /* CollectionView */,
-				9A08FB5885965F746ECCD2DB61DD5CCB /* TableView */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -1466,6 +1463,26 @@
 			path = "Target Support Files/Pods-BIObjCHelpersExampleTests";
 			sourceTree = "<group>";
 		};
+		84B5E4D84AC7915173D28CF10B63F0D0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E33EFC7B2B364A5095EC847426BE40ED /* BITableViewCell.h */,
+				5C1D955CA5FFB8F09DDF13C7168E21EB /* BITableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8584319D65E7B7EEB041A217E88A346D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5C2AABFAC33BA6ABB3786F1E47C67FCA /* _BICollectionView+Internal.h */,
+				8F0A4786270CD084188C10DFA5324BF0 /* BICollectionView.h */,
+				79B276485E02BDFE3B4EAEA74F0E8952 /* BICollectionView.m */,
+				E4CCD7996C07B45631AFAFC693099BC3 /* Activity Indicator */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		91CF236AB8FAC953456248190DF2BAC5 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1499,18 +1516,6 @@
 			path = "../Target Support Files/CJALog";
 			sourceTree = "<group>";
 		};
-		9A08FB5885965F746ECCD2DB61DD5CCB /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				A765B9F6089EEF6BCE57508B0C6D1E45 /* _BITableView+Internal.h */,
-				9C3CB24A7AE4CC43ED0A2F7E10F28D92 /* BITableView.h */,
-				3C5526947828021B4E7D47DE28C9DF0A /* BITableView.m */,
-				35239D029ABE1003AADF1F59B07A5407 /* ActivityIndicator */,
-				1D0B0A10320606C323B19CB537008CED /* Cell */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
 		A247276B116AE4F69E3D79A1A287B0CF /* BIObjCHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1523,7 +1528,7 @@
 				5731E7704704F64415890F1392157D4B /* OperationQueue */,
 				B20935CB0EBC479636D917DD207D25DE /* Starters */,
 				1A6347C94A8ED542D9999639F6B7CB29 /* Utils */,
-				722EE539E64D25194E74C05A0CB2B0DD /* Views */,
+				AC7E89399C7C39F3237A20D041C75F03 /* Views */,
 			);
 			path = BIObjCHelpers;
 			sourceTree = "<group>";
@@ -1536,6 +1541,15 @@
 				156512945CA33DCFBB21DD49B1F7939E /* TableView */,
 			);
 			path = Handlers;
+			sourceTree = "<group>";
+		};
+		AC7E89399C7C39F3237A20D041C75F03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8584319D65E7B7EEB041A217E88A346D /* CollectionView */,
+				42261D6F8C606898887C370F4E0C1BC4 /* TableView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AE40E8627CF1BB9682F75D7E1B5277DD /* Targets Support Files */ = {
@@ -1812,6 +1826,24 @@
 			path = "Example/Pods/Target Support Files/BIObjCHelpers";
 			sourceTree = "<group>";
 		};
+		E4CCD7996C07B45631AFAFC693099BC3 /* Activity Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				4711B6BC7ABDC2325D2FB2F9B13B93E8 /* BICollectionViewActivityIndicatorReusableView.h */,
+				0A133AF17C88528032C7380CB998315C /* BICollectionViewActivityIndicatorReusableView.m */,
+			);
+			path = "Activity Indicator";
+			sourceTree = "<group>";
+		};
+		E814D5B1AE559EFED8F64114A23BC90D /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				DA678966624CC6B60BC29FF7EDFBB688 /* BIActivityIndicatorContainerView.h */,
+				3E4F3DD3F8253066513B5FE1BCB3A417 /* BIActivityIndicatorContainerView.m */,
+			);
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
 		F17CB186144BCB0F89FA45D72117C531 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1967,6 +1999,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3F990AB3B22367350C16BF9D7E32733 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13FE3DA016BAD1A66418641AF5CD5475 /* _BICollectionView+Internal.h in Headers */,
+				B7082DEF60A619A8826B5BBED2AFF068 /* _BIScrollViewProxy.h in Headers */,
+				BE703B7D27845166628C3B3672173509 /* _BITableView+Internal.h in Headers */,
+				680601A4A2A68C69EECDD76F687706EA /* BIActivityIndicatorContainerView.h in Headers */,
+				D2ADE65FC50B4BBD6F6821180A45F2B8 /* BIBatchHelpers.h in Headers */,
+				1ADE14FDEB82D4B355D4BCE18CB01486 /* BIBatchRequest.h in Headers */,
+				95D74DFC8D624AB62B608BA12307A387 /* BIBatchResponse.h in Headers */,
+				31C69770C06DE2D19CBCC1CD2F46D0C0 /* BICollectionView.h in Headers */,
+				1CC65EE022AE3A75E6AFFF6C5F7D3978 /* BICollectionViewActivityIndicatorReusableView.h in Headers */,
+				F97392DECD600F2A192A8C6BB3414B3D /* BIDatasourceBase.h in Headers */,
+				C1C8FA1B61145E5B66B5356627F206E8 /* BIDatasourceCollectionView.h in Headers */,
+				EB9EA40720F50A0E37566D4FCE346223 /* BIDatasourceFeedCollectionView.h in Headers */,
+				7345901F3C1137A4112FC6CDF8D05C82 /* BIDatasourceFeedTableView.h in Headers */,
+				563D5783D31B6CD204C19ECADCDC8C65 /* BIDatasourceFetchedCollectionView.h in Headers */,
+				D4CF97A71B24E220ACBE771F1CFAF6A1 /* BIDatasourceFetchedTableView.h in Headers */,
+				E135352BCEC4C19436DE610280AD6445 /* BIDatasourceTableView.h in Headers */,
+				9D06E257522753036CBAF910F75C0117 /* BIHandlerBase.h in Headers */,
+				8FB00D16E6A9A115C660CEC590B4A92F /* BIHandlerCollectionView.h in Headers */,
+				1BB17225B1757A324616560C61C38F0F /* BIHandlerTableView.h in Headers */,
+				2D879DCAFC6B72D2C223369DA382E17D /* BILaunchStartersFactory.h in Headers */,
+				F495FC2194EB85EADA49EFFA3B1641BF /* BILifecycle.h in Headers */,
+				A33B31721EAD4A79BBBCF78E097615CF /* BIObjCHelpers.h in Headers */,
+				0D446F09251A3A5423F934B6EB669B30 /* BIOperationQueue.h in Headers */,
+				810639D7A0AD0BB876CC6A968408EB9E /* BIScrollDetails.h in Headers */,
+				0490B93E885012761E020DB1402881BD /* BISerialOperationQueue.h in Headers */,
+				16C563236C6317FFB5D078F25C305F93 /* BIStarterProtocol.h in Headers */,
+				5ABB0B54A4762CCCF8D3E16876E09EBB /* BIStartersFactory.h in Headers */,
+				4BB5A7CAA5B25003B78C04765AD4909A /* BITableAdditionalErrorNoContentView.h in Headers */,
+				40E9191D9304416A9BA0F6A69B38BFA1 /* BITableAdditionalLoadingView.h in Headers */,
+				B4DA19EFDF28DEA3177FD7FA705F0FEC /* BITableAdditionalNoContentView.h in Headers */,
+				D1C00A4F82BEBA21540671F78AC47C34 /* BITableAdditionalViewBase.h in Headers */,
+				36168A1678D791AFC20BAA7881DFF753 /* BITableView.h in Headers */,
+				0F808EA63989322845C0B43B3EDA555E /* BITableViewCell.h in Headers */,
+				3EBFA2B558F15EAF441C9D2AEFB945A2 /* NSBundle+BIExtra.h in Headers */,
+				78256199696440F5A8149BEB424F2ADD /* NSDate+BIAttributedString.h in Headers */,
+				67E3FF884579A9C912D77E4B16B87EDB /* NSString+BIExtra.h in Headers */,
+				F2F0743AD4C475AC14CF114976E9F8B7 /* UIView+BILoadXib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6AA0186F88840A5CFA64CD780A556E3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2040,66 +2116,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FBAFA124C1C688AF15D38262B1BD7C50 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF538A1C7CB29C5A33D633E3A9589243 /* _BICollectionView+Internal.h in Headers */,
-				2F027425F9259DFB8B338318BBB60C7E /* _BIScrollViewProxy.h in Headers */,
-				76F1B0BC35A782B1C1898766136B984F /* _BITableView+Internal.h in Headers */,
-				79C4C4FEBD3A31491FF065105291A8DE /* BIActivityIndicatorContainerView.h in Headers */,
-				76C8710386562FBD7789F732552CFEB3 /* BIBatchHelpers.h in Headers */,
-				5594DC6BBA7B7B7A612015BF8C575BAD /* BIBatchRequest.h in Headers */,
-				EF7CD8C7279673E65DF1415EB4B7FCF0 /* BIBatchResponse.h in Headers */,
-				ABA8A0859C94257EB2F1F432C0A1C416 /* BICollectionView.h in Headers */,
-				E5894F089FC0EE5F1A252A90907F187F /* BICollectionViewActivityIndicatorReusableView.h in Headers */,
-				124E1D34DCC43B41CF9AA58879120EDF /* BIDatasourceBase.h in Headers */,
-				1935A49FF0B940AC3D64C3DCE437A8F2 /* BIDatasourceCollectionView.h in Headers */,
-				CF54447C34313DB715D8EEB7A2F610CE /* BIDatasourceFeedCollectionView.h in Headers */,
-				722978B6190CA46B9D3623835F535D25 /* BIDatasourceFeedTableView.h in Headers */,
-				3ABE71E12D1CCD1EB1C531CC5E72D0CC /* BIDatasourceFetchedCollectionView.h in Headers */,
-				693BD84A9DC841F2D0EC05FB923F0C5F /* BIDatasourceFetchedTableView.h in Headers */,
-				071DBD845DD8CD2A7D71AD1115DC33A2 /* BIDatasourceTableView.h in Headers */,
-				B3AEB1FF3CC1B5CA41548BB09514E327 /* BIHandlerBase.h in Headers */,
-				BE07C6C9EEF5AD0F71D24647C235E81E /* BIHandlerCollectionView.h in Headers */,
-				26BCEC76A929AB201A97FB30AFB2A6BB /* BIHandlerTableView.h in Headers */,
-				C78BBF4D2066D72641405C6B6509E9C8 /* BILaunchStartersFactory.h in Headers */,
-				872E037A928ACEB20557927739266542 /* BILifecycle.h in Headers */,
-				9506FAB2D11A3641F872590F99567456 /* BIObjCHelpers.h in Headers */,
-				E2B1C1D1EA9AB017B3687F554986DD80 /* BIOperationQueue.h in Headers */,
-				FBEFB30E530DDD1925565BA75C6564B5 /* BIScrollDetails.h in Headers */,
-				44493775F4898DDC425DF571F8E61856 /* BISerialOperationQueue.h in Headers */,
-				0A1D41CDD1F4B8C002A9559A39876673 /* BIStarterProtocol.h in Headers */,
-				4BE7E3CEA986F291D86448551655844D /* BIStartersFactory.h in Headers */,
-				ADA8BF8DE5EBDB119AF262A6CBC3F5FE /* BITableView.h in Headers */,
-				11C84373DDD1DBE15EFC5A539C829D11 /* BITableViewCell.h in Headers */,
-				D84AB1C8562DCB5568152943C5820465 /* NSBundle+BIExtra.h in Headers */,
-				77D4410D5FEACCCC4EA82B8891572D9E /* NSDate+BIAttributedString.h in Headers */,
-				6E1090CB29A764CEABF34775CA237EF5 /* NSString+BIExtra.h in Headers */,
-				16030728A277BE568607B930D1CD3EAB /* UIView+BILoadXib.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0BF12D016C377D53E759D6A1FB51A64F /* BIObjCHelpers */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9F6F3936026F2D014F2AE38B2D6E4070 /* Build configuration list for PBXNativeTarget "BIObjCHelpers" */;
-			buildPhases = (
-				7C4C314BDD9F1A6DD5143955486A2C45 /* Sources */,
-				CE6812B10D02D6B277F573D7339896BE /* Frameworks */,
-				FBAFA124C1C688AF15D38262B1BD7C50 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BIObjCHelpers;
-			productName = BIObjCHelpers;
-			productReference = A506CFEF5C26ED456537187B59512713 /* libBIObjCHelpers.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		6FB68ED04C3EC94394F8FC24EA3F9DD6 /* CJALog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89B889F4A428725DCAD23E9EDCCE2E83 /* Build configuration list for PBXNativeTarget "CJALog" */;
@@ -2188,6 +2207,23 @@
 			productReference = 16C1800335094119A2C9EA202B96EEBB /* libMagicalRecord.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		D7A5C3FA6B6B4EC59733F55616517763 /* BIObjCHelpers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79C6F957E152BC6171C7D891AD06D1E0 /* Build configuration list for PBXNativeTarget "BIObjCHelpers" */;
+			buildPhases = (
+				0D996FE253BB323109083110E16C3D9B /* Sources */,
+				4600FE48B4A0D60CEAADA4EB0B4405E5 /* Frameworks */,
+				F3F990AB3B22367350C16BF9D7E32733 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BIObjCHelpers;
+			productName = BIObjCHelpers;
+			productReference = A506CFEF5C26ED456537187B59512713 /* libBIObjCHelpers.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		E512CAC0061FA9AD6EFE6598464A9DF7 /* Pods-BIObjCHelpersExampleTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00B45F3ECEC6E57AD5A429206227394A /* Build configuration list for PBXNativeTarget "Pods-BIObjCHelpersExampleTests" */;
@@ -2230,7 +2266,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0BF12D016C377D53E759D6A1FB51A64F /* BIObjCHelpers */,
+				D7A5C3FA6B6B4EC59733F55616517763 /* BIObjCHelpers */,
 				6FB68ED04C3EC94394F8FC24EA3F9DD6 /* CJALog */,
 				D54AB3ECEB9A8FBA15D4F73CBE326692 /* MagicalRecord */,
 				B2D568B7365B31C2E5A1D41D0007F1BF /* OCHamcrest */,
@@ -2242,47 +2278,51 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D996FE253BB323109083110E16C3D9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EEE593880817724DA2B28032C0465D /* _BIScrollViewProxy.m in Sources */,
+				BD45B1737FECECDC255DFB3C1483A8E4 /* BIActivityIndicatorContainerView.m in Sources */,
+				5AAF07F94E5DABB751A33D741DB86442 /* BIBatchHelpers.m in Sources */,
+				5596D6A623CE0BB4520599410A16F63A /* BIBatchRequest.m in Sources */,
+				4704F6A3B6B24DE55202407313A999E3 /* BIBatchResponse.m in Sources */,
+				8DFD78AE8CE4BF020D5F120F504326D2 /* BICollectionView.m in Sources */,
+				EABC00865AD29D820A65AD78BF4CD88C /* BICollectionViewActivityIndicatorReusableView.m in Sources */,
+				945D77D2FEDEA7C7D4D187879FFBFF5C /* BIDatasourceBase.m in Sources */,
+				9E223A7F39980DA281DDE50D036F69EE /* BIDatasourceCollectionView.m in Sources */,
+				45CE204C5E91C3BD2BC2ABDE5003626C /* BIDatasourceFeedCollectionView.m in Sources */,
+				CC6002C7F2E29D2D2002CECAE981CB2A /* BIDatasourceFeedTableView.m in Sources */,
+				BD5215381B5D8CAA905448FCC2813298 /* BIDatasourceFetchedCollectionView.m in Sources */,
+				E0185D2511318B1177B5328B1377C4FF /* BIDatasourceFetchedTableView.m in Sources */,
+				9EE38661FFE463C0E669F623E85A21A6 /* BIDatasourceTableView.m in Sources */,
+				045FF802874299A38E408288DEDFF8FE /* BIHandlerBase.m in Sources */,
+				F8AC495924E2F27B86412EDC03020909 /* BIHandlerCollectionView.m in Sources */,
+				553FCDCA5F8C3297F10BB40E5C5BFB1B /* BIHandlerTableView.m in Sources */,
+				11ACDD42C194B7E7E082186F2012DD85 /* BILaunchStartersFactory.m in Sources */,
+				7845965321235B8B6C31598D6442EB4D /* BILifecycle.m in Sources */,
+				610CCB761F12AD6ADAACA4ADA4948E08 /* BIObjCHelpers-dummy.m in Sources */,
+				31CA1E311FFC686C56AA8BA95265E7DC /* BIOperationQueue.m in Sources */,
+				140E3EDAB79936C93B165E3EAD5B1799 /* BISerialOperationQueue.m in Sources */,
+				DA0A60CD4407A36EE8CA07293E45EFDB /* BIStartersFactory.m in Sources */,
+				FD833B030CE1161EB35FC7628AA84C17 /* BITableAdditionalErrorNoContentView.m in Sources */,
+				661FE8AE863F5739D226FFB8779D081D /* BITableAdditionalLoadingView.m in Sources */,
+				81C5CD088B34C1010B5459C695C9B270 /* BITableAdditionalNoContentView.m in Sources */,
+				D99EB2F995B8738F50527D250D42FB76 /* BITableAdditionalViewBase.m in Sources */,
+				D89B761593F3763265BC92B344E90583 /* BITableView.m in Sources */,
+				F50FF1CB5879A9235C104A7CCE37E82C /* BITableViewCell.m in Sources */,
+				D8F5DC702C9DBD030FA914CD61C2A58E /* NSBundle+BIExtra.m in Sources */,
+				48F10A9399755257150C2F86E1C63A38 /* NSDate+BIAttributedString.m in Sources */,
+				3CE44F0C4238E30B6F5713E7B50C1054 /* NSString+BIExtra.m in Sources */,
+				0512D9EF46E7CDB38940F2D224957F84 /* UIView+BILoadXib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F365D657DED11998504EF6DC0AB88DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D177E221956F4B8303E07EC613A146F6 /* Pods-BIObjCHelpersExampleTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7C4C314BDD9F1A6DD5143955486A2C45 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CEB8EED8EA557EDF6E4119F6E3DA46B /* _BIScrollViewProxy.m in Sources */,
-				1AFB094C2D2D75A0FE9611CE868B8B98 /* BIActivityIndicatorContainerView.m in Sources */,
-				63EB34CD88AE8D4059B4A846E16B9976 /* BIBatchHelpers.m in Sources */,
-				CC73C2C729BF8350D205546A1957BF6B /* BIBatchRequest.m in Sources */,
-				21BA8DB036B060F16DFB66C1EE46A70B /* BIBatchResponse.m in Sources */,
-				75EAAAE732922F9820E52AA24B4FFA0A /* BICollectionView.m in Sources */,
-				B9BDA3A3A3AE5FFDF22B4410085E1919 /* BICollectionViewActivityIndicatorReusableView.m in Sources */,
-				F2145B0C22B271C1C71011B870210209 /* BIDatasourceBase.m in Sources */,
-				53C84B9BC1888C435DED09776F602C4C /* BIDatasourceCollectionView.m in Sources */,
-				4D436802E971FA60CA1BBD8485D7F570 /* BIDatasourceFeedCollectionView.m in Sources */,
-				CBD504927BEC65A921996483FF7CA51F /* BIDatasourceFeedTableView.m in Sources */,
-				7D8D3696219A0EE4355B4C0C9A8F5594 /* BIDatasourceFetchedCollectionView.m in Sources */,
-				4434E612D0892DBF32286BB352CFF0DA /* BIDatasourceFetchedTableView.m in Sources */,
-				50534026B8288F8FED7B390971C6C65A /* BIDatasourceTableView.m in Sources */,
-				18E6C1DD98D298A7914D402E558A77D1 /* BIHandlerBase.m in Sources */,
-				F9AE0A48804FD6F8CA49E5F8E500E767 /* BIHandlerCollectionView.m in Sources */,
-				0CE6628299A9C96F838E25281E98F101 /* BIHandlerTableView.m in Sources */,
-				CB8A01D1C0A683BA2B15EA98368E8B62 /* BILaunchStartersFactory.m in Sources */,
-				97EAF483D8C7C2DFA7994320344A672C /* BILifecycle.m in Sources */,
-				ED7C3EBFEF62B7AACC8CD2C812582931 /* BIObjCHelpers-dummy.m in Sources */,
-				660C66FDC6C1FB7BFC84C159D334FDFF /* BIOperationQueue.m in Sources */,
-				ECB9AF7A9D1EB2881EF7E5E717793355 /* BISerialOperationQueue.m in Sources */,
-				F772ECF9749DEEA8E4405AD4DCA20489 /* BIStartersFactory.m in Sources */,
-				A35E3EDF475D1DD4E68B0B614981C94B /* BITableView.m in Sources */,
-				7241A2680874EEEA4855D6C0F118B487 /* BITableViewCell.m in Sources */,
-				2E37A328B8A2D2B5188B3BDAA154BFF1 /* NSBundle+BIExtra.m in Sources */,
-				D9B45A18AB84E942538A023B0859E837 /* NSDate+BIAttributedString.m in Sources */,
-				BA52779AA84AABCD7504C92DDE6C0EA0 /* NSString+BIExtra.m in Sources */,
-				A06EB920F7650F4111B582C8CD32F2A4 /* UIView+BILoadXib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2498,7 +2538,7 @@
 		34449788AC4B5C4A85849594C863C291 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BIObjCHelpers;
-			target = 0BF12D016C377D53E759D6A1FB51A64F /* BIObjCHelpers */;
+			target = D7A5C3FA6B6B4EC59733F55616517763 /* BIObjCHelpers */;
 			targetProxy = F56E7E93FA91E904EEAF46874199EEA4 /* PBXContainerItemProxy */;
 		};
 		3DF05B535EDA66483F596D540B848BCA /* PBXTargetDependency */ = {
@@ -2510,7 +2550,7 @@
 		59A872046D88E10014D41DE3A15DE86F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BIObjCHelpers;
-			target = 0BF12D016C377D53E759D6A1FB51A64F /* BIObjCHelpers */;
+			target = D7A5C3FA6B6B4EC59733F55616517763 /* BIObjCHelpers */;
 			targetProxy = 19F4EE5DEF18C89907D518F2AC270530 /* PBXContainerItemProxy */;
 		};
 		8EB373160C6C6D944718461D6A635B01 /* PBXTargetDependency */ = {
@@ -2558,6 +2598,24 @@
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/OCMockito/OCMockito-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		35CA59E5D06600F688F13B6DE972919C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 270478F1AB912F5F1E5FF3B0EE05FC57 /* BIObjCHelpers.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BIObjCHelpers/BIObjCHelpers-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -2623,24 +2681,6 @@
 			};
 			name = Release;
 		};
-		8828004E4C66AFD68DAAF2720D8CAB19 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 270478F1AB912F5F1E5FF3B0EE05FC57 /* BIObjCHelpers.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BIObjCHelpers/BIObjCHelpers-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		9BE9610E10C6BA606C781102D94EACCD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 141F654C72A42F0F045F5ED8FCB9A093 /* MagicalRecord.xcconfig */;
@@ -2665,6 +2705,24 @@
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/CJALog/CJALog-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9D15FD2D8AE735472A268B3CB96FFD8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 270478F1AB912F5F1E5FF3B0EE05FC57 /* BIObjCHelpers.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BIObjCHelpers/BIObjCHelpers-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -2748,24 +2806,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		B280537875E51C4786E26DC067BC5F24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 270478F1AB912F5F1E5FF3B0EE05FC57 /* BIObjCHelpers.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BIObjCHelpers/BIObjCHelpers-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -2912,20 +2952,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		79C6F957E152BC6171C7D891AD06D1E0 /* Build configuration list for PBXNativeTarget "BIObjCHelpers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35CA59E5D06600F688F13B6DE972919C /* Debug */,
+				9D15FD2D8AE735472A268B3CB96FFD8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		89B889F4A428725DCAD23E9EDCCE2E83 /* Build configuration list for PBXNativeTarget "CJALog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6BD8D12085CE8A4F55305471B6964651 /* Debug */,
 				9C2640211AA1CA2F10F122C7BAA1DA46 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9F6F3936026F2D014F2AE38B2D6E4070 /* Build configuration list for PBXNativeTarget "BIObjCHelpers" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B280537875E51C4786E26DC067BC5F24 /* Debug */,
-				8828004E4C66AFD68DAAF2720D8CAB19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

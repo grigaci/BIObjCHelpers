@@ -1,6 +1,6 @@
 {
   "name": "BIObjCHelpers",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "summary": "My collection of Objective-C helpers",
   "description": "Simple collection of classes commonly used in Objective-C projects.",
   "homepage": "https://github.com/grigaci/BIObjCHelpers",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/grigaci/BIObjCHelpers.git",
-    "tag": "0.3.1"
+    "tag": "0.3.3"
   },
   "social_media_url": "https://twitter.com/bogdaniusco",
   "platforms": {

@@ -99,6 +99,14 @@ const NSInteger kDefaultBatchRequestSize = 3;
     return (self.options & BIBatchRequestOptionInfiniteScrollingRequest) > 0;
 }
 
+- (BOOL)isErrorNoContentTapToRetryRequest {
+    return (self.options & BIBatchRequestOptionErrorTapToRetry) > 0;
+}
+
+- (BOOL)isNoContentRequest {
+    return (self.options & BIBatchRequestOptionNoContent) > 0;
+}
+
 @end
 
 @implementation BIMutableBatchRequest
