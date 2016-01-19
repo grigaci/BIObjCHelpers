@@ -11,6 +11,7 @@
 #import "BIBatchResponse.h"
 #import "BITableViewCell.h"
 #import "_BITableView+Internal.h"
+#import "BITableAdditionalViewBase.h"
 
 @interface BIDatasourceFeedTableView ()
 
@@ -215,6 +216,9 @@
         } else if (isEmptyResponse) {
             [self.tableView addAdditionalNoContentView];
         } else {
+            [self.tableView removeVisibleAdditionalView];
+        }
+        if (self.tableView.visibleAdditionalView.type == BITableAdditionalTypeLoadingContentView) {
             [self.tableView removeVisibleAdditionalView];
         }
     }
