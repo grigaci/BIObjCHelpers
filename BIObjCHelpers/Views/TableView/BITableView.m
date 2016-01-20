@@ -91,6 +91,20 @@
     }];
 }
 
+- (void)deleteRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    [super deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    if ([self BI_totalNumberOfRows] == 0 && !self.visibleAdditionalView) {
+        [self addAdditionalNoContentView];
+    }
+}
+
+- (void)insertRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    [super insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    if ([self BI_totalNumberOfRows] != 0 && self.visibleAdditionalView) {
+        [self removeVisibleAdditionalView];
+    }
+}
+
 #pragma mark - Public methods
 
 - (void)triggerPullToRefresh {
@@ -242,6 +256,19 @@
         CGRect frame = CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), 44.f);
         _infiniteScrollingActivityIndicatorContainer = [[BIActivityIndicatorContainerView alloc] initWithFrame:frame];
     }
+}
+
+- (NSInteger)BI_totalNumberOfRows {
+    NSInteger numberOfSections = 1;
+    if ([self.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
+        numberOfSections = [self.dataSource numberOfSectionsInTableView:self];
+    }
+    
+    NSInteger totalNumberOfRows = 0;
+    for (NSInteger sectionIndex = 0; sectionIndex < numberOfSections; sectionIndex++) {
+        totalNumberOfRows += [self.dataSource tableView:self numberOfRowsInSection:sectionIndex];
+    }
+    return totalNumberOfRows;
 }
 
 @end
