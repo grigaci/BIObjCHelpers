@@ -64,6 +64,13 @@
     [self.visibleAdditionalView unregisterAdditionalViewListeners:self];
 }
 
+#pragma mark - UIView methods
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self layoutAdditionalView];
+}
+
 #pragma mark - UITableView methods
 
 - (void)setDelegate:(id<UITableViewDelegate>)delegate {
