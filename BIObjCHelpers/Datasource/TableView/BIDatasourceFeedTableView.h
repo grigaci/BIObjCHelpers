@@ -91,6 +91,12 @@ typedef NS_ENUM(NSUInteger, BIDatasourceTableViewFetchingState) {
 - (nonnull BIMutableBatchRequest *)createErrorNoContentTapToRetryBatchRequest;
 
 /*!
+ * Create a mutable batch request driven by a tap to retry on a no content case.
+ * @return New batch.
+ */
+- (nonnull BIMutableBatchRequest *)createNoContentTapToRetryBatchRequest;
+
+/*!
  * Fetches a given batch.
  * @param batch Given batch.
  */
@@ -159,5 +165,10 @@ typedef NS_ENUM(NSUInteger, BIDatasourceTableViewFetchingState) {
  * Manually trigger the tap to retry error no content case.
  */
 - (void)triggerErrorNoContentTapToRetryRequest;
+
+/*!
+ * Manually trigger the tap on no content case.
+ */
+- (void)triggerNoContentTapToRetryRequest;
 
 @end

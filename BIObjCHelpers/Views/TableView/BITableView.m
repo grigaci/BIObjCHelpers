@@ -293,6 +293,11 @@
                 [feedDatasource triggerErrorNoContentTapToRetryRequest];
                 break;
             }
+            case BITableAdditionalTypeNoContentView: {
+                BIDatasourceFeedTableView *feedDatasource = (BIDatasourceFeedTableView *)self.datasource;
+                [feedDatasource triggerNoContentTapToRetryRequest];
+                break;
+            }
             default:
                 break;
         }
@@ -336,6 +341,7 @@
 - (void)addAdditionalNoContentView {
     BITableAdditionalViewBase *noContentView = [self createAdditionalNoContentView];
     if (noContentView) {
+        [noContentView registerAdditionalViewListeners:self];
         [self addGeneralAdditionalView:noContentView];
     }
 }
