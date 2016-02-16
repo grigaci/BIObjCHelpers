@@ -12,10 +12,10 @@
 #import "BIBatchHelpers.h"
 #import "BITableAdditionalViewBase.h"
 #import "BIDatasourceFeedCollectionView.h"
+#import "UIScrollView+SVInfiniteScrolling.h"
 
 @interface BICollectionView () <UICollectionViewDelegate, BITableAdditionalViewBaseListener>
 
-@property (nonatomic, strong, nonnull,  readwrite) BIActivityIndicatorContainerView *activityIndicatorContainer;
 @property (nonatomic, strong, nullable, readwrite) _BIScrollViewProxy *proxyDelegate;
 @property (nonatomic, weak, nullable,   readwrite) BIDatasourceCollectionView *datasource;
 @property (nonatomic, weak, nullable,   readwrite) BIHandlerCollectionView *handler;
@@ -112,8 +112,13 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 }
 
 - (void)triggerInfiniteScrolling {
-    if (self.infiniteScrollingCallback) {
-        self.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+    [self triggerInfiniteScrollingNotifyListeners:YES];
+}
+
+- (void)triggerInfiniteScrollingNotifyListeners:(BOOL)notifyListeners {
+    self.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+    [self manualTriggerInfiniteScrolling];
+    if (notifyListeners && self.infiniteScrollingCallback) {
         self.infiniteScrollingCallback();
     }
 }
@@ -134,22 +139,11 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 
 - (void)handleFetchBatchForTargetOffset:(CGPoint)targetOffset {
     if (BIDisplayShouldFetchBatch([self BI_scrollDirection], self.bounds, self.contentSize, targetOffset, self.infiniteScrollingLeadingScreens)) {
-        if (self.infiniteScrollingCallback) {
-            self.infiniteScrollingState = BIInfiniteScrollingStateLoading;
-            self.infiniteScrollingCallback();
-        }
+        [self triggerInfiniteScrolling];
     }
 }
 
 #pragma mark - Getters and Setters
-
-- (BIActivityIndicatorContainerView *)activityIndicatorContainer {
-    if (!_activityIndicatorContainer) {
-        CGRect frame = CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), kBIActivityIndicatorViewHeight);
-        _activityIndicatorContainer = [[BIActivityIndicatorContainerView alloc] initWithFrame:frame];
-    }
-    return _activityIndicatorContainer;
-}
 
 - (void)setPullToRefreshEnabled:(BOOL)pullToRefreshEnabled {
     _pullToRefreshEnabled = pullToRefreshEnabled;
@@ -163,18 +157,16 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     }
 }
 
+- (void)setInfiniteScrollingEnabled:(BOOL)infiniteScrollingEnabled {
+    _infiniteScrollingEnabled = infiniteScrollingEnabled;
+    [self BI_configureInfiniteScrolling];
+}
+
 #pragma mark - Private properties methods
 
 - (void)setBI_infiniteScrollingEnabled:(BOOL)BI_infiniteScrollingEnabled {
     _BI_infiniteScrollingEnabled = BI_infiniteScrollingEnabled;
-    // TODO: fix foter activity view
-    if (!_BI_infiniteScrollingEnabled) {
-//        self.tableFooterView = nil;
-    } else if (self.isInfiniteScrollingEnabled &&
-               !self.infiniteScrollingActivityIndicatorContainer.superview ) {
-//        [self BI_createInfiniteScrollingActivityIndicatorContainer];
-//        self.tableFooterView = self.infiniteScrollingActivityIndicatorContainer;
-    }
+    [self BI_configureInfiniteScrolling];
 }
 
 - (void)setBI_pullToRefreshEnabled:(BOOL)BI_pullToRefreshEnabled {
@@ -200,11 +192,7 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 #pragma mark - Private Methods
 
 - (void)BI_startInfiniteScrolling {
-    if (!self.infiniteScrollingActivityIndicatorContainer.superview) {
-        // TODO: fix foter activity view
-//        [self BI_createInfiniteScrollingActivityIndicatorContainer];
-//        self.tableFooterView = self.infiniteScrollingActivityIndicatorContainer;
-    }
+    [self triggerInfiniteScrolling];
 }
 
 - (BIScrollDirection)BI_scrollDirection {
@@ -221,6 +209,7 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 - (void)BI_setupCollectionView {
     self.proxyDelegate = [[_BIScrollViewProxy alloc] initWithTarget:nil interceptor:self];
     [super setDelegate:(id<UICollectionViewDelegate>)self.proxyDelegate];
+    self.BI_infiniteScrollingEnabled = YES;
     self.infiniteScrollingEnabled = NO;
     self.pullToRefreshEnabled = YES;
     self.infiniteScrollingLeadingScreens = kBIDefaultInfiniteScrollingLeadingScreens;
@@ -230,6 +219,16 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     if (!_pullToRefreshControl) {
         _pullToRefreshControl = [UIRefreshControl new];
         [_pullToRefreshControl addTarget:self action:@selector(BI_handlePullToRefreshAction:) forControlEvents:UIControlEventValueChanged];
+    }
+}
+
+- (void)BI_configureInfiniteScrolling {
+    if ((self.BI_infiniteScrollingEnabled && self.isInfiniteScrollingEnabled)) {
+        self.showsInfiniteScrolling = YES;
+        [self addInfiniteScrollingWithActionHandler:^{
+        }];
+    } else {
+        self.showsInfiniteScrolling = NO;
     }
 }
 

@@ -16,7 +16,6 @@
 @interface BIDatasourceFeedCollectionView ()
 
 @property (nonatomic, strong, nullable, readwrite) BIBatchRequest *currentBatchRequest;
-@property (nonatomic, copy) NSString *footerViewIdentifier;
 
 @end
 
@@ -41,7 +40,6 @@
 
 - (void)load {
     [super load];
-    [self.collectionView registerClass:[BICollectionViewActivityIndicatorReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:self.footerViewIdentifier];
     __weak typeof(self) weakself = self;
     [self.collectionView setInfiniteScrollingCallback:^{
         BIBatchRequest *batch = [weakself createNextBatch];
@@ -49,7 +47,7 @@
         [weakself fetchBatchRequest:batch];
     }];
     [self.collectionView setPullToRefreshCallback:^{
-        BIBatchRequest *batch = [weakself createNextBatch];
+        BIBatchRequest *batch = [weakself createPullToRefreshBatchRequest];
         batch.insertPosition = BIBatchInsertPositionTop;
         [weakself fetchBatchRequest:batch];
     }];
@@ -209,6 +207,7 @@
         self.collectionView.BI_pullToRefreshEnabled = YES;
     }
     if (batchResponse.batchRequest.isPullToRefreshRequest) {
+        [self.collectionView.pullToRefreshControl endRefreshing];
         self.collectionView.BI_infiniteScrollingEnabled = YES;
     }
     
@@ -286,26 +285,6 @@
 - (void)setFetchingState:(BIDatasourceCollectionViewFetchingState)fetchingState {
     NSAssert(_fetchingState ==  BIDatasourceCollectionViewFetchingStateNone || fetchingState ==  BIDatasourceCollectionViewFetchingStateNone, @"Trying to change the fetching state while another operation is in progress");
     _fetchingState = fetchingState;
-}
-
-#pragma mark - Properties
-
-- (NSString *)footerViewIdentifier {
-    if (!_footerViewIdentifier) {
-        _footerViewIdentifier = [NSUUID UUID].UUIDString;
-    }
-    return _footerViewIdentifier;
-}
-
-#pragma mark - UICollectionViewDatasource Methods
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
-        BICollectionViewActivityIndicatorReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:self.footerViewIdentifier forIndexPath:indexPath];
-        footerView.hidden = NO;
-        return footerView;
-    }
-    return nil;
 }
 
 #pragma mark - Private methods
