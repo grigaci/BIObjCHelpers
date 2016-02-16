@@ -11,6 +11,7 @@
 
 #import <BIObjCHelpers/BICollectionView.h>
 #import <BIObjCHelpers/BIHandlerCollectionView.h>
+#import <BIObjCHelpers/UIScrollView+InfiniteScroll.h>
 
 @interface BIExampleFeedCollectionViewController ()
 

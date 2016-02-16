@@ -9,7 +9,6 @@
 #import "BIScrollDetails.h"
 #import <UIKit/UIKit.h>
 
-@class BIActivityIndicatorContainerView;
 @class BIDatasourceCollectionView;
 @class BIHandlerCollectionView;
 @class BITableAdditionalViewBase;
@@ -59,12 +58,6 @@
  @brief Represents the number of screens left to scroll before triggering the fetch of the next batch. Default is 0.5f (half of screen)
  */
 @property (nonatomic, assign) CGFloat infiniteScrollingLeadingScreens;
-
-/*!
- @brief Activity indicator that is displayed on the collectionView footer while a new batch is fetched.
- Used as collection footer view. Override it for further customization.
- */
-@property (nonatomic, strong, nullable, readonly) BIActivityIndicatorContainerView *infiniteScrollingActivityIndicatorContainer;
 
 /*!
  @brief The current state of the infinite scrolling view.

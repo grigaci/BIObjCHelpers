@@ -14,6 +14,7 @@
 		433DEB501C4D1A74002296AE /* BITableAdditionalLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 433DEB4F1C4D1A74002296AE /* BITableAdditionalLoadingView.m */; };
 		433DEB531C4D1AA4002296AE /* BITableAdditionalNoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 433DEB521C4D1AA4002296AE /* BITableAdditionalNoContentView.m */; };
 		435D59C01B622E8A00ECA859 /* BIMockHandlerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */; };
+		43A7D0281C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A7D0271C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.m */; };
 		43BE6C311B56882B001F0A00 /* libBIObjCHelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE6C251B56882B001F0A00 /* libBIObjCHelpers.a */; };
 		43BE6C731B5689CA001F0A00 /* NSBundle+BIExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6C461B5689C9001F0A00 /* NSBundle+BIExtra.m */; };
 		43BE6C741B5689CA001F0A00 /* NSDate+BIAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6C491B5689CA001F0A00 /* NSDate+BIAttributedString.m */; };
@@ -108,6 +109,9 @@
 		4355334F1B81B87F0052A128 /* _BITableView+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "_BITableView+Internal.h"; path = "Views/TableView/_BITableView+Internal.h"; sourceTree = "<group>"; };
 		435D59BE1B622E8A00ECA859 /* BIMockHandlerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIMockHandlerTableView.h; path = BIHandlerTableView/BIMockHandlerTableView.h; sourceTree = "<group>"; };
 		435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIMockHandlerTableView.m; path = BIHandlerTableView/BIMockHandlerTableView.m; sourceTree = "<group>"; };
+		43A7D0251C735C1B007C8CC0 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		43A7D0261C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
+		43A7D0271C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+InfiniteScroll.m"; sourceTree = "<group>"; };
 		43BE6C251B56882B001F0A00 /* libBIObjCHelpers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBIObjCHelpers.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BE6C301B56882B001F0A00 /* BIObjCHelpersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BE6C361B56882B001F0A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
@@ -266,6 +270,24 @@
 			name = BIHandlerTableView;
 			sourceTree = "<group>";
 		};
+		43A7D01E1C7349DA007C8CC0 /* ExternalLibs */ = {
+			isa = PBXGroup;
+			children = (
+				43A7D0241C735C1B007C8CC0 /* UIScrollView+InfiniteScroll */,
+			);
+			path = ExternalLibs;
+			sourceTree = "<group>";
+		};
+		43A7D0241C735C1B007C8CC0 /* UIScrollView+InfiniteScroll */ = {
+			isa = PBXGroup;
+			children = (
+				43A7D0251C735C1B007C8CC0 /* LICENSE.txt */,
+				43A7D0261C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.h */,
+				43A7D0271C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.m */,
+			);
+			path = "UIScrollView+InfiniteScroll";
+			sourceTree = "<group>";
+		};
 		43BE6C1C1B56882B001F0A00 = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +321,7 @@
 				43BE6C661B5689CA001F0A00 /* Lifecycle */,
 				43BE6C691B5689CA001F0A00 /* OperationQueue */,
 				43BE6C6E1B5689CA001F0A00 /* Starters */,
+				43A7D01E1C7349DA007C8CC0 /* ExternalLibs */,
 			);
 			path = BIObjCHelpers;
 			sourceTree = "<group>";
@@ -1034,6 +1057,7 @@
 				433DEB501C4D1A74002296AE /* BITableAdditionalLoadingView.m in Sources */,
 				91E59B871B5840CD0034824F /* BITableView.m in Sources */,
 				43BE6C7D1B5689CA001F0A00 /* BIHandlerTableView.m in Sources */,
+				43A7D0281C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
