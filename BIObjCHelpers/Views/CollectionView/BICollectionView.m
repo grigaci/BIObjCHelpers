@@ -12,7 +12,7 @@
 #import "BIBatchHelpers.h"
 #import "BITableAdditionalViewBase.h"
 #import "BIDatasourceFeedCollectionView.h"
-#import "UIScrollView+SVInfiniteScrolling.h"
+#import "UIScrollView+InfiniteScroll.h"
 
 @interface BICollectionView () <UICollectionViewDelegate, BITableAdditionalViewBaseListener>
 
@@ -117,7 +117,6 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 
 - (void)triggerInfiniteScrollingNotifyListeners:(BOOL)notifyListeners {
     self.infiniteScrollingState = BIInfiniteScrollingStateLoading;
-    [self manualTriggerInfiniteScrolling];
     if (notifyListeners && self.infiniteScrollingCallback) {
         self.infiniteScrollingCallback();
     }
@@ -160,6 +159,17 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 - (void)setInfiniteScrollingEnabled:(BOOL)infiniteScrollingEnabled {
     _infiniteScrollingEnabled = infiniteScrollingEnabled;
     [self BI_configureInfiniteScrolling];
+}
+
+- (void)setInfiniteScrollingState:(BIInfiniteScrollingState)infiniteScrollingState {
+    _infiniteScrollingState = infiniteScrollingState;
+    switch (_infiniteScrollingState) {
+        case BIInfiniteScrollingStateStopped:
+            [self finishInfiniteScroll];
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - Private properties methods
@@ -224,11 +234,11 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
 
 - (void)BI_configureInfiniteScrolling {
     if ((self.BI_infiniteScrollingEnabled && self.isInfiniteScrollingEnabled)) {
-        self.showsInfiniteScrolling = YES;
-        [self addInfiniteScrollingWithActionHandler:^{
+        [self addInfiniteScrollWithHandler:^(__kindof UIScrollView * _Nonnull scrollView) {
+            
         }];
     } else {
-        self.showsInfiniteScrolling = NO;
+        [self removeInfiniteScroll];
     }
 }
 

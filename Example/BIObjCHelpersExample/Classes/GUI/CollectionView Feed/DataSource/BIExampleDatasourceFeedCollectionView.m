@@ -52,7 +52,7 @@ const CGFloat kExampleDatasourceFeedCollectionViewMaxElements = 30;
         return;
     }
     [super fetchBatchRequest:batchRequest];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         BIMutableBatchResponse *batchResponse = [[BIMutableBatchResponse alloc] initWithBatchRequest:batchRequest];
         [batchResponse createIndexPaths:batchRequest.batchSize countSectionItems:self.countItems];
         self.countItems += batchRequest.batchSize;

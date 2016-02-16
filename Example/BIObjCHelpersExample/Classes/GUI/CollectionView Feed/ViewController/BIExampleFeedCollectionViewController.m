@@ -11,7 +11,7 @@
 
 #import <BIObjCHelpers/BICollectionView.h>
 #import <BIObjCHelpers/BIHandlerCollectionView.h>
-#import <BIObjCHelpers/UIScrollView+SVInfiniteScrolling.h>
+#import <BIObjCHelpers/UIScrollView+InfiniteScroll.h>
 
 @interface BIExampleFeedCollectionViewController ()
 
@@ -29,7 +29,6 @@
 
     self.biCollectionView.infiniteScrollingEnabled = YES;
     self.biCollectionView.pullToRefreshEnabled = YES;
-    self.biCollectionView.infiniteScrollingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
 
     [self.dataSource load];
     [self.handler load];
