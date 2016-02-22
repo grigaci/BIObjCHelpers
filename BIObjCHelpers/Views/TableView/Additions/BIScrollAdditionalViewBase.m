@@ -1,23 +1,23 @@
 //
-//  BITableAdditionalViewBase.m
+//  BIScrollAdditionalViewBase.m
 //  BIObjCHelpers
 //
 //  Created by Bogdan Iusco on 18/01/16.
 //  Copyright © 2016 iGama Apps. All rights reserved.
 //
 
-#import "BITableAdditionalViewBase.h"
+#import "BIScrollAdditionalViewBase.h"
 
-@interface BITableAdditionalViewBase ()
+@interface BIScrollAdditionalViewBase ()
 
 @property (nonatomic, strong, nullable, readwrite) UITapGestureRecognizer *tapGestureRecognizer;
-@property (nonatomic, strong, nonnull, readwrite) NSHashTable<BITableAdditionalViewBaseListener> *contentViewListeners;
+@property (nonatomic, strong, nonnull, readwrite) NSHashTable<BIScrollAdditionalViewBaseListener> *contentViewListeners;
 @property (nonatomic, assign, readwrite) BITableAdditionalTypeView type;
 
 @end
 
 
-@implementation BITableAdditionalViewBase
+@implementation BIScrollAdditionalViewBase
 
 #pragma mark - Init methods
 
@@ -43,11 +43,11 @@
     [self addGestureRecognizer:self.tapGestureRecognizer];
 }
 
-- (void)registerAdditionalViewListeners:(nonnull id<BITableAdditionalViewBaseListener>)listener {
+- (void)registerAdditionalViewListeners:(nonnull id<BIScrollAdditionalViewBaseListener>)listener {
     [self.contentViewListeners addObject:listener];
 }
 
-- (void)unregisterAdditionalViewListeners:(nonnull id<BITableAdditionalViewBaseListener>)listener {
+- (void)unregisterAdditionalViewListeners:(nonnull id<BIScrollAdditionalViewBaseListener>)listener {
     [self.contentViewListeners removeObject:listener];
 }
 
@@ -56,7 +56,7 @@
         self.didTapContentViewCallback();
     }
     
-    for (id<BITableAdditionalViewBaseListener> listener in [self.contentViewListeners copy]) {
+    for (id<BIScrollAdditionalViewBaseListener> listener in [self.contentViewListeners copy]) {
         if ([listener respondsToSelector:@selector(didTapTableAdditionalView:)]) {
             [listener didTapTableAdditionalView:self];
         }
@@ -76,9 +76,9 @@
     return _tapGestureRecognizer;
 }
 
-- (NSHashTable<BITableAdditionalViewBaseListener> *)contentViewListeners {
+- (NSHashTable<BIScrollAdditionalViewBaseListener> *)contentViewListeners {
     if (!_contentViewListeners) {
-        _contentViewListeners = (NSHashTable<BITableAdditionalViewBaseListener> *)[NSHashTable weakObjectsHashTable];
+        _contentViewListeners = (NSHashTable<BIScrollAdditionalViewBaseListener> *)[NSHashTable weakObjectsHashTable];
     }
     return _contentViewListeners;
 }

@@ -11,7 +11,7 @@
 #import "BIBatchResponse.h"
 #import "BITableViewCell.h"
 #import "_BITableView+Internal.h"
-#import "BITableAdditionalViewBase.h"
+#import "BIScrollAdditionalViewBase.h"
 
 @interface BIDatasourceFeedTableView ()
 
