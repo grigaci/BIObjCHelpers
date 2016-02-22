@@ -25,17 +25,6 @@
 @property (nonatomic, assign, getter=BI_isPullToRefreshEnabled) BOOL BI_pullToRefreshEnabled;
 @property (nonatomic, assign, getter=BI_isInfiniteScrollingEnabled) BOOL BI_infiniteScrollingEnabled;
 
-// AdditionalViews Category
-
-@property (nonatomic, strong, nullable, readwrite) BITableAdditionalViewBase *additionalNoContentView;
-@property (nonatomic, strong, nullable, readwrite) BITableAdditionalViewBase *additionalErrorNoContentView;
-@property (nonatomic, strong, nullable, readwrite) BITableAdditionalViewBase *additionalLoadingContentView;
-@property (nonatomic, strong, nullable, readwrite) BITableAdditionalViewBase *visibleAdditionalView;
-
-@property (nonatomic, copy, nullable) BITableAdditionalViewBase * _Nullable (^createAdditionalNoContentViewCallback)(void);
-@property (nonatomic, copy, nullable) BITableAdditionalViewBase * _Nullable (^createAdditionalErrorNoContentViewCallback)(void);
-@property (nonatomic, copy, nullable) BITableAdditionalViewBase * _Nullable (^createAdditionalLoadingContentViewCallback)(void);
-
 @end
 
 @implementation BITableView

@@ -58,6 +58,7 @@ static void *kBIScrollViewAdditionalLoadingViewCallbackKey;
 - (void)addAdditionalNoContentView {
     BITableAdditionalViewBase *noContentView = [self createAdditionalNoContentView];
     if (noContentView) {
+        [noContentView registerAdditionalViewListeners:self];
         [self addGeneralAdditionalView:noContentView];
     }
 }
