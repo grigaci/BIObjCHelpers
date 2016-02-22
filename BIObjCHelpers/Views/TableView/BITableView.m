@@ -212,6 +212,27 @@
     }
 }
 
+#pragma mark - BITableAdditionalViewBaseListener methods
+
+- (void)didTapTableAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
+    if ([self.datasource isKindOfClass:[BIDatasourceFeedTableView class]]) {
+        switch (additionalView.type) {
+            case BITableAdditionalTypeErrorNoContentView: {
+                BIDatasourceFeedTableView *feedDatasource = (BIDatasourceFeedTableView *)self.datasource;
+                [feedDatasource triggerErrorNoContentTapToRetryRequest];
+                break;
+            }
+            case BITableAdditionalTypeNoContentView: {
+                BIDatasourceFeedTableView *feedDatasource = (BIDatasourceFeedTableView *)self.datasource;
+                [feedDatasource triggerNoContentTapToRetryRequest];
+                break;
+            }
+            default:
+                break;
+        }
+    }
+}
+
 #pragma mark - Action methods
 
 - (void)BI_handlePullToRefreshAction:(UIRefreshControl *)sender {
@@ -276,110 +297,6 @@
         totalNumberOfRows += [self.dataSource tableView:self numberOfRowsInSection:sectionIndex];
     }
     return totalNumberOfRows;
-}
-
-@end
-
-
-@implementation BITableView (AdditionalViews)
-
-#pragma mark - BITableAdditionalViewBaseListener methods
-
-- (void)didTapTableAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
-    if ([self.datasource isKindOfClass:[BIDatasourceFeedTableView class]]) {
-        switch (additionalView.type) {
-            case BITableAdditionalTypeErrorNoContentView: {
-                BIDatasourceFeedTableView *feedDatasource = (BIDatasourceFeedTableView *)self.datasource;
-                [feedDatasource triggerErrorNoContentTapToRetryRequest];
-                break;
-            }
-            case BITableAdditionalTypeNoContentView: {
-                BIDatasourceFeedTableView *feedDatasource = (BIDatasourceFeedTableView *)self.datasource;
-                [feedDatasource triggerNoContentTapToRetryRequest];
-                break;
-            }
-            default:
-                break;
-        }
-    }
-}
-
-#pragma mark - Public methods
-
-- (nullable BITableAdditionalViewBase *)createAdditionalNoContentView {
-    if (self.createAdditionalNoContentViewCallback) {
-        return self.createAdditionalNoContentViewCallback();
-    }
-    return nil;
-}
-
-- (nullable BITableAdditionalViewBase *)createAdditionalErrorNoContentView {
-    if (self.createAdditionalErrorNoContentViewCallback) {
-        return self.createAdditionalErrorNoContentViewCallback();
-    }
-    return nil;
-}
-
-- (nullable BITableAdditionalViewBase *)createAdditionalLoadingContentView {
-    if (self.createAdditionalLoadingContentViewCallback) {
-        return self.createAdditionalLoadingContentViewCallback();
-    }
-    return nil;
-}
-
-- (void)addGeneralAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
-    if (self.visibleAdditionalView) {
-        [self.visibleAdditionalView removeFromSuperview];
-    }
-    
-    self.visibleAdditionalView = additionalView;
-    [self layoutAdditionalView];
-    [self addSubview:self.visibleAdditionalView];
-    self.scrollEnabled = NO;
-}
-
-- (void)addAdditionalNoContentView {
-    BITableAdditionalViewBase *noContentView = [self createAdditionalNoContentView];
-    if (noContentView) {
-        [noContentView registerAdditionalViewListeners:self];
-        [self addGeneralAdditionalView:noContentView];
-    }
-}
-
-- (void)addAdditionalErrorNoContentView {
-    BITableAdditionalViewBase *errorNoContentView = [self createAdditionalErrorNoContentView];
-    if (errorNoContentView) {
-        [errorNoContentView registerAdditionalViewListeners:self];
-        [self addGeneralAdditionalView:errorNoContentView];
-    }
-}
-
-- (void)addAdditionalLoadingContentView {
-    BITableAdditionalViewBase *loadingView = [self createAdditionalLoadingContentView];
-    if (loadingView) {
-        [self addGeneralAdditionalView:loadingView];
-    }
-}
-
-- (void)removeGeneralAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
-    [additionalView removeFromSuperview];
-    [additionalView unregisterAdditionalViewListeners:self];
-    if (self.visibleAdditionalView == additionalView) {
-        self.visibleAdditionalView = nil;
-    }
-    self.scrollEnabled = YES;
-}
-
-- (void)removeVisibleAdditionalView {
-    if (self.visibleAdditionalView) {
-        [self removeGeneralAdditionalView:self.visibleAdditionalView];
-    }
-}
-
-- (void)layoutAdditionalView {
-    if (self.visibleAdditionalView) {
-        self.visibleAdditionalView.frame = self.bounds;
-    }
 }
 
 @end

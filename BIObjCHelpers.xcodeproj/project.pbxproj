@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4304A9B61B70D892009739B3 /* BIDatasourceTableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */; };
+		432001981C7B26C0006A8BB7 /* UIScrollView+BIBatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 432001971C7B26C0006A8BB7 /* UIScrollView+BIBatching.m */; };
 		43329F6F1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */; };
 		433DEB4A1C4D1A16002296AE /* BITableAdditionalViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 433DEB491C4D1A16002296AE /* BITableAdditionalViewBase.m */; };
 		433DEB4D1C4D1A52002296AE /* BITableAdditionalErrorNoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 433DEB4C1C4D1A52002296AE /* BITableAdditionalErrorNoContentView.m */; };
@@ -97,6 +98,8 @@
 
 /* Begin PBXFileReference section */
 		4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceTableViewTestCase.m; sourceTree = "<group>"; };
+		432001961C7B26C0006A8BB7 /* UIScrollView+BIBatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+BIBatching.h"; path = "Views/ScrollView/UIScrollView+BIBatching.h"; sourceTree = "<group>"; };
+		432001971C7B26C0006A8BB7 /* UIScrollView+BIBatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+BIBatching.m"; path = "Views/ScrollView/UIScrollView+BIBatching.m"; sourceTree = "<group>"; };
 		43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceBaseTestCase.m; sourceTree = "<group>"; };
 		433DEB481C4D1A16002296AE /* BITableAdditionalViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BITableAdditionalViewBase.h; path = Views/TableView/Additions/BITableAdditionalViewBase.h; sourceTree = "<group>"; };
 		433DEB491C4D1A16002296AE /* BITableAdditionalViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableAdditionalViewBase.m; path = Views/TableView/Additions/BITableAdditionalViewBase.m; sourceTree = "<group>"; };
@@ -244,6 +247,15 @@
 				B17EECE85027D221447B728D /* Pods-BIObjCHelpersTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		432001951C7B2697006A8BB7 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				432001961C7B26C0006A8BB7 /* UIScrollView+BIBatching.h */,
+				432001971C7B26C0006A8BB7 /* UIScrollView+BIBatching.m */,
+			);
+			name = ScrollView;
 			sourceTree = "<group>";
 		};
 		433DEB471C4D19DB002296AE /* Additions */ = {
@@ -785,6 +797,7 @@
 		914D2CAF1B5792CD009A9B4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				432001951C7B2697006A8BB7 /* ScrollView */,
 				91E59B7F1B5840970034824F /* TableView */,
 				91614A7F1B94775B00D00EB2 /* CollectionView */,
 			);
@@ -1041,6 +1054,7 @@
 				43F23F7F1B9EFC0D00CEAD8C /* BIBatchHelpers.m in Sources */,
 				43BE6C7A1B5689CA001F0A00 /* BIDatasourceFetchedTableView.m in Sources */,
 				91614A831B94790400D00EB2 /* _BIScrollViewProxy.m in Sources */,
+				432001981C7B26C0006A8BB7 /* UIScrollView+BIBatching.m in Sources */,
 				43BE6C791B5689CA001F0A00 /* BIDatasourceFeedTableView.m in Sources */,
 				91614A951B94830600D00EB2 /* BIHandlerCollectionView.m in Sources */,
 				91E517F21B59208F000B51AF /* BITableViewCell.m in Sources */,

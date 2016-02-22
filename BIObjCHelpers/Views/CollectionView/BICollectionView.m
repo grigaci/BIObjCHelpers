@@ -14,7 +14,7 @@
 #import "BIDatasourceFeedCollectionView.h"
 #import "UIScrollView+InfiniteScroll.h"
 
-@interface BICollectionView () <UICollectionViewDelegate, BITableAdditionalViewBaseListener>
+@interface BICollectionView () <UICollectionViewDelegate>
 
 @property (nonatomic, strong, nullable, readwrite) _BIScrollViewProxy *proxyDelegate;
 @property (nonatomic, weak, nullable,   readwrite) BIDatasourceCollectionView *datasource;
@@ -23,17 +23,6 @@
 
 @property (nonatomic, assign, getter=BI_isPullToRefreshEnabled) BOOL BI_pullToRefreshEnabled;
 @property (nonatomic, assign, getter=BI_isInfiniteScrollingEnabled) BOOL BI_infiniteScrollingEnabled;
-
-// AdditionalViews Category
-
-@property (nonatomic, strong, nullable, readwrite) BITableAdditionalViewBase *additionalNoContentView;
-@property (nonatomic, strong, nullable, readwrite) BITableAdditionalViewBase *additionalErrorNoContentView;
-@property (nonatomic, strong, nullable, readwrite) BITableAdditionalViewBase *additionalLoadingContentView;
-@property (nonatomic, strong, nullable, readwrite) BITableAdditionalViewBase *visibleAdditionalView;
-
-@property (nonatomic, copy, nullable) BITableAdditionalViewBase * _Nullable (^createAdditionalNoContentViewCallback)(void);
-@property (nonatomic, copy, nullable) BITableAdditionalViewBase * _Nullable (^createAdditionalErrorNoContentViewCallback)(void);
-@property (nonatomic, copy, nullable) BITableAdditionalViewBase * _Nullable (^createAdditionalLoadingContentViewCallback)(void);
 
 @end
 
@@ -172,6 +161,24 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     }
 }
 
+#pragma mark - BITableAdditionalViewBaseListener methods
+
+- (void)didTapTableAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
+    if ([self.datasource isKindOfClass:[BIDatasourceFeedCollectionView class]]) {
+        switch (additionalView.type) {
+            case BITableAdditionalTypeErrorNoContentView: {
+                BIDatasourceFeedCollectionView *feedDatasource = (BIDatasourceFeedCollectionView *)self.datasource;
+                [feedDatasource triggerErrorNoContentTapToRetryRequest];
+                break;
+            }
+            default:
+                break;
+        }
+    }
+}
+
+#pragma mark - UIScrollView+BIBatching methods
+
 #pragma mark - Private properties methods
 
 - (void)setBI_infiniteScrollingEnabled:(BOOL)BI_infiniteScrollingEnabled {
@@ -239,103 +246,6 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
         }];
     } else {
         [self removeInfiniteScroll];
-    }
-}
-
-@end
-
-@implementation BICollectionView (AdditionalViews)
-
-#pragma mark - BITableAdditionalViewBaseListener methods
-
-- (void)didTapTableAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
-    if ([self.datasource isKindOfClass:[BIDatasourceFeedCollectionView class]]) {
-        switch (additionalView.type) {
-            case BITableAdditionalTypeErrorNoContentView: {
-                BIDatasourceFeedCollectionView *feedDatasource = (BIDatasourceFeedCollectionView *)self.datasource;
-                [feedDatasource triggerErrorNoContentTapToRetryRequest];
-                break;
-            }
-            default:
-                break;
-        }
-    }
-}
-
-#pragma mark - Public methods
-
-- (nullable BITableAdditionalViewBase *)createAdditionalNoContentView {
-    if (self.createAdditionalNoContentViewCallback) {
-        return self.createAdditionalNoContentViewCallback();
-    }
-    return nil;
-}
-
-- (nullable BITableAdditionalViewBase *)createAdditionalErrorNoContentView {
-    if (self.createAdditionalErrorNoContentViewCallback) {
-        return self.createAdditionalErrorNoContentViewCallback();
-    }
-    return nil;
-}
-
-- (nullable BITableAdditionalViewBase *)createAdditionalLoadingContentView {
-    if (self.createAdditionalLoadingContentViewCallback) {
-        return self.createAdditionalLoadingContentViewCallback();
-    }
-    return nil;
-}
-
-- (void)addGeneralAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
-    if (self.visibleAdditionalView) {
-        [self.visibleAdditionalView removeFromSuperview];
-    }
-    
-    self.visibleAdditionalView = additionalView;
-    [self layoutAdditionalView];
-    [self addSubview:self.visibleAdditionalView];
-    self.scrollEnabled = NO;
-}
-
-- (void)addAdditionalNoContentView {
-    BITableAdditionalViewBase *noContentView = [self createAdditionalNoContentView];
-    if (noContentView) {
-        [self addGeneralAdditionalView:noContentView];
-    }
-}
-
-- (void)addAdditionalErrorNoContentView {
-    BITableAdditionalViewBase *errorNoContentView = [self createAdditionalErrorNoContentView];
-    if (errorNoContentView) {
-        [errorNoContentView registerAdditionalViewListeners:self];
-        [self addGeneralAdditionalView:errorNoContentView];
-    }
-}
-
-- (void)addAdditionalLoadingContentView {
-    BITableAdditionalViewBase *loadingView = [self createAdditionalLoadingContentView];
-    if (loadingView) {
-        [self addGeneralAdditionalView:loadingView];
-    }
-}
-
-- (void)removeGeneralAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
-    [additionalView removeFromSuperview];
-    [additionalView unregisterAdditionalViewListeners:self];
-    if (self.visibleAdditionalView == additionalView) {
-        self.visibleAdditionalView = nil;
-    }
-    self.scrollEnabled = YES;
-}
-
-- (void)removeVisibleAdditionalView {
-    if (self.visibleAdditionalView) {
-        [self removeGeneralAdditionalView:self.visibleAdditionalView];
-    }
-}
-
-- (void)layoutAdditionalView {
-    if (self.visibleAdditionalView) {
-        self.visibleAdditionalView.frame = self.bounds;
     }
 }
 

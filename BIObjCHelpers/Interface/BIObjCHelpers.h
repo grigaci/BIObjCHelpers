@@ -20,6 +20,7 @@
 #import "BITableAdditionalNoContentView.h"
 #import "BITableAdditionalErrorNoContentView.h"
 #import "BICollectionView.h"
+#import "UIScrollView+BIBatching.h"
 
 // Datasources
 #import "BIDatasourceTableView.h"
