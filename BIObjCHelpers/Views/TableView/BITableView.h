@@ -14,7 +14,7 @@
 @class BIActivityIndicatorContainerView;
 @class BIDatasourceTableView;
 @class BIHandlerTableView;
-@class BITableAdditionalViewBase;
+@class BIScrollAdditionalViewBase;
 
 /*!
  @brief Table view with infinite scrolling support.

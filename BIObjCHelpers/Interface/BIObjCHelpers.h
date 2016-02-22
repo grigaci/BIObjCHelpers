@@ -15,10 +15,10 @@
 
 // Views
 #import "BITableView.h"
-#import "BITableAdditionalViewBase.h"
-#import "BITableAdditionalLoadingView.h"
-#import "BITableAdditionalNoContentView.h"
-#import "BITableAdditionalErrorNoContentView.h"
+#import "BIScrollAdditionalViewBase.h"
+#import "BIScrollAdditionalLoadingView.h"
+#import "BIScrollAdditionalNoContentView.h"
+#import "BIScrollAdditionalErrorNoContentView.h"
 #import "BICollectionView.h"
 #import "UIScrollView+BIBatching.h"
 

@@ -10,10 +10,10 @@
 #import "BIActivityIndicatorContainerView.h"
 #import "_BIScrollViewProxy.h"
 #import "BIBatchHelpers.h"
-#import "BITableAdditionalViewBase.h"
+#import "BIScrollAdditionalViewBase.h"
 #import "BIDatasourceFeedTableView.h"
 
-@interface BITableView () <UITableViewDelegate, BITableAdditionalViewBaseListener>
+@interface BITableView () <UITableViewDelegate, BIScrollAdditionalViewBaseListener>
 
 @property (nonatomic, strong, nullable,  readwrite) BIActivityIndicatorContainerView *infiniteScrollingActivityIndicatorContainer;
 @property (nonatomic, strong, nullable, readwrite) _BIScrollViewProxy *proxyDelegate;
@@ -201,9 +201,9 @@
     }
 }
 
-#pragma mark - BITableAdditionalViewBaseListener methods
+#pragma mark - BIScrollAdditionalViewBaseListener methods
 
-- (void)didTapTableAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
+- (void)didTapTableAdditionalView:(nonnull BIScrollAdditionalViewBase *)additionalView {
     if ([self.datasource isKindOfClass:[BIDatasourceFeedTableView class]]) {
         switch (additionalView.type) {
             case BITableAdditionalTypeErrorNoContentView: {

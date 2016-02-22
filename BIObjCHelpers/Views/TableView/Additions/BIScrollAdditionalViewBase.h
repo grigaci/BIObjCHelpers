@@ -1,5 +1,5 @@
 //
-//  BITableAdditionalViewBase.h
+//  BIScrollAdditionalViewBase.h
 //  BIObjCHelpers
 //
 //  Created by Bogdan Iusco on 18/01/16.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class BITableAdditionalViewBase;
+@class BIScrollAdditionalViewBase;
 
 /*!
  * @brief Listener methods for a base table additional view.
  */
-@protocol BITableAdditionalViewBaseListener <NSObject>
+@protocol BIScrollAdditionalViewBaseListener <NSObject>
 
 @optional
 
@@ -21,7 +21,7 @@
  * @brief Notify listener that user has tapped the additional view.
  * @param additionalView Tapped additional view.
  */
-- (void)didTapTableAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView;
+- (void)didTapTableAdditionalView:(nonnull BIScrollAdditionalViewBase *)additionalView;
 
 @end
 
@@ -45,10 +45,10 @@ typedef NS_ENUM(NSUInteger, BITableAdditionalTypeView) {
 };
 
 /*!
- * @brief Base class for additional views for a table view.
+ * @brief Base class for additional views for a scroll view.
  * It has a tap gesture used in general for reloading.
  */
-@interface BITableAdditionalViewBase : UIView <UIGestureRecognizerDelegate>
+@interface BIScrollAdditionalViewBase : UIView <UIGestureRecognizerDelegate>
 
 /*!
  * @brief Simple tap gesture.
@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, BITableAdditionalTypeView) {
 /*!
  * @brief Its listeners.
  */
-@property (nonatomic, strong, nonnull, readonly) NSHashTable<BITableAdditionalViewBaseListener> *contentViewListeners;
+@property (nonatomic, strong, nonnull, readonly) NSHashTable<BIScrollAdditionalViewBaseListener> *contentViewListeners;
 
 /*!
  * @brief Additional view's type.
@@ -79,13 +79,13 @@ typedef NS_ENUM(NSUInteger, BITableAdditionalTypeView) {
  * @brief Register a listener.
  * @param listener Lister to register.
  */
-- (void)registerAdditionalViewListeners:(nonnull id<BITableAdditionalViewBaseListener>)listener;
+- (void)registerAdditionalViewListeners:(nonnull id<BIScrollAdditionalViewBaseListener>)listener;
 
 /*!
  * @brief Unregister a listener.
  * @param listener Lister to unregister.
  */
-- (void)unregisterAdditionalViewListeners:(nonnull id<BITableAdditionalViewBaseListener>)listener;
+- (void)unregisterAdditionalViewListeners:(nonnull id<BIScrollAdditionalViewBaseListener>)listener;
 
 /*!
  * @brief Called by the tap gesture. Notifies listeners.

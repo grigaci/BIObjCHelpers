@@ -12,7 +12,7 @@
 
 @class BIDatasourceCollectionView;
 @class BIHandlerCollectionView;
-@class BITableAdditionalViewBase;
+@class BIScrollAdditionalViewBase;
 
 /*!
  @brief CollectionView with infinite scrolling support.

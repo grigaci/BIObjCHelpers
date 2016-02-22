@@ -7,7 +7,7 @@
 //
 
 #import "UIScrollView+BIBatching.h"
-#import "BITableAdditionalViewBase.h"
+#import "BIScrollAdditionalViewBase.h"
 
 #import <objc/runtime.h>
 
@@ -23,28 +23,28 @@ static void *kBIScrollViewAdditionalLoadingViewCallbackKey;
 
 #pragma mark - Public methods
 
-- (nullable BITableAdditionalViewBase *)createAdditionalNoContentView {
+- (nullable BIScrollAdditionalViewBase *)createAdditionalNoContentView {
     if (self.createAdditionalNoContentViewCallback) {
         return self.createAdditionalNoContentViewCallback();
     }
     return nil;
 }
 
-- (nullable BITableAdditionalViewBase *)createAdditionalErrorNoContentView {
+- (nullable BIScrollAdditionalViewBase *)createAdditionalErrorNoContentView {
     if (self.createAdditionalErrorNoContentViewCallback) {
         return self.createAdditionalErrorNoContentViewCallback();
     }
     return nil;
 }
 
-- (nullable BITableAdditionalViewBase *)createAdditionalLoadingContentView {
+- (nullable BIScrollAdditionalViewBase *)createAdditionalLoadingContentView {
     if (self.createAdditionalLoadingContentViewCallback) {
         return self.createAdditionalLoadingContentViewCallback();
     }
     return nil;
 }
 
-- (void)addGeneralAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
+- (void)addGeneralAdditionalView:(nonnull BIScrollAdditionalViewBase *)additionalView {
     if (self.visibleAdditionalView) {
         [self.visibleAdditionalView removeFromSuperview];
     }
@@ -56,7 +56,7 @@ static void *kBIScrollViewAdditionalLoadingViewCallbackKey;
 }
 
 - (void)addAdditionalNoContentView {
-    BITableAdditionalViewBase *noContentView = [self createAdditionalNoContentView];
+    BIScrollAdditionalViewBase *noContentView = [self createAdditionalNoContentView];
     if (noContentView) {
         [noContentView registerAdditionalViewListeners:self];
         [self addGeneralAdditionalView:noContentView];
@@ -64,7 +64,7 @@ static void *kBIScrollViewAdditionalLoadingViewCallbackKey;
 }
 
 - (void)addAdditionalErrorNoContentView {
-    BITableAdditionalViewBase *errorNoContentView = [self createAdditionalErrorNoContentView];
+    BIScrollAdditionalViewBase *errorNoContentView = [self createAdditionalErrorNoContentView];
     if (errorNoContentView) {
         [errorNoContentView registerAdditionalViewListeners:self];
         [self addGeneralAdditionalView:errorNoContentView];
@@ -72,13 +72,13 @@ static void *kBIScrollViewAdditionalLoadingViewCallbackKey;
 }
 
 - (void)addAdditionalLoadingContentView {
-    BITableAdditionalViewBase *loadingView = [self createAdditionalLoadingContentView];
+    BIScrollAdditionalViewBase *loadingView = [self createAdditionalLoadingContentView];
     if (loadingView) {
         [self addGeneralAdditionalView:loadingView];
     }
 }
 
-- (void)removeGeneralAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
+- (void)removeGeneralAdditionalView:(nonnull BIScrollAdditionalViewBase *)additionalView {
     [additionalView removeFromSuperview];
     [additionalView unregisterAdditionalViewListeners:self];
     if (self.visibleAdditionalView == additionalView) {
@@ -101,60 +101,60 @@ static void *kBIScrollViewAdditionalLoadingViewCallbackKey;
 
 #pragma mark - Property methods
 
-- (void)setAdditionalNoContentView:(BITableAdditionalViewBase * _Nullable)additionalNoContentView {
+- (void)setAdditionalNoContentView:(BIScrollAdditionalViewBase * _Nullable)additionalNoContentView {
     objc_setAssociatedObject(self, &kBIScrollViewAdditionalNoContentViewKey, additionalNoContentView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BITableAdditionalViewBase *_Nullable)additionalNoContentView {
+- (BIScrollAdditionalViewBase *_Nullable)additionalNoContentView {
     return objc_getAssociatedObject(self, &kBIScrollViewAdditionalNoContentViewKey);
 }
 
-- (void)setAdditionalErrorNoContentView:(BITableAdditionalViewBase * _Nullable)additionalErrorNoContentView {
+- (void)setAdditionalErrorNoContentView:(BIScrollAdditionalViewBase * _Nullable)additionalErrorNoContentView {
     objc_setAssociatedObject(self, &kBIScrollViewAdditionalErrorNoContentViewKey, additionalErrorNoContentView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BITableAdditionalViewBase *)additionalErrorNoContentView {
+- (BIScrollAdditionalViewBase *)additionalErrorNoContentView {
     return objc_getAssociatedObject(self, &kBIScrollViewAdditionalErrorNoContentViewKey);
 }
 
-- (void)setAdditionalLoadingContentView:(BITableAdditionalViewBase * _Nullable)additionalLoadingContentView {
+- (void)setAdditionalLoadingContentView:(BIScrollAdditionalViewBase * _Nullable)additionalLoadingContentView {
     objc_setAssociatedObject(self, &kBIScrollViewAdditionalLoadingViewKey, additionalLoadingContentView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BITableAdditionalViewBase *)additionalLoadingContentView {
+- (BIScrollAdditionalViewBase *)additionalLoadingContentView {
     return objc_getAssociatedObject(self, &kBIScrollViewAdditionalLoadingViewKey);
 }
 
-- (void)setVisibleAdditionalView:(BITableAdditionalViewBase * _Nullable)visibleAdditionalView {
+- (void)setVisibleAdditionalView:(BIScrollAdditionalViewBase * _Nullable)visibleAdditionalView {
     objc_setAssociatedObject(self, &kBIScrollViewVisibleAdditionalViewKey, visibleAdditionalView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BITableAdditionalViewBase *)visibleAdditionalView {
+- (BIScrollAdditionalViewBase *)visibleAdditionalView {
     return objc_getAssociatedObject(self, &kBIScrollViewVisibleAdditionalViewKey);
 }
 
-- (void)setCreateAdditionalNoContentViewCallback:(BITableAdditionalViewBase * _Nullable (^)(void))createAdditionalNoContentViewCallback {
+- (void)setCreateAdditionalNoContentViewCallback:(BIScrollAdditionalViewBase * _Nullable (^)(void))createAdditionalNoContentViewCallback {
     objc_setAssociatedObject(self, &kBIScrollViewAdditionalNoContentViewCallbackKey, createAdditionalNoContentViewCallback, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (BITableAdditionalViewBase * _Nullable (^)(void))createAdditionalNoContentViewCallback {
+- (BIScrollAdditionalViewBase * _Nullable (^)(void))createAdditionalNoContentViewCallback {
     return objc_getAssociatedObject(self, &kBIScrollViewAdditionalNoContentViewCallbackKey);
 }
 
 
-- (void)setCreateAdditionalErrorNoContentViewCallback:(BITableAdditionalViewBase * _Nullable (^)(void))createAdditionalErrorNoContentViewCallback {
+- (void)setCreateAdditionalErrorNoContentViewCallback:(BIScrollAdditionalViewBase * _Nullable (^)(void))createAdditionalErrorNoContentViewCallback {
     objc_setAssociatedObject(self, &kBIScrollViewAdditionalErrorNoContentViewCallbackKey, createAdditionalErrorNoContentViewCallback, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (BITableAdditionalViewBase * _Nullable (^)(void))createAdditionalErrorNoContentViewCallback {
+- (BIScrollAdditionalViewBase * _Nullable (^)(void))createAdditionalErrorNoContentViewCallback {
     return objc_getAssociatedObject(self, &kBIScrollViewAdditionalErrorNoContentViewCallbackKey);
 }
 
-- (void)setCreateAdditionalLoadingContentViewCallback:(BITableAdditionalViewBase * _Nullable (^)(void))createAdditionalLoadingContentViewCallback {
+- (void)setCreateAdditionalLoadingContentViewCallback:(BIScrollAdditionalViewBase * _Nullable (^)(void))createAdditionalLoadingContentViewCallback {
     objc_setAssociatedObject(self, &kBIScrollViewAdditionalLoadingViewCallbackKey, createAdditionalLoadingContentViewCallback, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (BITableAdditionalViewBase * _Nullable (^)(void))createAdditionalLoadingContentViewCallback {
+- (BIScrollAdditionalViewBase * _Nullable (^)(void))createAdditionalLoadingContentViewCallback {
     return objc_getAssociatedObject(self, &kBIScrollViewAdditionalLoadingViewCallbackKey);
 }
 

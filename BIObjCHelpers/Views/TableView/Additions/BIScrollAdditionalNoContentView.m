@@ -1,24 +1,24 @@
 //
-//  BITableAdditionalNoContentView.m
+//  BIScrollAdditionalNoContentView.m
 //  BIObjCHelpers
 //
 //  Created by Bogdan Iusco on 18/01/16.
 //  Copyright © 2016 iGama Apps. All rights reserved.
 //
 
-#import "BITableAdditionalNoContentView.h"
+#import "BIScrollAdditionalNoContentView.h"
 
-@interface BITableAdditionalNoContentView ()
+@interface BIScrollAdditionalNoContentView ()
 
 @property (nonatomic, assign, readwrite) BITableAdditionalTypeView type;
 
 @end
 
-@implementation BITableAdditionalNoContentView
+@implementation BIScrollAdditionalNoContentView
 
 @synthesize type = _type;
 
-#pragma mark - BITableAdditionalViewBase methods
+#pragma mark - BIScrollAdditionalViewBase methods
 
 - (void)commonSetup {
     [super commonSetup];

@@ -10,7 +10,7 @@
 #import "BIActivityIndicatorContainerView.h"
 #import "_BIScrollViewProxy.h"
 #import "BIBatchHelpers.h"
-#import "BITableAdditionalViewBase.h"
+#import "BIScrollAdditionalViewBase.h"
 #import "BIDatasourceFeedCollectionView.h"
 #import "UIScrollView+InfiniteScroll.h"
 
@@ -161,9 +161,9 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     }
 }
 
-#pragma mark - BITableAdditionalViewBaseListener methods
+#pragma mark - BIScrollAdditionalViewBaseListener methods
 
-- (void)didTapTableAdditionalView:(nonnull BITableAdditionalViewBase *)additionalView {
+- (void)didTapTableAdditionalView:(nonnull BIScrollAdditionalViewBase *)additionalView {
     if ([self.datasource isKindOfClass:[BIDatasourceFeedCollectionView class]]) {
         switch (additionalView.type) {
             case BITableAdditionalTypeErrorNoContentView: {
