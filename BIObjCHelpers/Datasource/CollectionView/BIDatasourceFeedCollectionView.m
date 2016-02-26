@@ -113,6 +113,13 @@
     return mutableBatch;
 }
 
+- (nonnull BIMutableBatchRequest *)createReloadRequest {
+    BIMutableBatchRequest *mutableBatch = [self createBatchRequest];
+    mutableBatch.options |= BIBatchRequestOptionReload;
+    mutableBatch.insertPosition = BIBatchInsertPositionBottom;
+    return mutableBatch;
+}
+
 - (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     NSAssert(!self.currentBatchRequest, @"Another batch request is in progress!");
     self.currentBatchRequest = batchRequest;
@@ -277,6 +284,14 @@
         return;
     }
     BIMutableBatchRequest *batchRequest = [self createErrorNoContentTapToRetryBatchRequest];
+    [self fetchBatchRequest:batchRequest];
+}
+
+- (void)triggerReloadRequest {
+    if (self.fetchingState != BIDatasourceCollectionViewFetchingStateNone) {
+        return;
+    }
+    BIMutableBatchRequest *batchRequest = [self createReloadRequest];
     [self fetchBatchRequest:batchRequest];
 }
 

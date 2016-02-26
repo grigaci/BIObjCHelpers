@@ -107,6 +107,10 @@ const NSInteger kDefaultBatchRequestSize = 3;
     return (self.options & BIBatchRequestOptionNoContent) > 0;
 }
 
+- (BOOL)isReloadRequest {
+    return (self.options & BIBatchRequestOptionReload) > 0;
+}
+
 @end
 
 @implementation BIMutableBatchRequest
