@@ -141,6 +141,11 @@ typedef NS_OPTIONS(NSUInteger, BIBatchRequestOptions) {
 @property (nonatomic, assign, readonly) BOOL isNoContentRequest;
 
 /*!
+ * @brief True if options contain BIBatchRequestOptionReload flag.
+ */
+@property (nonatomic, assign, readonly) BOOL isReloadRequest;
+
+/*!
  * @brief Overriden method for returning the exact class type for a copied object.
  */
 - (nonnull BIBatchRequest *)copy;

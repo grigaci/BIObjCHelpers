@@ -118,6 +118,13 @@
     return mutableBatch;
 }
 
+- (nonnull BIMutableBatchRequest *)createReloadRequest {
+    BIMutableBatchRequest *mutableBatch = [self createBatchRequest];
+    mutableBatch.options |= BIBatchRequestOptionReload;
+    mutableBatch.insertPosition = BIBatchInsertPositionBottom;
+    return mutableBatch;
+}
+
 - (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     NSAssert(!self.currentBatchRequest, @"Another batch request is in progress!");
     self.currentBatchRequest = batchRequest;
@@ -272,6 +279,14 @@
     [self fetchBatchRequest:batchRequest];
 }
 
+- (void)triggerReloadRequest {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
+        return;
+    }
+    BIMutableBatchRequest *batchRequest = [self createReloadRequest];
+    [self fetchBatchRequest:batchRequest];
+}
+
 #pragma mark - Property methods
 
 - (void)setFetchingState:(BIDatasourceTableViewFetchingState)fetchingState {
@@ -284,7 +299,8 @@
 - (BOOL)BI_areNoItemsDisplayedForBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     BOOL noItemsDisplayed = batchRequest.isInitialRequest ||
                             batchRequest.isNoContentRequest ||
-                            batchRequest.isErrorNoContentTapToRetryRequest;
+                            batchRequest.isErrorNoContentTapToRetryRequest ||
+                            batchRequest.isReloadRequest;
     return noItemsDisplayed;
 }
 

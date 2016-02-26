@@ -97,6 +97,12 @@ typedef NS_ENUM(NSUInteger, BIDatasourceTableViewFetchingState) {
 - (nonnull BIMutableBatchRequest *)createNoContentTapToRetryBatchRequest;
 
 /*!
+ * Create a mutable batch request for reloading the content.
+ * @return New batch.
+ */
+- (nonnull BIMutableBatchRequest *)createReloadRequest;
+
+/*!
  * Fetches a given batch.
  * @param batch Given batch.
  */
@@ -170,5 +176,10 @@ typedef NS_ENUM(NSUInteger, BIDatasourceTableViewFetchingState) {
  * Manually trigger the tap on no content case.
  */
 - (void)triggerNoContentTapToRetryRequest;
+
+/*!
+ * Manually trigger a reload request.
+ */
+- (void)triggerReloadRequest;
 
 @end
