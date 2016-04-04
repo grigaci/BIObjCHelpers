@@ -224,6 +224,10 @@
 - (void)updateTableAdditionalViewsForBatchResponse:(nonnull BIBatchResponse *)batchResponse {
     BOOL noItemsDisplayed = [self BI_areNoItemsDisplayedForBatchRequest:batchResponse.batchRequest];
     if (noItemsDisplayed) {
+        // BI_pullToRefreshEnabled is set to NO for some batch requests types(when noItemsDisplayed is YES).
+        // Not resetting it here will disable pull to refresh for all types of requests(cases when noItemsDisplayed is NO).
+        self.tableView.BI_pullToRefreshEnabled = YES;
+
         BOOL isBatchFailed = batchResponse.error ? YES : NO;
         BOOL isEmptyResponse = batchResponse.indexPaths.count == 0 ? YES : NO;
         if (isBatchFailed) {
