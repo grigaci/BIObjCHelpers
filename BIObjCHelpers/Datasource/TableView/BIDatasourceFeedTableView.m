@@ -204,6 +204,7 @@
     }
     if (batchResponse.batchRequest.isPullToRefreshRequest) {
         self.tableView.BI_infiniteScrollingEnabled = YES;
+        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
     }
     
     // Batch response flags
