@@ -216,6 +216,7 @@
     if (batchResponse.batchRequest.isPullToRefreshRequest) {
         [self.collectionView.pullToRefreshControl endRefreshing];
         self.collectionView.BI_infiniteScrollingEnabled = YES;
+        self.collectionView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
     }
     
     // Batch response flags
