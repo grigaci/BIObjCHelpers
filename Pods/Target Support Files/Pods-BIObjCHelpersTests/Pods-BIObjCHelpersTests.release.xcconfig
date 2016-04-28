@@ -1,6 +1,6 @@
 FRAMEWORK_SEARCH_PATHS = $(inherited)  "$(PLATFORM_DIR)/Developer/Library/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FBSnapshotTestCase" "${PODS_ROOT}/Headers/Public/OCHamcrest" "${PODS_ROOT}/Headers/Public/OCMockito"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FBSnapshotTestCase" -isystem "${PODS_ROOT}/Headers/Public/OCHamcrest" -isystem "${PODS_ROOT}/Headers/Public/OCMockito"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"FBSnapshotTestCase" -l"OCHamcrest" -l"OCMockito" -framework "XCTest"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FBSnapshotTestCase" "${PODS_ROOT}/Headers/Public/OCHamcrest" "${PODS_ROOT}/Headers/Public/OCMockito" "${PODS_ROOT}/Headers/Public/UIView+BezierCurve"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FBSnapshotTestCase" -isystem "${PODS_ROOT}/Headers/Public/OCHamcrest" -isystem "${PODS_ROOT}/Headers/Public/OCMockito" -isystem "${PODS_ROOT}/Headers/Public/UIView+BezierCurve"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"FBSnapshotTestCase" -l"OCHamcrest" -l"OCMockito" -l"UIView+BezierCurve" -framework "Foundation" -framework "XCTest"
 PODS_ROOT = ${SRCROOT}/Pods
