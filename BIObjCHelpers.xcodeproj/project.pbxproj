@@ -79,7 +79,7 @@
 		43F542471CD0F44F002EB6C6 /* UIScrollView+InfiniteScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A7D0261C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43FA5D471CD22DB700FA754E /* BICollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91614A8C1B9481A000D00EB2 /* BICollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43FA5D481CD22DC400FA754E /* BICollectionViewActivityIndicatorReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91E9ECEE1B94A6F10009C4F1 /* BICollectionViewActivityIndicatorReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43FA5D4C1CD2310300FA754E /* BIObjCHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 43FA5D4A1CD2310300FA754E /* BIObjCHelpers.h */; };
+		43FA5D4C1CD2310300FA754E /* BIObjCHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 43FA5D4A1CD2310300FA754E /* BIObjCHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43FA5D4E1CD2320200FA754E /* BIMockHandlerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */; };
 		43FA5D4F1CD2320400FA754E /* NSFetchedResultsController+BITestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CC71B568B1F001F0A00 /* NSFetchedResultsController+BITestHelpers.m */; };
 		43FA5D501CD2320700FA754E /* NSString+RandomTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CCA1B568B1F001F0A00 /* NSString+RandomTest.m */; };
@@ -927,7 +927,6 @@
 				43F5423F1CD0F436002EB6C6 /* BIHandlerCollectionView.h in Headers */,
 				43F542411CD0F441002EB6C6 /* BILifecycle.h in Headers */,
 				43F542451CD0F44A002EB6C6 /* BIStartersFactory.h in Headers */,
-				43FA5D4C1CD2310300FA754E /* BIObjCHelpers.h in Headers */,
 				43F542471CD0F44F002EB6C6 /* UIScrollView+InfiniteScroll.h in Headers */,
 				43F542441CD0F448002EB6C6 /* BIStarterProtocol.h in Headers */,
 				43F542461CD0F44B002EB6C6 /* BILaunchStartersFactory.h in Headers */,
@@ -953,6 +952,7 @@
 				43F542271CD0F377002EB6C6 /* BIScrollAdditionalViewBase.h in Headers */,
 				43F542291CD0F37B002EB6C6 /* BIScrollAdditionalLoadingView.h in Headers */,
 				43F542241CD0F36A002EB6C6 /* BIScrollDetails.h in Headers */,
+				43FA5D4C1CD2310300FA754E /* BIObjCHelpers.h in Headers */,
 				43F542261CD0F372002EB6C6 /* UIScrollView+BIBatching.h in Headers */,
 				43F542251CD0F36E002EB6C6 /* _BIScrollViewProxy.h in Headers */,
 				43F5422E1CD0F399002EB6C6 /* _BITableView+Internal.h in Headers */,
