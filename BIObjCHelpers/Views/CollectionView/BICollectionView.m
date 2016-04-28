@@ -19,7 +19,7 @@
 @property (nonatomic, strong, nullable, readwrite) _BIScrollViewProxy *proxyDelegate;
 @property (nonatomic, weak, nullable,   readwrite) BIDatasourceCollectionView *datasource;
 @property (nonatomic, weak, nullable,   readwrite) BIHandlerCollectionView *handler;
-@property (nonatomic, strong, nonnull, readwrite) UIRefreshControl *pullToRefreshControl;
+@property (nonatomic, strong, nullable, readwrite) UIRefreshControl *pullToRefreshControl;
 
 @property (nonatomic, assign, getter=BI_isPullToRefreshEnabled) BOOL BI_pullToRefreshEnabled;
 @property (nonatomic, assign, getter=BI_isInfiniteScrollingEnabled) BOOL BI_infiniteScrollingEnabled;
