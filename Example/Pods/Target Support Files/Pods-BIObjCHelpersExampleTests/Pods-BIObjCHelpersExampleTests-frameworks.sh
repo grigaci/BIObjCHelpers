@@ -82,3 +82,18 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-BIObjCHelpersExampleTests/BIObjCHelpers.framework"
+  install_framework "Pods-BIObjCHelpersExampleTests/CJALog.framework"
+  install_framework "Pods-BIObjCHelpersExampleTests/MagicalRecord.framework"
+  install_framework "Pods-BIObjCHelpersExampleTests/OCHamcrest.framework"
+  install_framework "Pods-BIObjCHelpersExampleTests/OCMockito.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-BIObjCHelpersExampleTests/BIObjCHelpers.framework"
+  install_framework "Pods-BIObjCHelpersExampleTests/CJALog.framework"
+  install_framework "Pods-BIObjCHelpersExampleTests/MagicalRecord.framework"
+  install_framework "Pods-BIObjCHelpersExampleTests/OCHamcrest.framework"
+  install_framework "Pods-BIObjCHelpersExampleTests/OCMockito.framework"
+fi

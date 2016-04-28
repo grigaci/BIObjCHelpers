@@ -1,4 +1,4 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/OCHamcrest" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BIObjCHelpers" "${PODS_ROOT}/Headers/Public/CJALog" "${PODS_ROOT}/Headers/Public/CJAMacros" "${PODS_ROOT}/Headers/Public/MagicalRecord" "${PODS_ROOT}/Headers/Public/OCHamcrest" "${PODS_ROOT}/Headers/Public/OCMockito"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/OCHamcrest" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CJAMacros"
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES
