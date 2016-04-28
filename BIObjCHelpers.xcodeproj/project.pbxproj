@@ -131,6 +131,8 @@
 		43F542451CD0F44A002EB6C6 /* BIStartersFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BE6C701B5689CA001F0A00 /* BIStartersFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43F542461CD0F44B002EB6C6 /* BILaunchStartersFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9437007D1BCD3F9C0063D2CC /* BILaunchStartersFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43F542471CD0F44F002EB6C6 /* UIScrollView+InfiniteScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A7D0261C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43FA5D471CD22DB700FA754E /* BICollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91614A8C1B9481A000D00EB2 /* BICollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43FA5D481CD22DC400FA754E /* BICollectionViewActivityIndicatorReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91E9ECEE1B94A6F10009C4F1 /* BICollectionViewActivityIndicatorReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		830DAE5A3DE83DBED5554583 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5728F3176E11CCA0B30BB593 /* libPods.a */; };
 		914D2CB51B57BB41009A9B4D /* BIBatchHelpersTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 914D2CB41B57BB41009A9B4D /* BIBatchHelpersTestCase.m */; };
 		91614A831B94790400D00EB2 /* _BIScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A821B94790400D00EB2 /* _BIScrollViewProxy.m */; };
@@ -1017,7 +1019,9 @@
 				43F5422B1CD0F390002EB6C6 /* BIActivityIndicatorContainerView.h in Headers */,
 				43F5423D1CD0F433002EB6C6 /* BIHandlerBase.h in Headers */,
 				43F5423E1CD0F434002EB6C6 /* BIHandlerTableView.h in Headers */,
+				43FA5D481CD22DC400FA754E /* BICollectionViewActivityIndicatorReusableView.h in Headers */,
 				43F542401CD0F43C002EB6C6 /* BIObjCHelpers.h in Headers */,
+				43FA5D471CD22DB700FA754E /* BICollectionView.h in Headers */,
 				43F5423F1CD0F436002EB6C6 /* BIHandlerCollectionView.h in Headers */,
 				43F542411CD0F441002EB6C6 /* BILifecycle.h in Headers */,
 				43F542451CD0F44A002EB6C6 /* BIStartersFactory.h in Headers */,
@@ -1650,6 +1654,7 @@
 				43F541D51CD0F276002EB6C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43F541D91CD0F276002EB6C6 /* Build configuration list for PBXNativeTarget "BIObjCHelpersFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -1658,6 +1663,7 @@
 				43F541D71CD0F276002EB6C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
