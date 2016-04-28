@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43BE6C241B56882B001F0A00"
-               BuildableName = "libBIObjCHelpers.a"
+               BlueprintIdentifier = "43F541C21CD0F275002EB6C6"
+               BuildableName = "BIObjCHelpers.framework"
                BlueprintName = "BIObjCHelpers"
                ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
             </BuildableReference>
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43BE6C2F1B56882B001F0A00"
+               BlueprintIdentifier = "43F541CB1CD0F276002EB6C6"
                BuildableName = "BIObjCHelpersTests.xctest"
                BlueprintName = "BIObjCHelpersTests"
                ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43BE6C2F1B56882B001F0A00"
+               BlueprintIdentifier = "43F541CB1CD0F276002EB6C6"
                BuildableName = "BIObjCHelpersTests.xctest"
                BlueprintName = "BIObjCHelpersTests"
                ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
@@ -70,8 +70,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43BE6C241B56882B001F0A00"
-            BuildableName = "libBIObjCHelpers.a"
+            BlueprintIdentifier = "43F541C21CD0F275002EB6C6"
+            BuildableName = "BIObjCHelpers.framework"
             BlueprintName = "BIObjCHelpers"
             ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
          </BuildableReference>
@@ -92,8 +92,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43BE6C241B56882B001F0A00"
-            BuildableName = "libBIObjCHelpers.a"
+            BlueprintIdentifier = "43F541C21CD0F275002EB6C6"
+            BuildableName = "BIObjCHelpers.framework"
             BlueprintName = "BIObjCHelpers"
             ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
          </BuildableReference>
@@ -117,8 +117,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43BE6C241B56882B001F0A00"
-            BuildableName = "libBIObjCHelpers.a"
+            BlueprintIdentifier = "43F541C21CD0F275002EB6C6"
+            BuildableName = "BIObjCHelpers.framework"
             BlueprintName = "BIObjCHelpers"
             ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
          </BuildableReference>

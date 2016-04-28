@@ -1,6 +1,6 @@
 PODS:
   - FBSnapshotTestCase (1.8.1)
-  - OCHamcrest (4.1.1)
+  - OCHamcrest (4.3.0)
   - OCMockito (1.4.0):
     - OCHamcrest (~> 4.0)
 
@@ -19,7 +19,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 6cbb7042b269a68b5d31887fc18d6bba29ec5897
-  OCHamcrest: 6f03ffa81d12feab872638490a44ab0a6d3aca10
+  OCHamcrest: cd63d27f48a266d4412c0b295b01b8f0940efa81
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
