@@ -1,5 +1,5 @@
 PODS:
-  - BIObjCHelpers (0.3.3)
+  - BIObjCHelpers (0.3.4)
   - CJALog (1.1.0)
   - CJAMacros (2.1.3)
   - MagicalRecord (2.3.2):
@@ -18,10 +18,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   BIObjCHelpers:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  BIObjCHelpers: 1d1353feeaaa3815f72a1d5045d800c77d2b0457
+  BIObjCHelpers: 24505cdde43d2ba970dc0fa5b278ffeb49a68c26
   CJALog: e91c4e468145c8e42559831d251c727680b61650
   CJAMacros: 01775e631d55f3ffc8524483e27fbdd6c9fd8a44
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
