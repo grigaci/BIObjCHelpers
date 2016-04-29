@@ -36,8 +36,10 @@
 - (NSPersistentStoreCoordinator *)persistanceStoreCoordinator {
     if (!_persistanceStoreCoordinator) {
         _persistanceStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+#ifdef DEBUG
         NSPersistentStore * persistanceStore = [_persistanceStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType configuration:nil URL:nil options:nil error:nil];
         NSAssert(persistanceStore, @"Cannot create persistance store in memory");
+#endif
     }
     return _persistanceStoreCoordinator;
 }

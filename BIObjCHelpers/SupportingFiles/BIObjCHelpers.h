@@ -14,11 +14,15 @@ FOUNDATION_EXPORT double BIObjCHelpersVersionNumber;
 //! Project version string for BIObjCHelpers.
 FOUNDATION_EXPORT const unsigned char BIObjCHelpersVersionString[];
 
+// Starters
 #import <BIObjCHelpers/BIStarterProtocol.h>
 #import <BIObjCHelpers/BILifecycle.h>
 #import <BIObjCHelpers/BIStartersFactory.h>
-#import <BIObjCHelpers/BIOperationQueue.h>
 #import <BIObjCHelpers/BILaunchStartersFactory.h>
+
+// Operations
+#import <BIObjCHelpers/BIOperationQueue.h>
+#import <BIObjCHelpers/BISerialOperationQueue.h>
 
 // Views
 #import <BIObjCHelpers/BITableView.h>
@@ -28,6 +32,9 @@ FOUNDATION_EXPORT const unsigned char BIObjCHelpersVersionString[];
 #import <BIObjCHelpers/BIScrollAdditionalErrorNoContentView.h>
 #import <BIObjCHelpers/BICollectionView.h>
 #import <BIObjCHelpers/UIScrollView+BIBatching.h>
+#import <BIObjCHelpers/BIActivityIndicatorContainerView.h>
+#import <BIObjCHelpers/BICollectionViewActivityIndicatorReusableView.h>
+#import <BIObjCHelpers/BITableViewCell.h>
 
 // Datasources
 #import <BIObjCHelpers/BIDatasourceTableView.h>
@@ -35,10 +42,12 @@ FOUNDATION_EXPORT const unsigned char BIObjCHelpersVersionString[];
 #import <BIObjCHelpers/BIDatasourceFetchedTableView.h>
 #import <BIObjCHelpers/BIDatasourceFetchedCollectionView.h>
 #import <BIObjCHelpers/BIDatasourceFeedTableView.h>
+#import <BIObjCHelpers/BIDatasourceFeedCollectionView.h>
 
 // Handlers
 #import <BIObjCHelpers/BIHandlerBase.h>
 #import <BIObjCHelpers/BIHandlerTableView.h>
+#import <BIObjCHelpers/BIHandlerCollectionView.h>
 
 // Categories
 #import <BIObjCHelpers/NSBundle+BIExtra.h>
@@ -48,3 +57,4 @@ FOUNDATION_EXPORT const unsigned char BIObjCHelpersVersionString[];
 // Batch
 #import <BIObjCHelpers/BIBatchRequest.h>
 #import <BIObjCHelpers/BIBatchResponse.h>
+#import <BIObjCHelpers/BIBatchHelpers.h>
