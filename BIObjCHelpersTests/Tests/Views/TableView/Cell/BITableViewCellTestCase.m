@@ -29,6 +29,7 @@
     self.cell = [[BITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
     self.cell.frame = CGRectMake(.0f, .0f, 375.f, 44.f);
     self.cell.backgroundColor = [UIColor whiteColor];
+//    self.recordMode = YES;
 }
 
 - (void)tearDown {

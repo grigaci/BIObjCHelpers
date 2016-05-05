@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43BE6C2F1B56882B001F0A00"
+               BlueprintIdentifier = "43F541CB1CD0F276002EB6C6"
                BuildableName = "BIObjCHelpersTests.xctest"
                BlueprintName = "BIObjCHelpersTests"
                ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
@@ -32,30 +32,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43BE6C2F1B56882B001F0A00"
+               BlueprintIdentifier = "43F541CB1CD0F276002EB6C6"
                BuildableName = "BIObjCHelpersTests.xctest"
                BlueprintName = "BIObjCHelpersTests"
                ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "BIActivityIndicatorContainerViewTestCase">
-               </Test>
-               <Test
-                  Identifier = "BITableViewCellTestCase">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43BE6C2F1B56882B001F0A00"
-            BuildableName = "BIObjCHelpersTests.xctest"
-            BlueprintName = "BIObjCHelpersTests"
-            ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -72,7 +55,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43BE6C2F1B56882B001F0A00"
+            BlueprintIdentifier = "43F541CB1CD0F276002EB6C6"
             BuildableName = "BIObjCHelpersTests.xctest"
             BlueprintName = "BIObjCHelpersTests"
             ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
@@ -94,15 +77,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43BE6C2F1B56882B001F0A00"
-            BuildableName = "BIObjCHelpersTests.xctest"
-            BlueprintName = "BIObjCHelpersTests"
-            ReferencedContainer = "container:BIObjCHelpers.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

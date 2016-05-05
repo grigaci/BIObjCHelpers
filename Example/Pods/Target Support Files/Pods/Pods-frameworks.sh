@@ -82,3 +82,14 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/BIObjCHelpers.framework"
+  install_framework "Pods/CJALog.framework"
+  install_framework "Pods/MagicalRecord.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/BIObjCHelpers.framework"
+  install_framework "Pods/CJALog.framework"
+  install_framework "Pods/MagicalRecord.framework"
+fi

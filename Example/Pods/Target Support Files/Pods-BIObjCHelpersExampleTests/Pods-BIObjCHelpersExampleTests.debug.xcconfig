@@ -1,5 +1,7 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BIObjCHelpers" "${PODS_ROOT}/Headers/Public/CJALog" "${PODS_ROOT}/Headers/Public/CJAMacros" "${PODS_ROOT}/Headers/Public/MagicalRecord" "${PODS_ROOT}/Headers/Public/OCHamcrest" "${PODS_ROOT}/Headers/Public/OCMockito"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/BIObjCHelpers" -isystem "${PODS_ROOT}/Headers/Public/CJALog" -isystem "${PODS_ROOT}/Headers/Public/CJAMacros" -isystem "${PODS_ROOT}/Headers/Public/MagicalRecord" -isystem "${PODS_ROOT}/Headers/Public/OCHamcrest" -isystem "${PODS_ROOT}/Headers/Public/OCMockito"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"BIObjCHelpers" -l"CJALog" -l"MagicalRecord" -l"OCHamcrest" -l"OCMockito" -framework "CoreData"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CJAMacros"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/BIObjCHelpers.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/CJALog.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MagicalRecord.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/OCHamcrest.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/OCMockito.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CJAMacros"
+OTHER_LDFLAGS = $(inherited) -framework "BIObjCHelpers" -framework "CJALog" -framework "MagicalRecord" -framework "OCHamcrest" -framework "OCMockito"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-BIObjCHelpersExampleTests
 PODS_ROOT = ${SRCROOT}/Pods
