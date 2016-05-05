@@ -35,6 +35,8 @@ FOUNDATION_EXPORT const unsigned char BIObjCHelpersVersionString[];
 #import <BIObjCHelpers/BIActivityIndicatorContainerView.h>
 #import <BIObjCHelpers/BICollectionViewActivityIndicatorReusableView.h>
 #import <BIObjCHelpers/BITableViewCell.h>
+#import <BIObjCHelpers/UIView+BILoadXib.h>
+#import <BIObjCHelpers/UIScrollView+InfiniteScroll.h>
 
 // Datasources
 #import <BIObjCHelpers/BIDatasourceTableView.h>
