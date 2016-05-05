@@ -3,7 +3,7 @@ BIObjCHelpers
 
 Collection of Objective C helpers
 
-[![Build Status](https://travis-ci.org/grigaci/BIObjCHelpers.svg?branch=master)](https://travis-ci.org/grigaci/BIObjCHelpers) [![Coverage Status](https://coveralls.io/repos/grigaci/BIObjCHelpers/badge.png?branch=master)](https://coveralls.io/r/grigaci/BIObjCHelpers?branch=master) [![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/BIObjCHelpers/badge.png)](http://cocoapods.org/?q=BIObjCHelpers) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/grigaci/BIObjCHelpers.svg?branch=master)](https://travis-ci.org/grigaci/BIObjCHelpers) [![Coverage Status](https://coveralls.io/repos/github/grigaci/BIObjCHelpers/badge.svg?branch=master)](https://coveralls.io/github/grigaci/BIObjCHelpers?branch=master) [![CocoaPods Version](https://cocoapod-badges.herokuapp.com/v/BIObjCHelpers/badge.png)](http://cocoapods.org/?q=BIObjCHelpers) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 # Build
 Use Xcode 7.2 or above for building the projects.
