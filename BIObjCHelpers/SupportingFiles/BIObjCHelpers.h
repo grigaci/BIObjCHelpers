@@ -23,6 +23,7 @@ FOUNDATION_EXPORT const unsigned char BIObjCHelpersVersionString[];
 // Operations
 #import <BIObjCHelpers/BIOperationQueue.h>
 #import <BIObjCHelpers/BISerialOperationQueue.h>
+#import <BIObjCHelpers/BIOperationNotifier.h>
 
 // Views
 #import <BIObjCHelpers/BITableView.h>

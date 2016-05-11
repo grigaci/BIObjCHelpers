@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		431124921CE36CDC00950918 /* BIOperationNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 431124901CE36CDC00950918 /* BIOperationNotifier.h */; };
+		431124921CE36CDC00950918 /* BIOperationNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 431124901CE36CDC00950918 /* BIOperationNotifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		431124931CE36CDC00950918 /* BIOperationNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 431124911CE36CDC00950918 /* BIOperationNotifier.m */; };
 		43F541CD1CD0F276002EB6C6 /* BIObjCHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F541C31CD0F275002EB6C6 /* BIObjCHelpers.framework */; };
 		43F541DC1CD0F2AD002EB6C6 /* _BIScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A821B94790400D00EB2 /* _BIScrollViewProxy.m */; };
