@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431124921CE36CDC00950918 /* BIOperationNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 431124901CE36CDC00950918 /* BIOperationNotifier.h */; };
+		431124931CE36CDC00950918 /* BIOperationNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 431124911CE36CDC00950918 /* BIOperationNotifier.m */; };
 		43F541CD1CD0F276002EB6C6 /* BIObjCHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F541C31CD0F275002EB6C6 /* BIObjCHelpers.framework */; };
 		43F541DC1CD0F2AD002EB6C6 /* _BIScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A821B94790400D00EB2 /* _BIScrollViewProxy.m */; };
 		43F541DE1CD0F2AD002EB6C6 /* UIScrollView+BIBatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 432001971C7B26C0006A8BB7 /* UIScrollView+BIBatching.m */; };
@@ -124,6 +126,8 @@
 
 /* Begin PBXFileReference section */
 		4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceTableViewTestCase.m; sourceTree = "<group>"; };
+		431124901CE36CDC00950918 /* BIOperationNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIOperationNotifier.h; path = Operations/BIOperationNotifier.h; sourceTree = "<group>"; };
+		431124911CE36CDC00950918 /* BIOperationNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIOperationNotifier.m; path = Operations/BIOperationNotifier.m; sourceTree = "<group>"; };
 		432001961C7B26C0006A8BB7 /* UIScrollView+BIBatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+BIBatching.h"; path = "Views/ScrollView/UIScrollView+BIBatching.h"; sourceTree = "<group>"; };
 		432001971C7B26C0006A8BB7 /* UIScrollView+BIBatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+BIBatching.m"; path = "Views/ScrollView/UIScrollView+BIBatching.m"; sourceTree = "<group>"; };
 		43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceBaseTestCase.m; sourceTree = "<group>"; };
@@ -276,6 +280,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4311248D1CE36CA200950918 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				431124901CE36CDC00950918 /* BIOperationNotifier.h */,
+				431124911CE36CDC00950918 /* BIOperationNotifier.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		432001951C7B2697006A8BB7 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +371,7 @@
 				43BE6C5D1B5689CA001F0A00 /* Handlers */,
 				43BE6C661B5689CA001F0A00 /* Lifecycle */,
 				43BE6C691B5689CA001F0A00 /* OperationQueue */,
+				4311248D1CE36CA200950918 /* Operations */,
 				43BE6C6E1B5689CA001F0A00 /* Starters */,
 				43A7D01E1C7349DA007C8CC0 /* ExternalLibs */,
 				43FA5D491CD2310300FA754E /* SupportingFiles */,
@@ -950,6 +964,7 @@
 				43F542281CD0F379002EB6C6 /* BIScrollAdditionalErrorNoContentView.h in Headers */,
 				43F5422D1CD0F395002EB6C6 /* BITableView.h in Headers */,
 				43F542271CD0F377002EB6C6 /* BIScrollAdditionalViewBase.h in Headers */,
+				431124921CE36CDC00950918 /* BIOperationNotifier.h in Headers */,
 				43F542291CD0F37B002EB6C6 /* BIScrollAdditionalLoadingView.h in Headers */,
 				43F542241CD0F36A002EB6C6 /* BIScrollDetails.h in Headers */,
 				43FA5D4C1CD2310300FA754E /* BIObjCHelpers.h in Headers */,
@@ -1009,6 +1024,7 @@
 		43BE6C1D1B56882B001F0A00 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "iGama Apps";
 				TargetAttributes = {
@@ -1150,6 +1166,7 @@
 				43F541EC1CD0F2AD002EB6C6 /* BITableView.m in Sources */,
 				43F541EF1CD0F2AD002EB6C6 /* BICollectionViewActivityIndicatorReusableView.m in Sources */,
 				43F541F11CD0F2AD002EB6C6 /* BICollectionView.m in Sources */,
+				431124931CE36CDC00950918 /* BIOperationNotifier.m in Sources */,
 				43F541F41CD0F2AD002EB6C6 /* BIBatchRequest.m in Sources */,
 				43F541F61CD0F2AD002EB6C6 /* BIBatchResponse.m in Sources */,
 				43F541F81CD0F2AD002EB6C6 /* BIBatchHelpers.m in Sources */,
@@ -1309,6 +1326,7 @@
 			baseConfigurationReference = 817E8A412EFC8949D37CE542 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1325,6 +1343,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bogdaniusco.BIObjCHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1336,6 +1355,7 @@
 			baseConfigurationReference = BB1D306E32DEEA06A1B3FEA0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
