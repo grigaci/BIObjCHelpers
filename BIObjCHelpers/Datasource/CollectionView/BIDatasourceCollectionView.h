@@ -27,4 +27,19 @@ typedef void(^BIDatasourceCollectionViewConfigureCell)(id __nonnull cell, NSInde
 
 - (void)configureCell:(nonnull UICollectionViewCell *)cell atIndexPath:(nonnull NSIndexPath *)indexPath;
 
+/*!
+ * @brief Remove items at a given paths. Use this method instead of collectionView's similar one in
+ * order to better manipulate its stored data.
+ * @param indexPath Specifies items that need removing.
+ */
+- (void)deleteItemsAtIndexPaths:(nonnull NSArray *)indexPaths;
+
+/*!
+ * @brief Insert items at a given indexPaths with a given model objects.
+ * Use this method instead of collectionView's similar one in order to better manipulate its stored data.
+ * @param indexPath Specifies where items need to be inserted.
+ * @param models Model for the cell.
+ */
+- (void)insertItemsAtIndexPaths:(nonnull NSArray *)indexPaths
+                         models:(nonnull NSArray *)models;
 @end

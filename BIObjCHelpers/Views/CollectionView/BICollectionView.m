@@ -90,6 +90,20 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     return validDelegate;
 }
 
+- (void)insertItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths {
+    [super insertItemsAtIndexPaths:indexPaths];
+    if ([self BI_totalNumberOfRows] != 0 && self.visibleAdditionalView) {
+        [self removeVisibleAdditionalView];
+    }
+}
+
+- (void)deleteItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths {
+    [super deleteItemsAtIndexPaths:indexPaths];
+    if ([self BI_totalNumberOfRows] == 0 && !self.visibleAdditionalView) {
+        [self addAdditionalNoContentView];
+    }
+}
+
 #pragma mark - Public methods
 
 - (void)triggerPullToRefresh {
@@ -247,6 +261,19 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     } else {
         [self removeInfiniteScroll];
     }
+}
+
+- (NSInteger)BI_totalNumberOfRows {
+    NSInteger numberOfSections = 1;
+    if ([self.dataSource respondsToSelector:@selector(numberOfSectionsInCollectionView:)]) {
+        numberOfSections = [self.dataSource numberOfSectionsInCollectionView:self];
+    }
+    
+    NSInteger totalNumberOfRows = 0;
+    for (NSInteger sectionIndex = 0; sectionIndex < numberOfSections; sectionIndex++) {
+        totalNumberOfRows += [self.dataSource collectionView:self numberOfItemsInSection:sectionIndex];
+    }
+    return totalNumberOfRows;
 }
 
 @end

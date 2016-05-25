@@ -73,6 +73,15 @@
     }
 }
 
+- (void)deleteItemsAtIndexPaths:(nonnull NSArray *)indexPaths {
+    [self.collectionView deleteItemsAtIndexPaths:indexPaths];
+}
+
+- (void)insertItemsAtIndexPaths:(nonnull NSArray *)indexPaths
+                         models:(nonnull NSArray *)models {
+    [self.collectionView insertItemsAtIndexPaths:indexPaths];
+}
+
 #pragma mark - UICollectionViewDatasource methods
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
