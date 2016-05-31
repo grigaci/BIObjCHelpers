@@ -16,26 +16,6 @@
 
 @implementation BIOperationNotifier
 
-- (void)safeCallDidFinishWithErrorCallback:(nonnull NSError *)error {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self BI_notifyOperationDidFinishWithError:error];
-        [self safeCallDidFinishCommon];
-    });
-}
-
-- (void)safeCallDidFinishSuccessfullyCallback:(nonnull id)responseObject {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self BI_notifyOperationDidFinishWithResponse:responseObject];
-        [self safeCallDidFinishCommon];
-    });
-}
-
-- (void)safeCallDidFinishCommon {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self BI_notifyOperationDidFinishCommon];
-    });
-}
-
 #pragma mark - Public methods
 
 - (void)registerOperationFinishedListener:(id<BIOperationNotifierListener>)listener {
@@ -44,6 +24,49 @@
 
 - (void)unregisterOperationFinishedListener:(id<BIOperationNotifierListener>)listener {
     [self.operationFinishedListeners removeObject:listener];
+}
+
+#pragma mark - BIOperationBase methods
+
+- (void)safeCallDidFinishWithErrorCallback:(nonnull NSError *)error {
+    void(^block)() = ^{
+        [self BI_notifyOperationDidFinishWithError:error];
+        [self handleDidFinishedCommon];
+    };
+    if (self.runCallbacksOnMainThread) {
+        dispatchCodeOnMainThread( ^{
+            block();
+        });
+    } else {
+        block();
+    }
+}
+
+- (void)safeCallDidFinishSuccessfullyCallback:(nonnull id)responseObject {
+    void(^block)() = ^{
+        [self BI_notifyOperationDidFinishWithResponse:responseObject];
+        [self handleDidFinishedCommon];
+    };
+    if (self.runCallbacksOnMainThread) {
+        dispatchCodeOnMainThread( ^{
+            block();
+        });
+    } else {
+        block();
+    }
+}
+
+- (void)safeCallDidFinishCommon {
+    void(^block)() = ^{
+        [self BI_notifyOperationDidFinishCommon];
+    };
+    if (self.runCallbacksOnMainThread) {
+        dispatchCodeOnMainThread( ^{
+            block();
+        });
+    } else {
+        block();
+    }
 }
 
 #pragma mark - Properties methods
