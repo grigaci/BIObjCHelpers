@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		431124921CE36CDC00950918 /* BIOperationNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 431124901CE36CDC00950918 /* BIOperationNotifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		431124931CE36CDC00950918 /* BIOperationNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 431124911CE36CDC00950918 /* BIOperationNotifier.m */; };
+		43A5B5531CFD6EF900F79359 /* BIOperationBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A5B5511CFD6EF900F79359 /* BIOperationBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A5B5541CFD6EF900F79359 /* BIOperationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5B5521CFD6EF900F79359 /* BIOperationBase.m */; };
+		43A5B5571CFD733300F79359 /* BIOperationBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5B5561CFD733300F79359 /* BIOperationBaseTestCase.m */; };
 		43F541CD1CD0F276002EB6C6 /* BIObjCHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F541C31CD0F275002EB6C6 /* BIObjCHelpers.framework */; };
 		43F541DC1CD0F2AD002EB6C6 /* _BIScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A821B94790400D00EB2 /* _BIScrollViewProxy.m */; };
 		43F541DE1CD0F2AD002EB6C6 /* UIScrollView+BIBatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 432001971C7B26C0006A8BB7 /* UIScrollView+BIBatching.m */; };
@@ -142,6 +145,9 @@
 		4355334F1B81B87F0052A128 /* _BITableView+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "_BITableView+Internal.h"; path = "Views/TableView/_BITableView+Internal.h"; sourceTree = "<group>"; };
 		435D59BE1B622E8A00ECA859 /* BIMockHandlerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIMockHandlerTableView.h; path = BIHandlerTableView/BIMockHandlerTableView.h; sourceTree = "<group>"; };
 		435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIMockHandlerTableView.m; path = BIHandlerTableView/BIMockHandlerTableView.m; sourceTree = "<group>"; };
+		43A5B5511CFD6EF900F79359 /* BIOperationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIOperationBase.h; path = Operations/BIOperationBase.h; sourceTree = "<group>"; };
+		43A5B5521CFD6EF900F79359 /* BIOperationBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIOperationBase.m; path = Operations/BIOperationBase.m; sourceTree = "<group>"; };
+		43A5B5561CFD733300F79359 /* BIOperationBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIOperationBaseTestCase.m; path = Operations/BIOperationBaseTestCase.m; sourceTree = "<group>"; };
 		43A7D0251C735C1B007C8CC0 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		43A7D0261C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
 		43A7D0271C735C1B007C8CC0 /* UIScrollView+InfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+InfiniteScroll.m"; sourceTree = "<group>"; };
@@ -283,6 +289,8 @@
 		4311248D1CE36CA200950918 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				43A5B5511CFD6EF900F79359 /* BIOperationBase.h */,
+				43A5B5521CFD6EF900F79359 /* BIOperationBase.m */,
 				431124901CE36CDC00950918 /* BIOperationNotifier.h */,
 				431124911CE36CDC00950918 /* BIOperationNotifier.m */,
 			);
@@ -320,6 +328,14 @@
 				435D59BF1B622E8A00ECA859 /* BIMockHandlerTableView.m */,
 			);
 			name = BIHandlerTableView;
+			sourceTree = "<group>";
+		};
+		43A5B5551CFD731B00F79359 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				43A5B5561CFD733300F79359 /* BIOperationBaseTestCase.m */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		43A7D01E1C7349DA007C8CC0 /* ExternalLibs */ = {
@@ -563,6 +579,7 @@
 				43BE6CDF1B568ECB001F0A00 /* Datasource */,
 				43BE6CEA1B568ECB001F0A00 /* Handler */,
 				43BE6CED1B568ECB001F0A00 /* Lifecycle */,
+				43A5B5551CFD731B00F79359 /* Operations */,
 				43BE6CEF1B568ECB001F0A00 /* OperationQueue */,
 				43BE6CF21B568ECB001F0A00 /* Starters */,
 			);
@@ -954,6 +971,7 @@
 				43F542341CD0F417002EB6C6 /* NSDate+BIAttributedString.h in Headers */,
 				43F5423C1CD0F429002EB6C6 /* BIDatasourceTableView.h in Headers */,
 				43F542381CD0F424002EB6C6 /* BIDatasourceFetchedCollectionView.h in Headers */,
+				43A5B5531CFD6EF900F79359 /* BIOperationBase.h in Headers */,
 				43F542351CD0F41A002EB6C6 /* NSString+BIExtra.h in Headers */,
 				43F5422C1CD0F393002EB6C6 /* BITableViewCell.h in Headers */,
 				43F542361CD0F422002EB6C6 /* BIDatasourceBase.h in Headers */,
@@ -1190,6 +1208,7 @@
 				43F5421E1CD0F2AE002EB6C6 /* BIStartersFactory.m in Sources */,
 				43F542201CD0F2AE002EB6C6 /* BILaunchStartersFactory.m in Sources */,
 				43F542231CD0F2AE002EB6C6 /* UIScrollView+InfiniteScroll.m in Sources */,
+				43A5B5541CFD6EF900F79359 /* BIOperationBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1200,6 +1219,7 @@
 				43FA5D5E1CD2325200FA754E /* BIDatasourceTableViewTestCase.m in Sources */,
 				43FA5D611CD2325B00FA754E /* BIMockDatasourceFeedTableView.m in Sources */,
 				43FA5D651CD2326A00FA754E /* BIOperationQueueTestCase.m in Sources */,
+				43A5B5571CFD733300F79359 /* BIOperationBaseTestCase.m in Sources */,
 				43FA5D541CD2321E00FA754E /* BITableViewTestCase.m in Sources */,
 				43FA5D521CD2321900FA754E /* BIActivityIndicatorContainerViewTestCase.m in Sources */,
 				43FA5D661CD2326F00FA754E /* BIStartersFactoryTestCase.m in Sources */,
