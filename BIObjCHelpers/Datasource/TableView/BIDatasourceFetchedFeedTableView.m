@@ -1,40 +1,47 @@
 //
-//  BIDatasourceFeedCollectionView.m
+//  BIDatasourceFetchedFeedTableView.m
 //  BIObjCHelpers
 //
-//  Created by Mihai Chifor on 8/31/15.
-//  Copyright (c) 2015 iGama Apps. All rights reserved.
+//  Created by Bogdan Iusco on 6/10/16.
+//  Copyright © 2016 iGama Apps. All rights reserved.
 //
 
-#import "BIDatasourceFeedCollectionView.h"
-#import "BICollectionViewActivityIndicatorReusableView.h"
+#import "BIDatasourceFetchedFeedTableView.h"
 #import "BIBatchRequest.h"
 #import "BIBatchResponse.h"
-#import "_BICollectionView+Internal.h"
+#import "BITableViewCell.h"
+#import "_BITableView+Internal.h"
 #import "BIScrollAdditionalViewBase.h"
 #import "UIScrollView+BIBatching.h"
 
-@interface BIDatasourceFeedCollectionView ()
+@interface BIDatasourceFetchedFeedTableView ()
 
 @property (nonatomic, strong, nullable, readwrite) BIBatchRequest *currentBatchRequest;
+@property (nonatomic, assign, readwrite) BIDatasourceTableViewFetchingState fetchingState;
 
 @end
 
-@implementation BIDatasourceFeedCollectionView
 
-@dynamic collectionView;
+@implementation BIDatasourceFetchedFeedTableView
+
+@dynamic tableView;
 @synthesize cellClass = _cellClass;
 
 #pragma mark - Factory methods
 
-+ (nonnull instancetype)datasourceWithBICollectionView:(nonnull BICollectionView *)collectionView {
-    return [[self alloc] initWithBICollectionView:collectionView];
++ (nonnull instancetype)datasourceWithBITableView:(nonnull BITableView *)tableView {
+    return [[self alloc] initWithBITableView:tableView];
 }
 
 #pragma mark - Init methods
 
-- (nonnull instancetype)initWithBICollectionView:(nonnull BICollectionView *)collectionView {
-    return [super initWithCollectionView:collectionView];
+- (nonnull instancetype)initWithBITableView:(nonnull BITableView *)tableView  {
+    self = [super initWithTableView:tableView];
+    if (self) {
+        self.cellClass = [BITableViewCell class];
+        _fetchingState = BIDatasourceTableViewFetchingStateNone;
+    }
+    return self;
 }
 
 #pragma mark - BIDatasourceBase methods
@@ -42,29 +49,18 @@
 - (void)load {
     [super load];
     __weak typeof(self) weakself = self;
-    [self.collectionView setInfiniteScrollingCallback:^{
-        BIBatchRequest *batch = [weakself createNextBatch];
-        batch.insertPosition = BIBatchInsertPositionBottom;
-        [weakself fetchBatchRequest:batch];
+    [self.tableView setInfiniteScrollingCallback:^{
+        [weakself tableViewDidTriggerInfiniteScrollingAction];
     }];
-    [self.collectionView setPullToRefreshCallback:^{
-        BIBatchRequest *batch = [weakself createPullToRefreshBatchRequest];
-        batch.insertPosition = BIBatchInsertPositionTop;
-        [weakself fetchBatchRequest:batch];
+    [self.tableView setPullToRefreshCallback:^{
+        [weakself tableViewDidTriggerPullToRefreshAction];
     }];
-}
-
-- (Class)cellClass {
-    if (!_cellClass) {
-        _cellClass = [UICollectionViewCell class];
-    }
-    return _cellClass;
 }
 
 #pragma mark - Public methods
 
 - (nonnull BIBatchRequest *)createNextBatch {
-    NSUInteger lastSectionIndex = [self.collectionView numberOfSections] - 1;
+    NSUInteger lastSectionIndex = [self.tableView numberOfSections] - 1;
     NSUInteger batchSize = kDefaultBatchRequestSize;
     __weak typeof(self) weakself = self;
     BIBatchRequestCompletionBlock completionBlock = ^(BIBatchResponse *batchResponse) {
@@ -114,6 +110,14 @@
     return mutableBatch;
 }
 
+- (nonnull BIMutableBatchRequest *)createNoContentTapToRetryBatchRequest {
+    BIMutableBatchRequest *mutableBatch = [self createBatchRequest];
+    mutableBatch.options |= BIBatchRequestOptionNoContent;
+    mutableBatch.options |= BIBatchRequestOptionReload;
+    mutableBatch.insertPosition = BIBatchInsertPositionBottom;
+    return mutableBatch;
+}
+
 - (nonnull BIMutableBatchRequest *)createReloadRequest {
     BIMutableBatchRequest *mutableBatch = [self createBatchRequest];
     mutableBatch.options |= BIBatchRequestOptionReload;
@@ -124,36 +128,36 @@
 - (void)fetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     NSAssert(!self.currentBatchRequest, @"Another batch request is in progress!");
     self.currentBatchRequest = batchRequest;
-    [self updateCollectionViewForFetchBatchRequest:batchRequest];
+    [self updateTableViewForFetchBatchRequest:batchRequest];
 }
 
-- (void)updateCollectionViewForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
-    [self updateCollectionViewAdditionalViewsForFetchBatchRequest:batchRequest];
+- (void)updateTableViewForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+    [self updateTableAdditionalViewsForFetchBatchRequest:batchRequest];
     BOOL noItemsDisplayed = [self BI_areNoItemsDisplayedForBatchRequest:batchRequest];
     
     if (noItemsDisplayed) {
-        self.collectionView.BI_pullToRefreshEnabled = NO;
-        if (!self.collectionView.visibleAdditionalView) { // If we don't have an additional view visible
-            self.fetchingState = BIDatasourceCollectionViewFetchingStateInfiniteScrolling;
-            [self.collectionView BI_startInfiniteScrolling];
+        self.tableView.BI_pullToRefreshEnabled = NO;
+        if (!self.tableView.visibleAdditionalView) { // If we don't have an additional view visible
+            self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
+            [self.tableView BI_startInfiniteScrolling];
         }
     } else if (batchRequest.isInfiniteScrollingRequest) {
-        self.collectionView.BI_pullToRefreshEnabled = NO;
-        if (!self.collectionView.visibleAdditionalView) { // If we don't have an additional view visible
-            self.fetchingState = BIDatasourceCollectionViewFetchingStateInfiniteScrolling;
-            self.collectionView.infiniteScrollingState = BIInfiniteScrollingStateLoading;
+        self.tableView.BI_pullToRefreshEnabled = NO;
+        if (!self.tableView.visibleAdditionalView) { // If we don't have an additional view visible
+            self.fetchingState = BIDatasourceTableViewFetchingStateInfiniteScrolling;
+            self.tableView.infiniteScrollingState = BIInfiniteScrollingStateLoading;
         }
     } else if (batchRequest.isPullToRefreshRequest) {
-        self.collectionView.BI_infiniteScrollingEnabled = NO;
-        self.fetchingState = BIDatasourceCollectionViewFetchingStatePullToRefresh;
-        [self.collectionView.pullToRefreshControl beginRefreshing];
+        self.tableView.BI_infiniteScrollingEnabled = NO;
+        self.fetchingState = BIDatasourceTableViewFetchingStatePullToRefresh;
+        [self.tableView.pullToRefreshControl beginRefreshing];
     }
 }
 
-- (void)updateCollectionViewAdditionalViewsForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
+- (void)updateTableAdditionalViewsForFetchBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     BOOL noItemsDisplayed = [self BI_areNoItemsDisplayedForBatchRequest:batchRequest];
     if (noItemsDisplayed) {
-        [self.collectionView addAdditionalLoadingContentView];
+        [self.tableView addAdditionalLoadingContentView];
     }
 }
 
@@ -170,95 +174,78 @@
 }
 
 - (void)handleFetchBatchResponseWithSuccess:(nonnull BIBatchResponse *)batchResponse {
-    NSArray *newIndexPaths = batchResponse.indexPaths;
-    if (newIndexPaths.count) {
-        __weak typeof(self) weakself = self;
-
-        if (self.collectionView.visibleAdditionalView.type == BITableAdditionalTypeLoadingContentView) {
-            // Removing the loading view before inserting items
-            // Otherwise we get a nasty flicker
-            [self.collectionView removeVisibleAdditionalView];
+    if (batchResponse.indexPaths.count) {
+        [self.tableView beginUpdates];
+        if (batchResponse.addedSectionsIndexSet.count) {
+            [self.tableView insertSections:batchResponse.addedSectionsIndexSet withRowAnimation:UITableViewRowAnimationAutomatic];
         }
-
-        [self.collectionView performBatchUpdates:^{
-            if (batchResponse.addedSectionsIndexSet.count) {
-                [weakself.collectionView insertSections:batchResponse.addedSectionsIndexSet];
-            }
-
-            [weakself.collectionView insertItemsAtIndexPaths:newIndexPaths];
-        } completion:^(BOOL finished) {
-            [weakself handleFetchBatchResponseCommon:batchResponse];
-        }];
-    } else {
-        [self.collectionView.collectionViewLayout invalidateLayout];
-        [self handleFetchBatchResponseCommon:batchResponse];
+        [self.tableView insertRowsAtIndexPaths:batchResponse.indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView endUpdates];
     }
+    [self handleFetchBatchResponseCommon:batchResponse];
 }
 
 - (void)handleFetchBatchResponseCommon:(nonnull BIBatchResponse *)batchResponse {
     self.currentBatchRequest = nil;
-    self.fetchingState = BIDatasourceCollectionViewFetchingStateNone;
-    [self updateCollectionViewForBatchResponse:batchResponse];
+    self.fetchingState = BIDatasourceTableViewFetchingStateNone;
+    [self updateTableViewForBatchResponse:batchResponse];
 }
 
-- (void)updateCollectionViewForBatchResponse:(nonnull BIBatchResponse *)batchResponse {
-    [self updateCollectionAdditionalViewsForBatchResponse:batchResponse];
+- (void)updateTableViewForBatchResponse:(nonnull BIBatchResponse *)batchResponse {
+    [self updateTableAdditionalViewsForBatchResponse:batchResponse];
     
-    self.currentBatchRequest = nil;
-
     // Internal flags
     if (batchResponse.batchRequest.isInitialRequest) {
-        self.collectionView.BI_pullToRefreshEnabled = NO;
-        self.collectionView.BI_infiniteScrollingEnabled = NO;
+        self.tableView.BI_pullToRefreshEnabled = YES;
+        self.tableView.BI_infiniteScrollingEnabled = NO;
     }
     if (batchResponse.batchRequest.isInfiniteScrollingRequest) {
-        self.collectionView.BI_pullToRefreshEnabled = YES;
+        self.tableView.BI_pullToRefreshEnabled = YES;
     }
     if (batchResponse.batchRequest.isPullToRefreshRequest) {
-        [self.collectionView.pullToRefreshControl endRefreshing];
-        self.collectionView.BI_infiniteScrollingEnabled = YES;
-        self.collectionView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+        self.tableView.BI_infiniteScrollingEnabled = YES;
+        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
     }
     
     // Batch response flags
     if (batchResponse.shouldStopInfiniteScrolling || batchResponse.batchRequest.isInfiniteScrollingRequest) {
-        self.collectionView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+        self.tableView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
     }
     if (batchResponse.shouldStopPullToRefresh || batchResponse.batchRequest.isPullToRefreshRequest) {
-        [self.collectionView.pullToRefreshControl endRefreshing];
+        [self.tableView.pullToRefreshControl endRefreshing];
     }
     if (batchResponse.shouldDisablePullToRefresh) {
-        self.collectionView.pullToRefreshEnabled = NO;
+        self.tableView.pullToRefreshEnabled = NO;
     }
     if (batchResponse.shouldDisableInfiniteScrolling) {
-        self.collectionView.infiniteScrollingEnabled = NO;
-    }
-    
-    if (self.collectionView.infiniteScrollingState != BIInfiniteScrollingStateStopped) {
-        self.collectionView.infiniteScrollingState = BIInfiniteScrollingStateStopped;
+        self.tableView.infiniteScrollingEnabled = NO;
     }
 }
 
-- (void)updateCollectionAdditionalViewsForBatchResponse:(nonnull BIBatchResponse *)batchResponse {
+- (void)updateTableAdditionalViewsForBatchResponse:(nonnull BIBatchResponse *)batchResponse {
     BOOL noItemsDisplayed = [self BI_areNoItemsDisplayedForBatchRequest:batchResponse.batchRequest];
     if (noItemsDisplayed) {
+        // BI_pullToRefreshEnabled is set to NO for some batch requests types(when noItemsDisplayed is YES).
+        // Not resetting it here will disable pull to refresh for all types of requests(cases when noItemsDisplayed is NO).
+        self.tableView.BI_pullToRefreshEnabled = YES;
+        
         BOOL isBatchFailed = batchResponse.error ? YES : NO;
         BOOL isEmptyResponse = batchResponse.indexPaths.count == 0 ? YES : NO;
         if (isBatchFailed) {
-            [self.collectionView addAdditionalErrorNoContentView];
+            [self.tableView addAdditionalErrorNoContentView];
         } else if (isEmptyResponse) {
-            [self.collectionView addAdditionalNoContentView];
+            [self.tableView addAdditionalNoContentView];
         } else {
-            [self.collectionView removeVisibleAdditionalView];
+            [self.tableView removeVisibleAdditionalView];
         }
-        if (self.collectionView.visibleAdditionalView.type == BITableAdditionalTypeLoadingContentView) {
-            [self.collectionView removeVisibleAdditionalView];
+        if (self.tableView.visibleAdditionalView.type == BITableAdditionalTypeLoadingContentView) {
+            [self.tableView removeVisibleAdditionalView];
         }
     }
 }
 
 - (void)tableViewDidTriggerPullToRefreshAction {
-    if (self.fetchingState != BIDatasourceCollectionViewFetchingStateNone) {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
         return;
     }
     BIMutableBatchRequest *batchRequest = [self createPullToRefreshBatchRequest];
@@ -266,7 +253,7 @@
 }
 
 - (void)tableViewDidTriggerInfiniteScrollingAction {
-    if (self.fetchingState != BIDatasourceCollectionViewFetchingStateNone) {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
         return;
     }
     BIMutableBatchRequest *batchRequest = [self createInfiniteScrollingBatchRequest];
@@ -274,7 +261,7 @@
 }
 
 - (void)triggerInitialRequest {
-    if (self.fetchingState != BIDatasourceCollectionViewFetchingStateNone) {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
         return;
     }
     BIMutableBatchRequest *batchRequest = [self createInitialBatchRequest];
@@ -282,15 +269,23 @@
 }
 
 - (void)triggerErrorNoContentTapToRetryRequest {
-    if (self.fetchingState != BIDatasourceCollectionViewFetchingStateNone) {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
         return;
     }
     BIMutableBatchRequest *batchRequest = [self createErrorNoContentTapToRetryBatchRequest];
     [self fetchBatchRequest:batchRequest];
 }
 
+- (void)triggerNoContentTapToRetryRequest {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
+        return;
+    }
+    BIMutableBatchRequest *batchRequest = [self createNoContentTapToRetryBatchRequest];
+    [self fetchBatchRequest:batchRequest];
+}
+
 - (void)triggerReloadRequest {
-    if (self.fetchingState != BIDatasourceCollectionViewFetchingStateNone) {
+    if (self.fetchingState != BIDatasourceTableViewFetchingStateNone) {
         return;
     }
     BIMutableBatchRequest *batchRequest = [self createReloadRequest];
@@ -299,8 +294,8 @@
 
 #pragma mark - Property methods
 
-- (void)setFetchingState:(BIDatasourceCollectionViewFetchingState)fetchingState {
-    NSAssert(_fetchingState ==  BIDatasourceCollectionViewFetchingStateNone || fetchingState ==  BIDatasourceCollectionViewFetchingStateNone, @"Trying to change the fetching state while another operation is in progress");
+- (void)setFetchingState:(BIDatasourceTableViewFetchingState)fetchingState {
+    NSAssert(_fetchingState ==  BIDatasourceTableViewFetchingStateNone || fetchingState ==  BIDatasourceTableViewFetchingStateNone, @"Trying to change the fetching state while another operation is in progress");
     _fetchingState = fetchingState;
 }
 
@@ -309,7 +304,8 @@
 - (BOOL)BI_areNoItemsDisplayedForBatchRequest:(nonnull BIBatchRequest *)batchRequest {
     BOOL noItemsDisplayed = batchRequest.isInitialRequest ||
     batchRequest.isNoContentRequest ||
-    batchRequest.isErrorNoContentTapToRetryRequest;
+    batchRequest.isErrorNoContentTapToRetryRequest ||
+    batchRequest.isReloadRequest;
     return noItemsDisplayed;
 }
 

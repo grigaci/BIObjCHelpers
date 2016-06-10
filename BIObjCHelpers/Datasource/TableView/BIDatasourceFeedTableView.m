@@ -12,6 +12,7 @@
 #import "BITableViewCell.h"
 #import "_BITableView+Internal.h"
 #import "BIScrollAdditionalViewBase.h"
+#import "UIScrollView+BIBatching.h"
 
 @interface BIDatasourceFeedTableView ()
 

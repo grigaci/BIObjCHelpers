@@ -1,12 +1,12 @@
 //
-//  BIDatasourceFeedTableView.h
+//  BIDatasourceFetchedFeedTableView.h
 //  BIObjCHelpers
 //
-//  Created by Bogdan Iusco on 14/07/15.
-//  Copyright (c) 2015 Bogdan Iusco. All rights reserved.
+//  Created by Bogdan Iusco on 6/10/16.
+//  Copyright © 2016 iGama Apps. All rights reserved.
 //
 
-#import "BIDatasourceTableView.h"
+#import "BIDatasourceFetchedTableView.h"
 #import "BITableView.h"
 #import "BITableViewUtils.h"
 
@@ -14,11 +14,7 @@
 @class BIMutableBatchRequest;
 @class BIBatchResponse;
 
-
-/*!
- * Datasource for a BITableView with support for fetching batches.
- */
-@interface BIDatasourceFeedTableView : BIDatasourceTableView
+@interface BIDatasourceFetchedFeedTableView : BIDatasourceFetchedTableView
 
 /*!
  * @brief Factory method for creating a feed table view datasource.

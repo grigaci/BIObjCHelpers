@@ -47,6 +47,7 @@ FOUNDATION_EXPORT const unsigned char BIObjCHelpersVersionString[];
 #import <BIObjCHelpers/BIDatasourceFetchedCollectionView.h>
 #import <BIObjCHelpers/BIDatasourceFeedTableView.h>
 #import <BIObjCHelpers/BIDatasourceFeedCollectionView.h>
+#import <BIObjCHelpers/BIDatasourceFetchedFeedTableView.h>
 
 // Handlers
 #import <BIObjCHelpers/BIHandlerBase.h>
