@@ -8,6 +8,6 @@ before_install:
 - brew uninstall xctool; brew install xctool --HEAD;
 
 script:
-- xctool test -workspace BIObjCHelpers.xcodeproj -scheme BIObjCHelpers -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 6,OS=9.3"
+- xctool test -project BIObjCHelpers.xcodeproj -scheme BIObjCHelpers -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 6,OS=9.3"
 
 after_success: slather
