@@ -1,1 +1,0 @@
-../../../../../BIObjCHelpers/Views/TableView/Cell/BITableViewCell.h

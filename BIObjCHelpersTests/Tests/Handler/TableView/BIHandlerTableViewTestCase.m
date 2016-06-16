@@ -7,20 +7,14 @@
 //
 
 #import "BIHandlerTableView.h"
-#import "BITableView.h"
+#import "MockBITableView.h"
+
 #import <XCTest/XCTest.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-
-#define MOCKITO_SHORTHAND
-#import <OCMockito/OCMockito.h>
-
 
 @interface BIHandlerTableViewTestCase : XCTestCase
 
 @property (nonatomic, strong) BIHandlerTableView *handler;
-@property (nonatomic, strong) BITableView *tableView;
-@property (nonatomic, strong) UITableViewCell *cell;
+@property (nonatomic, strong) MockBITableView *tableView;
 
 @end
 
@@ -30,12 +24,12 @@
 
 - (void)setUp {
     [super setUp];
-    self.tableView = mock([BITableView class]);
-    self.cell = mock([UITableViewCell class]);
+    self.tableView = [MockBITableView new];
     self.handler = [BIHandlerTableView handlerWithTableView:self.tableView];
 
-    [given([self.tableView cellForRowAtIndexPath:anything()]) willReturn:self.cell];
-    [given([self.tableView delegate]) willReturn:self.handler];
+    self.tableView.cellForRowAtIndexPathCallback = ^(NSIndexPath *__nonnull indexPath) {
+        return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString randomString]];
+    };
 
     [self.handler load];
 }
@@ -43,7 +37,6 @@
 - (void)tearDown {
     self.handler = nil;
     self.tableView = nil;
-    self.cell = nil;
     [super tearDown];
 }
 
@@ -72,7 +65,7 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:arc4random_uniform(10) inSection:arc4random_uniform(10)];
     [self.tableView.delegate tableView:self.tableView didSelectRowAtIndexPath:indexPath];
     
-    XCTAssertEqual(receivedCell, self.cell);
+    XCTAssertNotNil(receivedCell);
     XCTAssertEqual(receivedIndexPath, indexPath);
 }
 
@@ -92,7 +85,7 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:arc4random_uniform(10) inSection:arc4random_uniform(10)];
     [self.tableView.delegate tableView:self.tableView didDeselectRowAtIndexPath:indexPath];
 
-    XCTAssertEqual(receivedCell, self.cell);
+    XCTAssertNotNil(receivedCell);
     XCTAssertEqual(receivedIndexPath, indexPath);
 }
 

@@ -7,33 +7,17 @@
 //
 
 #import "BIDatasourceTableView.h"
+#import "MockUITableView.h"
+#import "MockUINib.h"
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-
-#define MOCKITO_SHORTHAND
-#import <OCMockito/OCMockito.h>
 
 @interface BIDatasourceTableViewTestCase : XCTestCase
 
 @end
 
 @implementation BIDatasourceTableViewTestCase
-
-#pragma mark - Setup methods
-
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
 
 #pragma mark - Test init
 
@@ -47,31 +31,39 @@
 #pragma mark - Test load
 
 - (void)testLoadNib {
-    UITableView *tableView = mock([UITableView class]);
-    UINib *nib = mock([UINib class]);
+    MockUITableView *tableView = [MockUITableView new];
+    __block UINib *returnedNib;
+    tableView.registerNibForCellReuseIdentifierCallback = ^(UINib *__nonnull nib, NSString *__nonnull identifier) {
+        returnedNib = nib;
+    };
+
+    MockUINib *nib = [MockUINib new];
     BIDatasourceTableView *datasource = [BIDatasourceTableView datasourceWithTableView:tableView];
     datasource.cellNib = nib;
     
     [datasource load];
     
-    [verifyCount(tableView, times(1)) registerNib:nib forCellReuseIdentifier:datasource.cellIdentifier];
+    XCTAssertNotNil(returnedNib);
 }
 
 - (void)testLoadCell {
-    UITableView *tableView = mock([UITableView class]);
-    Class cell = mockClass([UITableViewCell class]);
+    MockUITableView *tableView = [MockUITableView new];
+    __block Class returnedClass;
+    tableView.registerClassForCellReuseIdentifierCallback = ^(Class __nonnull cellClass, NSString *__nonnull identifier) {
+        returnedClass = cellClass;
+    };
     BIDatasourceTableView *datasource = [BIDatasourceTableView datasourceWithTableView:tableView];
-    datasource.cellClass = cell;
+    datasource.cellClass = [UITableViewCell class];
     
     [datasource load];
     
-    [verifyCount(tableView, times(1)) registerClass:cell forCellReuseIdentifier:datasource.cellIdentifier];
+    XCTAssertNotNil(returnedClass);
 }
 
 #pragma mark - Test cellForRowAtIndexPath
 
 - (void)testCellForRowAtIndexPathNoCellType {
-    UITableView *tableView = mock([UITableView class]);
+    MockUITableView *tableView = [MockUITableView new];
     BIDatasourceTableView *datasource = [BIDatasourceTableView datasourceWithTableView:tableView];
     
     [datasource load];
@@ -82,7 +74,11 @@
 #pragma mark - Test deleteRowsAtIndexPaths:withRowAnimation:
 
 - (void)test_deleteRowsAtIndexPathsWithRowAnimation {
-    UITableView *tableView = mock([UITableView class]);
+    MockUITableView *tableView = [MockUITableView new];
+    __block NSArray *returnedIndexPaths;
+    tableView.deleteRowsAtIndexPathsWithRowAnimationCallback = ^(NSArray * __nonnull indexPaths, UITableViewRowAnimation animation) {
+        returnedIndexPaths = indexPaths;
+    };
     BIDatasourceTableView *datasource = [BIDatasourceTableView datasourceWithTableView:tableView];
     [datasource load];
     
@@ -91,13 +87,17 @@
     NSArray *indexPaths = @[indexPath];
 
     [datasource deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
-    [verifyCount(tableView, times(1)) deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    XCTAssertEqual(returnedIndexPaths, indexPaths);
 }
 
 #pragma mark - Test test_insertRowsAtIndexPaths:models:withRowAnimation
 
 - (void)test_insertRowsAtIndexPathsModelsWithRowAnimation {
-    UITableView *tableView = mock([UITableView class]);
+    MockUITableView *tableView = [MockUITableView new];
+    __block NSArray *returnedIndexPaths;
+    tableView.insertRowsAtIndexPathsWithRowAnimationCallback = ^(NSArray * __nonnull indexPaths, UITableViewRowAnimation animation) {
+        returnedIndexPaths = indexPaths;
+    };
     BIDatasourceTableView *datasource = [BIDatasourceTableView datasourceWithTableView:tableView];
     [datasource load];
     
@@ -106,7 +106,7 @@
     NSArray *indexPaths = @[indexPath];
     
     [datasource insertRowsAtIndexPaths:indexPaths models:@[] withRowAnimation:animation];
-    [verifyCount(tableView, times(1)) insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+    XCTAssertEqual(returnedIndexPaths, indexPaths);
 }
 
 @end

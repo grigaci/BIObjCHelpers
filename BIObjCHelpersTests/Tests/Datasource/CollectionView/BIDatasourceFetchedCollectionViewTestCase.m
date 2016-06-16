@@ -7,21 +7,15 @@
 //
 
 #import "BITestCaseCoreData.h"
-#import "BIMockDatasourceFetchedCollectionView.h"
-#import "NSFetchedResultsController+BITestHelpers.h"
-
+#import "MockUICollectionView.h"
+#import "MockNSFetchedResultsController.h"
+#import "MockNSFetchedResultsSectionInfo.h"
 #import "BIDatasourceFetchedCollectionView.h"
-
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-
-#define MOCKITO_SHORTHAND
-#import <OCMockito/OCMockito.h>
 
 @interface BIDatasourceFetchedCollectionViewTestCase : BITestCaseCoreData
 
 @property (nonatomic, strong) BIDatasourceFetchedCollectionView *datasource;
-@property (nonatomic, strong) BIMockDatasourceFetchedCollectionView *collectionView;
+@property (nonatomic, strong) MockUICollectionView *collectionView;
 
 @end
 
@@ -30,7 +24,7 @@
 - (void)setUp {
     [super setUp];
     UICollectionViewLayout *layout = [UICollectionViewFlowLayout new];
-    self.collectionView = [[BIMockDatasourceFetchedCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    self.collectionView = [[MockUICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     self.datasource = [BIDatasourceFetchedCollectionView datasourceWithCollectionView:self.collectionView];
 }
 
@@ -51,7 +45,7 @@
 - (void)testCollectionViewDatasourceMethods {
     // Simulate an fetched with 1 section and 3 objects
     NSArray *objects = @[@1, @2, @3];
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController mockWithSectionsArray:@[objects]];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:objects];
     self.datasource.fetchedResultsController = fetchedResults;
 
     XCTAssertEqual([self.datasource numberOfSectionsInCollectionView:self.collectionView], 1U);
@@ -83,7 +77,8 @@
 #pragma mark - Test fetched results section changes
 
 - (void)testAddSection {
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[]];
+    self.datasource.fetchedResultsController = fetchedResults;
     NSUInteger sectionIndexToInsert = 1;
     NSIndexSet *sectionIndexSetToInsert = [NSIndexSet indexSetWithIndex:sectionIndexToInsert];
     self.datasource.fetchedResultsController = fetchedResults;
@@ -93,7 +88,7 @@
         testSections = sections;
     };
 
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeSection:sectionInfo atIndex:sectionIndexToInsert forChangeType:NSFetchedResultsChangeInsert];
     [self.datasource controllerDidChangeContent:fetchedResults];
 
@@ -101,7 +96,7 @@
 }
 
 - (void)testDeleteSection {
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[]];
     NSUInteger sectionIndexToDeleted = 0;
     NSIndexSet *sectionIndexSetToDelete = [NSIndexSet indexSetWithIndex:sectionIndexToDeleted];
     self.datasource.fetchedResultsController = fetchedResults;
@@ -111,7 +106,7 @@
         testSections = sections;
     };
     
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeSection:sectionInfo atIndex:sectionIndexToDeleted forChangeType:NSFetchedResultsChangeDelete];
     [self.datasource controllerDidChangeContent:fetchedResults];
 
@@ -121,7 +116,7 @@
 #pragma mark - Test fetched results item changes
 
 - (void)testAddItems {
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController mockWithSectionsArray:@[@[@1, @2, @3]]];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[@[@1, @2, @3]]];
     self.datasource.fetchedResultsController = fetchedResults;
 
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -136,7 +131,7 @@
         wasReloaded = YES;
     };
 
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:nil forChangeType:NSFetchedResultsChangeInsert newIndexPath:indexPath];
     [self.datasource controllerDidChangeContent:fetchedResults];
 
@@ -150,7 +145,7 @@
 }
 
 - (void)testDeleteItems {
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController mockWithSectionsArray:@[@[@1, @2, @3]]];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[@[@1, @2, @3]]];
     self.datasource.fetchedResultsController = fetchedResults;
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -165,7 +160,7 @@
         wasReloaded = YES;
     };
     
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:indexPath forChangeType:NSFetchedResultsChangeDelete newIndexPath:nil];
     [self.datasource controllerDidChangeContent:fetchedResults];
     
@@ -179,7 +174,7 @@
 }
 
 - (void)testUpdateItems {
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController mockWithSectionsArray:@[@[@1]]];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[@[@1, @2, @3]]];
     self.datasource.fetchedResultsController = fetchedResults;
 
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -194,7 +189,7 @@
         wasReloaded = YES;
     };
     
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:indexPath forChangeType:NSFetchedResultsChangeUpdate newIndexPath:nil];
     [self.datasource controllerDidChangeContent:fetchedResults];
 
@@ -208,7 +203,7 @@
 }
 
 - (void)testMoveItems {
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController mockWithSectionsArray:@[@[@1]]];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[@[@1]]];
     self.datasource.fetchedResultsController = fetchedResults;
     
     NSIndexPath *from = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -226,7 +221,7 @@
         wasReloaded = YES;
     };
     
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:from forChangeType:NSFetchedResultsChangeMove newIndexPath:to];
     [self.datasource controllerDidChangeContent:fetchedResults];
     

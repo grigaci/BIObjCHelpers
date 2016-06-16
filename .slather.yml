@@ -1,6 +1,6 @@
 coverage_service: coveralls
 xcodeproj: BIObjCHelpers.xcodeproj
+scheme: BIObjCHelpers
 ignore:
-- "*/Pods/*"
 - Example/*
 - BIObjCHelpersTests/*
