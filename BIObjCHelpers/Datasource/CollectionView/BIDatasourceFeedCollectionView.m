@@ -12,6 +12,7 @@
 #import "BIBatchResponse.h"
 #import "_BICollectionView+Internal.h"
 #import "BIScrollAdditionalViewBase.h"
+#import "UIScrollView+BIBatching.h"
 
 @interface BIDatasourceFeedCollectionView ()
 

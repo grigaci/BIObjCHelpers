@@ -12,6 +12,7 @@
 #import "BIBatchHelpers.h"
 #import "BIScrollAdditionalViewBase.h"
 #import "BIDatasourceFeedTableView.h"
+#import "UIScrollView+BIBatching.h"
 
 @interface BITableView () <UITableViewDelegate, BIScrollAdditionalViewBaseListener>
 

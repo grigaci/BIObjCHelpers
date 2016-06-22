@@ -7,7 +7,6 @@
 //
 
 #import "BIScrollDetails.h"
-#import "UIScrollView+BIBatching.h"
 
 #import <UIKit/UIKit.h>
 

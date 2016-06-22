@@ -10,7 +10,7 @@
 #import "BIDatasourceFeedTableView.h"
 #import "BIHandlerTableView.h"
 
-#import "BIMockHandlerTableView.h"
+#import "MockBIHandlerTableView.h"
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong, nullable) BITableView *tableView;
 @property (nonatomic, strong, nullable) BIDatasourceTableView *datasource;
-@property (nonatomic, strong, nullable) BIMockHandlerTableView *handler;
+@property (nonatomic, strong, nullable) MockBIHandlerTableView *handler;
 @property (nonatomic, assign) NSInteger countItems;
 
 @end
@@ -37,7 +37,7 @@
     self.datasource.numberOfRowsInSectionCallback = ^(NSInteger section) {
         return weakself.countItems;
     };
-    self.handler = [[BIMockHandlerTableView alloc] initWithTableView:self.tableView];
+    self.handler = [[MockBIHandlerTableView alloc] initWithTableView:self.tableView];
     [self.datasource load];
 }
 

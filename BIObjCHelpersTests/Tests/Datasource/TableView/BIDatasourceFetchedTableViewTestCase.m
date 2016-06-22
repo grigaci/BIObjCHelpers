@@ -7,20 +7,16 @@
 //
 
 #import "BITestCaseCoreData.h"
-#import "NSFetchedResultsController+BITestHelpers.h"
+#import "MockNSFetchedResultsController.h"
+#import "MockNSFetchedResultsSectionInfo.h"
+#import "MockBITableView.h"
 
 #import "BIDatasourceFetchedTableView.h"
-
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-
-#define MOCKITO_SHORTHAND
-#import <OCMockito/OCMockito.h>
 
 @interface BIDatasourceFetchedTableViewTestCase : BITestCaseCoreData
 
 @property (nonatomic, strong) BIDatasourceFetchedTableView *datasource;
-@property (nonatomic, strong) BITableView *tableView;
+@property (nonatomic, strong) MockBITableView *tableView;
 
 @end
 
@@ -28,7 +24,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.tableView = [[BITableView alloc] initWithFrame:CGRectZero];
+    self.tableView = [[MockBITableView alloc] initWithFrame:CGRectZero];
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
     self.datasource.cellClass = [UITableViewCell class];
 }
@@ -50,7 +46,7 @@
 - (void)testTableViewDatasourceMethods {
     // Simulate an fetched with 1 section and 2 objects
     NSArray *objects = @[@1, @2];
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController mockWithSectionsArray:@[objects]];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:objects];
     self.datasource.fetchedResultsController = fetchedResults;
 
     XCTAssertEqual([self.datasource numberOfSectionsInTableView:self.tableView], 1U);
@@ -82,67 +78,67 @@
 #pragma mark - Test fetched results section changes
 
 - (void)testNewSectionAdded {
-    self.tableView = mock([UITableView class]);
+    __block NSIndexSet *returnedSections;
+    self.tableView.insertSectionsWithRowAnimationCallback = ^(NSIndexSet * __nonnull sections, UITableViewRowAnimation animation) {
+        returnedSections = sections;
+    };
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[]];
     NSUInteger sectionIndexToInsert = 1;
-    NSIndexSet *sectionIndexSetToInsert = [NSIndexSet indexSetWithIndex:sectionIndexToInsert];
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeSection:sectionInfo atIndex:sectionIndexToInsert forChangeType:NSFetchedResultsChangeInsert];
 
-    id verifyCountObj = verifyCount(self.tableView, times(1));
-    verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
-    verifyCountObj = [verifyCountObj withMatcher:equalTo(sectionIndexSetToInsert) forArgument:0]; // validate the section index sent to tableview
-    [verifyCountObj insertSections:anything() withRowAnimation:UITableViewRowAnimationBottom];
+    XCTAssertNotNil(returnedSections);
 }
 
 - (void)testSectionDeleted {
-    self.tableView = mock([UITableView class]);
+    __block NSIndexSet *returnedSections;
+    self.tableView.deleteSectionsWithRowAnimationCallback = ^(NSIndexSet * __nonnull sections, UITableViewRowAnimation animation) {
+        returnedSections = sections;
+    };
+
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
+        MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[]];
     NSUInteger sectionIndexToDelete = 0;
-    NSIndexSet *sectionIndexSetToDelete = [NSIndexSet indexSetWithIndex:sectionIndexToDelete];
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeSection:sectionInfo atIndex:sectionIndexToDelete forChangeType:NSFetchedResultsChangeDelete];
     
-    id verifyCountObj = verifyCount(self.tableView, times(1));
-    verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
-    verifyCountObj = [verifyCountObj withMatcher:equalTo(sectionIndexSetToDelete) forArgument:0]; // validate the section index sent to tableview
-    [verifyCountObj deleteSections:anything() withRowAnimation:UITableViewRowAnimationBottom];
+    XCTAssertNotNil(returnedSections);
 }
 
 #pragma mark - Test fetched results section changes
 
 - (void)testNewObjectAdded {
-    self.tableView = mock([UITableView class]);
+    __block NSArray *returnedIndexPaths;
+    self.tableView.insertRowsAtIndexPathsWithRowAnimationCallback = ^(NSArray * __nonnull indexPaths, UITableViewRowAnimation animation) {
+        returnedIndexPaths = indexPaths;
+    };
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[]];
+    self.datasource.fetchedResultsController = fetchedResults;
     NSIndexPath *newRow = [NSIndexPath indexPathForRow:1 inSection:1];
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:nil forChangeType:NSFetchedResultsChangeInsert newIndexPath:newRow];
     
-    id verifyCountObj = verifyCount(self.tableView, times(1));
-    verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
-    verifyCountObj = [verifyCountObj withMatcher:equalTo(@[newRow]) forArgument:0]; // validate the object index sent to tableview
-    [verifyCountObj insertRowsAtIndexPaths:anything() withRowAnimation:UITableViewRowAnimationBottom];
+    XCTAssertNotNil(returnedIndexPaths);
 }
 
 - (void)testObjectDeleted {
-    self.tableView = mock([UITableView class]);
+    __block NSArray *returnedIndexPaths;
+    self.tableView.deleteRowsAtIndexPathsWithRowAnimationCallback = ^(NSArray * __nonnull indexPaths, UITableViewRowAnimation animation) {
+        returnedIndexPaths = indexPaths;
+    };
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[]];
+    self.datasource.fetchedResultsController = fetchedResults;
     NSIndexPath *deletedRow = [NSIndexPath indexPathForRow:1 inSection:1];
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:deletedRow forChangeType:NSFetchedResultsChangeDelete newIndexPath:nil];
     
-    id verifyCountObj = verifyCount(self.tableView, times(1));
-    verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
-    verifyCountObj = [verifyCountObj withMatcher:equalTo(@[deletedRow]) forArgument:0]; // validate the object index sent to tableview
-    [verifyCountObj deleteRowsAtIndexPaths:anything() withRowAnimation:UITableViewRowAnimationBottom];
+    XCTAssertNotNil(returnedIndexPaths);
 }
 
 - (void)testObjectUpdate {
-    self.tableView = mock([UITableView class]);
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
     NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
     self.datasource.fetchedResultsController = fetchedResults;
@@ -154,31 +150,26 @@
         testIndexPath = indexPath;
     };
 
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:updateIndexPath forChangeType:NSFetchedResultsChangeUpdate newIndexPath:nil];
     XCTAssertEqual(testIndexPath, updateIndexPath);
 }
 
 - (void)testObjectMoved {
-    self.tableView = mock([UITableView class]);
+    __block NSArray *returnedIndexPaths;
+    self.tableView.deleteRowsAtIndexPathsWithRowAnimationCallback = ^(NSArray * __nonnull indexPaths, UITableViewRowAnimation animation) {
+        returnedIndexPaths = indexPaths;
+    };
+
     self.datasource = [BIDatasourceFetchedTableView datasourceWithTableView:self.tableView];
-    NSFetchedResultsController *fetchedResults = [NSFetchedResultsController new];
+    MockNSFetchedResultsController *fetchedResults = [[MockNSFetchedResultsController alloc] initWithObjects:@[]];
+    self.datasource.fetchedResultsController = fetchedResults;
     NSIndexPath *fromIndexPath = [NSIndexPath indexPathForRow:1 inSection:1];
     NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:1 inSection:2];
-    id <NSFetchedResultsSectionInfo> sectionInfo = mockProtocol(@protocol(NSFetchedResultsSectionInfo));
+    MockNSFetchedResultsSectionInfo *sectionInfo = [MockNSFetchedResultsSectionInfo new];
     [self.datasource controller:fetchedResults didChangeObject:sectionInfo atIndexPath:fromIndexPath forChangeType:NSFetchedResultsChangeMove newIndexPath:toIndexPath];
 
-    // Test the delete call
-    id verifyCountObj = verifyCount(self.tableView, times(1));
-    verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
-    verifyCountObj = [verifyCountObj withMatcher:equalTo(@[fromIndexPath]) forArgument:0]; // validate the delete index sent to tableview
-    [verifyCountObj deleteRowsAtIndexPaths:anything() withRowAnimation:UITableViewRowAnimationBottom];
-    
-    // Test the insert call
-    verifyCountObj = verifyCount(self.tableView, times(1));
-    verifyCountObj = [verifyCountObj withMatcher:anything() forArgument:1]; // ignore withRowAnimation param
-    verifyCountObj = [verifyCountObj withMatcher:equalTo(@[fromIndexPath]) forArgument:0]; // validate the insert index sent to tableview
-    [verifyCountObj deleteRowsAtIndexPaths:anything() withRowAnimation:UITableViewRowAnimationBottom];
+    XCTAssertNotNil(returnedIndexPaths);
 }
 
 #pragma mark - Property

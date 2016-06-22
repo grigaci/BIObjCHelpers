@@ -13,6 +13,7 @@
 #import "BIScrollAdditionalViewBase.h"
 #import "BIDatasourceFeedCollectionView.h"
 #import "UIScrollView+InfiniteScroll.h"
+#import "UIScrollView+BIBatching.h"
 
 @interface BICollectionView () <UICollectionViewDelegate>
 

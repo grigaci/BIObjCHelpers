@@ -8,16 +8,12 @@
 
 #import "BIDatasourceTableView.h"
 #import "BITableView.h"
+#import "BITableViewUtils.h"
 
 @class BIBatchRequest;
 @class BIMutableBatchRequest;
 @class BIBatchResponse;
 
-typedef NS_ENUM(NSUInteger, BIDatasourceTableViewFetchingState) {
-    BIDatasourceTableViewFetchingStateNone = 0,
-    BIDatasourceTableViewFetchingStatePullToRefresh,
-    BIDatasourceTableViewFetchingStateInfiniteScrolling
-};
 
 /*!
  * Datasource for a BITableView with support for fetching batches.
