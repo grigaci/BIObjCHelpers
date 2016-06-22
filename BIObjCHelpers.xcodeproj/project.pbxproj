@@ -22,6 +22,9 @@
 		43D3BFF31D12E0DB000C840C /* MockNSFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3BFF21D12E0DB000C840C /* MockNSFetchedResultsController.m */; };
 		43D3BFF71D12E592000C840C /* MockUINib.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3BFF61D12E592000C840C /* MockUINib.m */; };
 		43D3BFFC1D12FCC0000C840C /* MockBITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3BFFB1D12FCC0000C840C /* MockBITableView.m */; };
+		43D3BFFE1D1A8080000C840C /* BIOperationNotifierTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3BFFD1D1A8080000C840C /* BIOperationNotifierTestCase.m */; };
+		43D3C0021D1A8143000C840C /* MockBIOperationNotifierListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3C0011D1A8143000C840C /* MockBIOperationNotifierListener.m */; };
+		43D3C0081D1A832C000C840C /* BIDatasourceBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3C0071D1A832C000C840C /* BIDatasourceBaseTestCase.m */; };
 		43F541CD1CD0F276002EB6C6 /* BIObjCHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F541C31CD0F275002EB6C6 /* BIObjCHelpers.framework */; };
 		43F541DC1CD0F2AD002EB6C6 /* _BIScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91614A821B94790400D00EB2 /* _BIScrollViewProxy.m */; };
 		43F541DE1CD0F2AD002EB6C6 /* UIScrollView+BIBatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 432001971C7B26C0006A8BB7 /* UIScrollView+BIBatching.m */; };
@@ -105,7 +108,6 @@
 		43FA5D591CD2323B00FA754E /* NSDateBIAttributedStringTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CDC1B568ECB001F0A00 /* NSDateBIAttributedStringTestCase.m */; };
 		43FA5D5A1CD2323E00FA754E /* NSStringBIExtraTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CDE1B568ECB001F0A00 /* NSStringBIExtraTestCase.m */; };
 		43FA5D5B1CD2324300FA754E /* BIDatasourceFetchedCollectionViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CE11B568ECB001F0A00 /* BIDatasourceFetchedCollectionViewTestCase.m */; };
-		43FA5D5D1CD2324D00FA754E /* BIDatasourceBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */; };
 		43FA5D5E1CD2325200FA754E /* BIDatasourceTableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */; };
 		43FA5D5F1CD2325400FA754E /* BIDatasourceFeedTableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CE61B568ECB001F0A00 /* BIDatasourceFeedTableViewTestCase.m */; };
 		43FA5D601CD2325700FA754E /* BIDatasourceFetchedTableViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CE71B568ECB001F0A00 /* BIDatasourceFetchedTableViewTestCase.m */; };
@@ -136,7 +138,6 @@
 		431124911CE36CDC00950918 /* BIOperationNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIOperationNotifier.m; path = Operations/BIOperationNotifier.m; sourceTree = "<group>"; };
 		432001961C7B26C0006A8BB7 /* UIScrollView+BIBatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+BIBatching.h"; path = "Views/ScrollView/UIScrollView+BIBatching.h"; sourceTree = "<group>"; };
 		432001971C7B26C0006A8BB7 /* UIScrollView+BIBatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+BIBatching.m"; path = "Views/ScrollView/UIScrollView+BIBatching.m"; sourceTree = "<group>"; };
-		43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDatasourceBaseTestCase.m; sourceTree = "<group>"; };
 		433DEB481C4D1A16002296AE /* BIScrollAdditionalViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIScrollAdditionalViewBase.h; path = Views/TableView/Additions/BIScrollAdditionalViewBase.h; sourceTree = "<group>"; };
 		433DEB491C4D1A16002296AE /* BIScrollAdditionalViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIScrollAdditionalViewBase.m; path = Views/TableView/Additions/BIScrollAdditionalViewBase.m; sourceTree = "<group>"; };
 		433DEB4B1C4D1A52002296AE /* BIScrollAdditionalErrorNoContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIScrollAdditionalErrorNoContentView.h; path = Views/TableView/Additions/BIScrollAdditionalErrorNoContentView.h; sourceTree = "<group>"; };
@@ -221,6 +222,11 @@
 		43D3BFF61D12E592000C840C /* MockUINib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockUINib.m; path = Mocks/UIKit/UINib/MockUINib.m; sourceTree = "<group>"; };
 		43D3BFFA1D12FCC0000C840C /* MockBITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockBITableView.h; path = Mocks/Views/TableView/MockBITableView.h; sourceTree = "<group>"; };
 		43D3BFFB1D12FCC0000C840C /* MockBITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockBITableView.m; path = Mocks/Views/TableView/MockBITableView.m; sourceTree = "<group>"; };
+		43D3BFFD1D1A8080000C840C /* BIOperationNotifierTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIOperationNotifierTestCase.m; path = Operations/BIOperationNotifierTestCase.m; sourceTree = "<group>"; };
+		43D3C0001D1A8143000C840C /* MockBIOperationNotifierListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockBIOperationNotifierListener.h; path = Mocks/Operations/MockBIOperationNotifierListener.h; sourceTree = "<group>"; };
+		43D3C0011D1A8143000C840C /* MockBIOperationNotifierListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockBIOperationNotifierListener.m; path = Mocks/Operations/MockBIOperationNotifierListener.m; sourceTree = "<group>"; };
+		43D3C0031D1A8287000C840C /* BIOperationNotifier+Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BIOperationNotifier+Tests.h"; path = "Operations/BIOperationNotifier+Tests.h"; sourceTree = "<group>"; };
+		43D3C0071D1A832C000C840C /* BIDatasourceBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIDatasourceBaseTestCase.m; path = Base/BIDatasourceBaseTestCase.m; sourceTree = "<group>"; };
 		43DA594B1B6217F400ECAAC0 /* BITableViewTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BITableViewTestCase.m; path = Views/TableView/BITableViewTestCase.m; sourceTree = "<group>"; };
 		43F23F7C1B9EFC0D00CEAD8C /* BIBatchHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIBatchHelpers.h; sourceTree = "<group>"; };
 		43F23F7D1B9EFC0D00CEAD8C /* BIBatchHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIBatchHelpers.m; sourceTree = "<group>"; };
@@ -318,6 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				43A5B5561CFD733300F79359 /* BIOperationBaseTestCase.m */,
+				43D3BFFD1D1A8080000C840C /* BIOperationNotifierTestCase.m */,
+				43D3C0031D1A8287000C840C /* BIOperationNotifier+Tests.h */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -669,6 +677,7 @@
 		43BE6CDF1B568ECB001F0A00 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
+				43D3C0061D1A8315000C840C /* Base */,
 				43BE6CE01B568ECB001F0A00 /* CollectionView */,
 				43BE6CE51B568ECB001F0A00 /* TableView */,
 			);
@@ -686,7 +695,6 @@
 		43BE6CE51B568ECB001F0A00 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				43329F6E1BFC7D6F0081FDA3 /* BIDatasourceBaseTestCase.m */,
 				4304A9B51B70D892009739B3 /* BIDatasourceTableViewTestCase.m */,
 				43BE6CE61B568ECB001F0A00 /* BIDatasourceFeedTableViewTestCase.m */,
 				43BE6CE71B568ECB001F0A00 /* BIDatasourceFetchedTableViewTestCase.m */,
@@ -751,6 +759,7 @@
 		43D3BFD81D12DCA6000C840C /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				43D3BFFF1D1A8127000C840C /* Operations */,
 				43D3BFF81D12FCA4000C840C /* Views */,
 				43D3BFE71D12DF5D000C840C /* Handlers */,
 				43D3BFDA1D12DCAD000C840C /* UIKit */,
@@ -857,6 +866,23 @@
 				43D3BFFB1D12FCC0000C840C /* MockBITableView.m */,
 			);
 			name = TableView;
+			sourceTree = "<group>";
+		};
+		43D3BFFF1D1A8127000C840C /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				43D3C0001D1A8143000C840C /* MockBIOperationNotifierListener.h */,
+				43D3C0011D1A8143000C840C /* MockBIOperationNotifierListener.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		43D3C0061D1A8315000C840C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				43D3C0071D1A832C000C840C /* BIDatasourceBaseTestCase.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		43DA58F21B5D1CAB00ECAAC0 /* ActivityIndicator */ = {
@@ -1185,7 +1211,6 @@
 				43FA5D541CD2321E00FA754E /* BITableViewTestCase.m in Sources */,
 				43FA5D661CD2326F00FA754E /* BIStartersFactoryTestCase.m in Sources */,
 				43D3BFE21D12DD5B000C840C /* MockUITableView.m in Sources */,
-				43FA5D5D1CD2324D00FA754E /* BIDatasourceBaseTestCase.m in Sources */,
 				43D3BFE61D12DDC1000C840C /* MockUICollectionView.m in Sources */,
 				43FA5D601CD2325700FA754E /* BIDatasourceFetchedTableViewTestCase.m in Sources */,
 				43FA5D621CD2326000FA754E /* BIHandlerTableViewTestCase.m in Sources */,
@@ -1200,10 +1225,13 @@
 				43D3BFFC1D12FCC0000C840C /* MockBITableView.m in Sources */,
 				43FA5D571CD2322900FA754E /* BIBatchHelpersTestCase.m in Sources */,
 				43FA5D591CD2323B00FA754E /* NSDateBIAttributedStringTestCase.m in Sources */,
+				43D3C0081D1A832C000C840C /* BIDatasourceBaseTestCase.m in Sources */,
 				43FA5D641CD2326800FA754E /* BISerialOperationQueueTestCase.m in Sources */,
+				43D3C0021D1A8143000C840C /* MockBIOperationNotifierListener.m in Sources */,
 				43FA5D551CD2322400FA754E /* BIBatchRequestTestCase.m in Sources */,
 				43FA5D561CD2322700FA754E /* BIBatchResponseTestCase.m in Sources */,
 				43D3BFF31D12E0DB000C840C /* MockNSFetchedResultsController.m in Sources */,
+				43D3BFFE1D1A8080000C840C /* BIOperationNotifierTestCase.m in Sources */,
 				43FA5D681CD2327600FA754E /* BIMockStarter.m in Sources */,
 				43FA5D581CD2323800FA754E /* NSBundleBIExtraTestCase.m in Sources */,
 				43D3BFEF1D12E0B1000C840C /* MockNSFetchedResultsSectionInfo.m in Sources */,

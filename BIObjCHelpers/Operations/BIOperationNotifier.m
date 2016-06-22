@@ -26,6 +26,10 @@
     [self.operationFinishedListeners removeObject:listener];
 }
 
+- (void)removeAllListeners {
+    [self.operationFinishedListeners removeAllObjects];
+}
+
 #pragma mark - BIOperationBase methods
 
 - (void)safeCallDidFinishWithErrorCallback:(nonnull NSError *)error {
