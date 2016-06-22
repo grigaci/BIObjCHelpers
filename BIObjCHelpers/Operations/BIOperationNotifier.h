@@ -25,5 +25,6 @@
 
 - (void)registerOperationFinishedListener:(id<BIOperationNotifierListener> __nonnull)listener;
 - (void)unregisterOperationFinishedListener:(id<BIOperationNotifierListener> __nonnull)listener;
+- (void)removeAllListeners;
 
 @end

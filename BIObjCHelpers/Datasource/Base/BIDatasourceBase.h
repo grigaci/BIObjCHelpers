@@ -8,8 +8,12 @@
 
 #import "BILifecycle.h"
 
+#import <UIKit/UIKit.h>
+
 @interface BIDatasourceBase : BILifecycle
 
 @property (nonatomic, strong, nonnull, readonly) NSHashTable *operations;
+
+- (void)cancelAllCurrentOperations:(BOOL)silently;
 
 @end

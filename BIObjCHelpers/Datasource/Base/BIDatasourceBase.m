@@ -7,6 +7,8 @@
 //
 
 #import "BIDatasourceBase.h"
+#import "BIOperationBase.h"
+#import "BIOperationNotifier.h"
 
 @interface BIDatasourceBase ()
 
@@ -16,6 +18,26 @@
 
 
 @implementation BIDatasourceBase
+
+#pragma mark - Public methods
+
+- (void)cancelAllCurrentOperations:(BOOL)silently {
+    NSHashTable *copiedOperations = [self.operations copy];
+    for (id object in copiedOperations) {
+        if ([object isKindOfClass:[BIOperationBase class]]) {
+            BIOperationBase *operation = (BIOperationBase *)object;
+            if (silently) {
+                operation.didFinishWithErrorCallback = nil;
+                if ([operation isKindOfClass:[BIOperationNotifier class]]) {
+                    BIOperationNotifier *notifierOperation = (BIOperationNotifier *)operation;
+                    [notifierOperation removeAllListeners];
+                }
+            }
+            [operation cancel];
+        }
+    }
+    [self.operations removeAllObjects];
+}
 
 #pragma mark - Property methods
 
