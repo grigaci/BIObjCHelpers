@@ -8,7 +8,7 @@
 
 #import "BIOperationBase.h"
 
-void dispatchCodeOnMainThread(void(^__nonnull codeBlock)()) {
+void dispatchCodeOnMainThread(void(^__nonnull codeBlock)(void)) {
     if (![NSThread isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             codeBlock();
@@ -43,7 +43,7 @@ void dispatchCodeOnMainThread(void(^__nonnull codeBlock)()) {
 #pragma mark - Public methods
 
 - (void)safeCallDidFinishWithErrorCallback:(nonnull NSError *)error {
-    void(^block)() = ^{
+    void(^block)(void) = ^{
         if (self.didFinishWithErrorCallback) {
             self.didFinishWithErrorCallback(error);
         }
@@ -59,7 +59,7 @@ void dispatchCodeOnMainThread(void(^__nonnull codeBlock)()) {
 }
 
 - (void)safeCallDidFinishSuccessfullyCallback:(nonnull id)responseObject {
-    void(^block)() = ^{
+    void(^block)(void) = ^{
         if (self.didFinishSuccessfullyCallback) {
             self.didFinishSuccessfullyCallback(responseObject);
         }
@@ -75,7 +75,7 @@ void dispatchCodeOnMainThread(void(^__nonnull codeBlock)()) {
 }
 
 - (void)safeCallDidFinishCommon {
-    void(^block)() = ^{
+    void(^block)(void) = ^{
         if (self.didFinishCommonCallback) {
             self.didFinishCommonCallback();
         }

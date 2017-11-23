@@ -33,7 +33,7 @@
 #pragma mark - BIOperationBase methods
 
 - (void)safeCallDidFinishWithErrorCallback:(nonnull NSError *)error {
-    void(^block)() = ^{
+    void(^block)(void) = ^{
         [self BI_notifyOperationDidFinishWithError:error];
         [self handleDidFinishedCommon];
     };
@@ -47,7 +47,7 @@
 }
 
 - (void)safeCallDidFinishSuccessfullyCallback:(nonnull id)responseObject {
-    void(^block)() = ^{
+    void(^block)(void) = ^{
         [self BI_notifyOperationDidFinishWithResponse:responseObject];
         [self handleDidFinishedCommon];
     };
@@ -61,7 +61,7 @@
 }
 
 - (void)safeCallDidFinishCommon {
-    void(^block)() = ^{
+    void(^block)(void) = ^{
         [self BI_notifyOperationDidFinishCommon];
     };
     if (self.runCallbacksOnMainThread) {
