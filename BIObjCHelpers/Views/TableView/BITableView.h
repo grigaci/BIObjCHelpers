@@ -30,7 +30,7 @@
 /*!
  @brief Used to notify the datasource to reload.
  */
-@property (nonatomic, copy, nullable) void (^pullToRefreshCallback)();
+@property (nonatomic, copy, nullable) void (^pullToRefreshCallback)(void);
 
 /*!
  @brief Represents the view that is displayed on top of the tableView when the pull-to-refresh gesture is made.
@@ -45,7 +45,7 @@
 /*!
  @brief Used to notify dataSource to fetch the next batch
  */
-@property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)();
+@property (nonatomic, copy, nullable) void (^infiniteScrollingCallback)(void);
 
 /*!
  @brief Represents the number of screens left to scroll before triggering the fetch of the next batch. Default is 0.5f (half of screen)

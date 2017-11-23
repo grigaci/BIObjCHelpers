@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern void dispatchCodeOnMainThread(void(^__nonnull codeBlock)());
+extern void dispatchCodeOnMainThread(void(^__nonnull codeBlock)(void));
 
 @interface BIOperationBase : NSOperation
 
@@ -19,7 +19,7 @@ extern void dispatchCodeOnMainThread(void(^__nonnull codeBlock)());
 // Callbacks
 @property (nonatomic, copy, nullable) void(^didFinishWithErrorCallback)(NSError *__nonnull error);
 @property (nonatomic, copy, nullable) void(^didFinishSuccessfullyCallback)(id __nonnull responseObject);
-@property (nonatomic, copy, nullable) void(^didFinishCommonCallback)();
+@property (nonatomic, copy, nullable) void(^didFinishCommonCallback)(void);
 @property (nonatomic, assign) BOOL runCallbacksOnMainThread;
 
 // Handle operations response states
