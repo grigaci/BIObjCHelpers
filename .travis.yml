@@ -8,6 +8,7 @@ before_install:
 - brew uninstall xctool; brew install xctool --HEAD;
 
 script:
+- xcodebuild -project BIObjCHelpers.xcodeproj -scheme BIObjCHelpers -sdk iphonesimulator11.2 build-for-testing
 - xctool -project BIObjCHelpers.xcodeproj -scheme BIObjCHelpers run-tests -test-sdk iphonesimulator11.2 -parallelize
 
 after_success: slather
