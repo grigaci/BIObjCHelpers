@@ -1,32 +1,39 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.3)
+    CFPropertyList (2.3.6)
+    activesupport (4.2.10)
       i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    claide (0.9.1)
+    atomos (0.1.2)
+    claide (1.0.2)
     clamp (0.6.5)
-    colored (1.2)
-    i18n (0.7.0)
-    json (1.8.3)
-    mini_portile (0.6.2)
-    minitest (5.8.0)
-    nokogiri (1.6.6.2)
-      mini_portile (~> 0.6.0)
-    slather (1.8.1)
+    colored2 (3.1.2)
+    concurrent-ruby (1.0.5)
+    i18n (0.9.4)
+      concurrent-ruby (~> 1.0)
+    mini_portile2 (2.1.0)
+    minitest (5.11.3)
+    nanaimo (0.2.3)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
+    slather (2.4.4)
+      CFPropertyList (~> 2.2)
+      activesupport (>= 4.0.2, < 5)
       clamp (~> 0.6)
-      nokogiri (~> 1.6.3)
-      xcodeproj (~> 0.26.2)
-    thread_safe (0.3.5)
-    tzinfo (1.2.2)
+      nokogiri (>= 1.6, < 1.7)
+      xcodeproj (~> 1.4)
+    thread_safe (0.3.6)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    xcodeproj (0.26.3)
-      activesupport (>= 3)
-      claide (~> 0.9.1)
-      colored (~> 1.2)
+    xcodeproj (1.5.6)
+      CFPropertyList (~> 2.3.3)
+      atomos (~> 0.1.2)
+      claide (>= 1.0.2, < 2.0)
+      colored2 (~> 3.1)
+      nanaimo (~> 0.2.3)
 
 PLATFORMS
   ruby
@@ -35,4 +42,4 @@ DEPENDENCIES
   slather
 
 BUNDLED WITH
-   1.10.6
+   1.16.0
