@@ -9,6 +9,7 @@
 #import "BITableView.h"
 #import "BIDatasourceFeedTableView.h"
 #import "BIHandlerTableView.h"
+#import "UIScrollView+BIBatching.h"
 
 #import "MockBIHandlerTableView.h"
 
@@ -144,6 +145,34 @@
     BIHandlerTableView *handler = [BIHandlerTableView handlerWithTableView:self.tableView];
     XCTAssertNotNil(self.tableView.handler);
     XCTAssertEqual(self.tableView.handler, handler);
+}
+
+#pragma mark - Test reloadData
+
+- (void)test_reloadData_no_content {
+    BIScrollAdditionalViewBase *noContentView = [[BIScrollAdditionalViewBase alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.tableView.createAdditionalNoContentViewCallback = ^BIScrollAdditionalViewBase * _Nullable{
+        return noContentView;
+    };
+    [self.tableView addAdditionalNoContentView];
+    XCTAssertNotNil(noContentView.superview);
+    
+    [self.tableView reloadData];
+    
+    XCTAssertNil(noContentView.superview);
+}
+
+- (void)test_reloadData_loading {
+    BIScrollAdditionalViewBase *loadingView = [[BIScrollAdditionalViewBase alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.tableView.createAdditionalLoadingContentViewCallback = ^BIScrollAdditionalViewBase * _Nullable{
+        return loadingView;
+    };
+    [self.tableView addAdditionalLoadingContentView];
+    XCTAssertNotNil(loadingView.superview);
+    
+    [self.tableView reloadData];
+    
+    XCTAssertNil(loadingView.superview);
 }
 
 @end
