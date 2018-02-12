@@ -120,6 +120,8 @@
 		43FA5D671CD2327200FA754E /* BILaunchStartersFactoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 943700831BCD4E250063D2CC /* BILaunchStartersFactoryTestCase.m */; };
 		43FA5D681CD2327600FA754E /* BIMockStarter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE6CF61B568ECB001F0A00 /* BIMockStarter.m */; };
 		43FA5D691CD2381E00FA754E /* DefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43BE6CD31B568CC7001F0A00 /* DefaultData.plist */; };
+		8B6246B02031AAAE005989DB /* BICollectionViewTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6246AF2031AAAE005989DB /* BICollectionViewTestCase.m */; };
+		8B6246B42031AD22005989DB /* BIMockCollectionViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6246B32031AD22005989DB /* BIMockCollectionViewDatasource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +243,9 @@
 		43F541CC1CD0F276002EB6C6 /* BIObjCHelpersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BIObjCHelpersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FA5D4A1CD2310300FA754E /* BIObjCHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIObjCHelpers.h; sourceTree = "<group>"; };
 		43FA5D4B1CD2310300FA754E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B6246AF2031AAAE005989DB /* BICollectionViewTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BICollectionViewTestCase.m; path = Views/CollectionView/BICollectionViewTestCase.m; sourceTree = "<group>"; };
+		8B6246B22031AD22005989DB /* BIMockCollectionViewDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BIMockCollectionViewDatasource.h; path = Mocks/Views/CollectionView/BIMockCollectionViewDatasource.h; sourceTree = "<group>"; };
+		8B6246B32031AD22005989DB /* BIMockCollectionViewDatasource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BIMockCollectionViewDatasource.m; path = Mocks/Views/CollectionView/BIMockCollectionViewDatasource.m; sourceTree = "<group>"; };
 		914D2CB41B57BB41009A9B4D /* BIBatchHelpersTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIBatchHelpersTestCase.m; sourceTree = "<group>"; };
 		91614A811B94790400D00EB2 /* _BIScrollViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _BIScrollViewProxy.h; path = Utils/Proxy/_BIScrollViewProxy.h; sourceTree = "<group>"; };
 		91614A821B94790400D00EB2 /* _BIScrollViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _BIScrollViewProxy.m; path = Utils/Proxy/_BIScrollViewProxy.m; sourceTree = "<group>"; };
@@ -854,6 +859,7 @@
 		43D3BFF81D12FCA4000C840C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B6246B12031AD01005989DB /* CollectionView */,
 				43D3BFF91D12FCA7000C840C /* TableView */,
 			);
 			name = Views;
@@ -897,6 +903,7 @@
 		43DA59491B6217A900ECAAC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B6246AE2031AA8E005989DB /* CollectionView */,
 				43DA594A1B6217B200ECAAC0 /* TableView */,
 			);
 			name = Views;
@@ -919,6 +926,23 @@
 			name = SupportingFiles;
 			path = BIObjCHelpers/SupportingFiles;
 			sourceTree = SOURCE_ROOT;
+		};
+		8B6246AE2031AA8E005989DB /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8B6246AF2031AAAE005989DB /* BICollectionViewTestCase.m */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		8B6246B12031AD01005989DB /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8B6246B22031AD22005989DB /* BIMockCollectionViewDatasource.h */,
+				8B6246B32031AD22005989DB /* BIMockCollectionViewDatasource.m */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
 		};
 		914D2CAF1B5792CD009A9B4D /* Views */ = {
 			isa = PBXGroup;
@@ -1209,6 +1233,7 @@
 				43D3BFF71D12E592000C840C /* MockUINib.m in Sources */,
 				43FA5D611CD2325B00FA754E /* BIMockDatasourceFeedTableView.m in Sources */,
 				43FA5D651CD2326A00FA754E /* BIOperationQueueTestCase.m in Sources */,
+				8B6246B42031AD22005989DB /* BIMockCollectionViewDatasource.m in Sources */,
 				43A5B5571CFD733300F79359 /* BIOperationBaseTestCase.m in Sources */,
 				43FA5D541CD2321E00FA754E /* BITableViewTestCase.m in Sources */,
 				43FA5D661CD2326F00FA754E /* BIStartersFactoryTestCase.m in Sources */,
@@ -1220,6 +1245,7 @@
 				43FA5D671CD2327200FA754E /* BILaunchStartersFactoryTestCase.m in Sources */,
 				43FA5D501CD2320700FA754E /* NSString+RandomTest.m in Sources */,
 				43FA5D511CD2320A00FA754E /* BITestCaseCoreData.m in Sources */,
+				8B6246B02031AAAE005989DB /* BICollectionViewTestCase.m in Sources */,
 				43FA5D5F1CD2325400FA754E /* BIDatasourceFeedTableViewTestCase.m in Sources */,
 				43FA5D631CD2326400FA754E /* BILifecycleTestCase.m in Sources */,
 				43D3BFEB1D12DF5D000C840C /* MockBIHandlerTableView.m in Sources */,

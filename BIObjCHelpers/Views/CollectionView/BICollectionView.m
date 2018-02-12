@@ -105,6 +105,13 @@ CGFloat const kBIActivityIndicatorViewHeight = 44.f;
     }
 }
 
+- (void)reloadData {
+    [super reloadData];
+    if ([self BI_totalNumberOfRows] != 0 && self.visibleAdditionalView) {
+        [self removeVisibleAdditionalView];
+    }
+}
+
 #pragma mark - Public methods
 
 - (void)triggerPullToRefresh {
